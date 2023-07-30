@@ -7,7 +7,7 @@
 
 import UIKit
 
-public protocol ViewOutputProtocol: class {
+protocol ViewOutputProtocol: AnyObject {
     func viewDidLoad()
     
     func didGoBack()

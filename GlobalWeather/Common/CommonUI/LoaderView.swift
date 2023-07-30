@@ -7,12 +7,12 @@
 
 import UIKit
 
-public var loaderViewColor: UIColor = #colorLiteral(red: 0.2118796408, green: 0.2519861162, blue: 0.2926436067, alpha: 1)
+var loaderViewColor: UIColor = #colorLiteral(red: 0.2118796408, green: 0.2519861162, blue: 0.2926436067, alpha: 1)
 
-public class LoaderView: UIView {
+class LoaderView: UIView {
     private let loadingIndicator = UIActivityIndicatorView()
     
-    public init() {
+    init() {
         super.init(frame: .zero)
         setupSubviews()
     }
@@ -25,12 +25,12 @@ public class LoaderView: UIView {
         backgroundColor = #colorLiteral(red: 0.9655296206, green: 0.9720321298, blue: 0.9782348275, alpha: 0.2)
         addSubview(loadingIndicator)
         
-        loadingIndicator.style = .whiteLarge
+        loadingIndicator.style = .large
         loadingIndicator.centerInSuperview()
         loadingIndicator.hidesWhenStopped = true
     }
     
-    public func startAnimation(in view: UIView) {
+    func startAnimation(in view: UIView) {
         isHidden = false
         view.addSubview(self)
         frame = view.bounds
@@ -39,10 +39,11 @@ public class LoaderView: UIView {
         loadingIndicator.startAnimating()
     }
     
-    public func stopAnimation() {
+    func stopAnimation() {
         isHidden = true
         loadingIndicator.stopAnimating()
         removeFromSuperview()
     }
 }
+
 

@@ -1,17 +1,17 @@
 import UIKit
 import FloatingPanel
 
-public enum NavigationPushPopStyle: UInt {
+enum NavigationPushPopStyle: UInt {
     case fade
     case standart
 }
 
-public enum NavigationStyle: UInt {
+enum NavigationStyle: UInt {
     case present
     case push
 }
 
-public protocol CoordinatorRouterProtocol: class {
+protocol CoordinatorRouterProtocol: AnyObject {
     var rootViewController: UIViewController { get }
     var didPresent: Bool { get set }
     
@@ -46,13 +46,13 @@ public protocol CoordinatorRouterProtocol: class {
     func popToFirstControllerInStack(style: NavigationPushPopStyle, animated: Bool)
     func popToRootViewController(animated: Bool)
     func popToSpecificVC(bottomBound: Int, upperBound: Int)
-
+    
     func leaveOnlyTopControllerInStack()
     func setControllerInStack(_ module: PresentableProtocol, animated: Bool)
     func replaceLastControllerWith(_ module: PresentableProtocol, animated: Bool)
 }
 
-public extension CoordinatorRouterProtocol {
+extension CoordinatorRouterProtocol {
     func present(_ module: PresentableProtocol)  {
         present(module, style: .overFullScreen)
     }
@@ -144,15 +144,15 @@ public extension CoordinatorRouterProtocol {
     }
     
     func dismissModule(animated: Bool, completion: EmptyBlock?) {
-//        if #available(iOS 13, *) {
-//            rootViewController.dismiss(animated: animated, completion: { completion?.execute(()) })
-//        } else {
-//            if rootViewController.presentingViewController != nil {
-//                rootViewController.dismiss(animated: animated, completion: { completion?.execute(()) })
-//            } else {
-//                completion?.execute(())
-//            }
-//        }
+        //        if #available(iOS 13, *) {
+        //            rootViewController.dismiss(animated: animated, completion: { completion?.execute(()) })
+        //        } else {
+        //            if rootViewController.presentingViewController != nil {
+        //                rootViewController.dismiss(animated: animated, completion: { completion?.execute(()) })
+        //            } else {
+        //                completion?.execute(())
+        //            }
+        //        }
         rootViewController.dismiss(animated: animated, completion: { completion?.execute(()) })
     }
     
@@ -191,7 +191,7 @@ public extension CoordinatorRouterProtocol {
     func popToSpecificVC(bottomBound: Int, upperBound: Int) {
         popToSpecificVC(bottomBound: bottomBound, upperBound: upperBound)
     }
-     
+    
     // MARK: PresentableProtocol
     func toPresent() -> UIViewController? {
         return rootViewController

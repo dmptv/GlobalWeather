@@ -1,7 +1,7 @@
 import UIKit
 import FloatingPanel
 
-public protocol BaseModuleRoutableProtocol {
+protocol BaseModuleRoutableProtocol {
     var viewController: ViewControllerProtocol? { get }
     
     func goBackRouting()
@@ -10,9 +10,9 @@ public protocol BaseModuleRoutableProtocol {
     func removeRouting()
 }
 
-open class Router<ROUTINGHANDLER>: BaseModuleRoutableProtocol {
+class Router<ROUTINGHANDLER>: BaseModuleRoutableProtocol {
     private var moduleRoutingHandlerWeakContainer: WeakContainer<ROUTINGHANDLER>?
-    public var moduleRoutingHandler: ROUTINGHANDLER? {
+    var moduleRoutingHandler: ROUTINGHANDLER? {
         get {
             moduleRoutingHandlerWeakContainer?.value
         } set {
@@ -24,17 +24,17 @@ open class Router<ROUTINGHANDLER>: BaseModuleRoutableProtocol {
         }
     }
     
-    public weak var viewController: ViewControllerProtocol?
+    weak var viewController: ViewControllerProtocol?
     
     deinit {
         (moduleRoutingHandler as? ModuleRoutingHandlingProtocol)?.performModuleRemovedRouting()
     }
     
-    public init(viewController: ViewControllerProtocol?) {
+    init(viewController: ViewControllerProtocol?) {
         self.viewController = viewController
     }
     
-    public func presentFloating(_ module: PresentableProtocol, positions: Set<FloatingPanelPosition>, basicPosition: FloatingPanelPosition) {
+    func presentFloating(_ module: PresentableProtocol, positions: Set<FloatingPanelPosition>, basicPosition: FloatingPanelPosition) {
         guard let contentVC = module.toPresent() else {
             return
         }
@@ -52,7 +52,7 @@ open class Router<ROUTINGHANDLER>: BaseModuleRoutableProtocol {
         present(fpc, animated: true, style: .custom)
     }
     
-    public func presentFloatingIntrinsicLayout(_ module: PresentableProtocol) {
+    func presentFloatingIntrinsicLayout(_ module: PresentableProtocol) {
         guard let contentVC = module.toPresent() else {
             return
         }
@@ -70,7 +70,7 @@ open class Router<ROUTINGHANDLER>: BaseModuleRoutableProtocol {
         present(fpc, animated: true, style: .custom)
     }
     
-    public func present(_ module: PresentableProtocol, animated: Bool, style: UIModalPresentationStyle) {
+    func present(_ module: PresentableProtocol, animated: Bool, style: UIModalPresentationStyle) {
         guard let controller = module.toPresent() else {
             return
         }
@@ -86,7 +86,7 @@ open class Router<ROUTINGHANDLER>: BaseModuleRoutableProtocol {
     }
 }
 
-public extension Router {
+extension Router {
     func goBackRouting() {
         (moduleRoutingHandler as? ModuleRoutingHandlingProtocol)?.performRouteForBackRouting()
     }
@@ -105,7 +105,7 @@ public extension Router {
 }
 
 extension Router: PresentableProtocol {
-    public func toPresent() -> UIViewController? {
+    func toPresent() -> UIViewController? {
         return viewController
     }
 }

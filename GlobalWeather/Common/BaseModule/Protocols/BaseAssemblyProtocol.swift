@@ -1,5 +1,5 @@
 import UIKit
 
-public protocol BaseAssemblyProtocol: class {
+protocol BaseAssemblyProtocol: AnyObject {
     
 }

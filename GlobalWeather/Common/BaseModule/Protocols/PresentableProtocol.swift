@@ -1,5 +1,5 @@
 import UIKit
 
-public protocol PresentableProtocol {
+protocol PresentableProtocol {
     func toPresent() -> UIViewController?
 }

@@ -4,17 +4,16 @@ open class BaseCoordinatorRouter: NSObject, CoordinatorRouterProtocol {
     private var completions: [UIViewController: EmptyBlock] = [:]
     private var currentController: UIViewController?
     
-    //TODO: make rootViewController weak!
-    public let rootViewController: UIViewController
-    public var didPresent = false
-        
-    public init(_ rootViewController: UIViewController = BaseRouterController()) {
+    let rootViewController: UIViewController
+    var didPresent = false
+    
+    init(_ rootViewController: UIViewController = BaseRouterController()) {
         self.rootViewController = rootViewController
         super.init()
         self.rootViewController.navigationController?.delegate = self
     }
     
-    public func showScreen(_ module: PresentableProtocol) {
+    func showScreen(_ module: PresentableProtocol) {
         guard let viewController = module.toPresent() else {
             return
         }
@@ -30,7 +29,7 @@ open class BaseCoordinatorRouter: NSObject, CoordinatorRouterProtocol {
         rootViewController.setNeedsStatusBarAppearanceUpdate()
     }
     
-    public func push(_ module: PresentableProtocol, _ style: NavigationPushPopStyle, animated: Bool, hideBottomBar: Bool, completion: EmptyBlock?) {
+    func push(_ module: PresentableProtocol, _ style: NavigationPushPopStyle, animated: Bool, hideBottomBar: Bool, completion: EmptyBlock?) {
         guard let controller = module.toPresent() else {
             return
         }
@@ -45,30 +44,28 @@ open class BaseCoordinatorRouter: NSObject, CoordinatorRouterProtocol {
         
         controller.hidesBottomBarWhenPushed = hideBottomBar
         let navController = rootViewController as? UINavigationController ?? (rootViewController.navigationController ??
-                (rootViewController.children.first as? UINavigationController))
+                                                                              (rootViewController.children.first as? UINavigationController))
         
         navController?.pushViewController(controller, animated: animated)
     }
     
-    public func popModule(style: NavigationPushPopStyle, animated: Bool)  {
+    func popModule(style: NavigationPushPopStyle, animated: Bool)  {
         let navigationController = rootViewController.navigationController ??
-            (rootViewController.children.first as? UINavigationController)
+        (rootViewController.children.first as? UINavigationController)
         if let controller = navigationController?.popViewController(animated: animated) {
             runCompletion(for: controller)
         }
     }
     
-    public func popToFirstControllerInStack(style: NavigationPushPopStyle, animated: Bool) {
+    func popToFirstControllerInStack(style: NavigationPushPopStyle, animated: Bool) {
         let navigationController = rootViewController.navigationController ??
-            (rootViewController.children.first as? UINavigationController)
+        (rootViewController.children.first as? UINavigationController)
         if let controllers = navigationController?.popToRootViewController(animated: animated) {
             controllers.forEach { runCompletion(for: $0) }
         }
     }
     
-    /// bottomBound ..<upperBound - viewController's входящие в range будут удалены из стэка
-    /// затем вызвать  - childCoordinators.removeSubrange(bottomBound..<upperBound)
-    public func popToSpecificVC(bottomBound: Int, upperBound: Int) {
+    func popToSpecificVC(bottomBound: Int, upperBound: Int) {
         let navigationController = rootViewController.navigationController ??
         (rootViewController.children.first as? UINavigationController)
         if var controllers = navigationController?.viewControllers,
@@ -77,26 +74,26 @@ open class BaseCoordinatorRouter: NSObject, CoordinatorRouterProtocol {
             navigationController?.viewControllers = controllers
         }
     }
-
-    public func leaveOnlyTopControllerInStack() {
+    
+    func leaveOnlyTopControllerInStack() {
         let navigationController = rootViewController.navigationController ??
-            (rootViewController.children.first as? UINavigationController)
+        (rootViewController.children.first as? UINavigationController)
         if let controllers = navigationController?.viewControllers,
-                controllers.count > 1,
-                let topController = controllers.last {
+           controllers.count > 1,
+           let topController = controllers.last {
             navigationController?.viewControllers = [topController]
         }
     }
-
-    public func setControllerInStack(_ module: PresentableProtocol, animated: Bool) {
+    
+    func setControllerInStack(_ module: PresentableProtocol, animated: Bool) {
         let navigationController = rootViewController.navigationController ??
-            (rootViewController.children.first as? UINavigationController)
+        (rootViewController.children.first as? UINavigationController)
         if let toPresent = module.toPresent() {
             navigationController?.setViewControllers([toPresent], animated: animated)
         }
     }
     
-    public func replaceLastControllerWith(_ module: PresentableProtocol, animated: Bool) {
+    func replaceLastControllerWith(_ module: PresentableProtocol, animated: Bool) {
         guard let navigationController = rootViewController.navigationController ??
                 (rootViewController.children.first as? UINavigationController),
               let toPresent = module.toPresent() else {
@@ -110,7 +107,7 @@ open class BaseCoordinatorRouter: NSObject, CoordinatorRouterProtocol {
         navigationController.setViewControllers(Array(controllers), animated: animated)
     }
     
-    public func popToRootViewController(animated: Bool) {
+    func popToRootViewController(animated: Bool) {
         if let controllers = rootViewController.navigationController?.popToViewController(rootViewController, animated: animated) {
             controllers.forEach { runCompletion(for: $0) }
         }
@@ -125,17 +122,16 @@ open class BaseCoordinatorRouter: NSObject, CoordinatorRouterProtocol {
     }
 }
 
-public class BaseRouterController: UIViewController {
-}
+class BaseRouterController: UIViewController { }
 
 // MARK: UINavigationController Delegate
 extension BaseCoordinatorRouter: UINavigationControllerDelegate {
     public func navigationController(_ navigationController: UINavigationController,
-                                     didShow viewController: UIViewController,
-                                     animated: Bool) {
+                              didShow viewController: UIViewController,
+                              animated: Bool) {
         guard let poppedViewController = navigationController.transitionCoordinator?.viewController(forKey: .from),
-            !navigationController.viewControllers.contains(poppedViewController) else {
-                return
+              !navigationController.viewControllers.contains(poppedViewController) else {
+            return
         }
         
         runCompletion(for: poppedViewController)

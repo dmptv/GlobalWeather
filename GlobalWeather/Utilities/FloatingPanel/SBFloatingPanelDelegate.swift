@@ -7,101 +7,101 @@
 
 import FloatingPanel
 
-public protocol SBFloatingPanelProtocol: class {
+protocol SBFloatingPanelProtocol: AnyObject {
     func floatingPanelDidEndRemove(_ floatingViewController: UIViewController)
     func floatingPanelDidEndDraggingToRemove(_ floatingViewController: UIViewController)
 }
 
-public extension SBFloatingPanelProtocol {
-    public func floatingPanelDidEndDraggingToRemove(_ floatingViewController: UIViewController) {}
+extension SBFloatingPanelProtocol {
+    func floatingPanelDidEndDraggingToRemove(_ floatingViewController: UIViewController) {}
 }
 
-public protocol SBFloatingPanelControllerDelegate: FloatingPanelControllerDelegate {
+protocol SBFloatingPanelControllerDelegate: FloatingPanelControllerDelegate {
 }
 
-public class SBFloatingPanelDelegate: NSObject, SBFloatingPanelControllerDelegate {
-    public weak var delegate: SBFloatingPanelProtocol?
+class SBFloatingPanelDelegate: NSObject, SBFloatingPanelControllerDelegate {
+    weak var delegate: SBFloatingPanelProtocol?
     let positions: Set<FloatingPanelPosition>
     let basicPosition: FloatingPanelPosition
     
-    public init(positions: Set<FloatingPanelPosition>, basicPosition: FloatingPanelPosition, delegate: SBFloatingPanelProtocol? = nil) {
+    init(positions: Set<FloatingPanelPosition>, basicPosition: FloatingPanelPosition, delegate: SBFloatingPanelProtocol? = nil) {
         self.positions = positions
         self.basicPosition = basicPosition
         self.delegate = delegate
         super.init()
     }
     
-    public func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
+    func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
         SBFloatingPanelLayout(positions: positions, basicPosition: basicPosition)
     }
     
-    public func floatingPanelDidEndRemove(_ vc: FloatingPanelController) {
+    func floatingPanelDidEndRemove(_ vc: FloatingPanelController) {
         // TODO: - Implement removing coordinator from stack after dismissing
         delegate?.floatingPanelDidEndRemove(vc)
     }
 }
 
-public class SBFloatingPanelIntrinsicLayoutDelegate: NSObject, SBFloatingPanelControllerDelegate {
-    public weak var delegate: SBFloatingPanelProtocol?
+class SBFloatingPanelIntrinsicLayoutDelegate: NSObject, SBFloatingPanelControllerDelegate {
+    weak var delegate: SBFloatingPanelProtocol?
     
-    public init(delegate: SBFloatingPanelProtocol?) {
+    init(delegate: SBFloatingPanelProtocol?) {
         self.delegate = delegate
         super.init()
     }
     
-    public func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
+    func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
         RemovablePanelLayout()
     }
     
-    public func floatingPanelDidEndRemove(_ vc: FloatingPanelController) {
+    func floatingPanelDidEndRemove(_ vc: FloatingPanelController) {
         // TODO: - Implement removing coordinator from stack after dismissing
         delegate?.floatingPanelDidEndRemove(vc)
     }
     
-    public func floatingPanelDidEndDraggingToRemove(_ vc: FloatingPanelController, withVelocity velocity: CGPoint) {
+    func floatingPanelDidEndDraggingToRemove(_ vc: FloatingPanelController, withVelocity velocity: CGPoint) {
         delegate?.floatingPanelDidEndDraggingToRemove(vc)
     }
 }
 
-public class FloatingPanelDelegate: NSObject, FloatingPanelControllerDelegate {
-    public weak var delegate: SBFloatingPanelProtocol?
+class FloatingPanelDelegate: NSObject, FloatingPanelControllerDelegate {
+    weak var delegate: SBFloatingPanelProtocol?
     let positions: Set<FloatingPanelPosition>
     let basicPosition: FloatingPanelPosition
     
-    public init(positions: Set<FloatingPanelPosition>, basicPosition: FloatingPanelPosition, delegate: SBFloatingPanelProtocol? = nil) {
+    init(positions: Set<FloatingPanelPosition>, basicPosition: FloatingPanelPosition, delegate: SBFloatingPanelProtocol? = nil) {
         self.positions = positions
         self.basicPosition = basicPosition
         self.delegate = delegate
         super.init()
     }
     
-    public func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
+    func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
         SBFloatingPanelLayout(positions: positions, basicPosition: basicPosition)
     }
     
-    public func floatingPanelDidEndRemove(_ vc: FloatingPanelController) {
+    func floatingPanelDidEndRemove(_ vc: FloatingPanelController) {
         // TODO: - Implement removing coordinator from stack after dismissing
         delegate?.floatingPanelDidEndRemove(vc)
     }
 }
 
-public class FloatingPanelIntrinsicLayoutDelegate: NSObject, FloatingPanelControllerDelegate {
-    public weak var delegate: SBFloatingPanelProtocol?
+class FloatingPanelIntrinsicLayoutDelegate: NSObject, FloatingPanelControllerDelegate {
+    weak var delegate: SBFloatingPanelProtocol?
     
-    public override init() {
+    override init() {
         super.init()
     }
     
-    public init(delegate: SBFloatingPanelProtocol?) {
+    init(delegate: SBFloatingPanelProtocol?) {
         self.delegate = delegate
         super.init()
     }
     
-    public func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
+    func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
         RemovablePanelLayout()
     }
     
-    public func floatingPanelDidEndRemove(_ vc: FloatingPanelController) {
+    func floatingPanelDidEndRemove(_ vc: FloatingPanelController) {
         // TODO: - Implement removing coordinator from stack after dismissing
         delegate?.floatingPanelDidEndRemove(vc)
     }

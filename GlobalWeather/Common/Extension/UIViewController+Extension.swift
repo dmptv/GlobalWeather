@@ -1,11 +1,11 @@
 import UIKit
 
 extension UIViewController {
-    public func addChildController(_ viewController: UIViewController, _ constraintsBlock: (_ view: UIView) -> Void) {
+    func addChildController(_ viewController: UIViewController, _ constraintsBlock: (_ view: UIView) -> Void) {
         addChildController(viewController, view, constraintsBlock)
     }
     
-    public func addChildController(_ viewController: UIViewController, _ toView: UIView, _ constraintsBlock: (_ view: UIView) -> Void) {
+    func addChildController(_ viewController: UIViewController, _ toView: UIView, _ constraintsBlock: (_ view: UIView) -> Void) {
         viewController.willMove(toParent: self)
         addChild(viewController)
         toView.addSubview(viewController.view)
@@ -13,21 +13,21 @@ extension UIViewController {
         viewController.didMove(toParent: self)
     }
     
-    public func lastChild() -> UIViewController {
+    func lastChild() -> UIViewController {
         guard let lastChildController = children.last else {
             return self
         }
         return lastChildController.lastChild()
     }
 
-    public func firstNavigationItem() -> UINavigationItem {
+    func firstNavigationItem() -> UINavigationItem {
         if parent is UINavigationController {
             return self.navigationItem
         }
         return parent?.firstNavigationItem() ?? self.navigationItem
     }
     
-    public var isPushed: Bool {
+    var isPushed: Bool {
         var firstParentInStack = self
 
         while !(firstParentInStack.parent is UINavigationController) && firstParentInStack.parent != nil  {
@@ -42,10 +42,10 @@ extension UIViewController {
         }
     }
     
-    
     /// A Boolean value that determines whether the view controller is first in its navigation stack
-    public var isRootViewController: Bool {
+    var isRootViewController: Bool {
         self === navigationController?.viewControllers.first
     }
 }
+
 

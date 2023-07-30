@@ -1,8 +1,8 @@
 import UIKit
 
-public protocol ViewControllerProtocol: UIViewController { }
+protocol ViewControllerProtocol: UIViewController { }
 extension UIViewController: PresentableProtocol {
-    public func toPresent() -> UIViewController? {
+    func toPresent() -> UIViewController? {
         return self
     }
 }

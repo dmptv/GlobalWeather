@@ -1,6 +1,6 @@
 import UIKit
 
-public protocol CoordinatorProtocol: AnyObject, PresentableProtocol {
+protocol CoordinatorProtocol: AnyObject, PresentableProtocol {
     var supportedInterfaceOrientations: UIInterfaceOrientationMask { get }
     var router: CoordinatorRouterProtocol { get }
     
@@ -17,7 +17,7 @@ public protocol CoordinatorProtocol: AnyObject, PresentableProtocol {
     func updateOrientationIfNeeded() -> UIInterfaceOrientationMask
 }
 
-public extension CoordinatorProtocol {
+extension CoordinatorProtocol {
     func toPresent() -> UIViewController? {
         return router.toPresent()
     }
@@ -27,13 +27,13 @@ public extension CoordinatorProtocol {
     }
 }
 
-public protocol CoordinationExitPointProtocol: class {
+protocol CoordinationExitPointProtocol: AnyObject {
     func performRouteForBackRouting(_ coordinator: CoordinatorProtocol)
     func performRouteForCloseRouting(_ coordinator: CoordinatorProtocol)
     func performModuleRemovedRouting(_ coordinator: CoordinatorProtocol)
     func performRouteForBackOrCloseRouting(_ coordinator: CoordinatorProtocol)
 }
 
-public protocol FlowExitPointProtocol: CoordinationExitPointProtocol {
+protocol FlowExitPointProtocol: CoordinationExitPointProtocol {
     
 }

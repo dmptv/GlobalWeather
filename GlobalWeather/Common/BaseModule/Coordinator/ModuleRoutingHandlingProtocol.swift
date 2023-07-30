@@ -7,7 +7,7 @@
 
 import UIKit
 
-public protocol ModuleRoutingHandlingProtocol: class {
+protocol ModuleRoutingHandlingProtocol: AnyObject {
     func performRouteForBackRouting()
     func performRouteForCloseRouting()
     func performModuleRemovedRouting()

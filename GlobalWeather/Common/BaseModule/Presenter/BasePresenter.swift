@@ -1,20 +1,20 @@
 import UIKit
 
-open class BasePresenter<O, I, R, V>: NSObject {
-    public let interactor: I?
-    public let router: R?
+class BasePresenter<O, I, R, V>: NSObject {
+    let interactor: I?
+    let router: R?
     private let viewWeakContainer: WeakContainer<V>
     private let moduleOutputWeakContainer: WeakContainer<O>?
     
-    public var view: V? {
+    var view: V? {
         return viewWeakContainer.value
     }
     
-    public var moduleOutput: O? {
+    var moduleOutput: O? {
         return moduleOutputWeakContainer?.value
     }
     
-    public init(interactor: I?, router: R?, view: V, moduleOutput: O?) {
+    init(interactor: I?, router: R?, view: V, moduleOutput: O?) {
         self.interactor = interactor
         self.router = router
         self.viewWeakContainer = WeakContainer(value: view)
@@ -25,27 +25,28 @@ open class BasePresenter<O, I, R, V>: NSObject {
         }
     }
         
-    open func viewDidLoad() { }
+    func viewDidLoad() { }
 }
 
 extension BasePresenter: ViewOutputProtocol {
-    public var moduleRoutable: BaseModuleRoutableProtocol? {
+    var moduleRoutable: BaseModuleRoutableProtocol? {
         return router as? BaseModuleRoutableProtocol
     }
     
-    public func didGoBack() {
+    func didGoBack() {
         moduleRoutable?.goBackRouting()
     }
     
-    public func didClose() {
+    func didClose() {
         moduleRoutable?.closeRouting()
     }
     
-    public func didGoBackOrClose() {
+    func didGoBackOrClose() {
         moduleRoutable?.goBackOrCloseRouting()
     }
     
-    public func didRemove() {
+    func didRemove() {
         moduleRoutable?.removeRouting()
     }
 }
+

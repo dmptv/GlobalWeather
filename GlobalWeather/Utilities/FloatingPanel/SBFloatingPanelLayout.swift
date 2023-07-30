@@ -7,28 +7,28 @@
 
 import FloatingPanel
 
-public protocol SBFloatingPanelLayoutProtocol {
+protocol SBFloatingPanelLayoutProtocol {
     
 }
 
-public class SBFloatingPanelLayout: SBFloatingPanelLayoutProtocol, FloatingPanelLayout {
+class SBFloatingPanelLayout: SBFloatingPanelLayoutProtocol, FloatingPanelLayout {
     let basicPosition: FloatingPanelPosition
     let positions: Set<FloatingPanelPosition>
     
-    public init(positions: Set<FloatingPanelPosition>, basicPosition: FloatingPanelPosition) {
+    init(positions: Set<FloatingPanelPosition>, basicPosition: FloatingPanelPosition) {
         self.positions = positions
         self.basicPosition = basicPosition
     }
     
-    public var initialPosition: FloatingPanelPosition {
+    var initialPosition: FloatingPanelPosition {
         return basicPosition
     }
     
-    public var supportedPositions: Set<FloatingPanelPosition> {
+    var supportedPositions: Set<FloatingPanelPosition> {
         return positions
     }
     
-    public func backdropAlphaFor(position: FloatingPanelPosition) -> CGFloat {
+    func backdropAlphaFor(position: FloatingPanelPosition) -> CGFloat {
         switch position {
         case .full: return 0.9
         case .half: return 0.48
@@ -37,7 +37,7 @@ public class SBFloatingPanelLayout: SBFloatingPanelLayoutProtocol, FloatingPanel
         }
     }
     
-    public func insetFor(position: FloatingPanelPosition) -> CGFloat? {
+    func insetFor(position: FloatingPanelPosition) -> CGFloat? {
         let screenHeight = UIScreen.main.bounds.height
         switch position {
         case .full: return 16.0 // A top inset from safe area
@@ -48,14 +48,14 @@ public class SBFloatingPanelLayout: SBFloatingPanelLayoutProtocol, FloatingPanel
     }
 }
 
-public class RemovablePanelLayout: FloatingPanelIntrinsicLayout {
-    public init() {}
+class RemovablePanelLayout: FloatingPanelIntrinsicLayout {
+    init() {}
     
-    public var supportedPositions: Set<FloatingPanelPosition> {
+    var supportedPositions: Set<FloatingPanelPosition> {
         return [.full]
     }
     
-    public func backdropAlphaFor(position: FloatingPanelPosition) -> CGFloat {
+    func backdropAlphaFor(position: FloatingPanelPosition) -> CGFloat {
         switch position {
         case .full: return 0.48
         case .half: return 0.2
@@ -64,3 +64,4 @@ public class RemovablePanelLayout: FloatingPanelIntrinsicLayout {
         }
     }
 }
+

@@ -6,11 +6,11 @@ open class BaseCoordinator<EXITPOINT>: CoordinatorProtocol {
     
     private let device: DeviceServiceProtocol = ServiceLocator().deviceService()
     
-    public let router: CoordinatorRouterProtocol
-    public var childCoordinators: [CoordinatorProtocol] = []
+    let router: CoordinatorRouterProtocol
+    var childCoordinators: [CoordinatorProtocol] = []
     
     private var coordinationExitPointWeakContainer: WeakContainer<EXITPOINT>?
-    public var coordinationExitPoint: EXITPOINT? {
+    var coordinationExitPoint: EXITPOINT? {
         get { coordinationExitPointWeakContainer?.value }
         set {
             guard let value = newValue else {
@@ -22,15 +22,15 @@ open class BaseCoordinator<EXITPOINT>: CoordinatorProtocol {
     }
     
     private var prevInterfaceOrientations: UIInterfaceOrientationMask?
-    open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         .portrait
     }
     
-    public init(router: CoordinatorRouterProtocol) {
+    init(router: CoordinatorRouterProtocol) {
         self.router = router
     }
     
-    open func start(with option: DeepLinkOptionProtocol?) {
+    func start(with option: DeepLinkOptionProtocol?) {
         
     }
     
@@ -38,25 +38,24 @@ open class BaseCoordinator<EXITPOINT>: CoordinatorProtocol {
         start(with: nil)
     }
     
-    public func close() {
+    func close() {
         performRouteForCloseRouting()
     }
     
-    public func goBack() {
+    func goBack() {
         performRouteForBackRouting()
     }
     
     // add only unique object
-    public func addChild(_ coordinator: CoordinatorProtocol) {
+    func addChild(_ coordinator: CoordinatorProtocol) {
         guard !childCoordinators.contains(where: { $0 === coordinator }) else {
             return
         }
         childCoordinators.append(coordinator)
         updateOrientation()
-        UIViewController.attemptRotationToDeviceOrientation()
     }
     
-    public func removeChild(_ coordinator: CoordinatorProtocol?,
+    func removeChild(_ coordinator: CoordinatorProtocol?,
                             _ preUpdateOrientationBlock: EmptyBlock?) {
         guard childCoordinators.isEmpty == false, let coordinator = coordinator else {
             return
@@ -76,10 +75,9 @@ open class BaseCoordinator<EXITPOINT>: CoordinatorProtocol {
         
         preUpdateOrientationBlock?.execute(())
         updateOrientation()
-        UIViewController.attemptRotationToDeviceOrientation()
     }
     
-    public func updateOrientationIfNeeded() -> UIInterfaceOrientationMask {
+    func updateOrientationIfNeeded() -> UIInterfaceOrientationMask {
         defer {
             updateOrientation()
         }
@@ -118,25 +116,25 @@ open class BaseCoordinator<EXITPOINT>: CoordinatorProtocol {
     }
     
     // MARK: Remove after moving to modules
-    public func resetPrevOrientation() {
+    func resetPrevOrientation() {
         prevInterfaceOrientations = nil
     }
 }
 
 extension BaseCoordinator: ModuleRoutingHandlingProtocol {
-    public func performRouteForCloseRouting() {
+    func performRouteForCloseRouting() {
         (coordinationExitPoint as? CoordinationExitPointProtocol)?.performRouteForCloseRouting(self)
     }
     
-    public func performModuleRemovedRouting() {
+    func performModuleRemovedRouting() {
         (coordinationExitPoint as? CoordinationExitPointProtocol)?.performModuleRemovedRouting(self)
     }
     
-    public func performRouteForBackRouting() {
+    func performRouteForBackRouting() {
         (coordinationExitPoint as? CoordinationExitPointProtocol)?.performRouteForBackRouting(self)
     }
     
-    public func performRouteForBackOrCloseRouting() {
+    func performRouteForBackOrCloseRouting() {
         (coordinationExitPoint as? CoordinationExitPointProtocol)?.performRouteForBackOrCloseRouting(self)
     }
 }

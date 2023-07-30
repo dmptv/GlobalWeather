@@ -1,12 +1,12 @@
 import UIKit
 
-public struct Module<Input, Output>: PresentableProtocol {
-    public var view: UIViewController
+struct Module<Input, Output>: PresentableProtocol {
+    var view: UIViewController
     
-    public var input: Input
-    public var output: WeakContainer<Output>?
+    var input: Input
+    var output: WeakContainer<Output>?
     
-    public init(view: UIViewController, input: Input, output: Output?) {
+    init(view: UIViewController, input: Input, output: Output?) {
         self.view = view
         
         self.input = input
@@ -15,7 +15,8 @@ public struct Module<Input, Output>: PresentableProtocol {
         }
     }
     
-    public func toPresent() -> UIViewController? {
+    func toPresent() -> UIViewController? {
         return view
     }
 }
+

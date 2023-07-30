@@ -1,6 +1,6 @@
 import UIKit
 
-public enum LayoutConstraintType {
+enum LayoutConstraintType {
     case top
     case bottom
     case left
@@ -9,9 +9,9 @@ public enum LayoutConstraintType {
     case centerY
 }
 
-public typealias LayoutConstraints = [LayoutConstraintType: NSLayoutConstraint]
+typealias LayoutConstraints = [LayoutConstraintType: NSLayoutConstraint]
 
-public extension UIView {
+extension UIView {
     func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         if #available(iOS 11.0, *) {
             clipsToBounds = true

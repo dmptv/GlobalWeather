@@ -24,8 +24,6 @@
 		CE21D7462A7667EB00650BAB /* BaseAssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7332A7667EB00650BAB /* BaseAssemblyProtocol.swift */; };
 		CE21D7472A7667EB00650BAB /* ViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7342A7667EB00650BAB /* ViewControllerProtocol.swift */; };
 		CE21D7492A7667EB00650BAB /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7362A7667EB00650BAB /* CoordinatorProtocol.swift */; };
-		CE21D74A2A7667EB00650BAB /* DeepLinkOptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7372A7667EB00650BAB /* DeepLinkOptionProtocol.swift */; };
-		CE21D74B2A7667EB00650BAB /* LoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7382A7667EB00650BAB /* LoggerProtocol.swift */; };
 		CE21D74C2A7667EB00650BAB /* CoordinatorRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7392A7667EB00650BAB /* CoordinatorRouterProtocol.swift */; };
 		CE21D74E2A76686E00650BAB /* BlockObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D74D2A76686E00650BAB /* BlockObject.swift */; };
 		CE21D7502A7668C000650BAB /* WeakContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D74F2A7668C000650BAB /* WeakContainer.swift */; };
@@ -35,6 +33,23 @@
 		CE21D7582A766E3100650BAB /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7572A766E3100650BAB /* DeviceService.swift */; };
 		CE21D75B2A766F2300650BAB /* SBFloatingPanelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D75A2A766F2300650BAB /* SBFloatingPanelDelegate.swift */; };
 		CE21D75D2A766F4900650BAB /* SBFloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D75C2A766F4900650BAB /* SBFloatingPanelLayout.swift */; };
+		CE21D7612A76887600650BAB /* AppProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7602A76887600650BAB /* AppProtocol.swift */; };
+		CE21D7632A768B4500650BAB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7622A768B4500650BAB /* AppCoordinator.swift */; };
+		CE21D7652A768B9F00650BAB /* AppCoordinatorServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7642A768B9F00650BAB /* AppCoordinatorServiceLocator.swift */; };
+		CE21D7672A768C3600650BAB /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7662A768C3600650BAB /* RootRouter.swift */; };
+		CE21D7692A768CD800650BAB /* RootRouterLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7682A768CD800650BAB /* RootRouterLocator.swift */; };
+		CE21D76D2A768D6600650BAB /* AppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D76C2A768D6600650BAB /* AppInteractor.swift */; };
+		CE21D7702A768F8200650BAB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D76F2A768F8200650BAB /* UserService.swift */; };
+		CE21D7722A768FEE00650BAB /* UserServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7712A768FEE00650BAB /* UserServiceLocator.swift */; };
+		CE21D7752A76903100650BAB /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7742A76903100650BAB /* UserDefaultsService.swift */; };
+		CE21D7782A76908E00650BAB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7772A76908E00650BAB /* UserModel.swift */; };
+		CE21D77B2A76938500650BAB /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D77A2A76938500650BAB /* AuthService.swift */; };
+		CE21D77E2A7694EC00650BAB /* NetworkingSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D77D2A7694EC00650BAB /* NetworkingSessionService.swift */; };
+		CE21D7802A76953E00650BAB /* NetworkingSessionServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D77F2A76953E00650BAB /* NetworkingSessionServiceLocator.swift */; };
+		CE21D7832A7695F200650BAB /* APIServicesLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7822A7695F200650BAB /* APIServicesLocator.swift */; };
+		CE21D7852A76971E00650BAB /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7842A76971E00650BAB /* AppAppearance.swift */; };
+		CE21D7882A76984C00650BAB /* DeepLinkOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7872A76984C00650BAB /* DeepLinkOption.swift */; };
+		CE21D78A2A76988700650BAB /* DeepLinkOptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7892A76988700650BAB /* DeepLinkOptionProtocol.swift */; };
 		CE65D94E2A728E7B009E6954 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65D94D2A728E7B009E6954 /* AppDelegate.swift */; };
 		CE65D9502A728E7B009E6954 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65D94F2A728E7B009E6954 /* SceneDelegate.swift */; };
 		CE65D9522A728E7B009E6954 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65D9512A728E7B009E6954 /* ViewController.swift */; };
@@ -85,8 +100,6 @@
 		CE21D7332A7667EB00650BAB /* BaseAssemblyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAssemblyProtocol.swift; sourceTree = "<group>"; };
 		CE21D7342A7667EB00650BAB /* ViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerProtocol.swift; sourceTree = "<group>"; };
 		CE21D7362A7667EB00650BAB /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
-		CE21D7372A7667EB00650BAB /* DeepLinkOptionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkOptionProtocol.swift; sourceTree = "<group>"; };
-		CE21D7382A7667EB00650BAB /* LoggerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerProtocol.swift; sourceTree = "<group>"; };
 		CE21D7392A7667EB00650BAB /* CoordinatorRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorRouterProtocol.swift; sourceTree = "<group>"; };
 		CE21D74D2A76686E00650BAB /* BlockObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockObject.swift; sourceTree = "<group>"; };
 		CE21D74F2A7668C000650BAB /* WeakContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakContainer.swift; sourceTree = "<group>"; };
@@ -96,6 +109,23 @@
 		CE21D7572A766E3100650BAB /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
 		CE21D75A2A766F2300650BAB /* SBFloatingPanelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBFloatingPanelDelegate.swift; sourceTree = "<group>"; };
 		CE21D75C2A766F4900650BAB /* SBFloatingPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBFloatingPanelLayout.swift; sourceTree = "<group>"; };
+		CE21D7602A76887600650BAB /* AppProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProtocol.swift; sourceTree = "<group>"; };
+		CE21D7622A768B4500650BAB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		CE21D7642A768B9F00650BAB /* AppCoordinatorServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorServiceLocator.swift; sourceTree = "<group>"; };
+		CE21D7662A768C3600650BAB /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		CE21D7682A768CD800650BAB /* RootRouterLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouterLocator.swift; sourceTree = "<group>"; };
+		CE21D76C2A768D6600650BAB /* AppInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInteractor.swift; sourceTree = "<group>"; };
+		CE21D76F2A768F8200650BAB /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		CE21D7712A768FEE00650BAB /* UserServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceLocator.swift; sourceTree = "<group>"; };
+		CE21D7742A76903100650BAB /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		CE21D7772A76908E00650BAB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		CE21D77A2A76938500650BAB /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		CE21D77D2A7694EC00650BAB /* NetworkingSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingSessionService.swift; sourceTree = "<group>"; };
+		CE21D77F2A76953E00650BAB /* NetworkingSessionServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingSessionServiceLocator.swift; sourceTree = "<group>"; };
+		CE21D7822A7695F200650BAB /* APIServicesLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServicesLocator.swift; sourceTree = "<group>"; };
+		CE21D7842A76971E00650BAB /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
+		CE21D7872A76984C00650BAB /* DeepLinkOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkOption.swift; sourceTree = "<group>"; };
+		CE21D7892A76988700650BAB /* DeepLinkOptionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkOptionProtocol.swift; sourceTree = "<group>"; };
 		CE65D94A2A728E7B009E6954 /* GlobalWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlobalWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE65D94D2A728E7B009E6954 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE65D94F2A728E7B009E6954 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +197,12 @@
 		CE21D6BC2A765D7F00650BAB /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CE21D7862A76984100650BAB /* DeepLink */,
+				CE21D7812A7695E000650BAB /* API */,
+				CE21D77C2A7694E500650BAB /* NetworkingSessionService */,
+				CE21D7762A76907500650BAB /* ModelLayer */,
+				CE21D7732A76902600650BAB /* UserDefaultsService */,
+				CE21D76E2A768F7A00650BAB /* UserService */,
 				CE21D7222A7667EB00650BAB /* BaseModule */,
 				CE21D75E2A76707100650BAB /* Extension */,
 				CE21D75F2A76708400650BAB /* CommonUI */,
@@ -223,8 +259,6 @@
 				CE21D7332A7667EB00650BAB /* BaseAssemblyProtocol.swift */,
 				CE21D7342A7667EB00650BAB /* ViewControllerProtocol.swift */,
 				CE21D7362A7667EB00650BAB /* CoordinatorProtocol.swift */,
-				CE21D7372A7667EB00650BAB /* DeepLinkOptionProtocol.swift */,
-				CE21D7382A7667EB00650BAB /* LoggerProtocol.swift */,
 				CE21D7392A7667EB00650BAB /* CoordinatorRouterProtocol.swift */,
 			);
 			path = Protocols;
@@ -254,6 +288,83 @@
 				CE21D7532A766D9500650BAB /* LoaderView.swift */,
 			);
 			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		CE21D76A2A768CEB00650BAB /* RootRouter */ = {
+			isa = PBXGroup;
+			children = (
+				CE21D7662A768C3600650BAB /* RootRouter.swift */,
+				CE21D7682A768CD800650BAB /* RootRouterLocator.swift */,
+			);
+			path = RootRouter;
+			sourceTree = "<group>";
+		};
+		CE21D76B2A768D5A00650BAB /* AppInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				CE21D76C2A768D6600650BAB /* AppInteractor.swift */,
+			);
+			path = AppInteractor;
+			sourceTree = "<group>";
+		};
+		CE21D76E2A768F7A00650BAB /* UserService */ = {
+			isa = PBXGroup;
+			children = (
+				CE21D76F2A768F8200650BAB /* UserService.swift */,
+				CE21D7712A768FEE00650BAB /* UserServiceLocator.swift */,
+			);
+			path = UserService;
+			sourceTree = "<group>";
+		};
+		CE21D7732A76902600650BAB /* UserDefaultsService */ = {
+			isa = PBXGroup;
+			children = (
+				CE21D7742A76903100650BAB /* UserDefaultsService.swift */,
+			);
+			path = UserDefaultsService;
+			sourceTree = "<group>";
+		};
+		CE21D7762A76907500650BAB /* ModelLayer */ = {
+			isa = PBXGroup;
+			children = (
+				CE21D7772A76908E00650BAB /* UserModel.swift */,
+			);
+			path = ModelLayer;
+			sourceTree = "<group>";
+		};
+		CE21D7792A76937600650BAB /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				CE21D77A2A76938500650BAB /* AuthService.swift */,
+			);
+			path = AuthService;
+			sourceTree = "<group>";
+		};
+		CE21D77C2A7694E500650BAB /* NetworkingSessionService */ = {
+			isa = PBXGroup;
+			children = (
+				CE21D77D2A7694EC00650BAB /* NetworkingSessionService.swift */,
+				CE21D77F2A76953E00650BAB /* NetworkingSessionServiceLocator.swift */,
+			);
+			path = NetworkingSessionService;
+			sourceTree = "<group>";
+		};
+		CE21D7812A7695E000650BAB /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CE21D7792A76937600650BAB /* AuthService */,
+				CE21D7822A7695F200650BAB /* APIServicesLocator.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CE21D7862A76984100650BAB /* DeepLink */ = {
+			isa = PBXGroup;
+			children = (
+				CE21D7872A76984C00650BAB /* DeepLinkOption.swift */,
+				CE21D7892A76988700650BAB /* DeepLinkOptionProtocol.swift */,
+			);
+			path = DeepLink;
 			sourceTree = "<group>";
 		};
 		CE65D9412A728E7B009E6954 = {
@@ -361,6 +472,12 @@
 		CE65D9822A72910E009E6954 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CE21D7602A76887600650BAB /* AppProtocol.swift */,
+				CE21D7622A768B4500650BAB /* AppCoordinator.swift */,
+				CE21D7642A768B9F00650BAB /* AppCoordinatorServiceLocator.swift */,
+				CE21D76B2A768D5A00650BAB /* AppInteractor */,
+				CE21D76A2A768CEB00650BAB /* RootRouter */,
+				CE21D7842A76971E00650BAB /* AppAppearance.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -625,31 +742,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE21D74B2A7667EB00650BAB /* LoggerProtocol.swift in Sources */,
 				CE21D74C2A7667EB00650BAB /* CoordinatorRouterProtocol.swift in Sources */,
 				CE65D9522A728E7B009E6954 /* ViewController.swift in Sources */,
 				CE21D7432A7667EB00650BAB /* ViewOutputProtocol.swift in Sources */,
+				CE21D7692A768CD800650BAB /* RootRouterLocator.swift in Sources */,
+				CE21D7802A76953E00650BAB /* NetworkingSessionServiceLocator.swift in Sources */,
+				CE21D78A2A76988700650BAB /* DeepLinkOptionProtocol.swift in Sources */,
 				CE21D74E2A76686E00650BAB /* BlockObject.swift in Sources */,
+				CE21D77B2A76938500650BAB /* AuthService.swift in Sources */,
 				CE21D75D2A766F4900650BAB /* SBFloatingPanelLayout.swift in Sources */,
 				CE21D7462A7667EB00650BAB /* BaseAssemblyProtocol.swift in Sources */,
 				CE21D7472A7667EB00650BAB /* ViewControllerProtocol.swift in Sources */,
 				CE21D7422A7667EB00650BAB /* BasePresenter.swift in Sources */,
-				CE21D74A2A7667EB00650BAB /* DeepLinkOptionProtocol.swift in Sources */,
+				CE21D7882A76984C00650BAB /* DeepLinkOption.swift in Sources */,
 				CE21D7412A7667EB00650BAB /* BaseViewController.swift in Sources */,
 				CE21D7452A7667EB00650BAB /* PresentableProtocol.swift in Sources */,
+				CE21D7632A768B4500650BAB /* AppCoordinator.swift in Sources */,
 				CE21D73B2A7667EB00650BAB /* BaseModuleRouter.swift in Sources */,
+				CE21D7722A768FEE00650BAB /* UserServiceLocator.swift in Sources */,
 				CE21D7522A766CBD00650BAB /* UIViewController+Extension.swift in Sources */,
 				CE21D73E2A7667EB00650BAB /* ModuleRoutingHandlingProtocol.swift in Sources */,
+				CE21D7672A768C3600650BAB /* RootRouter.swift in Sources */,
 				CE65D94E2A728E7B009E6954 /* AppDelegate.swift in Sources */,
 				CE21D7402A7667EB00650BAB /* BaseCoordinator.swift in Sources */,
+				CE21D76D2A768D6600650BAB /* AppInteractor.swift in Sources */,
+				CE21D7702A768F8200650BAB /* UserService.swift in Sources */,
 				CE21D7582A766E3100650BAB /* DeviceService.swift in Sources */,
 				CE21D7502A7668C000650BAB /* WeakContainer.swift in Sources */,
+				CE21D7652A768B9F00650BAB /* AppCoordinatorServiceLocator.swift in Sources */,
 				CE21D7492A7667EB00650BAB /* CoordinatorProtocol.swift in Sources */,
 				CE21D73A2A7667EB00650BAB /* BaseCoordinatorRouter.swift in Sources */,
 				CE21D7562A766DC800650BAB /* UIView+Layout.swift in Sources */,
+				CE21D77E2A7694EC00650BAB /* NetworkingSessionService.swift in Sources */,
 				CE21D73C2A7667EB00650BAB /* Router.swift in Sources */,
+				CE21D7752A76903100650BAB /* UserDefaultsService.swift in Sources */,
+				CE21D7832A7695F200650BAB /* APIServicesLocator.swift in Sources */,
+				CE21D7612A76887600650BAB /* AppProtocol.swift in Sources */,
 				CE21D7442A7667EB00650BAB /* Module.swift in Sources */,
+				CE21D7852A76971E00650BAB /* AppAppearance.swift in Sources */,
 				CE21D7542A766D9500650BAB /* LoaderView.swift in Sources */,
+				CE21D7782A76908E00650BAB /* UserModel.swift in Sources */,
 				CE21D73F2A7667EB00650BAB /* BaseFlowCoordinator.swift in Sources */,
 				CE21D75B2A766F2300650BAB /* SBFloatingPanelDelegate.swift in Sources */,
 				CE65D9502A728E7B009E6954 /* SceneDelegate.swift in Sources */,
