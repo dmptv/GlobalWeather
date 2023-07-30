@@ -167,21 +167,16 @@
 		CE21D6BC2A765D7F00650BAB /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				CE21D7222A7667EB00650BAB /* Module */,
-				CE21D74D2A76686E00650BAB /* BlockObject.swift */,
-				CE21D74F2A7668C000650BAB /* WeakContainer.swift */,
-				CE21D7512A766CBD00650BAB /* UIViewController+Extension.swift */,
-				CE21D7532A766D9500650BAB /* LoaderView.swift */,
-				CE21D7552A766DC800650BAB /* UIView+Layout.swift */,
-				CE21D7572A766E3100650BAB /* DeviceService.swift */,
+				CE21D7222A7667EB00650BAB /* BaseModule */,
+				CE21D75E2A76707100650BAB /* Extension */,
+				CE21D75F2A76708400650BAB /* CommonUI */,
 			);
 			path = Common;
 			sourceTree = "<group>";
 		};
-		CE21D7222A7667EB00650BAB /* Module */ = {
+		CE21D7222A7667EB00650BAB /* BaseModule */ = {
 			isa = PBXGroup;
 			children = (
-				CE21D7592A766F1300650BAB /* FloatingPanel */,
 				CE21D7232A7667EB00650BAB /* Routers */,
 				CE21D7282A7667EB00650BAB /* Coordinator */,
 				CE21D72C2A7667EB00650BAB /* BaseViewController.swift */,
@@ -189,7 +184,7 @@
 				CE21D7302A7667EB00650BAB /* Module.swift */,
 				CE21D7312A7667EB00650BAB /* Protocols */,
 			);
-			path = Module;
+			path = BaseModule;
 			sourceTree = "<group>";
 		};
 		CE21D7232A7667EB00650BAB /* Routers */ = {
@@ -242,6 +237,23 @@
 				CE21D75C2A766F4900650BAB /* SBFloatingPanelLayout.swift */,
 			);
 			path = FloatingPanel;
+			sourceTree = "<group>";
+		};
+		CE21D75E2A76707100650BAB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CE21D7512A766CBD00650BAB /* UIViewController+Extension.swift */,
+				CE21D7552A766DC800650BAB /* UIView+Layout.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CE21D75F2A76708400650BAB /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				CE21D7532A766D9500650BAB /* LoaderView.swift */,
+			);
+			path = CommonUI;
 			sourceTree = "<group>";
 		};
 		CE65D9412A728E7B009E6954 = {
@@ -338,6 +350,10 @@
 		CE65D9812A7290DE009E6954 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CE21D7592A766F1300650BAB /* FloatingPanel */,
+				CE21D7572A766E3100650BAB /* DeviceService.swift */,
+				CE21D74D2A76686E00650BAB /* BlockObject.swift */,
+				CE21D74F2A7668C000650BAB /* WeakContainer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
