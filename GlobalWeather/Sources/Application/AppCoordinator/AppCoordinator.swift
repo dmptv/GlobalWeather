@@ -28,7 +28,25 @@ final class AppCoordinator: BaseCoordinator<AppCoordinatorExitPoint>, AppCoordin
         super.init(router: router)
     }
     
+    override func start(with option: DeepLinkOptionProtocol?) {
+        startApp()
+    }
 }
+
+extension AppCoordinator {
+    private func startApp() {
+        runMainFlow()
+    }
+}
+
+extension AppCoordinator {
+    private func runMainFlow() {
+        
+    }
+}
+
+
+
 
 protocol AppCoordinatorExitPoint: ModuleRoutingHandlingProtocol { }
 

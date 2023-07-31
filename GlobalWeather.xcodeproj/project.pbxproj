@@ -36,7 +36,7 @@
 		CE21D75D2A766F4900650BAB /* SBFloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D75C2A766F4900650BAB /* SBFloatingPanelLayout.swift */; };
 		CE21D7612A76887600650BAB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7602A76887600650BAB /* App.swift */; };
 		CE21D7632A768B4500650BAB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7622A768B4500650BAB /* AppCoordinator.swift */; };
-		CE21D7652A768B9F00650BAB /* AppCoordinatorServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7642A768B9F00650BAB /* AppCoordinatorServiceLocator.swift */; };
+		CE21D7652A768B9F00650BAB /* AppCoordinatorLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7642A768B9F00650BAB /* AppCoordinatorLocator.swift */; };
 		CE21D7672A768C3600650BAB /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7662A768C3600650BAB /* RootRouter.swift */; };
 		CE21D7692A768CD800650BAB /* RootRouterLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7682A768CD800650BAB /* RootRouterLocator.swift */; };
 		CE21D76D2A768D6600650BAB /* AppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D76C2A768D6600650BAB /* AppInteractor.swift */; };
@@ -53,10 +53,7 @@
 		CE21D78A2A76988700650BAB /* DeepLinkOptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7892A76988700650BAB /* DeepLinkOptionProtocol.swift */; };
 		CE65D94E2A728E7B009E6954 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65D94D2A728E7B009E6954 /* AppDelegate.swift */; };
 		CE65D9502A728E7B009E6954 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65D94F2A728E7B009E6954 /* SceneDelegate.swift */; };
-		CE65D9522A728E7B009E6954 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65D9512A728E7B009E6954 /* ViewController.swift */; };
-		CE65D9552A728E7B009E6954 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE65D9532A728E7B009E6954 /* Main.storyboard */; };
 		CE65D9572A728E7D009E6954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE65D9562A728E7D009E6954 /* Assets.xcassets */; };
-		CE65D95A2A728E7D009E6954 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE65D9582A728E7D009E6954 /* LaunchScreen.storyboard */; };
 		CE65D9652A728E7D009E6954 /* GlobalWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65D9642A728E7D009E6954 /* GlobalWeatherTests.swift */; };
 		CE65D96F2A728E7D009E6954 /* GlobalWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65D96E2A728E7D009E6954 /* GlobalWeatherUITests.swift */; };
 		CE65D9712A728E7D009E6954 /* GlobalWeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65D9702A728E7D009E6954 /* GlobalWeatherUITestsLaunchTests.swift */; };
@@ -113,7 +110,7 @@
 		CE21D75C2A766F4900650BAB /* SBFloatingPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBFloatingPanelLayout.swift; sourceTree = "<group>"; };
 		CE21D7602A76887600650BAB /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		CE21D7622A768B4500650BAB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		CE21D7642A768B9F00650BAB /* AppCoordinatorServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorServiceLocator.swift; sourceTree = "<group>"; };
+		CE21D7642A768B9F00650BAB /* AppCoordinatorLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorLocator.swift; sourceTree = "<group>"; };
 		CE21D7662A768C3600650BAB /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		CE21D7682A768CD800650BAB /* RootRouterLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouterLocator.swift; sourceTree = "<group>"; };
 		CE21D76C2A768D6600650BAB /* AppInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInteractor.swift; sourceTree = "<group>"; };
@@ -131,10 +128,7 @@
 		CE65D94A2A728E7B009E6954 /* GlobalWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlobalWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE65D94D2A728E7B009E6954 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE65D94F2A728E7B009E6954 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE65D9512A728E7B009E6954 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CE65D9542A728E7B009E6954 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE65D9562A728E7D009E6954 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CE65D9592A728E7D009E6954 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE65D95B2A728E7D009E6954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE65D9602A728E7D009E6954 /* GlobalWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlobalWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE65D9642A728E7D009E6954 /* GlobalWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalWeatherTests.swift; sourceTree = "<group>"; };
@@ -194,6 +188,24 @@
 				64AB79472BFA91BA827B0CC2 /* Pods-GlobalWeatherTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE0D65742A77F3D9007B5713 /* AppCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CE21D7622A768B4500650BAB /* AppCoordinator.swift */,
+				CE21D7642A768B9F00650BAB /* AppCoordinatorLocator.swift */,
+			);
+			path = AppCoordinator;
+			sourceTree = "<group>";
+		};
+		CE0D65752A77F3F2007B5713 /* ApplicationDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CE65D94D2A728E7B009E6954 /* AppDelegate.swift */,
+				CE65D94F2A728E7B009E6954 /* SceneDelegate.swift */,
+			);
+			path = ApplicationDelegate;
 			sourceTree = "<group>";
 		};
 		CE21D6BC2A765D7F00650BAB /* Common */ = {
@@ -422,12 +434,11 @@
 		CE65D97D2A728EE1009E6954 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				CE65D94D2A728E7B009E6954 /* AppDelegate.swift */,
-				CE65D94F2A728E7B009E6954 /* SceneDelegate.swift */,
+				CE0D65752A77F3F2007B5713 /* ApplicationDelegate */,
 				CE65D9822A72910E009E6954 /* App */,
-				CE65D9832A72912E009E6954 /* AppCoordinator */,
+				CE0D65742A77F3D9007B5713 /* AppCoordinator */,
 				CE65D9842A72913E009E6954 /* AppInteractor */,
-				CE65D9852A729162009E6954 /* RootRouter */,
+				CE21D76A2A768CEB00650BAB /* RootRouter */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -435,8 +446,6 @@
 		CE65D97E2A728F07009E6954 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CE65D9532A728E7B009E6954 /* Main.storyboard */,
-				CE65D9582A728E7D009E6954 /* LaunchScreen.storyboard */,
 				CE65D9562A728E7D009E6954 /* Assets.xcassets */,
 				CE65D95B2A728E7D009E6954 /* Info.plist */,
 			);
@@ -455,7 +464,6 @@
 		CE65D9802A7290BA009E6954 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				CE65D9512A728E7B009E6954 /* ViewController.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -475,21 +483,11 @@
 			isa = PBXGroup;
 			children = (
 				CE21D7602A76887600650BAB /* App.swift */,
-				CE21D7622A768B4500650BAB /* AppCoordinator.swift */,
-				CE21D7642A768B9F00650BAB /* AppCoordinatorServiceLocator.swift */,
 				CE21D76B2A768D5A00650BAB /* AppInteractor */,
-				CE21D76A2A768CEB00650BAB /* RootRouter */,
 				CE21D7842A76971E00650BAB /* AppAppearance.swift */,
 				CE0D65722A77E0D9007B5713 /* AppServiceLocator.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		CE65D9832A72912E009E6954 /* AppCoordinator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AppCoordinator;
 			sourceTree = "<group>";
 		};
 		CE65D9842A72913E009E6954 /* AppInteractor */ = {
@@ -497,13 +495,6 @@
 			children = (
 			);
 			path = AppInteractor;
-			sourceTree = "<group>";
-		};
-		CE65D9852A729162009E6954 /* RootRouter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RootRouter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -615,9 +606,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE65D95A2A728E7D009E6954 /* LaunchScreen.storyboard in Resources */,
 				CE65D9572A728E7D009E6954 /* Assets.xcassets in Resources */,
-				CE65D9552A728E7B009E6954 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,7 +735,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE21D74C2A7667EB00650BAB /* CoordinatorRouterProtocol.swift in Sources */,
-				CE65D9522A728E7B009E6954 /* ViewController.swift in Sources */,
 				CE21D7432A7667EB00650BAB /* ViewOutputProtocol.swift in Sources */,
 				CE21D7692A768CD800650BAB /* RootRouterLocator.swift in Sources */,
 				CE0D65732A77E0D9007B5713 /* AppServiceLocator.swift in Sources */,
@@ -773,7 +761,7 @@
 				CE21D7702A768F8200650BAB /* UserService.swift in Sources */,
 				CE21D7582A766E3100650BAB /* DeviceService.swift in Sources */,
 				CE21D7502A7668C000650BAB /* WeakContainer.swift in Sources */,
-				CE21D7652A768B9F00650BAB /* AppCoordinatorServiceLocator.swift in Sources */,
+				CE21D7652A768B9F00650BAB /* AppCoordinatorLocator.swift in Sources */,
 				CE21D7492A7667EB00650BAB /* CoordinatorProtocol.swift in Sources */,
 				CE21D73A2A7667EB00650BAB /* BaseCoordinatorRouter.swift in Sources */,
 				CE21D7562A766DC800650BAB /* UIView+Layout.swift in Sources */,
@@ -823,25 +811,6 @@
 			targetProxy = CE65D96B2A728E7D009E6954 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		CE65D9532A728E7B009E6954 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE65D9542A728E7B009E6954 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CE65D9582A728E7D009E6954 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE65D9592A728E7D009E6954 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CE65D9722A728E7D009E6954 /* Debug */ = {
