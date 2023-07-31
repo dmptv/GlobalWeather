@@ -437,7 +437,7 @@
 				CE0D65752A77F3F2007B5713 /* ApplicationDelegate */,
 				CE65D9822A72910E009E6954 /* App */,
 				CE0D65742A77F3D9007B5713 /* AppCoordinator */,
-				CE65D9842A72913E009E6954 /* AppInteractor */,
+				CE21D76B2A768D5A00650BAB /* AppInteractor */,
 				CE21D76A2A768CEB00650BAB /* RootRouter */,
 			);
 			path = Application;
@@ -483,18 +483,10 @@
 			isa = PBXGroup;
 			children = (
 				CE21D7602A76887600650BAB /* App.swift */,
-				CE21D76B2A768D5A00650BAB /* AppInteractor */,
-				CE21D7842A76971E00650BAB /* AppAppearance.swift */,
 				CE0D65722A77E0D9007B5713 /* AppServiceLocator.swift */,
+				CE21D7842A76971E00650BAB /* AppAppearance.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		CE65D9842A72913E009E6954 /* AppInteractor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AppInteractor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
