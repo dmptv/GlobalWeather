@@ -456,16 +456,8 @@
 			isa = PBXGroup;
 			children = (
 				CE65D97D2A728EE1009E6954 /* Application */,
-				CE65D9802A7290BA009E6954 /* Flows */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		CE65D9802A7290BA009E6954 /* Flows */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Flows;
 			sourceTree = "<group>";
 		};
 		CE65D9812A7290DE009E6954 /* Utilities */ = {
