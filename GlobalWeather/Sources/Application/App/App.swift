@@ -35,9 +35,7 @@ final class App: NSObject, AppProtocol {
     final class ServiceLocatorImpl: ServiceLocator { }
     
     private let appCoordinator: CoordinatorProtocol
-    
     private let userDefaults: UserDefaultsProtocol
-    
     private var privacyProtectionWindow: UIWindow?
     
     init(serviceLocator: ServiceLocator = ServiceLocatorImpl()) {
@@ -51,7 +49,8 @@ final class App: NSObject, AppProtocol {
     }
     
     func applicationDidFinishLaunching(_ application: UIApplication, _ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let deepLink = DeepLinkOption.initial
+        let notification = launchOptions?[.remoteNotification] as? [String: AnyObject]
+        let deepLink = DeepLinkOption.build(with: notification)
 
         appCoordinator.start(with: deepLink)
         return true
@@ -61,16 +60,16 @@ final class App: NSObject, AppProtocol {
     func applicationDidReceiveRemoteNotification(_ application: UIApplication,
                                                  _ userInfo: [AnyHashable: Any],
                                                  _ completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        let deepLink = DeepLinkOption.initial
+        let dict = userInfo as? [String: AnyObject]
+        let deepLink = DeepLinkOption.build(with: dict)
         appCoordinator.start(with: deepLink)
-        
         completionHandler(.noData)
     }
     
     func applicationContinueUserActivity(_ application: UIApplication,
                                          _ userActivity: NSUserActivity,
                                          _ restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        let deepLink = DeepLinkOption.initial
+        let deepLink = DeepLinkOption.build(with: userActivity)
         appCoordinator.start(with: deepLink)
         return true
     }

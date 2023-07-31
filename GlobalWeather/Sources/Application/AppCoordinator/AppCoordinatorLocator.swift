@@ -1,5 +1,5 @@
 //
-//  AppCoordinatorServiceLocator.swift
+//  AppCoordinatorLocator.swift
 //  GlobalWeather
 //
 //  Created by Kanat on 30.07.2023.
