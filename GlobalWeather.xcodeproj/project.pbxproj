@@ -10,6 +10,7 @@
 		1E14DCA061D07AC147FCF1EE /* Pods_GlobalWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC4795345FF2FB6DEE1B27D /* Pods_GlobalWeather.framework */; };
 		4A46B2984D1CC0A8950A9063 /* Pods_GlobalWeather_GlobalWeatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166DE02C0FA9FAEE579E4645 /* Pods_GlobalWeather_GlobalWeatherUITests.framework */; };
 		B2222BD2728D5FF072FF99E8 /* Pods_GlobalWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 682BCE58B4DED326D02CEC73 /* Pods_GlobalWeatherTests.framework */; };
+		CE0D65732A77E0D9007B5713 /* AppServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D65722A77E0D9007B5713 /* AppServiceLocator.swift */; };
 		CE21D73A2A7667EB00650BAB /* BaseCoordinatorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7242A7667EB00650BAB /* BaseCoordinatorRouter.swift */; };
 		CE21D73B2A7667EB00650BAB /* BaseModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7252A7667EB00650BAB /* BaseModuleRouter.swift */; };
 		CE21D73C2A7667EB00650BAB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7262A7667EB00650BAB /* Router.swift */; };
@@ -33,7 +34,7 @@
 		CE21D7582A766E3100650BAB /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7572A766E3100650BAB /* DeviceService.swift */; };
 		CE21D75B2A766F2300650BAB /* SBFloatingPanelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D75A2A766F2300650BAB /* SBFloatingPanelDelegate.swift */; };
 		CE21D75D2A766F4900650BAB /* SBFloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D75C2A766F4900650BAB /* SBFloatingPanelLayout.swift */; };
-		CE21D7612A76887600650BAB /* AppProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7602A76887600650BAB /* AppProtocol.swift */; };
+		CE21D7612A76887600650BAB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7602A76887600650BAB /* App.swift */; };
 		CE21D7632A768B4500650BAB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7622A768B4500650BAB /* AppCoordinator.swift */; };
 		CE21D7652A768B9F00650BAB /* AppCoordinatorServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7642A768B9F00650BAB /* AppCoordinatorServiceLocator.swift */; };
 		CE21D7672A768C3600650BAB /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7662A768C3600650BAB /* RootRouter.swift */; };
@@ -86,6 +87,7 @@
 		682BCE58B4DED326D02CEC73 /* Pods_GlobalWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobalWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC5EEF17D5AC7F3A7D94DF12 /* Pods-GlobalWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalWeather.debug.xcconfig"; path = "Target Support Files/Pods-GlobalWeather/Pods-GlobalWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		C23D875A351EA8DA0FB9F149 /* Pods-GlobalWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalWeather.release.xcconfig"; path = "Target Support Files/Pods-GlobalWeather/Pods-GlobalWeather.release.xcconfig"; sourceTree = "<group>"; };
+		CE0D65722A77E0D9007B5713 /* AppServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServiceLocator.swift; sourceTree = "<group>"; };
 		CE21D7242A7667EB00650BAB /* BaseCoordinatorRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinatorRouter.swift; sourceTree = "<group>"; };
 		CE21D7252A7667EB00650BAB /* BaseModuleRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModuleRouter.swift; sourceTree = "<group>"; };
 		CE21D7262A7667EB00650BAB /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -109,7 +111,7 @@
 		CE21D7572A766E3100650BAB /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
 		CE21D75A2A766F2300650BAB /* SBFloatingPanelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBFloatingPanelDelegate.swift; sourceTree = "<group>"; };
 		CE21D75C2A766F4900650BAB /* SBFloatingPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBFloatingPanelLayout.swift; sourceTree = "<group>"; };
-		CE21D7602A76887600650BAB /* AppProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProtocol.swift; sourceTree = "<group>"; };
+		CE21D7602A76887600650BAB /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		CE21D7622A768B4500650BAB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CE21D7642A768B9F00650BAB /* AppCoordinatorServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorServiceLocator.swift; sourceTree = "<group>"; };
 		CE21D7662A768C3600650BAB /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
@@ -472,12 +474,13 @@
 		CE65D9822A72910E009E6954 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				CE21D7602A76887600650BAB /* AppProtocol.swift */,
+				CE21D7602A76887600650BAB /* App.swift */,
 				CE21D7622A768B4500650BAB /* AppCoordinator.swift */,
 				CE21D7642A768B9F00650BAB /* AppCoordinatorServiceLocator.swift */,
 				CE21D76B2A768D5A00650BAB /* AppInteractor */,
 				CE21D76A2A768CEB00650BAB /* RootRouter */,
 				CE21D7842A76971E00650BAB /* AppAppearance.swift */,
+				CE0D65722A77E0D9007B5713 /* AppServiceLocator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				CE65D9522A728E7B009E6954 /* ViewController.swift in Sources */,
 				CE21D7432A7667EB00650BAB /* ViewOutputProtocol.swift in Sources */,
 				CE21D7692A768CD800650BAB /* RootRouterLocator.swift in Sources */,
+				CE0D65732A77E0D9007B5713 /* AppServiceLocator.swift in Sources */,
 				CE21D7802A76953E00650BAB /* NetworkingSessionServiceLocator.swift in Sources */,
 				CE21D78A2A76988700650BAB /* DeepLinkOptionProtocol.swift in Sources */,
 				CE21D74E2A76686E00650BAB /* BlockObject.swift in Sources */,
@@ -777,7 +781,7 @@
 				CE21D73C2A7667EB00650BAB /* Router.swift in Sources */,
 				CE21D7752A76903100650BAB /* UserDefaultsService.swift in Sources */,
 				CE21D7832A7695F200650BAB /* APIServicesLocator.swift in Sources */,
-				CE21D7612A76887600650BAB /* AppProtocol.swift in Sources */,
+				CE21D7612A76887600650BAB /* App.swift in Sources */,
 				CE21D7442A7667EB00650BAB /* Module.swift in Sources */,
 				CE21D7852A76971E00650BAB /* AppAppearance.swift in Sources */,
 				CE21D7542A766D9500650BAB /* LoaderView.swift in Sources */,
