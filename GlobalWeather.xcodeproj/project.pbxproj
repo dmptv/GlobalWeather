@@ -57,6 +57,18 @@
 		CE65D9652A728E7D009E6954 /* GlobalWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65D9642A728E7D009E6954 /* GlobalWeatherTests.swift */; };
 		CE65D96F2A728E7D009E6954 /* GlobalWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65D96E2A728E7D009E6954 /* GlobalWeatherUITests.swift */; };
 		CE65D9712A728E7D009E6954 /* GlobalWeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65D9702A728E7D009E6954 /* GlobalWeatherUITestsLaunchTests.swift */; };
+		CEFA03902A79410200D5471D /* FirstFlowCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA038D2A79410200D5471D /* FirstFlowCoordinatorAssembly.swift */; };
+		CEFA03912A79410200D5471D /* FirstFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA038E2A79410200D5471D /* FirstFlowCoordinator.swift */; };
+		CEFA03922A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA038F2A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift */; };
+		CEFA03A72A79413000D5471D /* MainCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03982A79413000D5471D /* MainCoordinatorAssembly.swift */; };
+		CEFA03A82A79413000D5471D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03992A79413000D5471D /* MainCoordinator.swift */; };
+		CEFA03A92A79413000D5471D /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA039B2A79413000D5471D /* MainAssembly.swift */; };
+		CEFA03AA2A79413000D5471D /* MainContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA039D2A79413000D5471D /* MainContracts.swift */; };
+		CEFA03AB2A79413000D5471D /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA039F2A79413000D5471D /* MainPresenter.swift */; };
+		CEFA03AC2A79413000D5471D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFA03A12A79413000D5471D /* MainViewController.xib */; };
+		CEFA03AD2A79413000D5471D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03A22A79413000D5471D /* MainViewController.swift */; };
+		CEFA03AE2A79413000D5471D /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03A42A79413000D5471D /* MainInteractor.swift */; };
+		CEFA03AF2A79413000D5471D /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03A62A79413000D5471D /* MainRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +148,18 @@
 		CE65D96E2A728E7D009E6954 /* GlobalWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalWeatherUITests.swift; sourceTree = "<group>"; };
 		CE65D9702A728E7D009E6954 /* GlobalWeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalWeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE9612B3053BD055CF15AF86 /* Pods-GlobalWeather-GlobalWeatherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalWeather-GlobalWeatherUITests.debug.xcconfig"; path = "Target Support Files/Pods-GlobalWeather-GlobalWeatherUITests/Pods-GlobalWeather-GlobalWeatherUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CEFA038D2A79410200D5471D /* FirstFlowCoordinatorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstFlowCoordinatorAssembly.swift; sourceTree = "<group>"; };
+		CEFA038E2A79410200D5471D /* FirstFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstFlowCoordinator.swift; sourceTree = "<group>"; };
+		CEFA038F2A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstFlowExitRoutingHandlerProtocol.swift; sourceTree = "<group>"; };
+		CEFA03982A79413000D5471D /* MainCoordinatorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinatorAssembly.swift; sourceTree = "<group>"; };
+		CEFA03992A79413000D5471D /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		CEFA039B2A79413000D5471D /* MainAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
+		CEFA039D2A79413000D5471D /* MainContracts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContracts.swift; sourceTree = "<group>"; };
+		CEFA039F2A79413000D5471D /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		CEFA03A12A79413000D5471D /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		CEFA03A22A79413000D5471D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CEFA03A42A79413000D5471D /* MainInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		CEFA03A62A79413000D5471D /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		EDC4795345FF2FB6DEE1B27D /* Pods_GlobalWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobalWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -456,6 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				CE65D97D2A728EE1009E6954 /* Application */,
+				CEFA03862A79404200D5471D /* Flows */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -479,6 +504,113 @@
 				CE21D7842A76971E00650BAB /* AppAppearance.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		CEFA03862A79404200D5471D /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA038B2A79410200D5471D /* FirstFlow */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		CEFA038B2A79410200D5471D /* FirstFlow */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA038C2A79410200D5471D /* FlowCoordinator */,
+			);
+			path = FirstFlow;
+			sourceTree = "<group>";
+		};
+		CEFA038C2A79410200D5471D /* FlowCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA038D2A79410200D5471D /* FirstFlowCoordinatorAssembly.swift */,
+				CEFA038E2A79410200D5471D /* FirstFlowCoordinator.swift */,
+				CEFA038F2A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift */,
+				CEFA03932A79410E00D5471D /* Modules */,
+			);
+			path = FlowCoordinator;
+			sourceTree = "<group>";
+		};
+		CEFA03932A79410E00D5471D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA03962A79413000D5471D /* MainModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CEFA03962A79413000D5471D /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA03972A79413000D5471D /* Coordinator */,
+				CEFA039A2A79413000D5471D /* Assembly */,
+				CEFA039C2A79413000D5471D /* Contracts */,
+				CEFA039E2A79413000D5471D /* Presenter */,
+				CEFA03A02A79413000D5471D /* View */,
+				CEFA03A32A79413000D5471D /* Interactor */,
+				CEFA03A52A79413000D5471D /* Router */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		CEFA03972A79413000D5471D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA03982A79413000D5471D /* MainCoordinatorAssembly.swift */,
+				CEFA03992A79413000D5471D /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CEFA039A2A79413000D5471D /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA039B2A79413000D5471D /* MainAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		CEFA039C2A79413000D5471D /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA039D2A79413000D5471D /* MainContracts.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
+		CEFA039E2A79413000D5471D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA039F2A79413000D5471D /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CEFA03A02A79413000D5471D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA03A12A79413000D5471D /* MainViewController.xib */,
+				CEFA03A22A79413000D5471D /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEFA03A32A79413000D5471D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA03A42A79413000D5471D /* MainInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CEFA03A52A79413000D5471D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CEFA03A62A79413000D5471D /* MainRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -591,6 +723,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE65D9572A728E7D009E6954 /* Assets.xcassets in Resources */,
+				CEFA03AC2A79413000D5471D /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,28 +855,38 @@
 				CE21D7432A7667EB00650BAB /* ViewOutputProtocol.swift in Sources */,
 				CE21D7692A768CD800650BAB /* RootRouterLocator.swift in Sources */,
 				CE0D65732A77E0D9007B5713 /* AppServiceLocator.swift in Sources */,
+				CEFA03A72A79413000D5471D /* MainCoordinatorAssembly.swift in Sources */,
 				CE21D7802A76953E00650BAB /* NetworkingSessionServiceLocator.swift in Sources */,
+				CEFA03AE2A79413000D5471D /* MainInteractor.swift in Sources */,
+				CEFA03AA2A79413000D5471D /* MainContracts.swift in Sources */,
 				CE21D78A2A76988700650BAB /* DeepLinkOptionProtocol.swift in Sources */,
 				CE21D74E2A76686E00650BAB /* BlockObject.swift in Sources */,
 				CE21D77B2A76938500650BAB /* AuthService.swift in Sources */,
+				CEFA03A92A79413000D5471D /* MainAssembly.swift in Sources */,
 				CE21D75D2A766F4900650BAB /* SBFloatingPanelLayout.swift in Sources */,
 				CE21D7462A7667EB00650BAB /* BaseAssemblyProtocol.swift in Sources */,
 				CE21D7472A7667EB00650BAB /* ViewControllerProtocol.swift in Sources */,
 				CE21D7422A7667EB00650BAB /* BasePresenter.swift in Sources */,
+				CEFA03922A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift in Sources */,
 				CE21D7882A76984C00650BAB /* DeepLinkOption.swift in Sources */,
 				CE21D7412A7667EB00650BAB /* BaseViewController.swift in Sources */,
 				CE21D7452A7667EB00650BAB /* PresentableProtocol.swift in Sources */,
+				CEFA03AB2A79413000D5471D /* MainPresenter.swift in Sources */,
 				CE21D7632A768B4500650BAB /* AppCoordinator.swift in Sources */,
 				CE21D73B2A7667EB00650BAB /* BaseModuleRouter.swift in Sources */,
 				CE21D7722A768FEE00650BAB /* UserServiceLocator.swift in Sources */,
 				CE21D7522A766CBD00650BAB /* UIViewController+Extension.swift in Sources */,
 				CE21D73E2A7667EB00650BAB /* ModuleRoutingHandlingProtocol.swift in Sources */,
 				CE21D7672A768C3600650BAB /* RootRouter.swift in Sources */,
+				CEFA03902A79410200D5471D /* FirstFlowCoordinatorAssembly.swift in Sources */,
+				CEFA03AD2A79413000D5471D /* MainViewController.swift in Sources */,
 				CE65D94E2A728E7B009E6954 /* AppDelegate.swift in Sources */,
+				CEFA03A82A79413000D5471D /* MainCoordinator.swift in Sources */,
 				CE21D7402A7667EB00650BAB /* BaseCoordinator.swift in Sources */,
 				CE21D76D2A768D6600650BAB /* AppInteractor.swift in Sources */,
 				CE21D7702A768F8200650BAB /* UserService.swift in Sources */,
 				CE21D7582A766E3100650BAB /* DeviceService.swift in Sources */,
+				CEFA03AF2A79413000D5471D /* MainRouter.swift in Sources */,
 				CE21D7502A7668C000650BAB /* WeakContainer.swift in Sources */,
 				CE21D7652A768B9F00650BAB /* AppCoordinatorLocator.swift in Sources */,
 				CE21D7492A7667EB00650BAB /* CoordinatorProtocol.swift in Sources */,
@@ -756,6 +899,7 @@
 				CE21D7612A76887600650BAB /* App.swift in Sources */,
 				CE21D7442A7667EB00650BAB /* Module.swift in Sources */,
 				CE21D7852A76971E00650BAB /* AppAppearance.swift in Sources */,
+				CEFA03912A79410200D5471D /* FirstFlowCoordinator.swift in Sources */,
 				CE21D7542A766D9500650BAB /* LoaderView.swift in Sources */,
 				CE21D7782A76908E00650BAB /* UserModel.swift in Sources */,
 				CE21D73F2A7667EB00650BAB /* BaseFlowCoordinator.swift in Sources */,
