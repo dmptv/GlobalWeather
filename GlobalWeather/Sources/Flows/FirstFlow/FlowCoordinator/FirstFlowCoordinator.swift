@@ -6,15 +6,23 @@
 //	
 //
 
-import Foundation
+import UIKit
 
 class FirstFlowCoordinator: BaseFlowCoordinator<FirstFlowRoutingExitHandler> {    
     override func start(with option: DeepLinkOptionProtocol?) {
         super.start(with: option)
-        
+        startMain()
     }
 }
 
 extension FirstFlowCoordinator {
+    private func startMain() {
+        let main = MainCoordinatorAssembly().build(router: router, routingHandler: self)
+        main.start()
+        addChild(main)
+    }
+}
 
+extension FirstFlowCoordinator: MainCoordinatorExitRoutingProtocol {
+    
 }

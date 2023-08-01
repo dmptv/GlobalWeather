@@ -35,16 +35,40 @@ final class AppCoordinator: BaseCoordinator<AppCoordinatorExitPoint>, AppCoordin
 
 extension AppCoordinator {
     private func startApp() {
-        runMainFlow()
+        runFirstFlow()
     }
 }
 
 extension AppCoordinator {
-    private func runMainFlow() {
-        
+    private func runFirstFlow() {
+        childCoordinators.forEach { removeChild($0) }
+        router.dismissModule()
+        let firstCoordinator = FirstFlowCoordinatorAssembly().build(self)
+        firstCoordinator.start()
+        addChild(firstCoordinator)
+        if let toPresent = firstCoordinator.toPresent() {
+            router.showScreen(toPresent)
+        }
     }
 }
 
+extension AppCoordinator: FirstFlowRoutingExitHandler {
+    func performRouteForBackRouting(_ coordinator: CoordinatorProtocol) {
+        
+    }
+    
+    func performRouteForCloseRouting(_ coordinator: CoordinatorProtocol) {
+        
+    }
+    
+    func performModuleRemovedRouting(_ coordinator: CoordinatorProtocol) {
+        
+    }
+    
+    func performRouteForBackOrCloseRouting(_ coordinator: CoordinatorProtocol) {
+        
+    }
+}
 
 
 

@@ -6,9 +6,9 @@
 //	
 //
 
-protocol MainCoordinatorProtocol: CoordinatorProtocol {
-    
-}
+import UIKit
+
+protocol MainCoordinatorProtocol: CoordinatorProtocol { }
 
 class MainCoordinator: BaseCoordinator<MainCoordinatorExitRoutingProtocol>, MainCoordinatorProtocol {
     override func start(with option: DeepLinkOptionProtocol?) {

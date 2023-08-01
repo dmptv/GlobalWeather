@@ -12,7 +12,7 @@ typealias MainModule = Module<MainModuleInput, MainModuleOutput>
 
 class MainAssembly: BaseAssemblyProtocol {
     func build(_ moduleOutput: MainModuleOutput?,
-               _ routingHandler: MainRoutingHandlingProtocol) -> Main {
+               _ routingHandler: MainRoutingHandlingProtocol) -> MainModule {
         // View
         let view = MainViewController()
         
