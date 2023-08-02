@@ -7,7 +7,7 @@
 
 import UIKit
 
-var loaderViewColor: UIColor = #colorLiteral(red: 0.2118796408, green: 0.2519861162, blue: 0.2926436067, alpha: 1)
+var loaderViewColor: UIColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
 
 class LoaderView: UIView {
     private let loadingIndicator = UIActivityIndicatorView()
@@ -22,7 +22,7 @@ class LoaderView: UIView {
     }
     
     private func setupSubviews() {
-        backgroundColor = #colorLiteral(red: 0.9655296206, green: 0.9720321298, blue: 0.9782348275, alpha: 0.2)
+        backgroundColor = .gray
         addSubview(loadingIndicator)
         
         loadingIndicator.style = .large

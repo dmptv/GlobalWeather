@@ -131,7 +131,7 @@ private extension App {
     func showPrivacyProtectionWindow() {
         privacyProtectionWindow = UIWindow(frame: UIScreen.main.bounds)
         let vc = UIViewController()
-        vc.view.backgroundColor = .cyan
+        vc.view.backgroundColor = .green
         privacyProtectionWindow?.rootViewController = vc
         privacyProtectionWindow?.windowLevel = .alert + 1
         privacyProtectionWindow?.makeKeyAndVisible()

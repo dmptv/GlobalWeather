@@ -21,7 +21,8 @@ class MainViewController: BaseViewController {
 // MARK: - Configure
 extension MainViewController: MainViewInput {
     private func setupSubviews() {
-        view.backgroundColor = .cyan
+        view.backgroundColor = .white
+        title = "Main"
     }
 }
 
