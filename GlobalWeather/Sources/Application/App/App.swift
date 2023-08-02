@@ -64,8 +64,7 @@ final class App: NSObject, AppProtocol {
     func applicationDidFinishLaunching(_ application: UIApplication, _ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let notification = launchOptions?[.remoteNotification] as? [String: AnyObject]
         let deepLink = DeepLinkOption.build(with: notification)
-
-//        appCoordinator?.start(with: deepLink)
+        appCoordinator?.start(with: deepLink)
         return true
     }
     
