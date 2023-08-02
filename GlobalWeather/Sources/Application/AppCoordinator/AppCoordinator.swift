@@ -10,21 +10,17 @@ import UIKit
 final class AppCoordinator: BaseCoordinator<AppCoordinatorExitPoint>, AppCoordinatorProtocol {
     typealias ServiceLocator = RootRouterLocator &
     UserServiceLocatorProtocol &
-    UserDefaultsServiceLocator &
-    APIServicesLocator
+    UserDefaultsServiceLocator
     final class ServiceLocatorImpl: ServiceLocator {}
     
     private var userService: UserServiceProtocol
     private let userDefaults: UserDefaultsProtocol
-    private let authService: AuthServiceProtocol
     private let interactor: AppInteractorInputProtocol
     
     init(scene: UIScene, serviceLocator: ServiceLocator = ServiceLocatorImpl()) {
         userService = serviceLocator.userService()
         userDefaults = serviceLocator.userDefaults()
-        authService =  serviceLocator.authService()
         interactor = AppInteractor()
-        
         let router = serviceLocator.rootRouter(scene: scene)
         
         super.init(router: router)

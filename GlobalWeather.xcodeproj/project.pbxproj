@@ -374,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				CE21D77A2A76938500650BAB /* AuthService.swift */,
+				CE21D7822A7695F200650BAB /* APIServicesLocator.swift */,
 			);
 			path = AuthService;
 			sourceTree = "<group>";
@@ -391,7 +392,6 @@
 			isa = PBXGroup;
 			children = (
 				CE21D7792A76937600650BAB /* AuthService */,
-				CE21D7822A7695F200650BAB /* APIServicesLocator.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -591,8 +591,8 @@
 		CEFA03A02A79413000D5471D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CEFA03A12A79413000D5471D /* MainViewController.xib */,
 				CEFA03A22A79413000D5471D /* MainViewController.swift */,
+				CEFA03A12A79413000D5471D /* MainViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
