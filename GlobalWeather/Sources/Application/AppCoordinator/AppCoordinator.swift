@@ -5,7 +5,7 @@
 //  Created by Kanat on 30.07.2023.
 //
 
-import Foundation
+import UIKit
 
 final class AppCoordinator: BaseCoordinator<AppCoordinatorExitPoint>, AppCoordinatorProtocol {
     typealias ServiceLocator = RootRouterLocator &
@@ -19,12 +19,14 @@ final class AppCoordinator: BaseCoordinator<AppCoordinatorExitPoint>, AppCoordin
     private let authService: AuthServiceProtocol
     private let interactor: AppInteractorInputProtocol
     
-    init(serviceLocator: ServiceLocator = ServiceLocatorImpl()) {
+    init(scene: UIScene, serviceLocator: ServiceLocator = ServiceLocatorImpl()) {
         userService = serviceLocator.userService()
         userDefaults = serviceLocator.userDefaults()
         authService =  serviceLocator.authService()
         interactor = AppInteractor()
-        let router = serviceLocator.rootRouter()
+        
+        let router = serviceLocator.rootRouter(scene: scene)
+        
         super.init(router: router)
     }
     

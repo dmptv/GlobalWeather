@@ -10,12 +10,20 @@ import UIKit
 final class RootRouter: BaseCoordinatorRouter {
     private var window: UIWindow?
     
-    override init(_ rootViewController: UIViewController = UIViewController()) {
+    init(scene: UIScene, _ rootViewController: UIViewController = UIViewController()) {
         super.init(rootViewController)
         
-        window = UIWindow()
-        window?.rootViewController = rootViewController
-        window?.backgroundColor = .white
+        guard let scene = (scene as? UIWindowScene) else { return }
+
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.windowScene = scene
+        let vc = UIViewController()
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        navigationController.navigationBar.barStyle = .default
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for:.default)
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.layoutIfNeeded()
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 }

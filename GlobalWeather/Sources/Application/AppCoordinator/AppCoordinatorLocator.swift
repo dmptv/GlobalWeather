@@ -5,14 +5,14 @@
 //  Created by Kanat on 30.07.2023.
 //
 
-import Foundation
+import UIKit
 
 protocol AppCoordinatorServiceLocator {
-    func appCoordinator() -> CoordinatorProtocol
+    func appCoordinator(scene: UIScene) -> CoordinatorProtocol
 }
 
 extension AppCoordinatorServiceLocator {
-    func appCoordinator() -> CoordinatorProtocol {
-        AppCoordinator()
+    func appCoordinator(scene: UIScene) -> CoordinatorProtocol {
+        AppCoordinator(scene: scene)
     }
 }

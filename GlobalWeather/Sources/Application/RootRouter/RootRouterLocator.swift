@@ -5,14 +5,14 @@
 //  Created by Kanat on 30.07.2023.
 //
 
-import Foundation
+import UIKit
 
 protocol RootRouterLocator {
-    func rootRouter() -> RootRouter
+    func rootRouter(scene: UIScene) -> RootRouter
 }
 
 extension RootRouterLocator {
-    func rootRouter() -> RootRouter {
-        RootRouter()
+    func rootRouter(scene: UIScene) -> RootRouter {
+        RootRouter(scene: scene)
     }
 }

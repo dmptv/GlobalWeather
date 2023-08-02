@@ -8,6 +8,8 @@
 import UIKit
 
 protocol AppProtocol {
+    func configureScene(with scene: UIScene)
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions)
     func application(_ application: UIApplication,
                      willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     func applicationDidFinishLaunching(_ application: UIApplication,
@@ -34,13 +36,24 @@ final class App: NSObject, AppProtocol {
     typealias ServiceLocator = AppCoordinatorServiceLocator & UserDefaultsServiceLocator
     final class ServiceLocatorImpl: ServiceLocator { }
     
-    private let appCoordinator: CoordinatorProtocol
+    let serviceLocator: ServiceLocator = ServiceLocatorImpl()
+    private var appCoordinator: CoordinatorProtocol?
     private let userDefaults: UserDefaultsProtocol
     private var privacyProtectionWindow: UIWindow?
     
-    init(serviceLocator: ServiceLocator = ServiceLocatorImpl()) {
-        appCoordinator = serviceLocator.appCoordinator()
+    static let shared = App()
+    
+    private override init() {
         userDefaults = serviceLocator.userDefaults()
+    }
+    
+    func configureScene(with scene: UIScene) {
+        appCoordinator = serviceLocator.appCoordinator(scene: scene)
+    }
+    
+    var window: UIWindow?
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        appCoordinator?.start()
     }
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -52,7 +65,7 @@ final class App: NSObject, AppProtocol {
         let notification = launchOptions?[.remoteNotification] as? [String: AnyObject]
         let deepLink = DeepLinkOption.build(with: notification)
 
-        appCoordinator.start(with: deepLink)
+//        appCoordinator?.start(with: deepLink)
         return true
     }
     
@@ -62,7 +75,7 @@ final class App: NSObject, AppProtocol {
                                                  _ completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         let dict = userInfo as? [String: AnyObject]
         let deepLink = DeepLinkOption.build(with: dict)
-        appCoordinator.start(with: deepLink)
+        appCoordinator?.start(with: deepLink)
         completionHandler(.noData)
     }
     
@@ -70,7 +83,7 @@ final class App: NSObject, AppProtocol {
                                          _ userActivity: NSUserActivity,
                                          _ restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         let deepLink = DeepLinkOption.build(with: userActivity)
-        appCoordinator.start(with: deepLink)
+        appCoordinator?.start(with: deepLink)
         return true
     }
     

@@ -11,7 +11,7 @@ protocol AppServiceLocator {
 
 extension AppServiceLocator {
     func app() -> AppProtocol {
-        App()
+        App.shared
     }
 }
 
