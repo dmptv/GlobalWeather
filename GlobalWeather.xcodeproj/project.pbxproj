@@ -11,6 +11,10 @@
 		4A46B2984D1CC0A8950A9063 /* Pods_GlobalWeather_GlobalWeatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166DE02C0FA9FAEE579E4645 /* Pods_GlobalWeather_GlobalWeatherUITests.framework */; };
 		B2222BD2728D5FF072FF99E8 /* Pods_GlobalWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 682BCE58B4DED326D02CEC73 /* Pods_GlobalWeatherTests.framework */; };
 		CE0D65732A77E0D9007B5713 /* AppServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D65722A77E0D9007B5713 /* AppServiceLocator.swift */; };
+		CE1D94E52A7BF0DC0058EBBF /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D94E42A7BF0DC0058EBBF /* APIRouter.swift */; };
+		CE1D94E82A7BF1F10058EBBF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D94E72A7BF1F10058EBBF /* Location.swift */; };
+		CE1D94EA2A7BFAB20058EBBF /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D94E92A7BFAB20058EBBF /* WeatherResponse.swift */; };
+		CE1D94EC2A7BFC7E0058EBBF /* WeatherServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D94EB2A7BFC7E0058EBBF /* WeatherServiceError.swift */; };
 		CE21D73A2A7667EB00650BAB /* BaseCoordinatorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7242A7667EB00650BAB /* BaseCoordinatorRouter.swift */; };
 		CE21D73B2A7667EB00650BAB /* BaseModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7252A7667EB00650BAB /* BaseModuleRouter.swift */; };
 		CE21D73C2A7667EB00650BAB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7262A7667EB00650BAB /* Router.swift */; };
@@ -99,6 +103,10 @@
 		BC5EEF17D5AC7F3A7D94DF12 /* Pods-GlobalWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalWeather.debug.xcconfig"; path = "Target Support Files/Pods-GlobalWeather/Pods-GlobalWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		C23D875A351EA8DA0FB9F149 /* Pods-GlobalWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalWeather.release.xcconfig"; path = "Target Support Files/Pods-GlobalWeather/Pods-GlobalWeather.release.xcconfig"; sourceTree = "<group>"; };
 		CE0D65722A77E0D9007B5713 /* AppServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServiceLocator.swift; sourceTree = "<group>"; };
+		CE1D94E42A7BF0DC0058EBBF /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		CE1D94E72A7BF1F10058EBBF /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		CE1D94E92A7BFAB20058EBBF /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		CE1D94EB2A7BFC7E0058EBBF /* WeatherServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceError.swift; sourceTree = "<group>"; };
 		CE21D7242A7667EB00650BAB /* BaseCoordinatorRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinatorRouter.swift; sourceTree = "<group>"; };
 		CE21D7252A7667EB00650BAB /* BaseModuleRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModuleRouter.swift; sourceTree = "<group>"; };
 		CE21D7262A7667EB00650BAB /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -370,6 +378,9 @@
 			isa = PBXGroup;
 			children = (
 				CE21D7772A76908E00650BAB /* UserModel.swift */,
+				CE1D94E72A7BF1F10058EBBF /* Location.swift */,
+				CE1D94E92A7BFAB20058EBBF /* WeatherResponse.swift */,
+				CE1D94EB2A7BFC7E0058EBBF /* WeatherServiceError.swift */,
 			);
 			path = ModelLayer;
 			sourceTree = "<group>";
@@ -623,6 +634,7 @@
 			children = (
 				CEFA03B32A7AA48F00D5471D /* APIClientService.swift */,
 				CEFA03B42A7AA48F00D5471D /* APIClientServiceLocatorProtocol.swift */,
+				CE1D94E42A7BF0DC0058EBBF /* APIRouter.swift */,
 			);
 			path = APIClientService;
 			sourceTree = "<group>";
@@ -869,7 +881,9 @@
 				CE21D7432A7667EB00650BAB /* ViewOutputProtocol.swift in Sources */,
 				CE21D7692A768CD800650BAB /* RootRouterLocator.swift in Sources */,
 				CE0D65732A77E0D9007B5713 /* AppServiceLocator.swift in Sources */,
+				CE1D94E52A7BF0DC0058EBBF /* APIRouter.swift in Sources */,
 				CEFA03A72A79413000D5471D /* MainCoordinatorAssembly.swift in Sources */,
+				CE1D94E82A7BF1F10058EBBF /* Location.swift in Sources */,
 				CE21D7802A76953E00650BAB /* NetworkingSessionServiceLocator.swift in Sources */,
 				CEFA03AE2A79413000D5471D /* MainInteractor.swift in Sources */,
 				CEFA03AA2A79413000D5471D /* MainContracts.swift in Sources */,
@@ -890,12 +904,14 @@
 				CE21D73B2A7667EB00650BAB /* BaseModuleRouter.swift in Sources */,
 				CE21D7722A768FEE00650BAB /* UserServiceLocator.swift in Sources */,
 				CEFA03B62A7AA48F00D5471D /* APIClientServiceLocatorProtocol.swift in Sources */,
+				CE1D94EC2A7BFC7E0058EBBF /* WeatherServiceError.swift in Sources */,
 				CE21D7522A766CBD00650BAB /* UIViewController+Extension.swift in Sources */,
 				CE21D73E2A7667EB00650BAB /* ModuleRoutingHandlingProtocol.swift in Sources */,
 				CE21D7672A768C3600650BAB /* RootRouter.swift in Sources */,
 				CEFA03902A79410200D5471D /* FirstFlowCoordinatorAssembly.swift in Sources */,
 				CEFA03AD2A79413000D5471D /* MainViewController.swift in Sources */,
 				CE65D94E2A728E7B009E6954 /* AppDelegate.swift in Sources */,
+				CE1D94EA2A7BFAB20058EBBF /* WeatherResponse.swift in Sources */,
 				CEFA03A82A79413000D5471D /* MainCoordinator.swift in Sources */,
 				CE21D7402A7667EB00650BAB /* BaseCoordinator.swift in Sources */,
 				CE21D76D2A768D6600650BAB /* AppInteractor.swift in Sources */,

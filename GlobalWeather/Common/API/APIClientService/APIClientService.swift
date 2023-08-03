@@ -9,27 +9,17 @@
 import Alamofire
 
 protocol APIClientServiceProtocol {
-    func makeRequest<T: Decodable>(endpoint: String, method: HTTPMethod, parameters: Parameters?, headers: HTTPHeaders?, completion: @escaping (Result<T, Error>) -> Void)
 }
 
 class APIClientService: APIClientServiceProtocol {
-    static let shared = APIClientService()
-    private let baseURL = "https://api.openweathermap.org/data/2.5/forecast"
-    static let API_KEY = "da69ade359c47e35161bf2e2dad374e8"
     
-    func makeRequest<T: Decodable>(endpoint: String, method: HTTPMethod, parameters: Parameters? = nil, headers: HTTPHeaders? = nil, completion: @escaping (Result<T, Error>) -> Void) {
-        let url = baseURL + endpoint
+    
+    static func cityWeather(cityName: String, completion:@escaping (Result<WeatherResponse, WeatherServiceError>)->Void) {
         
-        AF.request(url, method: method, parameters: parameters, headers: headers)
-            .validate()
-            .responseDecodable(of: T.self) { response in
-                switch response.result {
-                case .success(let value):
-                    completion(.success(value))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
+        AF.request(APIRouter.city(name: cityName))
+                     .responseDecodable { (response: DataResponse<WeatherResponse>) in
+                completion(response.result)
             }
-    }
+        }
 }
 
