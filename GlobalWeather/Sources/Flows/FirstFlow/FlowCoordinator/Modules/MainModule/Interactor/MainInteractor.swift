@@ -19,6 +19,14 @@ class MainInteractor {
     init(serviceLocator: ServiceLocatorAlias = ServiceLocator()) {
         apiClient = serviceLocator.serviceAPIClient()
         
+        apiClient.cityWeather(cityName: "Paris") { result in
+            switch result {
+            case let .success(weather):
+                print(weather)
+            case let .failure(error):
+                print(error)
+            }
+        }
     }
 
 }

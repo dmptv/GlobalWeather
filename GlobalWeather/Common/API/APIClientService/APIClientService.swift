@@ -8,17 +8,18 @@
 
 import Alamofire
 
+// https://medium.com/@AladinWay/write-a-networking-layer-in-swift-4-using-alamofire-5-and-codable-part-2-perform-request-and-b5c7ee2e012d
+
 protocol APIClientServiceProtocol {
+    func cityWeather(cityName: String, completion:@escaping (Result<WeatherResponse, AFError>) -> Void)
 }
 
 class APIClientService: APIClientServiceProtocol {
-    
-    
-    static func cityWeather(cityName: String, completion:@escaping (Result<WeatherResponse, WeatherServiceError>)->Void) {
+    func cityWeather(cityName: String, completion:@escaping (Result<WeatherResponse, AFError>) -> Void) {
         
         AF.request(APIRouter.city(name: cityName))
-                     .responseDecodable { (response: DataResponse<WeatherResponse>) in
-                completion(response.result)
+                     .responseDecodable { (response: DataResponse<WeatherResponse, AFError>) in
+                         completion(response.result)
             }
         }
 }
