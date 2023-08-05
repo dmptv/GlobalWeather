@@ -19,21 +19,7 @@ class MainInteractor {
     private let apiClient: APIClientServiceProtocol
     
     init(serviceLocator: ServiceLocatorAlias = ServiceLocator()) {
-        apiClient = serviceLocator.serviceAPIClient()
-        
-        apiClient.cityWeather(cityName: "Paris")
-            .sink(receiveCompletion: { receiveCompletion in
-                switch receiveCompletion {
-                case .finished:
-                    print("finished")
-                case .failure(let error):
-                    print(error, "kanat error")
-                }
-            }, receiveValue: { response in
-                print(response, "response kanat")
-            })
-            .store(in: &cancellables)
-    }
+        apiClient = serviceLocator.serviceAPIClient()    }
 
     deinit {
         cancellables.forEach { $0.cancel() }
@@ -43,7 +29,13 @@ class MainInteractor {
 
 // MARK: Private
 extension MainInteractor: MainInteractorInput {
+    func cityWeather(cityName: String) -> Future<WeatherResponse, AFError> {
+        apiClient.cityWeather(cityName: cityName)
+    }
     
+    func fetchWeather(location: Location) -> Future<WeatherResponse, AFError> {
+        apiClient.fetchWeather(location: location)
+    }
 }
 
 struct WeatherForecast: Decodable {

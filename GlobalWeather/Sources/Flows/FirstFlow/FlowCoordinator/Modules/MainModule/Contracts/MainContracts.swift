@@ -6,7 +6,8 @@
 //  
 //
 
-import Foundation
+import Alamofire
+import Combine
 
 // Module Input
 protocol MainModuleInput {
@@ -30,7 +31,8 @@ protocol MainViewOutput: ViewOutputProtocol {
 
 // Interactor Input
 protocol MainInteractorInput {
-    
+    func cityWeather(cityName: String) -> Future<WeatherResponse, AFError>
+    func fetchWeather(location: Location) -> Future<WeatherResponse, AFError>
 }
 
 // Interactor Output

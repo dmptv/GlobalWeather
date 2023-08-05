@@ -9,16 +9,20 @@
 import Alamofire
 import Combine
 
-// https://medium.com/@AladinWay/write-a-networking-layer-in-swift-4-using-alamofire-5-and-codable-part-3-using-futures-promises-cf3977fc8a5
-
 protocol APIClientServiceProtocol {
     func cityWeather(cityName: String) -> Future<WeatherResponse, AFError>
+    func fetchWeather(location: Location) -> Future<WeatherResponse, AFError>
 }
 
 class APIClientService: APIClientServiceProtocol {
     func cityWeather(cityName: String) -> Future<WeatherResponse, AFError> {
         performRequest(route: .city(name: cityName))
     }
+    
+    func fetchWeather(location: Location) -> Future<WeatherResponse, AFError> {
+        performRequest(route: APIRouter.wheatherBy(location: location))
+    }
+
 }
     
 extension APIClientService {
