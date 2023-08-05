@@ -7,20 +7,27 @@
 //
 
 import Alamofire
+import Combine
 
-// https://medium.com/@AladinWay/write-a-networking-layer-in-swift-4-using-alamofire-5-and-codable-part-2-perform-request-and-b5c7ee2e012d
+// https://medium.com/@AladinWay/write-a-networking-layer-in-swift-4-using-alamofire-5-and-codable-part-3-using-futures-promises-cf3977fc8a5
 
 protocol APIClientServiceProtocol {
-    func cityWeather(cityName: String, completion:@escaping (Result<WeatherResponse, AFError>) -> Void)
+    func cityWeather(cityName: String, completion: @escaping (Result<WeatherResponse, AFError>) -> Void)
 }
 
 class APIClientService: APIClientServiceProtocol {
-    func cityWeather(cityName: String, completion:@escaping (Result<WeatherResponse, AFError>) -> Void) {
-        
-        AF.request(APIRouter.city(name: cityName))
-                     .responseDecodable { (response: DataResponse<WeatherResponse, AFError>) in
-                         completion(response.result)
+    func cityWeather(cityName: String, completion: @escaping (Result<WeatherResponse, AFError>) -> Void) {
+        performRequest(route: APIRouter.city(name: cityName), completion: completion)
+    }
+}
+    
+extension APIClientService {
+    @discardableResult
+    private func performRequest<T: Decodable>(route: APIRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<T, AFError>) -> Void) -> DataRequest {
+        return AF.request(route)
+            .responseDecodable (decoder: decoder) { (response: DataResponse<T, AFError>) in
+                completion(response.result)
             }
-        }
+    }
 }
 
