@@ -22,7 +22,6 @@ class APIClientService: APIClientServiceProtocol {
     func fetchWeather(location: Location) -> Future<WeatherResponse, AFError> {
         performRequest(route: APIRouter.wheatherBy(location: location))
     }
-
 }
     
 extension APIClientService {
