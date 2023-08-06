@@ -7,11 +7,6 @@
 
 import Alamofire
 
-// https://api.openweathermap.org/data/2.5/forecast?
-// q=Paris&
-// APPID=da69ade359c47e35161bf2e2dad374e8&
-// units=metric
-
 enum APIRouter: URLRequestConvertible {
     private static let baseURL = "https://api.openweathermap.org/data/2.5/forecast"
     private static let API_KEY = "da69ade359c47e35161bf2e2dad374e8"
@@ -39,21 +34,20 @@ enum APIRouter: URLRequestConvertible {
     
     // MARK: - Parameters
     private var parameters: Parameters? {
+        var commonParameters: Parameters = [
+            "APPID": APIRouter.API_KEY,
+            "units": "metric"
+        ]
+        
         switch self {
         case let .city(cityName):
-            return [
-                "q": cityName,
-                "APPID": APIRouter.API_KEY,
-                "units": "metric"
-            ]
+            commonParameters["q"] = cityName
         case let .wheatherBy(location):
-            return [
-                "APPID": APIRouter.API_KEY,
-                "lat": location.latitude,
-                "lon": location.longitude,
-                "units": "metric"
-            ]
+            commonParameters["lat"] = location.latitude
+            commonParameters["lon"] = location.longitude
         }
+        
+        return commonParameters
     }
     
     func asURLRequest() throws -> URLRequest {
