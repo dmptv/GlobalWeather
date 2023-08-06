@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MultyViewController">
+            <connections>
+                <outlet property="container1" destination="u0p-n2-YrP" id="N2Z-O9-9dW"/>
+                <outlet property="container2" destination="i5M-Pr-FkT" id="QPA-dc-A9w"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u0p-n2-YrP" userLabel="container1">
+                    <rect key="frame" x="0.0" y="151" width="414" height="120"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="qtY-dV-KIp"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzC-cc-ybd" userLabel="Container2">
+                    <rect key="frame" x="0.0" y="433" width="414" height="120"/>
+                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="tyN-oZ-guX"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dzC-cc-ybd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5WB-dH-62N"/>
+                <constraint firstItem="u0p-n2-YrP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BZu-Pr-WcE"/>
+                <constraint firstItem="dzC-cc-ybd" firstAttribute="top" secondItem="u0p-n2-YrP" secondAttribute="bottom" constant="162" id="HyK-Ge-Vb7"/>
+                <constraint firstItem="u0p-n2-YrP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="103" id="T8j-mx-TvA"/>
+                <constraint firstItem="u0p-n2-YrP" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="VOD-Zw-gvU"/>
+                <constraint firstItem="dzC-cc-ybd" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Wvw-0c-nhx"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

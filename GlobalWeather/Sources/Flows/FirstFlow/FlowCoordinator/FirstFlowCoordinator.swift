@@ -17,12 +17,20 @@ class FirstFlowCoordinator: BaseFlowCoordinator<FirstFlowRoutingExitHandler> {
 
 extension FirstFlowCoordinator {
     private func startMain() {
-        let main = MainCoordinatorAssembly().build(router: router, routingHandler: self)
-        main.start()
-        addChild(main)
+//        let main = MainCoordinatorAssembly().build(router: router, routingHandler: self)
+//        main.start()
+//        addChild(main)
+        
+        let subs = MultyCoordinatorAssembly().build(router: router, routingHandler: self)
+        subs.start()
+        addChild(subs)
     }
 }
 
 extension FirstFlowCoordinator: MainCoordinatorExitRoutingProtocol {
+    
+}
+
+extension FirstFlowCoordinator: MultyCoordinatorExitRoutingProtocol {
     
 }

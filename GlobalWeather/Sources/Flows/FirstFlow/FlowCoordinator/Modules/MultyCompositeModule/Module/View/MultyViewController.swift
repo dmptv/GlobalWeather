@@ -11,8 +11,8 @@ import UIKit
 class MultyViewController: BaseViewController {
     var output: MultyViewOutput?
     
-    private let container1 = UIView()
-    private let container2 = UIView()
+    @IBOutlet var container1: UIView!
+    @IBOutlet var container2: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
