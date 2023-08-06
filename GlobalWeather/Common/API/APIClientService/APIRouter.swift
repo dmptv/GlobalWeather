@@ -43,7 +43,7 @@ enum APIRouter {
         case .wheatherBy:
             return ""
         }
-    } 
+    }
 }
 
 extension APIRouter: APIRouteParameters {
@@ -66,14 +66,18 @@ extension APIRouter: URLRequestConvertible {
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue
         
-        try configureParameters(parameters, method: method, urlRequest: &urlRequest)
+        do {
+            try configureParameters(parameters, method: method, urlRequest: &urlRequest)
+        } catch {
+            throw error
+        }
         
         return urlRequest
     }
     
     private func configureParameters(_ parameters: Parameters?, method: HTTPMethod, urlRequest: inout URLRequest) throws {
         guard let parameters = parameters else {
-            return
+            throw AFError.parameterEncodingFailed(reason: .missingURL)
         }
         
         switch method {
@@ -87,15 +91,17 @@ extension APIRouter: URLRequestConvertible {
     }
     
     private func configureGetParameters(_ parameters: Parameters, urlRequest: inout URLRequest) throws {
-        var urlComponents = URLComponents(url: urlRequest.url!, resolvingAgainstBaseURL: true)
+        guard var urlComponents = URLComponents(url: urlRequest.url!, resolvingAgainstBaseURL: true) else {
+            throw AFError.parameterEncodingFailed(reason: .missingURL)
+        }
         var queryItems: [URLQueryItem] = []
         
         for (key, value) in parameters {
             queryItems.append(URLQueryItem(name: key, value: "\(value)"))
         }
         
-        urlComponents?.queryItems = queryItems
-        urlRequest.url = urlComponents?.url
+        urlComponents.queryItems = queryItems
+        urlRequest.url = urlComponents.url
     }
     
     private func configurePostParameters(_ parameters: Parameters, urlRequest: inout URLRequest) throws {
