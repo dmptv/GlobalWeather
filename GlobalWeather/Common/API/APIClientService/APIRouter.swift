@@ -58,23 +58,26 @@ enum APIRouter: URLRequestConvertible {
     
     func asURLRequest() throws -> URLRequest {
         let url = try APIRouter.baseURL.asURL()
-        var urlComponents = URLComponents(url: url.appendingPathComponent(path), resolvingAgainstBaseURL: true)
+        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
+            urlRequest.httpMethod = method.rawValue
         
-        // Add query items to URL if parameters exist
         if let parameters = parameters {
-            var queryItems: [URLQueryItem] = []
-            for (key, value) in parameters {
-                queryItems.append(URLQueryItem(name: key, value: "\(value)"))
+            if method == .get {
+                var urlComponents = URLComponents(url: url.appendingPathComponent(path), resolvingAgainstBaseURL: true)
+                var queryItems: [URLQueryItem] = []
+                for (key, value) in parameters {
+                    queryItems.append(URLQueryItem(name: key, value: "\(value)"))
+                }
+                urlComponents?.queryItems = queryItems
+                urlRequest.url = urlComponents?.url
+            } else if method == .post {
+                do {
+                    urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+                } catch {
+                    throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
+                }
             }
-            urlComponents?.queryItems = queryItems
         }
-        
-        guard let finalURL = urlComponents?.url else {
-            throw AFError.invalidURL(url: "")
-        }
-        
-        var urlRequest = URLRequest(url: finalURL)
-        urlRequest.httpMethod = method.rawValue
         
         return urlRequest
     }
