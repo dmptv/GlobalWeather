@@ -48,9 +48,7 @@ extension APIRouter {
     
     private var path: String {
         switch self {
-        case .city:
-            return ""
-        case .wheatherBy:
+        case .city, .wheatherBy:
             return ""
         }
     }
