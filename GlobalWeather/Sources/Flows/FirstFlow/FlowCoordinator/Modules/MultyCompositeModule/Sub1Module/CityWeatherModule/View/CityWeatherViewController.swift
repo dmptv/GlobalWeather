@@ -1,15 +1,15 @@
 //
-//  Sub1ViewController.swift
+//  CityWeatherViewController.swift
 //  GlobalWeather
 //
-//  Created by Kanat on 06.08.2023
+//  Created by Kanat on 07.08.2023
 //  
 //
 
 import UIKit
 
-class Sub1ViewController: BaseViewController {
-    var output: Sub1ViewOutput?
+class CityWeatherViewController: BaseViewController {
+    var output: CityWeatherViewOutput?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,18 +19,18 @@ class Sub1ViewController: BaseViewController {
 }
 
 // MARK: - Configure
-extension Sub1ViewController: Sub1ViewInput {
+extension CityWeatherViewController: CityWeatherViewInput {
     private func setupSubviews() {
         
     }
 }
 
 // MARK: View Input
-extension Sub1ViewController {
+extension CityWeatherViewController {
     
 }
 
 // MARK: Button Action
-extension Sub1ViewController {
+extension CityWeatherViewController {
     
 }

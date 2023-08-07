@@ -19,12 +19,21 @@ class MultyViewController: BaseViewController {
         setupSubviews()
         output?.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
 }
 
 // MARK: - Configure
 extension MultyViewController: MultyViewInput {
     private func setupSubviews() {
-        
     }
 }
 

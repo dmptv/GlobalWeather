@@ -14,7 +14,7 @@ class MultyPresenter: BasePresenter
 MultyInteractorInput,
 MultyRouterInputProtocol,
 MultyViewInput> {
-    var submodule1: Module<Sub1ModuleInput, Sub1ModuleOutput>?
+    var submodule1: Module<CityWeatherModuleInput, CityWeatherModuleOutput>?
 //    var submodule2: Module<Submodule2ModuleInput, Submodule2ModuleOutput>?
     
     private var cancellables = Set<AnyCancellable>()
@@ -85,7 +85,7 @@ extension MultyPresenter: MultyInteractorOutput {
 }
 
 // MARK: Sumbmodules Outputs
-extension MultyPresenter: Sub1ModuleOutput {
+extension MultyPresenter: CityWeatherModuleOutput {
     
 }
 
@@ -94,7 +94,7 @@ extension MultyPresenter: Sub1ModuleOutput {
 //}
 
 // MARK: Submodules Routing Handling
-extension MultyPresenter: Sub1RoutingHandlingProtocol {
+extension MultyPresenter: CityWeatherRoutingHandlingProtocol {
     func performRouteForBackRouting() {
         
     }

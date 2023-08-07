@@ -27,11 +27,11 @@ class MultyAssembly: BaseAssemblyProtocol {
         let presenter = MultyPresenter(interactor: interactor, router: router, view: view, moduleOutput: moduleOutput)
         
         // Submodules
-        let submodule1 = Sub1Assembly().build(presenter, presenter)
+        let sityWeather = CityWeatherAssembly().build(presenter, presenter)
 //
 //        let submodule2 = Submodule2ModuleAssembly().build(presenter, presenter)
 //
-        presenter.submodule1 = submodule1
+        presenter.submodule1 = sityWeather
 //        presenter.storyInfoSubmodule = submodule2
         
         // Dependency Setup
