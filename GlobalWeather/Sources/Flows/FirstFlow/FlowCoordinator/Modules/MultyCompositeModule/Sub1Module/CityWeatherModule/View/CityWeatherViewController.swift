@@ -11,6 +11,10 @@ import UIKit
 class CityWeatherViewController: BaseViewController {
     var output: CityWeatherViewOutput?
     
+    @IBOutlet private weak var cityNameLabel: UILabel!
+    @IBOutlet private weak var temperatureLabel: UILabel!
+    @IBOutlet private weak var weatherDescriptionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubviews()

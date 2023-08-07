@@ -11,21 +11,58 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CityWeatherViewController">
             <connections>
+                <outlet property="cityNameLabel" destination="eJk-Wq-dNu" id="rOl-oc-DBz"/>
+                <outlet property="temperatureLabel" destination="RW9-19-O7U" id="Yda-TF-sTV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weatherDescriptionLabel" destination="O8j-vN-ZF7" id="ZN5-gD-vNc"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemPurpleColor"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJk-Wq-dNu">
+                    <rect key="frame" x="16" y="68" width="382" height="18.5"/>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="clouds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RW9-19-O7U">
+                    <rect key="frame" x="16" y="102.5" width="382" height="22"/>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8j-vN-ZF7">
+                    <rect key="frame" x="16" y="140.5" width="382" height="39"/>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="L97-Sy-xkm"/>
+            <color key="backgroundColor" systemColor="systemYellowColor"/>
+            <constraints>
+                <constraint firstItem="eJk-Wq-dNu" firstAttribute="top" secondItem="L97-Sy-xkm" secondAttribute="top" constant="20" id="3s7-0m-7Jg"/>
+                <constraint firstItem="RW9-19-O7U" firstAttribute="top" secondItem="eJk-Wq-dNu" secondAttribute="bottom" constant="16" id="4U3-7H-pDg"/>
+                <constraint firstAttribute="trailing" secondItem="O8j-vN-ZF7" secondAttribute="trailing" constant="16" id="7xn-77-Fiz"/>
+                <constraint firstItem="O8j-vN-ZF7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Cps-Sw-n9o"/>
+                <constraint firstAttribute="trailing" secondItem="eJk-Wq-dNu" secondAttribute="trailing" constant="16" id="HKv-P1-I8v"/>
+                <constraint firstAttribute="trailing" secondItem="RW9-19-O7U" secondAttribute="trailing" constant="16" id="OlI-M4-APw"/>
+                <constraint firstItem="RW9-19-O7U" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Urv-Im-Xld"/>
+                <constraint firstItem="eJk-Wq-dNu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Uzo-Gd-Ocj"/>
+                <constraint firstItem="O8j-vN-ZF7" firstAttribute="top" secondItem="RW9-19-O7U" secondAttribute="bottom" constant="16" id="gXH-IF-5oG"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="139" y="127"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
