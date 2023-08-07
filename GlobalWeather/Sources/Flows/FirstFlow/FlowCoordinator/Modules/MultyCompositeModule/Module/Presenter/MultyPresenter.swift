@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 class MultyPresenter: BasePresenter
 <MultyModuleOutput,
@@ -16,9 +17,44 @@ MultyViewInput> {
     var submodule1: Module<Sub1ModuleInput, Sub1ModuleOutput>?
 //    var submodule2: Module<Submodule2ModuleInput, Submodule2ModuleOutput>?
     
+    private var cancellables = Set<AnyCancellable>()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()        
         setupSubmodules()
+        
+        let locationData = Location(name: "Paris", latitude: 21.2859, longitude: 14.7832)
+        interactor?.cityWeather(cityName: locationData.name)
+            .sink(receiveCompletion: { receiveCompletion in
+                switch receiveCompletion {
+                case .finished:
+                    print("finished")
+                case .failure(let error):
+                    print(error, "kanat error")
+                }
+            }, receiveValue: { response in
+                print(response, "response kanat")
+            })
+            .store(in: &cancellables)
+        
+        interactor?.fetchWeather(location: locationData)
+            .sink(receiveCompletion: { receiveCompletion in
+                switch receiveCompletion {
+                case .finished:
+                    print("finished location")
+                case .failure(let error):
+                    print(error, "kanat error location")
+                }
+            }, receiveValue: { response in
+                print(response, "response kanat location")
+            })
+            .store(in: &cancellables)
+    }
+    
+    deinit {
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
     }
 }
 

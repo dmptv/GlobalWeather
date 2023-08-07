@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import Combine
 
 // Module Input
 protocol MultyModuleInput {
@@ -36,7 +38,8 @@ protocol MultyContainersHolderProtocol: ContainersHolderProtocol {
 
 // Interactor Input
 protocol MultyInteractorInput {
-    
+    func cityWeather(cityName: String) -> Future<WeatherResponse, AFError>
+    func fetchWeather(location: Location) -> Future<WeatherResponse, AFError>
 }
 
 // Interactor Output
