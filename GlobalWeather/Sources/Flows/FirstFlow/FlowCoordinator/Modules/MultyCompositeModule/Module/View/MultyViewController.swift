@@ -10,6 +10,7 @@ import UIKit
 
 class MultyViewController: BaseViewController {
     var output: MultyViewOutput?
+    static let headerViewHeightRatio = CGFloat(0.38)
     
     @IBOutlet var container1: UIView!
     @IBOutlet var container2: UIView!

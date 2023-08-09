@@ -29,6 +29,15 @@ extension CityWeatherViewController: CityWeatherViewInput {
     }
 }
 
+extension CityWeatherViewController {
+    func configureView(viewModel: [WeatherViewModel], cityName: String) {
+        guard let recentData = viewModel.first else { return }
+        cityNameLabel.text = cityName
+        temperatureLabel.text = recentData.tempOriginal
+        weatherDescriptionLabel.text = recentData.description
+    }
+}
+
 // MARK: View Input
 extension CityWeatherViewController {
     
