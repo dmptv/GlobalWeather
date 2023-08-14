@@ -1,5 +1,5 @@
 //
-//  APIClientService.swift
+//  WeatherService.swift
 //  GlobalWeather
 //
 //  Created by Kanat on 02.08.2023
@@ -9,12 +9,12 @@
 import Alamofire
 import Combine
 
-protocol APIClientServiceProtocol {
+protocol WeatherServiceProtocol {
     func cityWeather(cityName: String) -> Future<WeatherResponse, AFError>
     func fetchWeather(location: Location) -> Future<WeatherResponse, AFError>
 }
 
-class APIClientService: APIClientServiceProtocol {
+class WeatherService: WeatherServiceProtocol {
     func cityWeather(cityName: String) -> Future<WeatherResponse, AFError> {
         performRequest(route: .city(name: cityName))
     }
@@ -24,7 +24,7 @@ class APIClientService: APIClientServiceProtocol {
     }
 }
     
-extension APIClientService {
+extension WeatherService {
     @discardableResult
     private func performRequest<T: Decodable>(route: APIRouter, decoder: JSONDecoder = JSONDecoder()) -> Future<T, AFError> {
         return Future { promise in

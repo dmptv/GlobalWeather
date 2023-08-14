@@ -48,10 +48,8 @@
 		CE21D7702A768F8200650BAB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D76F2A768F8200650BAB /* UserService.swift */; };
 		CE21D7722A768FEE00650BAB /* UserServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7712A768FEE00650BAB /* UserServiceLocator.swift */; };
 		CE21D7752A76903100650BAB /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7742A76903100650BAB /* UserDefaultsService.swift */; };
-		CE21D77B2A76938500650BAB /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D77A2A76938500650BAB /* AuthService.swift */; };
 		CE21D77E2A7694EC00650BAB /* NetworkingSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D77D2A7694EC00650BAB /* NetworkingSessionService.swift */; };
 		CE21D7802A76953E00650BAB /* NetworkingSessionServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D77F2A76953E00650BAB /* NetworkingSessionServiceLocator.swift */; };
-		CE21D7832A7695F200650BAB /* APIServicesLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7822A7695F200650BAB /* APIServicesLocator.swift */; };
 		CE21D7852A76971E00650BAB /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7842A76971E00650BAB /* AppAppearance.swift */; };
 		CE21D7882A76984C00650BAB /* DeepLinkOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7872A76984C00650BAB /* DeepLinkOption.swift */; };
 		CE21D78A2A76988700650BAB /* DeepLinkOptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7892A76988700650BAB /* DeepLinkOptionProtocol.swift */; };
@@ -96,8 +94,8 @@
 		CEFA03AD2A79413000D5471D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03A22A79413000D5471D /* MainViewController.swift */; };
 		CEFA03AE2A79413000D5471D /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03A42A79413000D5471D /* MainInteractor.swift */; };
 		CEFA03AF2A79413000D5471D /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03A62A79413000D5471D /* MainRouter.swift */; };
-		CEFA03B52A7AA48F00D5471D /* APIClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03B32A7AA48F00D5471D /* APIClientService.swift */; };
-		CEFA03B62A7AA48F00D5471D /* APIClientServiceLocatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03B42A7AA48F00D5471D /* APIClientServiceLocatorProtocol.swift */; };
+		CEFA03B52A7AA48F00D5471D /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03B32A7AA48F00D5471D /* WeatherService.swift */; };
+		CEFA03B62A7AA48F00D5471D /* APIServicesLocatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03B42A7AA48F00D5471D /* APIServicesLocatorProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,10 +161,8 @@
 		CE21D76F2A768F8200650BAB /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		CE21D7712A768FEE00650BAB /* UserServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceLocator.swift; sourceTree = "<group>"; };
 		CE21D7742A76903100650BAB /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
-		CE21D77A2A76938500650BAB /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CE21D77D2A7694EC00650BAB /* NetworkingSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingSessionService.swift; sourceTree = "<group>"; };
 		CE21D77F2A76953E00650BAB /* NetworkingSessionServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingSessionServiceLocator.swift; sourceTree = "<group>"; };
-		CE21D7822A7695F200650BAB /* APIServicesLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServicesLocator.swift; sourceTree = "<group>"; };
 		CE21D7842A76971E00650BAB /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		CE21D7872A76984C00650BAB /* DeepLinkOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkOption.swift; sourceTree = "<group>"; };
 		CE21D7892A76988700650BAB /* DeepLinkOptionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkOptionProtocol.swift; sourceTree = "<group>"; };
@@ -216,8 +212,8 @@
 		CEFA03A22A79413000D5471D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CEFA03A42A79413000D5471D /* MainInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		CEFA03A62A79413000D5471D /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
-		CEFA03B32A7AA48F00D5471D /* APIClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientService.swift; sourceTree = "<group>"; };
-		CEFA03B42A7AA48F00D5471D /* APIClientServiceLocatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientServiceLocatorProtocol.swift; sourceTree = "<group>"; };
+		CEFA03B32A7AA48F00D5471D /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		CEFA03B42A7AA48F00D5471D /* APIServicesLocatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServicesLocatorProtocol.swift; sourceTree = "<group>"; };
 		EDC4795345FF2FB6DEE1B27D /* Pods_GlobalWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobalWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -432,15 +428,6 @@
 			path = ModelLayer;
 			sourceTree = "<group>";
 		};
-		CE21D7792A76937600650BAB /* AuthService */ = {
-			isa = PBXGroup;
-			children = (
-				CE21D77A2A76938500650BAB /* AuthService.swift */,
-				CE21D7822A7695F200650BAB /* APIServicesLocator.swift */,
-			);
-			path = AuthService;
-			sourceTree = "<group>";
-		};
 		CE21D77C2A7694E500650BAB /* NetworkingSessionService */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,8 +440,9 @@
 		CE21D7812A7695E000650BAB /* API */ = {
 			isa = PBXGroup;
 			children = (
-				CEFA03B22A7AA48F00D5471D /* APIClientService */,
-				CE21D7792A76937600650BAB /* AuthService */,
+				CE1D94E42A7BF0DC0058EBBF /* APIRouter.swift */,
+				CEFA03B42A7AA48F00D5471D /* APIServicesLocatorProtocol.swift */,
+				CEFA03B22A7AA48F00D5471D /* WeatherService */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -851,14 +839,12 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		CEFA03B22A7AA48F00D5471D /* APIClientService */ = {
+		CEFA03B22A7AA48F00D5471D /* WeatherService */ = {
 			isa = PBXGroup;
 			children = (
-				CEFA03B32A7AA48F00D5471D /* APIClientService.swift */,
-				CEFA03B42A7AA48F00D5471D /* APIClientServiceLocatorProtocol.swift */,
-				CE1D94E42A7BF0DC0058EBBF /* APIRouter.swift */,
+				CEFA03B32A7AA48F00D5471D /* WeatherService.swift */,
 			);
-			path = APIClientService;
+			path = WeatherService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1121,7 +1107,6 @@
 				CE21D78A2A76988700650BAB /* DeepLinkOptionProtocol.swift in Sources */,
 				CE21D74E2A76686E00650BAB /* BlockObject.swift in Sources */,
 				CE5EDEF82A812067006D90DD /* CityWeatherViewController.swift in Sources */,
-				CE21D77B2A76938500650BAB /* AuthService.swift in Sources */,
 				CEDB8A092A83DDE400E1F27A /* Double+Extension.swift in Sources */,
 				CEFA03A92A79413000D5471D /* MainAssembly.swift in Sources */,
 				CE5DCBD12A7FAC2A00582FB3 /* MultyRouter.swift in Sources */,
@@ -1139,7 +1124,7 @@
 				CE21D7632A768B4500650BAB /* AppCoordinator.swift in Sources */,
 				CE21D73B2A7667EB00650BAB /* BaseModuleRouter.swift in Sources */,
 				CE21D7722A768FEE00650BAB /* UserServiceLocator.swift in Sources */,
-				CEFA03B62A7AA48F00D5471D /* APIClientServiceLocatorProtocol.swift in Sources */,
+				CEFA03B62A7AA48F00D5471D /* APIServicesLocatorProtocol.swift in Sources */,
 				CE1D94EC2A7BFC7E0058EBBF /* WeatherServiceError.swift in Sources */,
 				CE21D7522A766CBD00650BAB /* UIViewController+Extension.swift in Sources */,
 				CE21D73E2A7667EB00650BAB /* ModuleRoutingHandlingProtocol.swift in Sources */,
@@ -1168,12 +1153,11 @@
 				CE21D73C2A7667EB00650BAB /* Router.swift in Sources */,
 				CE5EDEF92A812067006D90DD /* CityWeatherInteractor.swift in Sources */,
 				CE21D7752A76903100650BAB /* UserDefaultsService.swift in Sources */,
-				CE21D7832A7695F200650BAB /* APIServicesLocator.swift in Sources */,
 				CE21D7612A76887600650BAB /* App.swift in Sources */,
 				CE21D7442A7667EB00650BAB /* Module.swift in Sources */,
 				CE21D7852A76971E00650BAB /* AppAppearance.swift in Sources */,
 				CEFA03912A79410200D5471D /* FirstFlowCoordinator.swift in Sources */,
-				CEFA03B52A7AA48F00D5471D /* APIClientService.swift in Sources */,
+				CEFA03B52A7AA48F00D5471D /* WeatherService.swift in Sources */,
 				CE21D7542A766D9500650BAB /* LoaderView.swift in Sources */,
 				CE5EDEFA2A812067006D90DD /* CityWeatherRouter.swift in Sources */,
 				CE5EDEF22A812067006D90DD /* CityWeatherCoordinatorAssembly.swift in Sources */,

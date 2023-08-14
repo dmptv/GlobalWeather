@@ -14,10 +14,10 @@ class MultyInteractor {
     
     private var cancellables = Set<AnyCancellable>()
 
-    typealias ServiceLocatorAlias = APIClientServiceLocator
+    typealias ServiceLocatorAlias = APIServicesLocatorProtocol
     final class ServiceLocator: ServiceLocatorAlias {}
     
-    private let apiClient: APIClientServiceProtocol
+    private let apiClient: WeatherServiceProtocol
     
     init(serviceLocator: ServiceLocatorAlias = ServiceLocator()) {
         apiClient = serviceLocator.serviceAPIClient()    }
