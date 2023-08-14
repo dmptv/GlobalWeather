@@ -48,7 +48,6 @@
 		CE21D7702A768F8200650BAB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D76F2A768F8200650BAB /* UserService.swift */; };
 		CE21D7722A768FEE00650BAB /* UserServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7712A768FEE00650BAB /* UserServiceLocator.swift */; };
 		CE21D7752A76903100650BAB /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7742A76903100650BAB /* UserDefaultsService.swift */; };
-		CE21D7782A76908E00650BAB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7772A76908E00650BAB /* UserModel.swift */; };
 		CE21D77B2A76938500650BAB /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D77A2A76938500650BAB /* AuthService.swift */; };
 		CE21D77E2A7694EC00650BAB /* NetworkingSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D77D2A7694EC00650BAB /* NetworkingSessionService.swift */; };
 		CE21D7802A76953E00650BAB /* NetworkingSessionServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D77F2A76953E00650BAB /* NetworkingSessionServiceLocator.swift */; };
@@ -164,7 +163,6 @@
 		CE21D76F2A768F8200650BAB /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		CE21D7712A768FEE00650BAB /* UserServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceLocator.swift; sourceTree = "<group>"; };
 		CE21D7742A76903100650BAB /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
-		CE21D7772A76908E00650BAB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CE21D77A2A76938500650BAB /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CE21D77D2A7694EC00650BAB /* NetworkingSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingSessionService.swift; sourceTree = "<group>"; };
 		CE21D77F2A76953E00650BAB /* NetworkingSessionServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingSessionServiceLocator.swift; sourceTree = "<group>"; };
@@ -296,11 +294,8 @@
 			isa = PBXGroup;
 			children = (
 				CE21D7862A76984100650BAB /* DeepLink */,
-				CE21D7812A7695E000650BAB /* API */,
-				CE21D77C2A7694E500650BAB /* NetworkingSessionService */,
 				CE21D7762A76907500650BAB /* ModelLayer */,
-				CE21D7732A76902600650BAB /* UserDefaultsService */,
-				CE21D76E2A768F7A00650BAB /* UserService */,
+				CECB444B2A8A4A8C00B86A0D /* Services */,
 				CE21D7222A7667EB00650BAB /* BaseModule */,
 				CE21D75E2A76707100650BAB /* Extension */,
 				CE21D75F2A76708400650BAB /* CommonUI */,
@@ -429,7 +424,6 @@
 		CE21D7762A76907500650BAB /* ModelLayer */ = {
 			isa = PBXGroup;
 			children = (
-				CE21D7772A76908E00650BAB /* UserModel.swift */,
 				CE1D94E72A7BF1F10058EBBF /* Location.swift */,
 				CE1D94E92A7BFAB20058EBBF /* WeatherResponse.swift */,
 				CE1D94EB2A7BFC7E0058EBBF /* WeatherServiceError.swift */,
@@ -736,6 +730,17 @@
 				CE21D7842A76971E00650BAB /* AppAppearance.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		CECB444B2A8A4A8C00B86A0D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE21D7812A7695E000650BAB /* API */,
+				CE21D77C2A7694E500650BAB /* NetworkingSessionService */,
+				CE21D76E2A768F7A00650BAB /* UserService */,
+				CE21D7732A76902600650BAB /* UserDefaultsService */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		CEFA03862A79404200D5471D /* Flows */ = {
@@ -1173,7 +1178,6 @@
 				CE5EDEFA2A812067006D90DD /* CityWeatherRouter.swift in Sources */,
 				CE5EDEF22A812067006D90DD /* CityWeatherCoordinatorAssembly.swift in Sources */,
 				CE5DCBCC2A7FAC2A00582FB3 /* MultyContracts.swift in Sources */,
-				CE21D7782A76908E00650BAB /* UserModel.swift in Sources */,
 				CE21D73F2A7667EB00650BAB /* BaseFlowCoordinator.swift in Sources */,
 				CE5DCBD52A7FAD5800582FB3 /* ContainersHolderProtocol.swift in Sources */,
 				CE21D75B2A766F2300650BAB /* SBFloatingPanelDelegate.swift in Sources */,

@@ -8,8 +8,6 @@
 import Foundation
 
 protocol UserServiceProtocol {
-    var currentUser: UserModel { get set }
-
     func setData<T>(_ data: T?)
     func setData<T>(_ data: T?, fireUpdate: Bool)
     func getData<T>() -> T?
@@ -44,20 +42,6 @@ class UserService: UserServiceProtocol {
     
     private init(serviceLocator: ServiceLocatorAlias = ServiceLocator()) {
         userDefaultsService = serviceLocator.userDefaults()
-        currentUser = userDefaultsService.getValue(forKey: type(of: self).userKey) ?? UserModel(firstName: "")
-    }
-    
-    var currentUser: UserModel {
-        didSet {
-            syncQueue.sync {
-                userDefaultsService.set(currentUser, type(of: self).userKey)
-                executeListeners(currentUser)
-            }
-        }
-    }
-    
-    private func getCurrentUser() {
-        currentUser = userDefaultsService.getValue(forKey: type(of: self).userKey) ?? UserModel(firstName: "")
     }
     
     func setData<T>(_ data: T?, fireUpdate: Bool) {
