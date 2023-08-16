@@ -29,11 +29,11 @@ class MainInteractor {
 
 // MARK: Private
 extension MainInteractor: MainInteractorInput {
-    func cityWeather(cityName: String) -> Future<WeatherResponse, AFError> {
+    func cityWeather(cityName: String) -> Future<WeatherResponse, CustomAPIError> {
         apiClient.cityWeather(cityName: cityName)
     }
     
-    func fetchWeather(location: Location) -> Future<WeatherResponse, AFError> {
+    func fetchWeather(location: Location) -> Future<WeatherResponse, CustomAPIError> {
         apiClient.fetchWeather(location: location)
     }
 }

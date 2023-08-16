@@ -6,38 +6,20 @@
 //	
 //
 
-import Alamofire
 import Combine
 
 protocol WeatherServiceProtocol {
-    func cityWeather(cityName: String) -> Future<WeatherResponse, AFError>
-    func fetchWeather(location: Location) -> Future<WeatherResponse, AFError>
+    func cityWeather(cityName: String) -> Future<WeatherResponse, CustomAPIError>
+    func fetchWeather(location: Location) -> Future<WeatherResponse, CustomAPIError>
 }
 
 class WeatherService: WeatherServiceProtocol {
-    func cityWeather(cityName: String) -> Future<WeatherResponse, AFError> {
-        performRequest(route: .city(name: cityName))
+    func cityWeather(cityName: String) -> Future<WeatherResponse, CustomAPIError> {
+        CityWeatherRequest(cityName: cityName).performRequest()
     }
     
-    func fetchWeather(location: Location) -> Future<WeatherResponse, AFError> {
-        performRequest(route: APIRouter.wheatherBy(location: location))
-    }
-}
-    
-extension WeatherService {
-    @discardableResult
-    private func performRequest<T: Decodable>(route: APIRouter, decoder: JSONDecoder = JSONDecoder()) -> Future<T, AFError> {
-        return Future { promise in
-            AF.request(route)
-                .responseDecodable (decoder: decoder) { (response: DataResponse<T, AFError>) in
-                    switch response.result {
-                    case .success(let value):
-                        promise(.success(value))
-                    case .failure(let error):
-                        promise(.failure(error))
-                    }
-                }
-        }
+    func fetchWeather(location: Location) -> Future<WeatherResponse, CustomAPIError> {
+        LocationWeatherRequest(location: location).performRequest()
     }
 }
 

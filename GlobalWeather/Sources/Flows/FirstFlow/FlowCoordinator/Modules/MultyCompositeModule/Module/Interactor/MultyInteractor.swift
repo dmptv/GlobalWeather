@@ -6,7 +6,6 @@
 //  
 //
 
-import Alamofire
 import Combine
 
 class MultyInteractor {
@@ -30,11 +29,11 @@ class MultyInteractor {
 
 // MARK: Private
 extension MultyInteractor: MultyInteractorInput {
-    func cityWeather(cityName: String) -> Future<WeatherResponse, AFError> {
+    func cityWeather(cityName: String) -> Future<WeatherResponse, CustomAPIError> {
         apiClient.cityWeather(cityName: cityName)
     }
     
-    func fetchWeather(location: Location) -> Future<WeatherResponse, AFError> {
+    func fetchWeather(location: Location) -> Future<WeatherResponse, CustomAPIError> {
         apiClient.fetchWeather(location: location)
     }
 }
