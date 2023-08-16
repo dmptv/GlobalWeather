@@ -23,21 +23,27 @@ extension APIRouter: URLRequestConvertible {
 // MARK: - Private
 extension APIRouter {
     var method: HTTPMethod {
-        switch self {
-        case .city, .wheatherBy:
-            return .get
+        get {
+            switch self {
+            case .city, .wheatherBy:
+                return .get
+            }
         }
     }
     
     var path: String {
-        switch self {
-        case .city, .wheatherBy:
-            return ""
+        get {
+            switch self {
+            case .city, .wheatherBy:
+                return ""
+            }
         }
     }
     
     var parameters: Parameters {
-        APIRouter.requestBuilder.buildParameters(for: self)
+        get {
+            return APIRouter.requestBuilder.buildParameters(for: self)
+        }
     }
 }
 
