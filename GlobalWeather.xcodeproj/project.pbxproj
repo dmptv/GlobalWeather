@@ -93,6 +93,8 @@
 		CEDB8A092A83DDE400E1F27A /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8A082A83DDE400E1F27A /* Double+Extension.swift */; };
 		CEF248532A8C6936001BEB26 /* LocationWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248522A8C6936001BEB26 /* LocationWeatherResponse.swift */; };
 		CEF248572A8C6A2C001BEB26 /* CommonResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248562A8C6A2C001BEB26 /* CommonResponses.swift */; };
+		CEF248592A8CC4F6001BEB26 /* StorableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248582A8CC4F6001BEB26 /* StorableProtocol.swift */; };
+		CEF2485B2A8CC541001BEB26 /* RunTimeModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2485A2A8CC541001BEB26 /* RunTimeModelProtocol.swift */; };
 		CEFA03902A79410200D5471D /* FirstFlowCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA038D2A79410200D5471D /* FirstFlowCoordinatorAssembly.swift */; };
 		CEFA03912A79410200D5471D /* FirstFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA038E2A79410200D5471D /* FirstFlowCoordinator.swift */; };
 		CEFA03922A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA038F2A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift */; };
@@ -222,6 +224,8 @@
 		CEDB8A082A83DDE400E1F27A /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		CEF248522A8C6936001BEB26 /* LocationWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeatherResponse.swift; sourceTree = "<group>"; };
 		CEF248562A8C6A2C001BEB26 /* CommonResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResponses.swift; sourceTree = "<group>"; };
+		CEF248582A8CC4F6001BEB26 /* StorableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorableProtocol.swift; sourceTree = "<group>"; };
+		CEF2485A2A8CC541001BEB26 /* RunTimeModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimeModelProtocol.swift; sourceTree = "<group>"; };
 		CEFA038D2A79410200D5471D /* FirstFlowCoordinatorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstFlowCoordinatorAssembly.swift; sourceTree = "<group>"; };
 		CEFA038E2A79410200D5471D /* FirstFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstFlowCoordinator.swift; sourceTree = "<group>"; };
 		CEFA038F2A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstFlowExitRoutingHandlerProtocol.swift; sourceTree = "<group>"; };
@@ -442,6 +446,7 @@
 		CE21D7762A76907500650BAB /* ModelLayer */ = {
 			isa = PBXGroup;
 			children = (
+				CEF2485C2A8CC56D001BEB26 /* Protocols */,
 			);
 			path = ModelLayer;
 			sourceTree = "<group>";
@@ -816,6 +821,15 @@
 				CEF248562A8C6A2C001BEB26 /* CommonResponses.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		CEF2485C2A8CC56D001BEB26 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CEF248582A8CC4F6001BEB26 /* StorableProtocol.swift */,
+				CEF2485A2A8CC541001BEB26 /* RunTimeModelProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		CEFA03862A79404200D5471D /* Flows */ = {
@@ -1200,6 +1214,7 @@
 				CE5DCBCD2A7FAC2A00582FB3 /* MultyPresenter.swift in Sources */,
 				CE21D78A2A76988700650BAB /* DeepLinkOptionProtocol.swift in Sources */,
 				CE21D74E2A76686E00650BAB /* BlockObject.swift in Sources */,
+				CEF248592A8CC4F6001BEB26 /* StorableProtocol.swift in Sources */,
 				CE5EDEF82A812067006D90DD /* CityWeatherViewController.swift in Sources */,
 				CEA3C8402A8C5331009F62B9 /* BaseRequest.swift in Sources */,
 				CEDB8A092A83DDE400E1F27A /* Double+Extension.swift in Sources */,
@@ -1231,6 +1246,7 @@
 				CEFA03902A79410200D5471D /* FirstFlowCoordinatorAssembly.swift in Sources */,
 				CE5DCBCF2A7FAC2A00582FB3 /* MultyViewController.swift in Sources */,
 				CEFA03AD2A79413000D5471D /* MainViewController.swift in Sources */,
+				CEF2485B2A8CC541001BEB26 /* RunTimeModelProtocol.swift in Sources */,
 				CE65D94E2A728E7B009E6954 /* AppDelegate.swift in Sources */,
 				CE5EDEF42A812067006D90DD /* CityWeatherAssembly.swift in Sources */,
 				CE1D94EA2A7BFAB20058EBBF /* CityWeatherResponse.swift in Sources */,
