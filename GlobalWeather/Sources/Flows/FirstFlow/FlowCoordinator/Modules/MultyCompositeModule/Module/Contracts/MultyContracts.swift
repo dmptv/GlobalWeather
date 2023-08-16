@@ -37,8 +37,8 @@ protocol MultyContainersHolderProtocol: ContainersHolderProtocol {
 
 // Interactor Input
 protocol MultyInteractorInput {
-    func cityWeather(cityName: String) -> Future<WeatherResponse, CustomAPIError>
-    func fetchWeather(location: Location) -> Future<WeatherResponse, CustomAPIError>
+    func cityWeather(cityName: String) -> Future<CityWeatherResponse, CustomAPIError>
+    func fetchWeather(location: Location) -> Future<LocationWeatherResponse, CustomAPIError>
 }
 
 // Interactor Output

@@ -67,11 +67,11 @@ struct WeatherViewModel {
         self.visibility = visibility
     }
     
-    static func getViewModels(with weatherResponse: WeatherResponse) -> [WeatherViewModel] {
+    static func getViewModels(with weatherResponse: CityWeatherResponse) -> [WeatherViewModel] {
         return weatherResponse.list.map { getViewModel(eachWeather: $0, response: weatherResponse) }
     }
     
-    static func getViewModel(eachWeather: WeatherListResponse, response: WeatherResponse) -> WeatherViewModel {
+    static func getViewModel(eachWeather: WeatherListResponse, response: CityWeatherResponse) -> WeatherViewModel {
         let timeZone = response.city.timezone
         let date = Date.getddMMYYYYFormat(timestamp: eachWeather.dtTxt, timeZone: timeZone)
         let dateWithMonth = Date.getddMMFormat(timestamp: eachWeather.dtTxt, timeZone: timeZone)

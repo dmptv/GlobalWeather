@@ -29,11 +29,11 @@ class MultyInteractor {
 
 // MARK: Private
 extension MultyInteractor: MultyInteractorInput {
-    func cityWeather(cityName: String) -> Future<WeatherResponse, CustomAPIError> {
+    func cityWeather(cityName: String) -> Future<CityWeatherResponse, CustomAPIError> {
         apiClient.cityWeather(cityName: cityName)
     }
     
-    func fetchWeather(location: Location) -> Future<WeatherResponse, CustomAPIError> {
+    func fetchWeather(location: Location) -> Future<LocationWeatherResponse, CustomAPIError> {
         apiClient.fetchWeather(location: location)
     }
 }
