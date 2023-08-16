@@ -808,12 +808,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		CEF248552A8C6A0D001BEB26 /* CommonResponses */ = {
+		CEF248552A8C6A0D001BEB26 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CEFA03B32A7AA48F00D5471D /* WeatherService.swift */,
+				CE1D94E42A7BF0DC0058EBBF /* WeatherRouter.swift */,
 				CEF248562A8C6A2C001BEB26 /* CommonResponses.swift */,
 			);
-			path = CommonResponses;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		CEFA03862A79404200D5471D /* Flows */ = {
@@ -927,9 +929,7 @@
 		CEFA03B22A7AA48F00D5471D /* WeatherService */ = {
 			isa = PBXGroup;
 			children = (
-				CEF248552A8C6A0D001BEB26 /* CommonResponses */,
-				CEFA03B32A7AA48F00D5471D /* WeatherService.swift */,
-				CE1D94E42A7BF0DC0058EBBF /* WeatherRouter.swift */,
+				CEF248552A8C6A0D001BEB26 /* Common */,
 				CEA3C83A2A8C52A4009F62B9 /* CityWeather */,
 				CEA3C83D2A8C52D3009F62B9 /* LocationWeather */,
 			);
