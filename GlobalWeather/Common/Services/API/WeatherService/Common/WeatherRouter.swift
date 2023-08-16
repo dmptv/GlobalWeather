@@ -8,7 +8,7 @@
 import Alamofire
 
 enum WeatherRouter: RouterProtocol {
-    private static let requestBuilder = RequestBuilder()
+    private static let requestBuilder = RequestBuilder<WeatherRouter>()
     
     case city(name: String)
     case wheatherBy(location: Location)
@@ -42,8 +42,25 @@ extension WeatherRouter {
     
     var parameters: Parameters {
         get {
-            return WeatherRouter.requestBuilder.buildParameters(for: self)
+            return buildParameters(apiKey: WeatherRouter.requestBuilder.API_KEY)
         }
+    }
+    
+    private func buildParameters(apiKey: String) -> Parameters {
+        var parameters: Parameters = [
+            "APPID": apiKey,
+            "units": "metric"
+        ]
+        
+        switch self {
+        case let .city(cityName):
+            parameters["q"] = cityName
+        case let .wheatherBy(location):
+            parameters["lat"] = location.latitude
+            parameters["lon"] = location.longitude
+        }
+        
+        return parameters
     }
 }
 

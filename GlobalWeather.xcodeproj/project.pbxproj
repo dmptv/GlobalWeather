@@ -773,8 +773,8 @@
 		CEA3C8472A8C6421009F62B9 /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
-				CEA3C8432A8C5BB0009F62B9 /* RequestBuilder.swift */,
 				CEA3C83F2A8C5331009F62B9 /* BaseRequest.swift */,
+				CEA3C8432A8C5BB0009F62B9 /* RequestBuilder.swift */,
 				CEA3C8452A8C6408009F62B9 /* RouterProtocol.swift */,
 				CEA3C8412A8C544D009F62B9 /* CustomAPIError.swift */,
 			);
