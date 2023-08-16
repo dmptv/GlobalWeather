@@ -107,6 +107,8 @@
 		CEF248782A8CF353001BEB26 /* WeatherListMainStorableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248772A8CF353001BEB26 /* WeatherListMainStorableModel.swift */; };
 		CEF2487A2A8CF518001BEB26 /* WeatherListWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248792A8CF518001BEB26 /* WeatherListWeatherModel.swift */; };
 		CEF2487D2A8CF55E001BEB26 /* WeatherListWeatherStoredModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2487C2A8CF55E001BEB26 /* WeatherListWeatherStoredModel.swift */; };
+		CEF2487F2A8CF663001BEB26 /* WeatherListWindModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2487E2A8CF663001BEB26 /* WeatherListWindModel.swift */; };
+		CEF248822A8CF68C001BEB26 /* WeatherListWindStoredModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248812A8CF68C001BEB26 /* WeatherListWindStoredModel.swift */; };
 		CEFA03902A79410200D5471D /* FirstFlowCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA038D2A79410200D5471D /* FirstFlowCoordinatorAssembly.swift */; };
 		CEFA03912A79410200D5471D /* FirstFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA038E2A79410200D5471D /* FirstFlowCoordinator.swift */; };
 		CEFA03922A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA038F2A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift */; };
@@ -250,6 +252,8 @@
 		CEF248772A8CF353001BEB26 /* WeatherListMainStorableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListMainStorableModel.swift; sourceTree = "<group>"; };
 		CEF248792A8CF518001BEB26 /* WeatherListWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListWeatherModel.swift; sourceTree = "<group>"; };
 		CEF2487C2A8CF55E001BEB26 /* WeatherListWeatherStoredModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListWeatherStoredModel.swift; sourceTree = "<group>"; };
+		CEF2487E2A8CF663001BEB26 /* WeatherListWindModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListWindModel.swift; sourceTree = "<group>"; };
+		CEF248812A8CF68C001BEB26 /* WeatherListWindStoredModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListWindStoredModel.swift; sourceTree = "<group>"; };
 		CEFA038D2A79410200D5471D /* FirstFlowCoordinatorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstFlowCoordinatorAssembly.swift; sourceTree = "<group>"; };
 		CEFA038E2A79410200D5471D /* FirstFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstFlowCoordinator.swift; sourceTree = "<group>"; };
 		CEFA038F2A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstFlowExitRoutingHandlerProtocol.swift; sourceTree = "<group>"; };
@@ -472,6 +476,7 @@
 			children = (
 				CEF2485C2A8CC56D001BEB26 /* Protocols */,
 				CEF248562A8C6A2C001BEB26 /* CommonResponses.swift */,
+				CEF248802A8CF67D001BEB26 /* WeatherListWindModel */,
 				CEF2487B2A8CF51D001BEB26 /* WeatherListWeatherModel */,
 				CEF248762A8CF335001BEB26 /* WeatherListMainModel */,
 				CEF2486D2A8CDBB1001BEB26 /* WeatherListModel */,
@@ -924,6 +929,15 @@
 			path = WeatherListWeatherModel;
 			sourceTree = "<group>";
 		};
+		CEF248802A8CF67D001BEB26 /* WeatherListWindModel */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2487E2A8CF663001BEB26 /* WeatherListWindModel.swift */,
+				CEF248812A8CF68C001BEB26 /* WeatherListWindStoredModel.swift */,
+			);
+			path = WeatherListWindModel;
+			sourceTree = "<group>";
+		};
 		CEFA03862A79404200D5471D /* Flows */ = {
 			isa = PBXGroup;
 			children = (
@@ -1314,6 +1328,7 @@
 				CEF248592A8CC4F6001BEB26 /* StorableProtocol.swift in Sources */,
 				CE5EDEF82A812067006D90DD /* CityWeatherViewController.swift in Sources */,
 				CEA3C8402A8C5331009F62B9 /* BaseRequest.swift in Sources */,
+				CEF248822A8CF68C001BEB26 /* WeatherListWindStoredModel.swift in Sources */,
 				CEDB8A092A83DDE400E1F27A /* Double+Extension.swift in Sources */,
 				CEF2486C2A8CDBA6001BEB26 /* WeatherListModel.swift in Sources */,
 				CEFA03A92A79413000D5471D /* MainAssembly.swift in Sources */,
@@ -1383,6 +1398,7 @@
 				CE5DCBCC2A7FAC2A00582FB3 /* MultyContracts.swift in Sources */,
 				CE21D73F2A7667EB00650BAB /* BaseFlowCoordinator.swift in Sources */,
 				CE5DCBD52A7FAD5800582FB3 /* ContainersHolderProtocol.swift in Sources */,
+				CEF2487F2A8CF663001BEB26 /* WeatherListWindModel.swift in Sources */,
 				CE21D75B2A766F2300650BAB /* SBFloatingPanelDelegate.swift in Sources */,
 				CE65D9502A728E7B009E6954 /* SceneDelegate.swift in Sources */,
 				CECB445A2A8A560E00B86A0D /* RawDataResponse.swift in Sources */,

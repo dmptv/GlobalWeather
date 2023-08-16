@@ -11,9 +11,6 @@ import Foundation
 
 
 
-struct WeatherListWindResponse: Codable {
-    let speed: Double
-    let deg: Double
-}
+
 
 
