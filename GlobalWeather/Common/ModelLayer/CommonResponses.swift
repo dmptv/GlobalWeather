@@ -7,19 +7,7 @@
 
 import Foundation
 
-struct WeatherListResponse: Codable {
-    let dt: Double
-    let main: WeatherListMainResponse
-    let weather: [WeatherListWeatherResponse]
-    let wind: WeatherListWindResponse
-    let visibility: Int
-    let dtTxt: String
-    
-    enum CodingKeys: String, CodingKey {
-        case dt, main, weather, wind, visibility
-        case dtTxt = "dt_txt"
-    }
-}
+
 
 struct WeatherListMainResponse: Codable {
     let temp: Double
@@ -49,16 +37,4 @@ struct WeatherListWindResponse: Codable {
     let deg: Double
 }
 
-struct WeatherCityResponse: Codable {
-    let id: Int
-    let name: String
-    let coord: WeatherCityCoordResponse
-    let country: String
-    let timezone: Int
-    let population: Int?
-}
 
-struct WeatherCityCoordResponse: Codable {
-    let lat: Double
-    let lon: Double
-}
