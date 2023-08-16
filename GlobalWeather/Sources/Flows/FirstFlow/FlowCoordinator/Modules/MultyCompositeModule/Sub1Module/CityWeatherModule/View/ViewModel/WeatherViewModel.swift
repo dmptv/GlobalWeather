@@ -67,28 +67,34 @@ struct WeatherViewModel {
         self.visibility = visibility
     }
     
-    static func getViewModels(with weatherResponse: CityWeatherResponse) -> [WeatherViewModel] {
+    static func getViewModels(with weatherResponse: CityWeatherModel) -> [WeatherViewModel] {
         return weatherResponse.list.map { getViewModel(eachWeather: $0, response: weatherResponse) }
     }
     
-    static func getViewModel(eachWeather: WeatherListResponse, response: CityWeatherResponse) -> WeatherViewModel {
-        let timeZone = response.city.timezone
+    static func getViewModel(eachWeather: WeatherListModel, response: CityWeatherModel) -> WeatherViewModel {
+        let timeZone: Int = response.city?.timezone ?? 0
         let date = Date.getddMMYYYYFormat(timestamp: eachWeather.dtTxt, timeZone: timeZone)
         let dateWithMonth = Date.getddMMFormat(timestamp: eachWeather.dtTxt, timeZone: timeZone)
         let hour = Date.getHHFormat(timestamp: eachWeather.dtTxt, timeZone: timeZone)
         let day = Date.getWeekDay(timestamp: eachWeather.dtTxt, timeZone: timeZone)
-        let tempOriginal = "\(Int(eachWeather.main.temp))"
-        let temp = "\(Int(eachWeather.main.temp))°C"
-        let temp_min_int = (Int(eachWeather.main.tempMin))
-        let temp_max_int = (Int(eachWeather.main.tempMax))
-        let temp_min = "\(Int(eachWeather.main.tempMin))°C"
-        let temp_max = "\(Int(eachWeather.main.tempMax))°C"
+        
+        let tempMain: Double = eachWeather.main?.temp ?? 0
+        let tempOriginal = "\(Int(tempMain))"
+        let temp = "\(Int(tempMain))°C"
+        
+        let tempMin: Double = eachWeather.main?.tempMin ?? 0
+        let tempMax: Double = eachWeather.main?.tempMax ?? 0
+        let temp_min_int = (Int(tempMin))
+        let temp_max_int = (Int(tempMax))
+        let temp_min = "\(Int(tempMin))°C"
+        let temp_max = "\(Int(tempMax))°C"
+        
         var description: String = ""
-        let feelslike = "\(Int(eachWeather.main.feelsLike))°C"
-        let humidity = "\(eachWeather.main.humidity)%"
-        let pressure = "\(Int(eachWeather.main.pressure))hPa"
-        let windSpeed = "\(Int(eachWeather.wind.speed * 3.6))km/h"
-        let windDirection = (eachWeather.wind.deg).degToCompass()
+        let feelslike = "\(Int(eachWeather.main?.feelsLike ?? 0))°C"
+        let humidity = "\(String(describing: eachWeather.main?.humidity))%"
+        let pressure = "\(Int(eachWeather.main?.pressure ?? 0))hPa"
+        let windSpeed = "\(Int((eachWeather.wind?.speed ?? 0) * 3.6))km/h"
+        let windDirection = (eachWeather.wind?.deg ?? 0).degToCompass()
         let visibility = "\(eachWeather.visibility / 1000)km"
         var conditionId: Int = 800
         

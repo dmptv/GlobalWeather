@@ -12,7 +12,7 @@ class LocationWeatherStoredModel: Object {
     @objc dynamic var cod: String = ""
     @objc dynamic var message: Double = 0
     @objc dynamic var cnt: UInt = 0
-    let list = List<WeatherListStoredModel>()
+    var list = List<WeatherListStoredModel>()
     @objc dynamic var city: WeatherCityStoredModel?
 }
 

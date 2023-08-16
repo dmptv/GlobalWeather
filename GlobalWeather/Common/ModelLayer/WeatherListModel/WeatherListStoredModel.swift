@@ -11,19 +11,19 @@ import RealmSwift
 class WeatherListStoredModel: Object {
     @objc dynamic var dt: Double = 0
     @objc dynamic var main: WeatherListMainStorableModel?
-    @objc dynamic var weather: [WeatherListWeatherResponse]?
-    @objc dynamic var wind: WeatherListWindResponse?
+    var weather = List<WeatherListWeatherStoredModel>()
+    @objc dynamic var wind: WeatherListWindStoredModel?
     @objc dynamic var visibility: Int = 0
     @objc dynamic var dtTxt: String = ""
-    
-    enum CodingKeys: String, CodingKey {
-        case dt, main, weather, wind, visibility
-        case dtTxt = "dt_txt"
-    }
 }
 
 extension WeatherListStoredModel: StorableProtocol {
     func createRuntimeModel() -> RunTimeModelProtocol {
-        
+        WeatherListModel(dt: dt,
+                         main: main?.createRuntimeModel() as? WeatherListMainModel,
+                         weather: weather.compactMap { $0.createRuntimeModel() as? WeatherListWeatherModel },
+                         wind: wind?.createRuntimeModel() as? WeatherListWindModel,
+                         visibility: visibility,
+                         dtTxt: dtTxt)
     }
 }

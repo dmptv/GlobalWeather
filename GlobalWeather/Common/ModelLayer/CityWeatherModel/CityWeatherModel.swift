@@ -1,13 +1,13 @@
 //
-//  LocationWeatherModel.swift
+//  CityWeatherModel.swift
 //  GlobalWeather
 //
-//  Created by Kanat on 16.08.2023.
+//  Created by Kanat on 03.08.2023.
 //
 
 import Foundation
 
-class LocationWeatherModel: Codable {
+class CityWeatherModel: Codable {
     let cod: String
     let message: Double
     let cnt: UInt
@@ -23,13 +23,13 @@ class LocationWeatherModel: Codable {
     }
 }
 
-extension LocationWeatherModel: RunTimeModelProtocol {
+extension CityWeatherModel: RunTimeModelProtocol {
     static func storableType() -> StorableProtocol.Type {
-        LocationWeatherStoredModel.self
+        CityWeatherStoredModel.self
     }
     
     func convertToStorable() -> StorableProtocol {
-        let storable = LocationWeatherStoredModel()
+        var storable = CityWeatherStoredModel()
         storable.cod = cod
         storable.message = message
         storable.cnt = cnt
@@ -42,6 +42,4 @@ extension LocationWeatherModel: RunTimeModelProtocol {
         storable.city = city?.convertToStorable() as? WeatherCityStoredModel
         return storable
     }
-    
-    
 }

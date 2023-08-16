@@ -30,8 +30,8 @@ protocol MainViewOutput: ViewOutputProtocol {
 
 // Interactor Input
 protocol MainInteractorInput {
-    func cityWeather(cityName: String) -> Future<CityWeatherResponse, CustomAPIError>
-    func fetchWeather(location: Location) -> Future<LocationWeatherResponse, CustomAPIError>
+    func cityWeather(cityName: String) -> Future<CityWeatherModel, CustomAPIError>
+    func fetchWeather(location: Location) -> Future<LocationWeatherModel, CustomAPIError>
 }
 
 // Interactor Output

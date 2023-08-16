@@ -9,16 +9,16 @@
 import Combine
 
 protocol WeatherServiceProtocol {
-    func cityWeather(cityName: String) -> Future<CityWeatherResponse, CustomAPIError>
-    func fetchWeather(location: Location) -> Future<LocationWeatherResponse, CustomAPIError>
+    func cityWeather(cityName: String) -> Future<CityWeatherModel, CustomAPIError>
+    func fetchWeather(location: Location) -> Future<LocationWeatherModel, CustomAPIError>
 }
 
 class WeatherService: WeatherServiceProtocol {
-    func cityWeather(cityName: String) -> Future<CityWeatherResponse, CustomAPIError> {
+    func cityWeather(cityName: String) -> Future<CityWeatherModel, CustomAPIError> {
         CityWeatherRequest(cityName: cityName).performRequest()
     }
     
-    func fetchWeather(location: Location) -> Future<LocationWeatherResponse, CustomAPIError> {
+    func fetchWeather(location: Location) -> Future<LocationWeatherModel, CustomAPIError> {
         LocationWeatherRequest(location: location).performRequest()
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LocationWeatherRequest: BaseRequest<WeatherRouter, LocationWeatherResponse> {
+class LocationWeatherRequest: BaseRequest<WeatherRouter, LocationWeatherModel> {
     init(location: Location) {
         super.init(route: .wheatherBy(location: location))
     }

@@ -18,6 +18,11 @@ class WeatherCityStoredModel: Object {
 
 extension WeatherCityStoredModel: StorableProtocol {
     func createRuntimeModel() -> RunTimeModelProtocol {
-        WeatherCityModel(id: id, name: name, coord: coord?.createRuntimeModel() as? WeatherCityCoordModel, country: country, timezone: timezone, population: population)
+        WeatherCityModel(id: id,
+                         name: name,
+                         coord: coord?.createRuntimeModel() as? WeatherCityCoordModel,
+                         country: country,
+                         timezone: timezone,
+                         population: population)
     }  
 }
