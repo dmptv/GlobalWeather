@@ -35,10 +35,10 @@ extension LocationWeatherModel: RunTimeModelProtocol {
         model.cnt = cnt
         
         list.forEach {
-            guard let time = $0.convertToStorable() as? WeatherListModel else {
+            guard let item = $0.convertToStorable() as? WeatherListModel else {
                 return
             }
-            model.refreshTime.append(time)
+            model.list.append(item)
         }
 
         return model

@@ -9,7 +9,7 @@ import Foundation
 
 class WeatherListModel: Codable {
     let dt: Double
-    let main: WeatherListMainResponse
+    let main: WeatherListMainModel
     let weather: [WeatherListWeatherResponse]
     let wind: WeatherListWindResponse?
     let visibility: Int
@@ -20,7 +20,7 @@ class WeatherListModel: Codable {
         case dtTxt = "dt_txt"
     }
     
-    init(dt: Double, main: WeatherListMainResponse, weather: [WeatherListWeatherResponse], wind: WeatherListWindResponse?, visibility: Int, dtTxt: String) {
+    init(dt: Double, main: WeatherListMainModel, weather: [WeatherListWeatherResponse], wind: WeatherListWindResponse?, visibility: Int, dtTxt: String) {
         self.dt = dt
         self.main = main
         self.weather = weather
@@ -36,6 +36,13 @@ extension WeatherListModel: RunTimeModelProtocol {
     }
     
     func convertToStorable() -> StorableProtocol {
-        
+        var storable = WeatherListStoredModel()
+        storable.dt = dt
+        storable.main = main
+        storable.weather = weather
+        storable.wind = wind
+        storable.visibility = visibility
+        storable.dtTxt = dtTxt
+        return storable
     }
 }
