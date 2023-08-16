@@ -759,9 +759,8 @@
 		CEA3C83E2A8C52F6009F62B9 /* APIRouter */ = {
 			isa = PBXGroup;
 			children = (
-				CE1D94E42A7BF0DC0058EBBF /* WeatherRouter.swift */,
-				CEFA03B42A7AA48F00D5471D /* APIServicesLocatorProtocol.swift */,
 				CEA3C8432A8C5BB0009F62B9 /* RequestBuilder.swift */,
+				CEFA03B42A7AA48F00D5471D /* APIServicesLocatorProtocol.swift */,
 			);
 			path = APIRouter;
 			sourceTree = "<group>";
@@ -915,6 +914,7 @@
 			isa = PBXGroup;
 			children = (
 				CEFA03B32A7AA48F00D5471D /* WeatherService.swift */,
+				CE1D94E42A7BF0DC0058EBBF /* WeatherRouter.swift */,
 				CE1D94E92A7BFAB20058EBBF /* WeatherResponse.swift */,
 				CEA3C83A2A8C52A4009F62B9 /* CityWeather */,
 				CEA3C83D2A8C52D3009F62B9 /* LocationWeather */,
