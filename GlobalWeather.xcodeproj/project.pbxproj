@@ -92,6 +92,7 @@
 		CEDB8A072A83DDA700E1F27A /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8A062A83DDA700E1F27A /* Date+Extension.swift */; };
 		CEDB8A092A83DDE400E1F27A /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB8A082A83DDE400E1F27A /* Double+Extension.swift */; };
 		CEF248532A8C6936001BEB26 /* LocationWeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248522A8C6936001BEB26 /* LocationWeatherResponse.swift */; };
+		CEF248572A8C6A2C001BEB26 /* CommonResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248562A8C6A2C001BEB26 /* CommonResponses.swift */; };
 		CEFA03902A79410200D5471D /* FirstFlowCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA038D2A79410200D5471D /* FirstFlowCoordinatorAssembly.swift */; };
 		CEFA03912A79410200D5471D /* FirstFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA038E2A79410200D5471D /* FirstFlowCoordinator.swift */; };
 		CEFA03922A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA038F2A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift */; };
@@ -220,6 +221,7 @@
 		CEDB8A062A83DDA700E1F27A /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		CEDB8A082A83DDE400E1F27A /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		CEF248522A8C6936001BEB26 /* LocationWeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeatherResponse.swift; sourceTree = "<group>"; };
+		CEF248562A8C6A2C001BEB26 /* CommonResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResponses.swift; sourceTree = "<group>"; };
 		CEFA038D2A79410200D5471D /* FirstFlowCoordinatorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstFlowCoordinatorAssembly.swift; sourceTree = "<group>"; };
 		CEFA038E2A79410200D5471D /* FirstFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstFlowCoordinator.swift; sourceTree = "<group>"; };
 		CEFA038F2A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstFlowExitRoutingHandlerProtocol.swift; sourceTree = "<group>"; };
@@ -806,6 +808,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		CEF248552A8C6A0D001BEB26 /* CommonResponses */ = {
+			isa = PBXGroup;
+			children = (
+				CEF248562A8C6A2C001BEB26 /* CommonResponses.swift */,
+			);
+			path = CommonResponses;
+			sourceTree = "<group>";
+		};
 		CEFA03862A79404200D5471D /* Flows */ = {
 			isa = PBXGroup;
 			children = (
@@ -917,6 +927,7 @@
 		CEFA03B22A7AA48F00D5471D /* WeatherService */ = {
 			isa = PBXGroup;
 			children = (
+				CEF248552A8C6A0D001BEB26 /* CommonResponses */,
 				CEFA03B32A7AA48F00D5471D /* WeatherService.swift */,
 				CE1D94E42A7BF0DC0058EBBF /* WeatherRouter.swift */,
 				CEA3C83A2A8C52A4009F62B9 /* CityWeather */,
@@ -1174,6 +1185,7 @@
 				CEA3C8442A8C5BB0009F62B9 /* RequestBuilder.swift in Sources */,
 				CE5DCBC92A7FAC2A00582FB3 /* MultyCoordinator.swift in Sources */,
 				CEDB8A072A83DDA700E1F27A /* Date+Extension.swift in Sources */,
+				CEF248572A8C6A2C001BEB26 /* CommonResponses.swift in Sources */,
 				CE5EDEF32A812067006D90DD /* CityWeatherCoordinator.swift in Sources */,
 				CE21D7692A768CD800650BAB /* RootRouterLocator.swift in Sources */,
 				CEA3C8392A8C529B009F62B9 /* CityWeatherRequest.swift in Sources */,
