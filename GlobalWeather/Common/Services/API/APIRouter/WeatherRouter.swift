@@ -7,21 +7,21 @@
 
 import Alamofire
 
-enum APIRouter {
+enum WeatherRouter {
     private static let requestBuilder = RequestBuilder()
     
     case city(name: String)
     case wheatherBy(location: Location)
 }
 
-extension APIRouter: URLRequestConvertible {
+extension WeatherRouter: URLRequestConvertible {
     func asURLRequest() throws -> URLRequest {
-        return try APIRouter.requestBuilder.buildURLRequest(for: self)
+        return try WeatherRouter.requestBuilder.buildURLRequest(for: self)
     }
 }
 
 // MARK: - Private
-extension APIRouter {
+extension WeatherRouter {
     var method: HTTPMethod {
         get {
             switch self {
@@ -42,7 +42,7 @@ extension APIRouter {
     
     var parameters: Parameters {
         get {
-            return APIRouter.requestBuilder.buildParameters(for: self)
+            return WeatherRouter.requestBuilder.buildParameters(for: self)
         }
     }
 }

@@ -11,7 +11,7 @@ class RequestBuilder {
     private let BASE_URL = "https://api.openweathermap.org/data/2.5/forecast"
     let API_KEY = "da69ade359c47e35161bf2e2dad374e8"
     
-    func buildParameters(for route: APIRouter) -> Parameters {
+    func buildParameters(for route: WeatherRouter) -> Parameters {
         var parameters: Parameters = [
             "APPID": API_KEY,
             "units": "metric"
@@ -28,7 +28,7 @@ class RequestBuilder {
         return parameters
     }
     
-    func buildURLRequest(for route: APIRouter) throws -> URLRequest {
+    func buildURLRequest(for route: WeatherRouter) throws -> URLRequest {
         let url = try BASE_URL.asURL()
         var urlRequest = URLRequest(url: url.appendingPathComponent(route.path))
         urlRequest.httpMethod = route.method.rawValue
