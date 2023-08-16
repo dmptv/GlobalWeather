@@ -29,12 +29,12 @@ MultyViewInput> {
             .sink(receiveCompletion: { receiveCompletion in
                 switch receiveCompletion {
                 case .finished:
-                    print("finished")
+                    break
                 case .failure(let error):
-                    print(error, "kanat error")
+                    print(error, "error")
                 }
             }, receiveValue: { response in
-                print(response, "response kanat")
+                print(response.cod as Any, "cityName")
             })
             .store(in: &cancellables)
         
@@ -42,12 +42,12 @@ MultyViewInput> {
             .sink(receiveCompletion: { receiveCompletion in
                 switch receiveCompletion {
                 case .finished:
-                    print("finished location")
+                    break
                 case .failure(let error):
-                    print(error, "kanat error location")
+                    print(error, "error location")
                 }
             }, receiveValue: { response in
-                print(response, "response kanat location")
+                print(response.message, "location")
             })
             .store(in: &cancellables)
     }
