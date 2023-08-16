@@ -7,7 +7,7 @@
 
 import Alamofire
 
-enum WeatherRouter {
+enum WeatherRouter: RouterProtocol {
     private static let requestBuilder = RequestBuilder()
     
     case city(name: String)

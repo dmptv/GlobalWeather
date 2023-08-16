@@ -8,11 +8,11 @@
 import Alamofire
 import Combine
 
-class BaseRequest<T: Decodable> {
-    private let route: WeatherRouter
+class BaseRequest<R: RouterProtocol, T: Decodable> {
+    private let route: R
     private let decoder: JSONDecoder
 
-    init(route: WeatherRouter, decoder: JSONDecoder = JSONDecoder()) {
+    init(route: R, decoder: JSONDecoder = JSONDecoder()) {
         self.route = route
         self.decoder = decoder
     }

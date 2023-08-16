@@ -85,6 +85,7 @@
 		CEA3C8402A8C5331009F62B9 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3C83F2A8C5331009F62B9 /* BaseRequest.swift */; };
 		CEA3C8422A8C544D009F62B9 /* CustomAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3C8412A8C544D009F62B9 /* CustomAPIError.swift */; };
 		CEA3C8442A8C5BB0009F62B9 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3C8432A8C5BB0009F62B9 /* RequestBuilder.swift */; };
+		CEA3C8462A8C6408009F62B9 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3C8452A8C6408009F62B9 /* RouterProtocol.swift */; };
 		CECB44582A8A558500B86A0D /* ApiResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB44572A8A558500B86A0D /* ApiResponseProtocol.swift */; };
 		CECB445A2A8A560E00B86A0D /* RawDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB44592A8A560E00B86A0D /* RawDataResponse.swift */; };
 		CECB445C2A8A564900B86A0D /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB445B2A8A564900B86A0D /* ResponseProtocol.swift */; };
@@ -211,6 +212,7 @@
 		CEA3C83F2A8C5331009F62B9 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		CEA3C8412A8C544D009F62B9 /* CustomAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAPIError.swift; sourceTree = "<group>"; };
 		CEA3C8432A8C5BB0009F62B9 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		CEA3C8452A8C6408009F62B9 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		CECB44572A8A558500B86A0D /* ApiResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseProtocol.swift; sourceTree = "<group>"; };
 		CECB44592A8A560E00B86A0D /* RawDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawDataResponse.swift; sourceTree = "<group>"; };
 		CECB445B2A8A564900B86A0D /* ResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
@@ -456,10 +458,9 @@
 		CE21D7812A7695E000650BAB /* API */ = {
 			isa = PBXGroup;
 			children = (
-				CEA3C83F2A8C5331009F62B9 /* BaseRequest.swift */,
+				CEA3C8472A8C6421009F62B9 /* BaseClasses */,
 				CEA3C83E2A8C52F6009F62B9 /* APIRouter */,
 				CEFA03B22A7AA48F00D5471D /* WeatherService */,
-				CEA3C8412A8C544D009F62B9 /* CustomAPIError.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -763,6 +764,16 @@
 				CEA3C8432A8C5BB0009F62B9 /* RequestBuilder.swift */,
 			);
 			path = APIRouter;
+			sourceTree = "<group>";
+		};
+		CEA3C8472A8C6421009F62B9 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				CEA3C83F2A8C5331009F62B9 /* BaseRequest.swift */,
+				CEA3C8452A8C6408009F62B9 /* RouterProtocol.swift */,
+				CEA3C8412A8C544D009F62B9 /* CustomAPIError.swift */,
+			);
+			path = BaseClasses;
 			sourceTree = "<group>";
 		};
 		CECB444B2A8A4A8C00B86A0D /* Services */ = {
@@ -1230,6 +1241,7 @@
 				CEFA03912A79410200D5471D /* FirstFlowCoordinator.swift in Sources */,
 				CEFA03B52A7AA48F00D5471D /* WeatherService.swift in Sources */,
 				CE21D7542A766D9500650BAB /* LoaderView.swift in Sources */,
+				CEA3C8462A8C6408009F62B9 /* RouterProtocol.swift in Sources */,
 				CE5EDEFA2A812067006D90DD /* CityWeatherRouter.swift in Sources */,
 				CE5EDEF22A812067006D90DD /* CityWeatherCoordinatorAssembly.swift in Sources */,
 				CE5DCBCC2A7FAC2A00582FB3 /* MultyContracts.swift in Sources */,
