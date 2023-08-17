@@ -88,6 +88,9 @@
 		CEA3C8462A8C6408009F62B9 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3C8452A8C6408009F62B9 /* RouterProtocol.swift */; };
 		CEC03FC82A8E3E8300F730CE /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03FC72A8E3E8300F730CE /* DatabaseService.swift */; };
 		CEC03FCA2A8E3E8600F730CE /* DatabaseServiceLocatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03FC92A8E3E8600F730CE /* DatabaseServiceLocatorProtocol.swift */; };
+		CEC03FCD2A8E71FD00F730CE /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03FCC2A8E71FD00F730CE /* Reusable.swift */; };
+		CEC03FCF2A8E721F00F730CE /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03FCE2A8E721F00F730CE /* UICollectionView.swift */; };
+		CEC03FD12A8E728F00F730CE /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03FD02A8E728F00F730CE /* UITableView.swift */; };
 		CECB44582A8A558500B86A0D /* ApiResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB44572A8A558500B86A0D /* ApiResponseProtocol.swift */; };
 		CECB445A2A8A560E00B86A0D /* RawDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB44592A8A560E00B86A0D /* RawDataResponse.swift */; };
 		CECB445C2A8A564900B86A0D /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB445B2A8A564900B86A0D /* ResponseProtocol.swift */; };
@@ -234,6 +237,9 @@
 		CEA3C8452A8C6408009F62B9 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		CEC03FC72A8E3E8300F730CE /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		CEC03FC92A8E3E8600F730CE /* DatabaseServiceLocatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceLocatorProtocol.swift; sourceTree = "<group>"; };
+		CEC03FCC2A8E71FD00F730CE /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		CEC03FCE2A8E721F00F730CE /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		CEC03FD02A8E728F00F730CE /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		CECB44572A8A558500B86A0D /* ApiResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseProtocol.swift; sourceTree = "<group>"; };
 		CECB44592A8A560E00B86A0D /* RawDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawDataResponse.swift; sourceTree = "<group>"; };
 		CECB445B2A8A564900B86A0D /* ResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
@@ -436,6 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				CE21D7532A766D9500650BAB /* LoaderView.swift */,
+				CEC03FCB2A8E71E200F730CE /* Reusable */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -821,6 +828,16 @@
 				CEC03FC92A8E3E8600F730CE /* DatabaseServiceLocatorProtocol.swift */,
 			);
 			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		CEC03FCB2A8E71E200F730CE /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				CEC03FCC2A8E71FD00F730CE /* Reusable.swift */,
+				CEC03FCE2A8E721F00F730CE /* UICollectionView.swift */,
+				CEC03FD02A8E728F00F730CE /* UITableView.swift */,
+			);
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 		CECB444B2A8A4A8C00B86A0D /* Services */ = {
@@ -1322,6 +1339,7 @@
 				CEF248592A8CC4F6001BEB26 /* StorableProtocol.swift in Sources */,
 				CE5EDEF82A812067006D90DD /* CityWeatherViewController.swift in Sources */,
 				CEA3C8402A8C5331009F62B9 /* BaseRequest.swift in Sources */,
+				CEC03FCD2A8E71FD00F730CE /* Reusable.swift in Sources */,
 				CEF248822A8CF68C001BEB26 /* WeatherListWindStoredModel.swift in Sources */,
 				CEDB8A092A83DDE400E1F27A /* Double+Extension.swift in Sources */,
 				CEF2486C2A8CDBA6001BEB26 /* WeatherListModel.swift in Sources */,
@@ -1331,6 +1349,7 @@
 				CEC03FC82A8E3E8300F730CE /* DatabaseService.swift in Sources */,
 				CE21D75D2A766F4900650BAB /* SBFloatingPanelLayout.swift in Sources */,
 				CEF248622A8CD8BB001BEB26 /* WeatherCityStoredModel.swift in Sources */,
+				CEC03FD12A8E728F00F730CE /* UITableView.swift in Sources */,
 				CE21D7462A7667EB00650BAB /* BaseAssemblyProtocol.swift in Sources */,
 				CE21D7472A7667EB00650BAB /* ViewControllerProtocol.swift in Sources */,
 				CE21D7422A7667EB00650BAB /* BasePresenter.swift in Sources */,
@@ -1357,6 +1376,7 @@
 				CEFA03902A79410200D5471D /* FirstFlowCoordinatorAssembly.swift in Sources */,
 				CE5DCBCF2A7FAC2A00582FB3 /* MultyViewController.swift in Sources */,
 				CEF248602A8CD623001BEB26 /* CityWeatherStoredModel.swift in Sources */,
+				CEC03FCF2A8E721F00F730CE /* UICollectionView.swift in Sources */,
 				CEFA03AD2A79413000D5471D /* MainViewController.swift in Sources */,
 				CEF2485B2A8CC541001BEB26 /* RunTimeModelProtocol.swift in Sources */,
 				CE65D94E2A728E7B009E6954 /* AppDelegate.swift in Sources */,

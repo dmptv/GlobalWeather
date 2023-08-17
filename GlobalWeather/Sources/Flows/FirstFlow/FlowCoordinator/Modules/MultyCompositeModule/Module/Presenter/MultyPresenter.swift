@@ -31,7 +31,7 @@ MultyViewInput> {
                 case .finished:
                     break
                 case .failure(let error):
-                    print(error.localizedDescription, "error")
+                    print(error.localizedDescription, "error cityName")
                 }
             }, receiveValue: { response in
                 print(response.city?.country as Any, "cityName")
