@@ -1,22 +1,22 @@
 //
-//  MultyInteractor.swift
+//  MainInteractor.swift
 //  GlobalWeather
 //
-//  Created by Kanat on 06.08.2023
+//  Created by Kanat on 01.08.2023
 //  
 //
 
+import Alamofire
 import Combine
 
-class MultyInteractor {
-    weak var output: MultyInteractorOutput?
-    
+class MainInteractor {
     private var cancellables = Set<AnyCancellable>()
 
-    typealias ServiceLocatorAlias = WeatherServiceLocatorProtocol
+    typealias ServiceLocatorAlias = APIClientServiceLocator
     final class ServiceLocator: ServiceLocatorAlias {}
     
-    private let apiClient: WeatherServiceProtocol
+    weak var output: MainInteractorOutput?
+    private let apiClient: APIClientServiceProtocol
     
     init(serviceLocator: ServiceLocatorAlias = ServiceLocator()) {
         apiClient = serviceLocator.serviceAPIClient()    }
@@ -28,12 +28,16 @@ class MultyInteractor {
 }
 
 // MARK: Private
-extension MultyInteractor: MultyInteractorInput {
-    func cityWeather(cityName: String) -> Future<CityWeatherModel, CustomAPIError> {
+extension MainInteractor: MainInteractorInput {
+    func cityWeather(cityName: String) -> Future<WeatherResponse, AFError> {
         apiClient.cityWeather(cityName: cityName)
     }
     
-    func fetchWeather(location: Location) -> Future<LocationWeatherModel, CustomAPIError> {
+    func fetchWeather(location: Location) -> Future<WeatherResponse, AFError> {
         apiClient.fetchWeather(location: location)
     }
+}
+
+struct WeatherForecast: Decodable {
+    
 }

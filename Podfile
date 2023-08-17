@@ -17,6 +17,7 @@ target 'GlobalWeather' do
   pod 'FloatingPanel', '~> 1.7.5'
   pod 'Wormholy', '1.6.5'
   pod 'RealmSwift', '~>10'
+  pod 'Then'
 
   target 'GlobalWeatherTests' do
     inherit! :search_paths

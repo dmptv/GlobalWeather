@@ -12,11 +12,11 @@ import Combine
 class MainInteractor {
     private var cancellables = Set<AnyCancellable>()
 
-    typealias ServiceLocatorAlias = APIClientServiceLocator
+    typealias ServiceLocatorAlias = WeatherServiceLocatorProtocol
     final class ServiceLocator: ServiceLocatorAlias {}
     
     weak var output: MainInteractorOutput?
-    private let apiClient: APIClientServiceProtocol
+    private let apiClient: WeatherServiceProtocol
     
     init(serviceLocator: ServiceLocatorAlias = ServiceLocator()) {
         apiClient = serviceLocator.serviceAPIClient()    }
@@ -29,11 +29,11 @@ class MainInteractor {
 
 // MARK: Private
 extension MainInteractor: MainInteractorInput {
-    func cityWeather(cityName: String) -> Future<WeatherResponse, AFError> {
+    func cityWeather(cityName: String) -> Future<CityWeatherModel, CustomAPIError> {
         apiClient.cityWeather(cityName: cityName)
     }
     
-    func fetchWeather(location: Location) -> Future<WeatherResponse, AFError> {
+    func fetchWeather(location: Location) -> Future<LocationWeatherModel, CustomAPIError> {
         apiClient.fetchWeather(location: location)
     }
 }

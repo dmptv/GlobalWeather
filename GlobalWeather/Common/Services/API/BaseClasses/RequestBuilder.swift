@@ -1,68 +1,28 @@
 //
-//  APIRouter.swift
+//  RequestBuilder.swift
 //  GlobalWeather
 //
-//  Created by Kanat on 03.08.2023.
+//  Created by Kanat on 16.08.2023.
 //
 
 import Alamofire
 
-enum APIRouter {
-    private static let baseURL = "https://api.openweathermap.org/data/2.5/forecast"
-    private static let API_KEY = "da69ade359c47e35161bf2e2dad374e8"
-    var commonParameters: Parameters {
-        [
-            "APPID": APIRouter.API_KEY,
-            "units": "metric"
-        ]
-    }
+class RequestBuilder<R: RouterProtocol> {
+    private let BASE_URL = "https://api.openweathermap.org/data/2.5/forecast"
+    let API_KEY = "da69ade359c47e35161bf2e2dad374e8"
     
-    case city(name: String)
-    case wheatherBy(location: Location)
-}
-
-extension APIRouter: URLRequestConvertible {
-    func asURLRequest() throws -> URLRequest {
-        let url = try APIRouter.baseURL.asURL()
-        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-        urlRequest.httpMethod = method.rawValue
+    func buildURLRequest(for route: R) throws -> URLRequest {
+        let url = try BASE_URL.asURL()
+        var urlRequest = URLRequest(url: url.appendingPathComponent(route.path))
+        urlRequest.httpMethod = route.method.rawValue
         
         do {
-            try configureParameters(parameters, method: method, urlRequest: &urlRequest)
+            try configureParameters(route.parameters, method: route.method, urlRequest: &urlRequest)
         } catch {
             throw error
         }
         
         return urlRequest
-    }
-}
-
-// MARK: - Private
-extension APIRouter {
-    private var method: HTTPMethod {
-        switch self {
-        case .city, .wheatherBy:
-            return .get
-        }
-    }
-    
-    private var path: String {
-        switch self {
-        case .city, .wheatherBy:
-            return ""
-        }
-    }
-    
-    private var parameters: Parameters? {
-        var combined = commonParameters
-        switch self {
-        case let .city(cityName):
-            combined["q"] = cityName
-        case let .wheatherBy(location):
-            combined["lat"] = location.latitude
-            combined["lon"] = location.longitude
-        }
-        return combined
     }
     
     private func configureParameters(_ parameters: Parameters?, method: HTTPMethod, urlRequest: inout URLRequest) throws {
@@ -103,5 +63,3 @@ extension APIRouter {
         }
     }
 }
-
-
