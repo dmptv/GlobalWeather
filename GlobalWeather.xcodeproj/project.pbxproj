@@ -91,6 +91,8 @@
 		CEC03FCD2A8E71FD00F730CE /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03FCC2A8E71FD00F730CE /* Reusable.swift */; };
 		CEC03FCF2A8E721F00F730CE /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03FCE2A8E721F00F730CE /* UICollectionView.swift */; };
 		CEC03FD12A8E728F00F730CE /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03FD02A8E728F00F730CE /* UITableView.swift */; };
+		CEC03FD32A8E744400F730CE /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03FD22A8E744400F730CE /* ToolBar.swift */; };
+		CEC03FD52A8E74B900F730CE /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC03FD42A8E74B900F730CE /* UIView.swift */; };
 		CECB44582A8A558500B86A0D /* ApiResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB44572A8A558500B86A0D /* ApiResponseProtocol.swift */; };
 		CECB445A2A8A560E00B86A0D /* RawDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB44592A8A560E00B86A0D /* RawDataResponse.swift */; };
 		CECB445C2A8A564900B86A0D /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB445B2A8A564900B86A0D /* ResponseProtocol.swift */; };
@@ -240,6 +242,8 @@
 		CEC03FCC2A8E71FD00F730CE /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		CEC03FCE2A8E721F00F730CE /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		CEC03FD02A8E728F00F730CE /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		CEC03FD22A8E744400F730CE /* ToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
+		CEC03FD42A8E74B900F730CE /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CECB44572A8A558500B86A0D /* ApiResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseProtocol.swift; sourceTree = "<group>"; };
 		CECB44592A8A560E00B86A0D /* RawDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawDataResponse.swift; sourceTree = "<group>"; };
 		CECB445B2A8A564900B86A0D /* ResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
@@ -435,6 +439,7 @@
 				CE21D7552A766DC800650BAB /* UIView+Layout.swift */,
 				CEDB8A062A83DDA700E1F27A /* Date+Extension.swift */,
 				CEDB8A082A83DDE400E1F27A /* Double+Extension.swift */,
+				CEC03FD42A8E74B900F730CE /* UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				CE21D7532A766D9500650BAB /* LoaderView.swift */,
+				CEC03FD22A8E744400F730CE /* ToolBar.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -1313,6 +1319,7 @@
 				CECB44582A8A558500B86A0D /* ApiResponseProtocol.swift in Sources */,
 				CE21D74C2A7667EB00650BAB /* CoordinatorRouterProtocol.swift in Sources */,
 				CE5EDEF52A812067006D90DD /* CityWeatherContracts.swift in Sources */,
+				CEC03FD52A8E74B900F730CE /* UIView.swift in Sources */,
 				CE21D7432A7667EB00650BAB /* ViewOutputProtocol.swift in Sources */,
 				CEA3C8442A8C5BB0009F62B9 /* RequestBuilder.swift in Sources */,
 				CE5DCBC92A7FAC2A00582FB3 /* MultyCoordinator.swift in Sources */,
@@ -1396,6 +1403,7 @@
 				CE21D73A2A7667EB00650BAB /* BaseCoordinatorRouter.swift in Sources */,
 				CE21D7562A766DC800650BAB /* UIView+Layout.swift in Sources */,
 				CE21D77E2A7694EC00650BAB /* NetworkingSessionService.swift in Sources */,
+				CEC03FD32A8E744400F730CE /* ToolBar.swift in Sources */,
 				CE21D73C2A7667EB00650BAB /* Router.swift in Sources */,
 				CE5EDEF92A812067006D90DD /* CityWeatherInteractor.swift in Sources */,
 				CEF248752A8CF32D001BEB26 /* WeatherListMainModel.swift in Sources */,
