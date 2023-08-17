@@ -29,7 +29,7 @@ extension CityWeatherModel: RunTimeModelProtocol {
     }
     
     func convertToStorable() -> StorableProtocol {
-        var storable = CityWeatherStoredModel()
+        let storable = CityWeatherStoredModel()
         storable.cod = cod
         storable.message = message
         storable.cnt = cnt

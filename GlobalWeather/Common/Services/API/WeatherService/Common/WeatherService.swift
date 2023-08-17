@@ -15,11 +15,13 @@ protocol WeatherServiceProtocol {
 
 class WeatherService: WeatherServiceProtocol {
     func cityWeather(cityName: String) -> Future<CityWeatherModel, CustomAPIError> {
-        CityWeatherRequest(cityName: cityName).performRequest()
+        CityWeatherRequest(cityName: cityName)
+            .performRequest()
     }
     
     func fetchWeather(location: Location) -> Future<LocationWeatherModel, CustomAPIError> {
-        LocationWeatherRequest(location: location).performRequest()
+        LocationWeatherRequest(location: location)
+            .performRequest()
     }
 }
 

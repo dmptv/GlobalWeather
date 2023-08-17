@@ -26,6 +26,7 @@ class BaseRequest<R: RouterProtocol, T: Decodable> {
                 .responseDecodable (decoder: self.decoder) { (response: DataResponse<T, AFError>) in
                     switch response.result {
                     case .success(let value):
+                        print(value)
                         promise(.success(value))
                     case .failure(let afError):
                         promise(.failure(CustomAPIError.requestFailed(description: afError.localizedDescription)))

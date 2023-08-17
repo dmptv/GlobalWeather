@@ -27,7 +27,7 @@ extension WeatherListWeatherModel: RunTimeModelProtocol {
     }
     
     func convertToStorable() -> StorableProtocol {
-        var storable = WeatherListWeatherStoredModel()
+        let storable = WeatherListWeatherStoredModel()
         storable.id = id
         storable.main = main
         storable._description = description

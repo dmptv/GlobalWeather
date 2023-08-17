@@ -13,7 +13,7 @@ class WeatherListModel: Codable {
     let weather: [WeatherListWeatherModel]
     let wind: WeatherListWindModel?
     let visibility: Int
-    let dtTxt: String
+    let dtTxt: String  ///timestamp
     
     enum CodingKeys: String, CodingKey {
         case dt, main, weather, wind, visibility

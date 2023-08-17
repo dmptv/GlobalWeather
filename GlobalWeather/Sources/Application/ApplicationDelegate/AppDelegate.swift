@@ -7,6 +7,8 @@
 
 import UIKit
 
+/// https://github.com/devxoul/Then
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     private lazy var app = AppServiceLocatorImpl().app()
