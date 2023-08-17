@@ -12,7 +12,7 @@ import Combine
 class MainInteractor {
     private var cancellables = Set<AnyCancellable>()
 
-    typealias ServiceLocatorAlias = APIServicesLocatorProtocol
+    typealias ServiceLocatorAlias = WeatherServiceLocatorProtocol
     final class ServiceLocator: ServiceLocatorAlias {}
     
     weak var output: MainInteractorOutput?

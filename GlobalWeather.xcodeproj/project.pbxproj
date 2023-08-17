@@ -121,7 +121,7 @@
 		CEFA03AE2A79413000D5471D /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03A42A79413000D5471D /* MainInteractor.swift */; };
 		CEFA03AF2A79413000D5471D /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03A62A79413000D5471D /* MainRouter.swift */; };
 		CEFA03B52A7AA48F00D5471D /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03B32A7AA48F00D5471D /* WeatherService.swift */; };
-		CEFA03B62A7AA48F00D5471D /* APIServicesLocatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03B42A7AA48F00D5471D /* APIServicesLocatorProtocol.swift */; };
+		CEFA03B62A7AA48F00D5471D /* WeatherServiceLocatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03B42A7AA48F00D5471D /* WeatherServiceLocatorProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -265,7 +265,7 @@
 		CEFA03A42A79413000D5471D /* MainInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		CEFA03A62A79413000D5471D /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		CEFA03B32A7AA48F00D5471D /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
-		CEFA03B42A7AA48F00D5471D /* APIServicesLocatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServicesLocatorProtocol.swift; sourceTree = "<group>"; };
+		CEFA03B42A7AA48F00D5471D /* WeatherServiceLocatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherServiceLocatorProtocol.swift; sourceTree = "<group>"; };
 		EDC4795345FF2FB6DEE1B27D /* Pods_GlobalWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobalWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -502,7 +502,6 @@
 			isa = PBXGroup;
 			children = (
 				CEA3C8472A8C6421009F62B9 /* BaseClasses */,
-				CEA3C83E2A8C52F6009F62B9 /* APIServicesLocatorProtocol */,
 				CEFA03B22A7AA48F00D5471D /* WeatherService */,
 			);
 			path = API;
@@ -799,14 +798,6 @@
 			path = LocationWeather;
 			sourceTree = "<group>";
 		};
-		CEA3C83E2A8C52F6009F62B9 /* APIServicesLocatorProtocol */ = {
-			isa = PBXGroup;
-			children = (
-				CEFA03B42A7AA48F00D5471D /* APIServicesLocatorProtocol.swift */,
-			);
-			path = APIServicesLocatorProtocol;
-			sourceTree = "<group>";
-		};
 		CEA3C8472A8C6421009F62B9 /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -843,15 +834,6 @@
 				CE5A8F462A83415B00ADFF32 /* WeatherViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		CEF248552A8C6A0D001BEB26 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				CEFA03B32A7AA48F00D5471D /* WeatherService.swift */,
-				CE1D94E42A7BF0DC0058EBBF /* WeatherRouter.swift */,
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		CEF2485C2A8CC56D001BEB26 /* Protocols */ = {
@@ -1046,7 +1028,9 @@
 		CEFA03B22A7AA48F00D5471D /* WeatherService */ = {
 			isa = PBXGroup;
 			children = (
-				CEF248552A8C6A0D001BEB26 /* Common */,
+				CEFA03B32A7AA48F00D5471D /* WeatherService.swift */,
+				CEFA03B42A7AA48F00D5471D /* WeatherServiceLocatorProtocol.swift */,
+				CE1D94E42A7BF0DC0058EBBF /* WeatherRouter.swift */,
 				CEA3C83A2A8C52A4009F62B9 /* CityWeather */,
 				CEA3C83D2A8C52D3009F62B9 /* LocationWeather */,
 			);
@@ -1349,7 +1333,7 @@
 				CE21D73B2A7667EB00650BAB /* BaseModuleRouter.swift in Sources */,
 				CE21D7722A768FEE00650BAB /* UserServiceLocator.swift in Sources */,
 				CEF2486A2A8CDA1A001BEB26 /* WeatherCityCoordStoredModel.swift in Sources */,
-				CEFA03B62A7AA48F00D5471D /* APIServicesLocatorProtocol.swift in Sources */,
+				CEFA03B62A7AA48F00D5471D /* WeatherServiceLocatorProtocol.swift in Sources */,
 				CE1D94EC2A7BFC7E0058EBBF /* WeatherServiceError.swift in Sources */,
 				CE21D7522A766CBD00650BAB /* UIViewController+Extension.swift in Sources */,
 				CE21D73E2A7667EB00650BAB /* ModuleRoutingHandlingProtocol.swift in Sources */,

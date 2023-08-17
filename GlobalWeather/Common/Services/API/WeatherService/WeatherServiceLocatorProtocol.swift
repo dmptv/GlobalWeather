@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol APIServicesLocatorProtocol {
+protocol WeatherServiceLocatorProtocol {
     func serviceAPIClient() -> WeatherServiceProtocol
 }
 
-extension APIServicesLocatorProtocol {
+extension WeatherServiceLocatorProtocol {
     func serviceAPIClient() -> WeatherServiceProtocol {
         WeatherService()
     }

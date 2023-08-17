@@ -24,9 +24,22 @@ class BaseRequest<R: RouterProtocol, T: Decodable> {
             }
             AF.request(self.route)
                 .responseDecodable (decoder: self.decoder) { (response: DataResponse<T, AFError>) in
+                    
+
                     switch response.result {
                     case .success(let value):
-                        print(value)
+                        
+                        
+                        if let locationWeatherModel = value as? LocationWeatherModel {
+                            print("Response:")
+                            dump(locationWeatherModel)
+                            
+                            if let data = response.data,
+                               let jsonString = String(data: data, encoding: .utf8) {
+                                print("Incoming JSON response:\n", jsonString)
+                            }
+                        }
+                        
                         promise(.success(value))
                     case .failure(let afError):
                         promise(.failure(CustomAPIError.requestFailed(description: afError.localizedDescription)))

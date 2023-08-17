@@ -31,10 +31,10 @@ MultyViewInput> {
                 case .finished:
                     break
                 case .failure(let error):
-                    print(error, "error")
+                    print(error.localizedDescription, "error")
                 }
             }, receiveValue: { response in
-                print(response.cod as Any, "cityName")
+                print(response.city?.country as Any, "cityName")
             })
             .store(in: &cancellables)
         
@@ -44,10 +44,10 @@ MultyViewInput> {
                 case .finished:
                     break
                 case .failure(let error):
-                    print(error, "error location")
+                    print(error.localizedDescription, "error location")
                 }
             }, receiveValue: { response in
-                print(response.message, "location")
+                print(response.city?.name as Any, "location")
             })
             .store(in: &cancellables)
     }
