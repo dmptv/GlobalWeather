@@ -12,7 +12,7 @@ import Combine
 
 class ToolBar: UIToolbar {
     private struct UI {
-        static let basicMargin = CGFloat(15)
+        static let basicMargin = CGFloat(16)
     }
     var weatherButtonDidTap = PassthroughSubject<Void, Never>()
     var settingButtonDidTap = PassthroughSubject<Void, Never>()
@@ -39,10 +39,9 @@ class ToolBar: UIToolbar {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        setupViews()
     }
 }
-
-//MARK: - Setup Views
 
 extension ToolBar {
     private func setupViews() {
