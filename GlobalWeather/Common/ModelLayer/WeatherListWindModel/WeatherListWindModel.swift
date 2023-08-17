@@ -23,9 +23,10 @@ extension WeatherListWindModel: RunTimeModelProtocol {
     }
     
     func convertToStorable() -> StorableProtocol {
-        var storable = WeatherListWindStoredModel()
-        storable.speed = speed
-        storable.deg = deg
+        let storable = WeatherListWindStoredModel().then { storable in
+            storable.speed = speed
+            storable.deg = deg
+        }
         return storable
     }
 }

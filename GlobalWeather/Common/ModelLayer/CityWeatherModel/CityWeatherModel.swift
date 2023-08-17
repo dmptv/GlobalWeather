@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Then
 
 class CityWeatherModel: Codable {
     let cod: String
@@ -29,17 +30,18 @@ extension CityWeatherModel: RunTimeModelProtocol {
     }
     
     func convertToStorable() -> StorableProtocol {
-        let storable = CityWeatherStoredModel()
-        storable.cod = cod
-        storable.message = message
-        storable.cnt = cnt
-        list.forEach {
-            guard let item = $0.convertToStorable() as? WeatherListStoredModel else {
-                return
+        let storable = CityWeatherStoredModel().then { storable in
+            storable.cod = cod
+            storable.message = message
+            storable.cnt = cnt
+            list.forEach {
+                guard let item = $0.convertToStorable() as? WeatherListStoredModel else {
+                    return
+                }
+                storable.list.append(item)
             }
-            storable.list.append(item)
+            storable.city = city?.convertToStorable() as? WeatherCityStoredModel
         }
-        storable.city = city?.convertToStorable() as? WeatherCityStoredModel
         return storable
     }
 }

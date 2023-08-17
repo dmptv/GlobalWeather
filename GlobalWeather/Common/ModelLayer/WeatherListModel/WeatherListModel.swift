@@ -36,19 +36,20 @@ extension WeatherListModel: RunTimeModelProtocol {
     }
     
     func convertToStorable() -> StorableProtocol {
-        var storable = WeatherListStoredModel()
-        storable.dt = dt
-        storable.main = main?.convertToStorable() as? WeatherListMainStorableModel
-        weather.forEach {
-            guard let item = $0.convertToStorable() as? WeatherListWeatherStoredModel else {
-                return
+        let storable = WeatherListStoredModel().then { storable in
+            storable.dt = dt
+            storable.main = main?.convertToStorable() as? WeatherListMainStorableModel
+            weather.forEach {
+                guard let item = $0.convertToStorable() as? WeatherListWeatherStoredModel else {
+                    return
+                }
+                storable.weather.append(item)
             }
-            storable.weather.append(item)
+            
+            storable.wind = wind?.convertToStorable() as? WeatherListWindStoredModel
+            storable.visibility = visibility
+            storable.dtTxt = dtTxt
         }
-        
-        storable.wind = wind?.convertToStorable() as? WeatherListWindStoredModel
-        storable.visibility = visibility
-        storable.dtTxt = dtTxt
         return storable
     }
 }

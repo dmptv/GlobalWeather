@@ -38,13 +38,14 @@ extension WeatherListMainModel: RunTimeModelProtocol {
     }
     
     func convertToStorable() -> StorableProtocol {
-        var storable = WeatherListMainStorableModel()
-        storable.temp = temp
-        storable.feelsLike = feelsLike
-        storable.tempMin = tempMin
-        storable.tempMax = tempMax
-        storable.pressure = pressure
-        storable.humidity = humidity
+        let storable = WeatherListMainStorableModel().then { storable in
+            storable.temp = temp
+            storable.feelsLike = feelsLike
+            storable.tempMin = tempMin
+            storable.tempMax = tempMax
+            storable.pressure = pressure
+            storable.humidity = humidity
+        }
         return storable
     }
 }
