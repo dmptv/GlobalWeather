@@ -430,6 +430,7 @@
 		CE21D75E2A76707100650BAB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				CEC03FCB2A8E71E200F730CE /* Reusable */,
 				CE21D7512A766CBD00650BAB /* UIViewController+Extension.swift */,
 				CE21D7552A766DC800650BAB /* UIView+Layout.swift */,
 				CEDB8A062A83DDA700E1F27A /* Date+Extension.swift */,
@@ -442,7 +443,6 @@
 			isa = PBXGroup;
 			children = (
 				CE21D7532A766D9500650BAB /* LoaderView.swift */,
-				CEC03FCB2A8E71E200F730CE /* Reusable */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
