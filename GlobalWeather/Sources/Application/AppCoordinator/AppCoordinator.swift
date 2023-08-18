@@ -33,6 +33,8 @@ final class AppCoordinator: BaseCoordinator<AppCoordinatorExitPoint>, AppCoordin
 
 extension AppCoordinator {
     private func startApp() {
+        let completion = EmptyBlock { _ in }
+        interactor.start(completion)
         runFirstFlow()
     }
 }

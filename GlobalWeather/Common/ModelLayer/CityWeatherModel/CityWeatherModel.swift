@@ -11,11 +11,11 @@ import Then
 class CityWeatherModel: Codable {
     let cod: String
     let message: Double
-    let cnt: UInt
+    let cnt: Int
     let list: [WeatherListModel]
     let city: WeatherCityModel?
     
-    init(cod: String, message: Double, cnt: UInt, list: [WeatherListModel], city: WeatherCityModel?) {
+    init(cod: String, message: Double, cnt: Int, list: [WeatherListModel], city: WeatherCityModel?) {
         self.cod = cod
         self.message = message
         self.cnt = cnt
