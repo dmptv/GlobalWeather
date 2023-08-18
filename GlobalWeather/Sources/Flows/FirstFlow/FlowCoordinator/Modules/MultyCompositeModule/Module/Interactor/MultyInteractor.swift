@@ -32,7 +32,21 @@ class MultyInteractor {
 // MARK: Private
 extension MultyInteractor: MultyInteractorInput {
     func cityWeather(cityName: String) -> Future<CityWeatherModel, CustomAPIError> {
-        apiClient.cityWeather(cityName: cityName)
+        return Future { [weak self] promise in
+            guard let self = self else {
+                return
+            }
+            
+            self.apiClient.cityWeather(cityName: cityName)
+                .sink(receiveCompletion: { receiveCompletion in
+                    if case let .failure(error) = receiveCompletion {
+                        promise(.failure(error))
+                    }
+                }, receiveValue: { response in
+                    promise(.success(response))
+                })
+                .store(in: &cancellables)
+        }
     }
     
     func fetchWeather(location: Location) -> Future<LocationWeatherModel, CustomAPIError> {
