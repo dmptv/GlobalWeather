@@ -15,13 +15,16 @@ class MultyInteractor {
     
     private var cancellables = Set<AnyCancellable>()
 
-    typealias ServiceLocatorAlias = WeatherServiceLocatorProtocol
+    typealias ServiceLocatorAlias = WeatherServiceLocatorProtocol & DatabaseServiceLocatorProtocol
     final class ServiceLocator: ServiceLocatorAlias {}
     
     private let apiClient: WeatherServiceProtocol
+    private let database: DatabaseServiceProtocol
     
     init(serviceLocator: ServiceLocatorAlias = ServiceLocator()) {
-        apiClient = serviceLocator.serviceAPIClient()    }
+        apiClient = serviceLocator.serviceAPIClient()
+        database = serviceLocator.serviceDatabase()
+    }
 
     deinit {
         cancellables.forEach { $0.cancel() }
@@ -31,6 +34,16 @@ class MultyInteractor {
 
 // MARK: Private
 extension MultyInteractor: MultyInteractorInput {
+    func retrieveCityWeather() -> Future<CityWeatherModel, CustomAPIError> {
+        return Future { [weak self] promise in
+            guard let self = self else {
+                return
+            }
+            
+        }
+    }
+
+    
     func cityWeather(cityName: String) -> Future<CityWeatherModel, CustomAPIError> {
         return Future { [weak self] promise in
             guard let self = self else {
@@ -54,7 +67,7 @@ extension MultyInteractor: MultyInteractorInput {
     }
 }
 
-/// 1 retrieve data
+/// 1 retrieve data V
 /// 2 check if the location has been saved
 /// 3 if location is nil - fetch cityWeather data, then
 /// 4 store data to real and bind data to view

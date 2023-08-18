@@ -24,6 +24,13 @@ MultyViewInput> {
         super.viewDidLoad()        
         setupSubmodules()
         
+        interactor?.retrieveCityWeather()
+            .sink(receiveCompletion: { _ in },
+                  receiveValue: { response in
+                print(response.city?.country as Any)
+            })
+            .store(in: &cancellables)
+        
         let locationData = Location(name: "Paris", latitude: 21.2859, longitude: 14.7832)
         interactor?.cityWeather(cityName: locationData.name)
             .sink(receiveCompletion: { receiveCompletion in
