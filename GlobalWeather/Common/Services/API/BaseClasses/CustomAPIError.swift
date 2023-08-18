@@ -10,4 +10,5 @@ import Alamofire
 enum CustomAPIError: Error {
     case requestFailed(description: String)
     case customError(message: String)
+    case noLocalData
 }

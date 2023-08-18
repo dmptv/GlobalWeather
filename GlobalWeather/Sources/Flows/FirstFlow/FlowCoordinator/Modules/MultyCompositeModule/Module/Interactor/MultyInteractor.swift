@@ -40,18 +40,23 @@ extension MultyInteractor: MultyInteractorInput {
                 return
             }
             
-            let completion = BlockObject<[CityWeatherModel], Void> { [weak self] arr in
+            let completion = BlockObject<[LocalWeatherModel], Void> { [weak self] arr in
                 guard let self = self else {
                     return
                 }
                 
-                if let model = arr.first {
-                    
+                guard let localData = arr.first,
+                      let locationName = localData.locationName,
+                      let locationLatitude = localData.latitude,
+                      let locationLongitude = localData.longitude
+                else {
+                    promise(.failure(.noLocalData))
+                    return
                 }
                 
             }
             
-            self.databaseService.getAll(of: CityWeatherModel.self, completion: completion)
+            self.databaseService.getAll(of: LocalWeatherModel.self, completion: completion)
         }
     }
 

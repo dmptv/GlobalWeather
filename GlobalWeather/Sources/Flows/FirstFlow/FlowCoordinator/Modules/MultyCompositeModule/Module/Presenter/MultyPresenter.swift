@@ -25,14 +25,20 @@ MultyViewInput> {
         setupSubmodules()
         
         interactor?.retrieveCityWeather()
-            .sink(receiveCompletion: { _ in },
+            .sink(receiveCompletion: { receiveCompletion in
+                if case let .failure(error) = receiveCompletion,
+                   case .noLocalData = error {
+                    print("no data kanat")
+                }
+            },
                   receiveValue: { response in
                 print(response.city?.country as Any)
             })
             .store(in: &cancellables)
         
-        let locationData = LocalWeatherModel(name: "Paris", latitude: 21.2859, longitude: 14.7832)
-        interactor?.cityWeather(cityName: locationData.name)
+        
+        let locationData = LocalWeatherModel(locationName: "Paris", latitude: 21.2859, longitude: 14.7832)
+        interactor?.cityWeather(cityName: locationData.locationName ?? "")
             .sink(receiveCompletion: { receiveCompletion in
                 switch receiveCompletion {
                 case .finished:
