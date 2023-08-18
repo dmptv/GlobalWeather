@@ -8,6 +8,12 @@
 
 import Combine
 
+enum LocalDataState {
+    case noLocalData
+    case hasLocation(LocalWeatherModel)
+    case sendLocalData(name: String)
+}
+
 /// https://developer.apple.com/documentation/mapkit/mapkit_for_appkit_and_uikit/interacting_with_nearby_points_of_interest
 
 class MultyInteractor {
@@ -34,30 +40,28 @@ class MultyInteractor {
 
 // MARK: Private
 extension MultyInteractor: MultyInteractorInput {
-    func retrieveCityWeather() -> Future<CityWeatherModel, CustomAPIError> {
-        return Future { [weak self] promise in
+    func retrieveCityWeather() -> AnyPublisher<LocalDataState, Never> {
+        let subject = PassthroughSubject<LocalDataState, Never>()
+        
+        let completion = BlockObject<[LocalWeatherModel], Void> { [weak self] arr in
             guard let self = self else {
                 return
             }
             
-            let completion = BlockObject<[LocalWeatherModel], Void> { [weak self] arr in
-                guard let self = self else {
-                    return
-                }
-                
-                guard let localData = arr.first,
-                      let locationName = localData.locationName,
-                      let locationLatitude = localData.latitude,
-                      let locationLongitude = localData.longitude
-                else {
-                    promise(.failure(.noLocalData))
-                    return
-                }
-                
+            guard let localData = arr.first,
+                  let locationName = localData.locationName,
+                  let locationLatitude = localData.latitude,
+                  let locationLongitude = localData.longitude
+            else {
+                subject.send(.noLocalData)
+                return
             }
             
-            self.databaseService.getAll(of: LocalWeatherModel.self, completion: completion)
         }
+        
+        self.databaseService.getAll(of: LocalWeatherModel.self, completion: completion)
+        
+        return subject.eraseToAnyPublisher()
     }
 
     

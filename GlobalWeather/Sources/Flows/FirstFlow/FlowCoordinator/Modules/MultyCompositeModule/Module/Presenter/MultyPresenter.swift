@@ -25,63 +25,48 @@ MultyViewInput> {
         setupSubmodules()
         
         interactor?.retrieveCityWeather()
-            .sink(receiveCompletion: { [weak self] receiveCompletion in
+            .sink { [weak self] state in
                 guard let self = self else {
                     return
                 }
-                
-                switch receiveCompletion {
-                case .finished:
-                    break
-                case .failure(let error) where error == .noLocalData:
-                    let locationData = LocalWeatherModel(locationName: "Paris", latitude: 21.2859, longitude: 14.7832)
-                    
-                    self.interactor?.cityWeather(cityName: locationData.locationName ?? "")
-                        .sink(receiveCompletion: { _ in },
-                              receiveValue: { response in
-                            print(response.city?.country as Any)
-                        })
-                        .store(in: &self.cancellables)
-                    
-                case .failure(let error):
-                    // Handle other error cases here
-                    print(error.localizedDescription)
+                switch state {
+                case .noLocalData:
+                    self.subsribeForCityWeather(cityName: "Paris")
+                case let .hasLocation(location):
+                    self.subsribeForFetchWeather(location: location)
+                case let .sendLocalData(name):
+                    self.subsribeForCityWeather(cityName: name)
                 }
-            },
-            receiveValue: { _ in })
+            }
             .store(in: &cancellables)
-
-
-
-
-
-
-        
-        
-        let locationData = LocalWeatherModel(locationName: "Paris", latitude: 21.2859, longitude: 14.7832)
-        interactor?.cityWeather(cityName: locationData.locationName ?? "")
+    }
+    
+    private func subsribeForCityWeather(cityName: String) {
+        interactor?.cityWeather(cityName: cityName)
             .sink(receiveCompletion: { receiveCompletion in
                 switch receiveCompletion {
                 case .finished:
                     break
                 case .failure(let error):
-                    print(error.localizedDescription, "error cityName")
+                    print(error.localizedDescription, "error sendLocalData")
                 }
             }, receiveValue: { response in
-                print(response.city?.country as Any, "cityName")
+                print(response.city?.country as Any, "sendLocalData")
             })
             .store(in: &cancellables)
-        
-        interactor?.fetchWeather(location: locationData)
+    }
+    
+    private func subsribeForFetchWeather(location: LocalWeatherModel) {
+        interactor?.fetchWeather(location: location)
             .sink(receiveCompletion: { receiveCompletion in
                 switch receiveCompletion {
                 case .finished:
                     break
                 case .failure(let error):
-                    print(error.localizedDescription, "error location")
+                    print(error.localizedDescription, "error hasLocation")
                 }
             }, receiveValue: { response in
-                print(response.city?.name as Any, "location")
+                print(response.city?.name as Any, "hasLocation")
             })
             .store(in: &cancellables)
     }
