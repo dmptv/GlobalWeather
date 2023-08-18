@@ -14,8 +14,8 @@ class ToolBar: UIToolbar {
     private struct UI {
         static let basicMargin = CGFloat(16)
     }
-    var weatherButtonDidTap = PassthroughSubject<Void, Never>()
-    var settingButtonDidTap = PassthroughSubject<Void, Never>()
+    var weatherButtonDidTapSubject = PassthroughSubject<Void, Never>()
+    var settingButtonDidTapSubject = PassthroughSubject<Void, Never>()
     
     private let configuration = UIImage.SymbolConfiguration(pointSize: 23, weight: .regular, scale: .default)
     private lazy var weatherButton = UIButton().then {
@@ -69,10 +69,10 @@ extension ToolBar {
 
 extension ToolBar {
     @objc private func weatherButtondidTap(_ sender: UIButton) {
-        weatherButtonDidTap.send()
+        weatherButtonDidTapSubject.send()
     }
     
     @objc private func locationButtondidTap(_ sender: UIButton) {
-        settingButtonDidTap.send()
+        settingButtonDidTapSubject.send()
     }
 }
