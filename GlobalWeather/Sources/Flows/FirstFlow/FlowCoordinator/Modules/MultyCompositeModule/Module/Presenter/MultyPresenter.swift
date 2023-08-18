@@ -31,7 +31,7 @@ MultyViewInput> {
             })
             .store(in: &cancellables)
         
-        let locationData = Location(name: "Paris", latitude: 21.2859, longitude: 14.7832)
+        let locationData = LocalWeatherModel(name: "Paris", latitude: 21.2859, longitude: 14.7832)
         interactor?.cityWeather(cityName: locationData.name)
             .sink(receiveCompletion: { receiveCompletion in
                 switch receiveCompletion {

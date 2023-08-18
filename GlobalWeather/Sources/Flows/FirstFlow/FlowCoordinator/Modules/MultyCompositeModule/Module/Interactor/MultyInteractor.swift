@@ -19,11 +19,11 @@ class MultyInteractor {
     final class ServiceLocator: ServiceLocatorAlias {}
     
     private let apiClient: WeatherServiceProtocol
-    private let database: DatabaseServiceProtocol
+    private let databaseService: DatabaseServiceProtocol
     
     init(serviceLocator: ServiceLocatorAlias = ServiceLocator()) {
         apiClient = serviceLocator.serviceAPIClient()
-        database = serviceLocator.serviceDatabase()
+        databaseService = serviceLocator.serviceDatabase()
     }
 
     deinit {
@@ -40,6 +40,18 @@ extension MultyInteractor: MultyInteractorInput {
                 return
             }
             
+            let completion = BlockObject<[CityWeatherModel], Void> { [weak self] arr in
+                guard let self = self else {
+                    return
+                }
+                
+                if let model = arr.first {
+                    
+                }
+                
+            }
+            
+            self.databaseService.getAll(of: CityWeatherModel.self, completion: completion)
         }
     }
 
@@ -62,7 +74,7 @@ extension MultyInteractor: MultyInteractorInput {
         }
     }
     
-    func fetchWeather(location: Location) -> Future<LocationWeatherModel, CustomAPIError> {
+    func fetchWeather(location: LocalWeatherModel) -> Future<LocationWeatherModel, CustomAPIError> {
         apiClient.fetchWeather(location: location)
     }
 }

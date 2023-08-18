@@ -43,7 +43,5 @@ extension LocationWeatherModel: RunTimeModelProtocol {
             storable.city = city?.convertToStorable() as? WeatherCityStoredModel
         }
         return storable
-    }
-    
-    
+    }   
 }

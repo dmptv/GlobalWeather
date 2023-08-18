@@ -11,7 +11,7 @@ enum WeatherRouter: RouterProtocol {
     private static let requestBuilder = RequestBuilder<WeatherRouter>()
     
     case city(name: String)
-    case wheatherBy(location: Location)
+    case wheatherBy(location: LocalWeatherModel)
 }
 
 extension WeatherRouter: URLRequestConvertible {
