@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import Combine
 
 protocol DatabaseServiceProtocol {
     func setup(version: UInt64, key: Data)
@@ -35,6 +36,8 @@ protocol DatabaseServiceProtocol {
     func get<T>(primaryKey: Any,
                 callbackQueue: DispatchQueue,
                 completion: BlockObject<T?, Void>) where T: RunTimeModelProtocol
+    
+    func getAll<T: RunTimeModelProtocol>(of type: T.Type, callbackQueue: DispatchQueue) -> Future<[T], Never>
 }
 
 extension DatabaseServiceProtocol {
@@ -63,6 +66,10 @@ extension DatabaseServiceProtocol {
         getAll(of: type, callbackQueue: .main, completion: completion)
     }
     
+    func getAll<T>(of type: T.Type) -> Future<[T], Never> where T: RunTimeModelProtocol {
+        getAll(of: type, callbackQueue: .main)
+    }
+
     func get<T>(primaryKey: Any,
                 completion: BlockObject<T?, Void>) where T: RunTimeModelProtocol {
         get(primaryKey: primaryKey, callbackQueue: .main, completion: completion)
@@ -208,6 +215,28 @@ final class DatabaseService: DatabaseServiceProtocol {
             }
         }
     }
+    
+    public func getAll<T: RunTimeModelProtocol>(of type: T.Type, callbackQueue: DispatchQueue = .main) -> Future<[T], Never> {
+        return Future<[T], Never> { promise in
+            self.queue.async { [weak self] in
+                guard let realm = self?.realm else {
+                    callbackQueue.async {
+                        promise(.success([]))
+                    }
+                    return
+                }
+                
+                autoreleasepool {
+                    let results = realm.objects(type.storableType()).compactMap { ($0 as? StorableProtocol)?.createRuntimeModel() }
+                    let array = Array(results) as? [T] ?? []
+                    callbackQueue.async {
+                        promise(.success(array))
+                    }
+                }
+            }
+        }
+    }
+
     
     public func get<T>(primaryKey : Any,
                        callbackQueue: DispatchQueue = .main,

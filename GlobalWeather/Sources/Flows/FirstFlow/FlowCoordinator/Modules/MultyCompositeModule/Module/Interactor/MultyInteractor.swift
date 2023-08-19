@@ -43,6 +43,26 @@ class MultyInteractor {
 extension MultyInteractor: MultyInteractorInput {
     func retrieveCityWeather() -> AnyPublisher<LocalDataState, Never> {
         let subject = PassthroughSubject<LocalDataState, Never>()
+
+        databaseService.getAll(of: CityWeatherModel.self)
+            .map { $0.first }
+            .sink { [weak self] model in
+                guard let self = self else {
+                    return
+                }
+                print(model)
+            }
+            .store(in: &cancellables)
+        
+        
+        
+            
+        return subject.eraseToAnyPublisher()
+    }
+    
+    
+    func retrieveCityWeather2() -> AnyPublisher<LocalDataState, Never> {
+        let subject = PassthroughSubject<LocalDataState, Never>()
         
         let completion = BlockObject<[LocalWeatherModel], Void> { [weak self] arr in
             guard let self = self else {
