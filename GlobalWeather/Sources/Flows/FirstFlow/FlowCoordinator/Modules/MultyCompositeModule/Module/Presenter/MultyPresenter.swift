@@ -24,7 +24,7 @@ MultyViewInput> {
         super.viewDidLoad()        
         setupSubmodules()
         
-        interactor?.retrieveCityWeather()
+        interactor?.getDataStateSubject
             .sink { [weak self] state in
                 guard let self = self else {
                     return

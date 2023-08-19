@@ -21,6 +21,7 @@ class MultyInteractor {
     weak var output: MultyInteractorOutput?
     
     private var cancellables = Set<AnyCancellable>()
+    private(set) var getDataStateSubject = PassthroughSubject<LocalDataState, Never>()
 
     typealias ServiceLocatorAlias = WeatherServiceLocatorProtocol & DatabaseServiceLocatorProtocol
     final class ServiceLocator: ServiceLocatorAlias {}
@@ -41,23 +42,32 @@ class MultyInteractor {
 
 // MARK: Private
 extension MultyInteractor: MultyInteractorInput {
-    func retrieveCityWeather() -> AnyPublisher<LocalDataState, Never> {
-        let subject = PassthroughSubject<LocalDataState, Never>()
-
-        databaseService.getAll(of: CityWeatherModel.self)
+    func retrieveCityWeather() {
+        let localDataPublisher = databaseService.getAll(of: LocalWeatherModel.self)
+            .eraseToAnyPublisher()
+            .share()
+        
+        localDataPublisher
             .map { $0.first }
-            .sink { [weak self] model in
+            .compactMap { $0 }
+            .sink { [weak self] localData in
                 guard let self = self else {
                     return
                 }
-                print(model)
+                
+                guard let locationName = localData.locationName,
+                      let _ = localData.latitude,
+                      let _ = localData.longitude
+                else {
+                    getDataStateSubject.send(.fetchFeaturedCityWeatherData)
+                    return
+                }
+                
+                
+                
             }
             .store(in: &cancellables)
         
-        
-        
-            
-        return subject.eraseToAnyPublisher()
     }
     
     
