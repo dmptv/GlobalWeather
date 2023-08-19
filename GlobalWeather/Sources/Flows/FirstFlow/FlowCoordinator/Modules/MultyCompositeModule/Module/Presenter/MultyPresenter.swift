@@ -18,7 +18,7 @@ MultyViewInput> {
 //    var submodule2: Module<Submodule2ModuleInput, Submodule2ModuleOutput>?
     
     private var cancellables = Set<AnyCancellable>()
-
+    @FeaturedCityProvider var featuredCity: String
     
     override func viewDidLoad() {
         super.viewDidLoad()        
@@ -31,7 +31,7 @@ MultyViewInput> {
                 }
                 switch state {
                 case .fetchFeaturedCityWeatherData:
-                    self.subsribeForFeaturedCityWeather("Paris")
+                    self.subsribeForFeaturedCityWeather(self.featuredCity)
                 case let .fetchLocationWeatherData(location):
                     self.subsribeForFetchWeather(with: location)
                 case .presentStoredData(let model, let city):
@@ -52,10 +52,10 @@ MultyViewInput> {
                 case .finished:
                     break
                 case .failure(let error):
-                    print(error.localizedDescription, "error sendLocalData")
+                    print(error.localizedDescription, "error featured")
                 }
             }, receiveValue: { response in
-                print(response.city?.country as Any, "sendLocalData")
+                print(response.city?.name as Any, "featured")
             })
             .store(in: &cancellables)
     }
@@ -67,10 +67,10 @@ MultyViewInput> {
                 case .finished:
                     break
                 case .failure(let error):
-                    print(error.localizedDescription, "error hasLocation")
+                    print(error.localizedDescription, "error by location")
                 }
             }, receiveValue: { response in
-                print(response.city?.name as Any, "hasLocation")
+                print(response.city?.name as Any, "by locatiion")
             })
             .store(in: &cancellables)
     }
