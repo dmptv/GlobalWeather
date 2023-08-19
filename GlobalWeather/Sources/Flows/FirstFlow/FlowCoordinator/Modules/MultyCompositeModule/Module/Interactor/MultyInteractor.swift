@@ -50,12 +50,21 @@ extension MultyInteractor: MultyInteractorInput {
             
             guard let localData = arr.first,
                   let locationName = localData.locationName,
-                  let locationLatitude = localData.latitude,
-                  let locationLongitude = localData.longitude
+                  let _ = localData.latitude,
+                  let _ = localData.longitude
             else {
                 subject.send(.fetchCityWeatherData)
                 return
             }
+            
+            if let _ = localData?.weatherData,
+                  let weatherResponse = relamManager.retrieveWeatherResponse() {
+                
+                fetchWeatherData(by: localData)
+            } else {
+                
+            }
+            
             subject.send(.fetchLocationWeatherData(localData))
         }
         
