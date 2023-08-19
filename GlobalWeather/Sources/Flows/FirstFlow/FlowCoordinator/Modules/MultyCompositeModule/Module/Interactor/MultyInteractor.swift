@@ -10,7 +10,7 @@ import Combine
 import Foundation
 
 enum LocalDataState {
-    case fetchCityWeatherData
+    case fetchFeaturedCityWeatherData
     case fetchLocationWeatherData(LocalWeatherModel)
     case presentStoredData(CityWeatherModel, _ name: String)
 }
@@ -54,7 +54,7 @@ extension MultyInteractor: MultyInteractorInput {
                   let _ = localData.latitude,
                   let _ = localData.longitude
             else {
-                subject.send(.fetchCityWeatherData)
+                subject.send(.fetchFeaturedCityWeatherData)
                 return
             }
             
