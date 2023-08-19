@@ -9,9 +9,9 @@
 import Combine
 
 enum LocalDataState {
-    case noLocalData
-    case hasLocation(LocalWeatherModel)
-    case sendLocalData(name: String)
+    case fetchCityWeatherData
+    case fetchLocationWeatherData(LocalWeatherModel)
+    case fetchStoredCityWeatherData(name: String)
 }
 
 /// https://developer.apple.com/documentation/mapkit/mapkit_for_appkit_and_uikit/interacting_with_nearby_points_of_interest
@@ -53,10 +53,10 @@ extension MultyInteractor: MultyInteractorInput {
                   let locationLatitude = localData.latitude,
                   let locationLongitude = localData.longitude
             else {
-                subject.send(.noLocalData)
+                subject.send(.fetchCityWeatherData)
                 return
             }
-            subject.send(.hasLocation(localData))
+            subject.send(.fetchLocationWeatherData(localData))
         }
         
         self.databaseService.getAll(of: LocalWeatherModel.self, completion: completion)

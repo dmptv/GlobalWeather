@@ -30,11 +30,11 @@ MultyViewInput> {
                     return
                 }
                 switch state {
-                case .noLocalData:
+                case .fetchCityWeatherData:
                     self.subsribeForCityWeather(cityName: "Paris")
-                case let .hasLocation(location):
+                case let .fetchLocationWeatherData(location):
                     self.subsribeForFetchWeather(location: location)
-                case let .sendLocalData(name):
+                case let .fetchStoredCityWeatherData(name):
                     self.subsribeForCityWeather(cityName: name)
                 }
             }
