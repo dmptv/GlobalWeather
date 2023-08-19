@@ -89,7 +89,7 @@ extension MultyInteractor: MultyInteractorInput {
     }
 
     
-    func cityWeather(cityName: String) -> Future<CityWeatherModel, CustomAPIError> {
+    func featuredCityWeather(cityName: String) -> Future<CityWeatherModel, CustomAPIError> {
         return Future { [weak self] promise in
             guard let self = self else {
                 return

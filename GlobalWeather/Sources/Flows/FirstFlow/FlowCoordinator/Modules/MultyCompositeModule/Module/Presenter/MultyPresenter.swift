@@ -46,7 +46,7 @@ MultyViewInput> {
     }
     
     private func subsribeForFeaturedCityWeather(_ cityName: String) {
-        interactor?.cityWeather(cityName: cityName)
+        interactor?.featuredCityWeather(cityName: cityName)
             .sink(receiveCompletion: { receiveCompletion in
                 switch receiveCompletion {
                 case .finished:
