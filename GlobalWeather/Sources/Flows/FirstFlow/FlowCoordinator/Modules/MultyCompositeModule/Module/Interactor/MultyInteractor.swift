@@ -7,11 +7,12 @@
 //
 
 import Combine
+import Foundation
 
 enum LocalDataState {
     case fetchCityWeatherData
-    case fetchStoredCityWeatherData(String)
     case fetchLocationWeatherData(LocalWeatherModel)
+    case presentStoredData(CityWeatherModel, _ name: String)
 }
 
 /// https://developer.apple.com/documentation/mapkit/mapkit_for_appkit_and_uikit/interacting_with_nearby_points_of_interest
@@ -57,24 +58,33 @@ extension MultyInteractor: MultyInteractorInput {
                 return
             }
             
-            if let _ = localData?.weatherData,
-                  let weatherResponse = relamManager.retrieveWeatherResponse() {
+            let localDataCompletion = BlockObject<[CityWeatherModel], Void> { [weak self] arr in
+                guard let self = self else {
+                    return
+                }
                 
-                fetchWeatherData(by: localData)
-            } else {
+                if let _ = localData.weatherData,
+                   let model = arr.first,
+                   let lastRefreshDate = localData.lastRefreshedDate {
+                    
+                    if self.isDataTooOld(from: lastRefreshDate) {
+                        subject.send(.fetchLocationWeatherData(localData))
+                    } else {
+                        subject.send(.presentStoredData(model, locationName))
+                    }
+                       
+                } else {
+                    // no weather data with new location
+                    subject.send(.fetchLocationWeatherData(localData))
+                    return
+                }
                 
             }
             
-            subject.send(.fetchLocationWeatherData(localData))
+            self.databaseService.getAll(of: CityWeatherModel.self, completion: localDataCompletion)
         }
         
         self.databaseService.getAll(of: LocalWeatherModel.self, completion: completion)
-        
-        /// 9 check if data is 3 hour long
-        /// 10 if  3 hour long - fetchWeather for location
-        
-        /// 12 if less 3 hour - fetch - present stored data
-        
         return subject.eraseToAnyPublisher()
     }
 
@@ -91,7 +101,7 @@ extension MultyInteractor: MultyInteractorInput {
                         promise(.failure(error))
                     }
                 }, receiveValue: { response in
-                    /// 4 store data to realm and bind data to view
+                    // 4 store data to realm and bind data to view
                     promise(.success(response))
                 })
                 .store(in: &cancellables)
@@ -100,6 +110,11 @@ extension MultyInteractor: MultyInteractorInput {
     
     func fetchWeather(location: LocalWeatherModel) -> Future<LocationWeatherModel, CustomAPIError> {
         apiClient.fetchWeather(location: location)
+    }
+    
+    private func isDataTooOld(from lastRefreshDate: Date) -> Bool {
+        let currentDate = Date()
+        return currentDate.minutes(from: lastRefreshDate) >= 180 ? true : false
     }
 }
 

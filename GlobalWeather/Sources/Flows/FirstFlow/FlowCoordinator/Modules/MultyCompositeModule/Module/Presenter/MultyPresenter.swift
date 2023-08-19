@@ -33,12 +33,16 @@ MultyViewInput> {
                 case .fetchCityWeatherData:
                     self.subsribeForCityWeather("Paris")
                 case let .fetchLocationWeatherData(location):
-                    self.subsribeForFetchWeather(location)
-                case let .fetchStoredCityWeatherData(name):
-                    self.subsribeForCityWeather(name)
+                    self.subsribeForFetchWeather(with: location)
+                case .presentStoredData(let model, let city):
+                    self.presentData(model, city)
                 }
             }
             .store(in: &cancellables)
+    }
+    
+    private func presentData(_ model: CityWeatherModel, _ city: String) {
+        
     }
     
     private func subsribeForCityWeather(_ cityName: String) {
@@ -56,7 +60,7 @@ MultyViewInput> {
             .store(in: &cancellables)
     }
     
-    private func subsribeForFetchWeather(_ location: LocalWeatherModel) {
+    private func subsribeForFetchWeather(with location: LocalWeatherModel) {
         interactor?.fetchWeather(location: location)
             .sink(receiveCompletion: { receiveCompletion in
                 switch receiveCompletion {
