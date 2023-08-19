@@ -47,23 +47,42 @@ extension MultyInteractor: MultyInteractorInput {
             .eraseToAnyPublisher()
             .share()
         
+        // if local data is nil
         localDataPublisher
             .map { $0.first }
-            .compactMap { $0 }
+            .map { localData -> LocalWeatherModel? in
+                guard let _ = localData?.locationName,
+                      let _ = localData?.latitude,
+                      let _ = localData?.longitude
+                else {
+                    return nil
+                }
+                return localData
+            }
+            .filter { $0 == nil }
             .sink { [weak self] localData in
                 guard let self = self else {
                     return
                 }
-                
-                guard let locationName = localData.locationName,
-                      let _ = localData.latitude,
-                      let _ = localData.longitude
+                self.getDataStateSubject.send(.fetchFeaturedCityWeatherData)
+            }
+            .store(in: &cancellables)
+        
+        localDataPublisher
+            .map { $0.first }
+            .compactMap { localData -> LocalWeatherModel? in
+                guard let _ = localData?.locationName,
+                      let _ = localData?.latitude,
+                      let _ = localData?.longitude
                 else {
-                    getDataStateSubject.send(.fetchFeaturedCityWeatherData)
+                    return nil
+                }
+                return localData
+            }
+            .sink { [weak self] localData in
+                guard let self = self else {
                     return
                 }
-                
-                
                 
             }
             .store(in: &cancellables)
