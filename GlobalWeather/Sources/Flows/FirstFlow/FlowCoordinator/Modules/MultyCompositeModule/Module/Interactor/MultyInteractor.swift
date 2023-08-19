@@ -10,8 +10,8 @@ import Combine
 
 enum LocalDataState {
     case fetchCityWeatherData
+    case fetchStoredCityWeatherData(String)
     case fetchLocationWeatherData(LocalWeatherModel)
-    case fetchStoredCityWeatherData(name: String)
 }
 
 /// https://developer.apple.com/documentation/mapkit/mapkit_for_appkit_and_uikit/interacting_with_nearby_points_of_interest
