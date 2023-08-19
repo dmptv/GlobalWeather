@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Then
 
 class WeatherCityCoordModel: Codable {
     let lat: Double
@@ -23,9 +24,10 @@ extension WeatherCityCoordModel: RunTimeModelProtocol {
     }
     
     func convertToStorable() -> StorableProtocol {
-        let storable = WeatherCityCoordStoredModel()
-        storable.lat = lat
-        storable.lon = lon
+        let storable = WeatherCityCoordStoredModel().then { storable in
+            storable.lat = lat
+            storable.lon = lon
+        }
         return storable
     }
 }

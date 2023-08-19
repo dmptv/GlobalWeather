@@ -31,13 +31,14 @@ extension WeatherCityModel: RunTimeModelProtocol {
     }
     
     func convertToStorable() -> StorableProtocol {
-        let storable = WeatherCityStoredModel()
-        storable.id = id
-        storable.name = name
-        storable.coord = coord?.convertToStorable() as? WeatherCityCoordStoredModel
-        storable.country = country
-        storable.timezone = timezone
-        storable.population = population ?? -1
+        let storable = WeatherCityStoredModel().then { storable in
+            storable.id = id
+            storable.name = name
+            storable.coord = coord?.convertToStorable() as? WeatherCityCoordStoredModel
+            storable.country = country
+            storable.timezone = timezone
+            storable.population = population ?? -1
+        }
         return storable
     }  
 }

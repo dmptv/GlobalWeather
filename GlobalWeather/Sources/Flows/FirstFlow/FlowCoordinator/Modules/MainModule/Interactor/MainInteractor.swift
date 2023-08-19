@@ -33,7 +33,7 @@ extension MainInteractor: MainInteractorInput {
         apiClient.cityWeather(cityName: cityName)
     }
     
-    func fetchWeather(location: Location) -> Future<LocationWeatherModel, CustomAPIError> {
+    func fetchWeather(location: LocalWeatherModel) -> Future<LocationWeatherModel, CustomAPIError> {
         apiClient.fetchWeather(location: location)
     }
 }

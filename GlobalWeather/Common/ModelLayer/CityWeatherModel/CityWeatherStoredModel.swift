@@ -11,7 +11,7 @@ import RealmSwift
 class CityWeatherStoredModel: Object {
     @objc dynamic var cod: String = ""
     @objc dynamic var message: Double = 0
-    @objc dynamic var cnt: UInt = 0
+    @objc dynamic var cnt: Int = 0
     var list = List<WeatherListStoredModel>()
     @objc dynamic var city: WeatherCityStoredModel?
 }

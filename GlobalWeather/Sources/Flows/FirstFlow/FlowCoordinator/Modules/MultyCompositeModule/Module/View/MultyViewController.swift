@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import Combine
 
 class MultyViewController: BaseViewController {
     var output: MultyViewOutput?
+    private var cancellables = Set<AnyCancellable>()
     static let headerViewHeightRatio = CGFloat(0.38)
     
-    @IBOutlet var container1: UIView!
-    @IBOutlet var container2: UIView!
+    @IBOutlet private weak var container1: UIView!
+    @IBOutlet private weak var container2: UIView!
+    @IBOutlet private weak var toolBar: ToolBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +33,31 @@ class MultyViewController: BaseViewController {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.isHidden = false
     }
+    
+    deinit {
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
+    }
 }
 
 // MARK: - Configure
 extension MultyViewController: MultyViewInput {
     private func setupSubviews() {
+        subscribeForPublishers()
+    }
+    
+    private func subscribeForPublishers() {
+        toolBar.weatherButtonDidTapSubject
+            .sink { _ in
+                
+            }
+            .store(in: &cancellables)
+        
+        toolBar.settingButtonDidTapSubject
+            .sink { _ in
+                
+            }
+            .store(in: &cancellables)
     }
 }
 

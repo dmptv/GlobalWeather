@@ -1,7 +1,6 @@
 import Foundation
 
 extension Double {
-    
     // kelvin to celsius
     func makeCelsius() -> String {
         let argue = self - 273.15
