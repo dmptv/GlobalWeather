@@ -56,10 +56,15 @@ extension MultyInteractor: MultyInteractorInput {
                 subject.send(.noLocalData)
                 return
             }
-            
+            subject.send(.hasLocation(localData))
         }
         
         self.databaseService.getAll(of: LocalWeatherModel.self, completion: completion)
+        
+        /// 9 check if data is 3 hour long
+        /// 10 if  3 hour long - fetchWeather for location
+        
+        /// 12 if less 3 hour - fetch - present stored data
         
         return subject.eraseToAnyPublisher()
     }
@@ -77,6 +82,7 @@ extension MultyInteractor: MultyInteractorInput {
                         promise(.failure(error))
                     }
                 }, receiveValue: { response in
+                    /// 4 store data to realm and bind data to view
                     promise(.success(response))
                 })
                 .store(in: &cancellables)
@@ -88,15 +94,15 @@ extension MultyInteractor: MultyInteractorInput {
     }
 }
 
-/// 1 retrieve data V
-/// 2 check if the location has been saved
-/// 3 if location is nil - fetch cityWeather data, then
-/// 4 store data to real and bind data to view
+/// 1 retrieve data - V
+/// 2 check if the location has been saved - V
+/// 3 if location is nil - fetch cityWeather data, then - V
+/// 4 store data to realm and bind data to view
 /// 5 if location is not nil, then
 /// 6 check if location has been changed from settings, then
 /// 7 fetchWeather for location, then
-/// 8 store data to real and bind data to view
+/// 8 store data to realm and bind data to view
 /// 9 check if data is 3 hour long
 /// 10 if  3 hour long - fetchWeather for location,
 /// 11 store data to real and bind data to view
-/// 12 if less 3 hour - present stored data
+/// 12 if less 3 hour - fetch - present stored data

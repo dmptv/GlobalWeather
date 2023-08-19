@@ -59,11 +59,11 @@ class AppInteractor: AppInteractorInputProtocol {
 
 extension AppInteractor {
     private func getKey() -> Data {
-        // Идентификатор для нашего keychain — должен быть уникальным в приложения.
+        /// Identifier for our keychain - must be unique across applications.
         let keychainIdentifier = "com.globalWeather.Realm.EncryptionKey"
         let keychainIdentifierData = keychainIdentifier.data(using: String.Encoding.utf8, allowLossyConversion: false)
         
-        // Проверка keychain на наличие существующего ключа
+        /// Check keychain for an existing key
         var query: [NSString: AnyObject] = [
             kSecClass: kSecClassKey,
             kSecAttrApplicationTag: keychainIdentifierData as AnyObject,
@@ -77,7 +77,7 @@ extension AppInteractor {
             return dataTypeRef as? Data ?? Data()
         }
         
-        // Сгенерировать случайный ключ шифрования
+        // Generate a random encryption key
         var key = Data(count: 64)
         key.withUnsafeMutableBytes({ (pointer: UnsafeMutableRawBufferPointer) in
             guard let baseAddress = pointer.baseAddress else {
@@ -88,7 +88,7 @@ extension AppInteractor {
             assert(result == 0, "Failed to get random bytes")
         })
         
-        // Сохранить ключ в keychain
+        /// Store key in keychain
         query = [
             kSecClass: kSecClassKey,
             kSecAttrApplicationTag: keychainIdentifierData as AnyObject,
