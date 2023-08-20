@@ -14,7 +14,7 @@ class MultyPresenter: BasePresenter
 MultyInteractorInput,
 MultyRouterInputProtocol,
 MultyViewInput> {
-    var submodule1: Module<CityWeatherModuleInput, CityWeatherModuleOutput>?
+    var citySubmodule: Module<CityWeatherModuleInput, CityWeatherModuleOutput>?
 //    var submodule2: Module<Submodule2ModuleInput, Submodule2ModuleOutput>?
     
     private var cancellables = Set<AnyCancellable>()
@@ -60,7 +60,7 @@ MultyViewInput> {
                 guard let self = self else {
                     return
                 }
-                self.submodule1?.input.setData(data: response.city?.name ?? "Not known city")
+                self.citySubmodule?.input.setData(data: response.city?.name ?? "Not known city")
             })
             .store(in: &cancellables)
     }
@@ -89,7 +89,7 @@ MultyViewInput> {
 // MARK: Private
 extension MultyPresenter {
     private func setupSubmodules() {
-        guard let submodule1 = submodule1 else {
+        guard let submodule1 = citySubmodule else {
                 return
         }
         router?.showSubmodule1(submodule1)
