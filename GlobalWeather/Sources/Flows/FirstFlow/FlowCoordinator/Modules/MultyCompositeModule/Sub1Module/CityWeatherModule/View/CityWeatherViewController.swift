@@ -24,17 +24,16 @@ class CityWeatherViewController: BaseViewController {
 
 // MARK: - Configure
 extension CityWeatherViewController: CityWeatherViewInput {
-    private func setupSubviews() {
-        
+    func configureView(viewModel: CityDataViewModel) {
+        cityNameLabel.text = viewModel.cityName
+        temperatureLabel.text = viewModel.tempOriginal
+        weatherDescriptionLabel.text = viewModel.description
     }
 }
 
 extension CityWeatherViewController {
-    func configureView(viewModel: [WeatherViewModel], cityName: String) {
-        guard let recentData = viewModel.first else { return }
-        cityNameLabel.text = cityName
-        temperatureLabel.text = recentData.tempOriginal
-        weatherDescriptionLabel.text = recentData.description
+    private func setupSubviews() {
+        
     }
 }
 

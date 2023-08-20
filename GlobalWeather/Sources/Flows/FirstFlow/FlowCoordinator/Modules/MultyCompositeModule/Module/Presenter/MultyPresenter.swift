@@ -60,7 +60,7 @@ MultyViewInput> {
                 guard let self = self else {
                     return
                 }
-                self.citySubmodule?.input.setData(data: response.city?.name ?? "Not known city")
+                self.citySubmodule?.input.setData(CityDataViewModel.configure(response))
             })
             .store(in: &cancellables)
     }
