@@ -15,7 +15,7 @@ MultyInteractorInput,
 MultyRouterInputProtocol,
 MultyViewInput> {
     var citySubmodule: Module<CityWeatherModuleInput, CityWeatherModuleOutput>?
-//    var submodule2: Module<Submodule2ModuleInput, Submodule2ModuleOutput>?
+    var hourSubmodule: Module<HourForecastModuleInput, HourForecastModuleOutput>?
     
     private var cancellables = Set<AnyCancellable>()
     @FeaturedCityProvider var featuredCity: String
@@ -89,11 +89,12 @@ MultyViewInput> {
 // MARK: Private
 extension MultyPresenter {
     private func setupSubmodules() {
-        guard let submodule1 = citySubmodule else {
-                return
+        guard let cityModule = citySubmodule,
+        let hourModule = hourSubmodule else {
+            return
         }
-        router?.showSubmodule1(submodule1)
-//        router.showSubmodule2(submodule2)
+        router?.showSubmodule1(cityModule)
+        router?.showSubmodule2(hourModule)
     }
 }
 
@@ -117,9 +118,9 @@ extension MultyPresenter: CityWeatherModuleOutput {
     
 }
 
-//extension MultyPresenter: Submodule2ModuleOutput {
-//    
-//}
+extension MultyPresenter: HourForecastModuleOutput {
+    
+}
 
 // MARK: Submodules Routing Handling
 extension MultyPresenter: CityWeatherRoutingHandlingProtocol {
@@ -144,8 +145,8 @@ extension MultyPresenter: CityWeatherRoutingHandlingProtocol {
     }
 }
 
-//extension MultyPresenter: Submodule2RoutingHandler {
-//    func tapSubmodule2ModuleButton() {
-//        router.submodule2ButtonRoute()
-//    }
-//}
+extension MultyPresenter: HourForecastRoutingHandlingProtocol {
+    func tapSubmodule2ModuleButton() {
+        router?.submodule2ButtonRoute()
+    }
+}

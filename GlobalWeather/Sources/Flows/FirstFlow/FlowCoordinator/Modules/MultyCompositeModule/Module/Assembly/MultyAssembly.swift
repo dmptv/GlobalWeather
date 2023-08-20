@@ -28,11 +28,10 @@ class MultyAssembly: BaseAssemblyProtocol {
         
         // Submodules
         let sityWeather = CityWeatherAssembly().build(presenter, presenter)
-//
-//        let submodule2 = Submodule2ModuleAssembly().build(presenter, presenter)
-//
+        let hourModule = HourForecastAssembly().build(presenter, presenter)
+        
         presenter.citySubmodule = sityWeather
-//        presenter.storyInfoSubmodule = submodule2
+        presenter.hourSubmodule = hourModule
         
         // Dependency Setup
         view.output = presenter
