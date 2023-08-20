@@ -71,32 +71,6 @@ extension MultyInteractor: MultyInteractorInput {
         // we have localData and weatherData
         localDataPublisher
             .map { $0.first }
-            .compactMap { localData -> LocalWeatherModel? in
-                guard let _ = localData?.locationName,
-                      let _ = localData?.locationName,
-                      let _ = localData?.latitude,
-                      let _ = localData?.longitude
-                else {
-                    return nil
-                }
-                return localData
-            }
-            .flatMap { _ in
-                    self.databaseService.getAll(of: CityWeatherModel.self)
-            }
-            .map { $0.first }
-            .compactMap { $0 }
-            .sink { [weak self] cityData in
-                guard let self = self else {
-                    return
-                }
-                
-            }
-            .store(in: &cancellables)
-        //-------------
-        
-        localDataPublisher
-            .map { $0.first }
             .compactMap { $0 }
             .combineLatest(databaseService.getAll(of: CityWeatherModel.self)
                 .map { $0.first }
@@ -107,23 +81,17 @@ extension MultyInteractor: MultyInteractorInput {
                     return
                 }
                 
-                if let lastRefreshDate = localData.lastRefreshedDate {
-                    // All Local Data Exsits
-                    
+                if let lastRefreshDate = localData.lastRefreshedDate,
+                   let locationName = localData.locationName {
                     if self.isDataTooOld(from: lastRefreshDate) {
                         self.getDataStateSubject.send(.fetchLocationWeatherData(localData))
                     } else {
-                        self.getDataStateSubject.send(.presentStoredData(model, locationName))
+                        self.getDataStateSubject.send(.presentStoredData(cityData, locationName))
                     }
                 }
                 
             }
             .store(in: &cancellables)
-
-        
-
-
-        
     }
     
     
