@@ -107,7 +107,15 @@ extension MultyInteractor: MultyInteractorInput {
                     return
                 }
                 
-                // Use 'localData' and 'cityData' here
+                if let lastRefreshDate = localData.lastRefreshedDate {
+                    // All Local Data Exsits
+                    
+                    if self.isDataTooOld(from: lastRefreshDate) {
+                        self.getDataStateSubject.send(.fetchLocationWeatherData(localData))
+                    } else {
+                        self.getDataStateSubject.send(.presentStoredData(model, locationName))
+                    }
+                }
                 
             }
             .store(in: &cancellables)
