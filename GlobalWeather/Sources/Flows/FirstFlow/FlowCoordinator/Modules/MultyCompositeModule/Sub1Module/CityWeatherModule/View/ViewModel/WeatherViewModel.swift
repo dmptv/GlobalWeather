@@ -26,6 +26,7 @@ struct WeatherViewModel {
     let windDirection: String
     let visibility: String
     let conditionId: Int
+    var cityName: String?
     
     var conditionImage: String {
         switch conditionId {

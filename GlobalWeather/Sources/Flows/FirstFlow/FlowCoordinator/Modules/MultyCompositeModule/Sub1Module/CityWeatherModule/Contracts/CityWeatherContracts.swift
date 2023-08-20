@@ -10,7 +10,7 @@ import Foundation
 
 // Module Input
 protocol CityWeatherModuleInput {
-    
+    func setData(_ viewModel: CityDataViewModel)
 }
 
 // Module Output
@@ -20,7 +20,7 @@ protocol CityWeatherModuleOutput {
 
 // View Input
 protocol CityWeatherViewInput: BaseViewInput {
-    
+    func configureView(viewModel: CityDataViewModel)
 }
 
 // View Output

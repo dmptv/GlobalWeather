@@ -9,8 +9,6 @@ import Foundation
 
 protocol AppInteractorInputProtocol {
     func start(_ completion: EmptyBlock)
-    func performLogout()
-    func loginWith(firtsName: String, progressBlock: BlockObject<AnyObject, Void>)
 }
 
 class AppInteractor: AppInteractorInputProtocol {
@@ -32,29 +30,6 @@ class AppInteractor: AppInteractorInputProtocol {
     func start(_ completion: EmptyBlock) {
         databaseService.setup(version: setRealmNumber(), key: getKey())
     }
-    
-    
-    func performLogout() {
-        userService.removeAll()
-        removeUserDefaultsObjects()
-        deleteCookies()
-    }
-    
-    func deleteCookies() {
-        let cookieStorage = HTTPCookieStorage.shared
-        cookieStorage.cookies?.forEach {
-            cookieStorage.deleteCookie($0)
-        }
-    }
-    
-    func removeUserDefaultsObjects() {
-        userDefaults.removeObject(forKey: "")
-    }
-    
-    func loginWith(firtsName: String, progressBlock: BlockObject<AnyObject, Void>) {
-        
-    }
-    
 }
 
 extension AppInteractor {

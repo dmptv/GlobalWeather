@@ -1,9 +1,4 @@
-//
-//  ViewOutputProtocol.swift
-//  Pods
-//
-//  Created by Artem Belenkov on 17/03/2020.
-//
+
 
 import UIKit
 

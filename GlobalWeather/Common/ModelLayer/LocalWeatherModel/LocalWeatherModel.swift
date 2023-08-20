@@ -7,18 +7,22 @@
 
 import Foundation
 import Then
+import RealmSwift
 
 class LocalWeatherModel: Codable {
     let locationName: String?
     let latitude: Double?
     let longitude: Double?
-    var lastRefreshedDate: Date? = nil
-    var weatherData: Data? = nil
     
-    init(locationName: String, latitude: Double, longitude: Double) {
+    var lastRefreshedDate: Date?
+    var weatherData: Data?
+    
+    init(locationName: String?, latitude: Double?, longitude: Double?, lastRefreshedDate: Date?, weatherData: Data?) {
         self.locationName = locationName
         self.latitude = latitude
         self.longitude = longitude
+        self.lastRefreshedDate = lastRefreshedDate
+        self.weatherData = weatherData
     }
 }
 
@@ -29,9 +33,9 @@ extension LocalWeatherModel: RunTimeModelProtocol {
     
     func convertToStorable() -> StorableProtocol {
         let storable = LocalWeatherStoredModel().then { storable  in
-            storable.locationName = locationName ?? ""
-            storable.latitude = latitude ?? 0
-            storable.longitude = longitude ?? 0
+            storable.locationName = locationName
+            storable.latitude.value = latitude
+            storable.longitude.value = longitude
             storable.lastRefreshedDate = lastRefreshedDate
             storable.weatherData = weatherData
         }
