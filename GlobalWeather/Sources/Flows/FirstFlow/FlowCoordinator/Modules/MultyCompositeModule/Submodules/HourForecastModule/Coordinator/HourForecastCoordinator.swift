@@ -12,16 +12,10 @@ protocol HourForecastCoordinatorProtocol: CoordinatorProtocol {
 
 class HourForecastCoordinator: BaseCoordinator<HourForecastCoordinatorExitRoutingProtocol>, HourForecastCoordinatorProtocol {
     override func start(with option: DeepLinkOptionProtocol?) {
-        let module = HourForecastAssembly().build(nil, self)
+        let module = HourForecastAssembly().build(nil, nil)
         guard let toPresent = module.toPresent() else {
             return
         }
         router.showScreen(toPresent)
-    }
-}
-
-extension HourForecastCoordinator: HourForecastRoutingHandlingProtocol {
-    func tapHourSubmoduleModuleButton() {
-        
     }
 }

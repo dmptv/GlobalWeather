@@ -12,7 +12,7 @@ typealias HourForecastModule = Module<HourForecastModuleInput, HourForecastModul
 
 class HourForecastAssembly: BaseAssemblyProtocol {
     func build(_ moduleOutput: HourForecastModuleOutput?,
-               _ routingHandler: HourForecastRoutingHandlingProtocol) -> HourForecastModule {
+               _ routingHandler: HourForecastRoutingHandlingProtocol?) -> HourForecastModule {
         // View
         let view = HourForecastViewController()
         

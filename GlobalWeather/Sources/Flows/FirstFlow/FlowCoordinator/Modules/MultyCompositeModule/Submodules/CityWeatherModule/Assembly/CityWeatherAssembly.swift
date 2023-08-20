@@ -12,7 +12,7 @@ typealias CityWeatherModule = Module<CityWeatherModuleInput, CityWeatherModuleOu
 
 class CityWeatherAssembly: BaseAssemblyProtocol {
     func build(_ moduleOutput: CityWeatherModuleOutput?,
-               _ routingHandler: CityWeatherRoutingHandlingProtocol) -> CityWeatherModule {
+               _ routingHandler: CityWeatherRoutingHandlingProtocol?) -> CityWeatherModule {
         // View
         let view = CityWeatherViewController()
         
