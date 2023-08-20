@@ -80,6 +80,16 @@
 		CE890BA52A921E430040F873 /* CityWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE890B982A921E430040F873 /* CityWeatherViewController.swift */; };
 		CE890BA62A921E430040F873 /* CityWeatherInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE890B9A2A921E430040F873 /* CityWeatherInteractor.swift */; };
 		CE890BA72A921E430040F873 /* CityWeatherRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE890B9C2A921E430040F873 /* CityWeatherRouter.swift */; };
+		CE890BDC2A921F260040F873 /* HourForecastCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE890BCD2A921F260040F873 /* HourForecastCoordinatorAssembly.swift */; };
+		CE890BDD2A921F260040F873 /* HourForecastCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE890BCE2A921F260040F873 /* HourForecastCoordinator.swift */; };
+		CE890BDE2A921F260040F873 /* HourForecastAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE890BD02A921F260040F873 /* HourForecastAssembly.swift */; };
+		CE890BDF2A921F260040F873 /* HourForecastContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE890BD22A921F260040F873 /* HourForecastContracts.swift */; };
+		CE890BE02A921F260040F873 /* HourForecastPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE890BD42A921F260040F873 /* HourForecastPresenter.swift */; };
+		CE890BE12A921F260040F873 /* HourForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE890BD62A921F260040F873 /* HourForecastViewController.swift */; };
+		CE890BE22A921F260040F873 /* HourForecastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE890BD72A921F260040F873 /* HourForecastViewController.xib */; };
+		CE890BE32A921F260040F873 /* HourForecastInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE890BD92A921F260040F873 /* HourForecastInteractor.swift */; };
+		CE890BE42A921F260040F873 /* HourForecastRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE890BDB2A921F260040F873 /* HourForecastRouter.swift */; };
+		CE890BE62A921FB30040F873 /* AlertRoutableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE890BE52A921FB30040F873 /* AlertRoutableProtocol.swift */; };
 		CEA3C8392A8C529B009F62B9 /* CityWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3C8382A8C529B009F62B9 /* CityWeatherRequest.swift */; };
 		CEA3C83C2A8C52CF009F62B9 /* LocationWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3C83B2A8C52CF009F62B9 /* LocationWeatherRequest.swift */; };
 		CEA3C8402A8C5331009F62B9 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3C83F2A8C5331009F62B9 /* BaseRequest.swift */; };
@@ -233,6 +243,16 @@
 		CE890B982A921E430040F873 /* CityWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityWeatherViewController.swift; sourceTree = "<group>"; };
 		CE890B9A2A921E430040F873 /* CityWeatherInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityWeatherInteractor.swift; sourceTree = "<group>"; };
 		CE890B9C2A921E430040F873 /* CityWeatherRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityWeatherRouter.swift; sourceTree = "<group>"; };
+		CE890BCD2A921F260040F873 /* HourForecastCoordinatorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourForecastCoordinatorAssembly.swift; sourceTree = "<group>"; };
+		CE890BCE2A921F260040F873 /* HourForecastCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourForecastCoordinator.swift; sourceTree = "<group>"; };
+		CE890BD02A921F260040F873 /* HourForecastAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourForecastAssembly.swift; sourceTree = "<group>"; };
+		CE890BD22A921F260040F873 /* HourForecastContracts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourForecastContracts.swift; sourceTree = "<group>"; };
+		CE890BD42A921F260040F873 /* HourForecastPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourForecastPresenter.swift; sourceTree = "<group>"; };
+		CE890BD62A921F260040F873 /* HourForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourForecastViewController.swift; sourceTree = "<group>"; };
+		CE890BD72A921F260040F873 /* HourForecastViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HourForecastViewController.xib; sourceTree = "<group>"; };
+		CE890BD92A921F260040F873 /* HourForecastInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourForecastInteractor.swift; sourceTree = "<group>"; };
+		CE890BDB2A921F260040F873 /* HourForecastRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourForecastRouter.swift; sourceTree = "<group>"; };
+		CE890BE52A921FB30040F873 /* AlertRoutableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertRoutableProtocol.swift; sourceTree = "<group>"; };
 		CE9612B3053BD055CF15AF86 /* Pods-GlobalWeather-GlobalWeatherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalWeather-GlobalWeatherUITests.debug.xcconfig"; path = "Target Support Files/Pods-GlobalWeather-GlobalWeatherUITests/Pods-GlobalWeather-GlobalWeatherUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CEA3C8382A8C529B009F62B9 /* CityWeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherRequest.swift; sourceTree = "<group>"; };
 		CEA3C83B2A8C52CF009F62B9 /* LocationWeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeatherRequest.swift; sourceTree = "<group>"; };
@@ -424,6 +444,7 @@
 				CE21D7362A7667EB00650BAB /* CoordinatorProtocol.swift */,
 				CE21D7392A7667EB00650BAB /* CoordinatorRouterProtocol.swift */,
 				CE5DCBD42A7FAD5800582FB3 /* ContainersHolderProtocol.swift */,
+				CE890BE52A921FB30040F873 /* AlertRoutableProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -811,8 +832,81 @@
 			isa = PBXGroup;
 			children = (
 				CE890B892A921E430040F873 /* CityWeatherModule */,
+				CE890BCB2A921F260040F873 /* HourForecastModule */,
 			);
 			path = Submodules;
+			sourceTree = "<group>";
+		};
+		CE890BCB2A921F260040F873 /* HourForecastModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE890BCC2A921F260040F873 /* Coordinator */,
+				CE890BCF2A921F260040F873 /* Assembly */,
+				CE890BD12A921F260040F873 /* Contracts */,
+				CE890BD32A921F260040F873 /* Presenter */,
+				CE890BD52A921F260040F873 /* View */,
+				CE890BD82A921F260040F873 /* Interactor */,
+				CE890BDA2A921F260040F873 /* Router */,
+			);
+			path = HourForecastModule;
+			sourceTree = "<group>";
+		};
+		CE890BCC2A921F260040F873 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CE890BCD2A921F260040F873 /* HourForecastCoordinatorAssembly.swift */,
+				CE890BCE2A921F260040F873 /* HourForecastCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CE890BCF2A921F260040F873 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				CE890BD02A921F260040F873 /* HourForecastAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		CE890BD12A921F260040F873 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				CE890BD22A921F260040F873 /* HourForecastContracts.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
+		CE890BD32A921F260040F873 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CE890BD42A921F260040F873 /* HourForecastPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CE890BD52A921F260040F873 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE890BD62A921F260040F873 /* HourForecastViewController.swift */,
+				CE890BD72A921F260040F873 /* HourForecastViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE890BD82A921F260040F873 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CE890BD92A921F260040F873 /* HourForecastInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CE890BDA2A921F260040F873 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CE890BDB2A921F260040F873 /* HourForecastRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		CEA3C83A2A8C52A4009F62B9 /* CityWeather */ = {
@@ -1196,6 +1290,7 @@
 				CE5DCBCE2A7FAC2A00582FB3 /* MultyViewController.xib in Resources */,
 				CE890BA42A921E430040F873 /* CityWeatherViewController.xib in Resources */,
 				CEFA03AC2A79413000D5471D /* MainViewController.xib in Resources */,
+				CE890BE22A921F260040F873 /* HourForecastViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1329,6 +1424,7 @@
 				CE21D7432A7667EB00650BAB /* ViewOutputProtocol.swift in Sources */,
 				CEA3C8442A8C5BB0009F62B9 /* RequestBuilder.swift in Sources */,
 				CE5DCBC92A7FAC2A00582FB3 /* MultyCoordinator.swift in Sources */,
+				CE890BE62A921FB30040F873 /* AlertRoutableProtocol.swift in Sources */,
 				CE890B9E2A921E430040F873 /* CityWeatherCoordinator.swift in Sources */,
 				CE890B9D2A921E430040F873 /* CityWeatherCoordinatorAssembly.swift in Sources */,
 				CEDB8A072A83DDA700E1F27A /* Date+Extension.swift in Sources */,
@@ -1365,12 +1461,15 @@
 				CEC03FC82A8E3E8300F730CE /* DatabaseService.swift in Sources */,
 				CE21D75D2A766F4900650BAB /* SBFloatingPanelLayout.swift in Sources */,
 				CEF248622A8CD8BB001BEB26 /* WeatherCityStoredModel.swift in Sources */,
+				CE890BDE2A921F260040F873 /* HourForecastAssembly.swift in Sources */,
 				CEC03FD12A8E728F00F730CE /* UITableView.swift in Sources */,
 				CE21D7462A7667EB00650BAB /* BaseAssemblyProtocol.swift in Sources */,
 				CE21D7472A7667EB00650BAB /* ViewControllerProtocol.swift in Sources */,
+				CE890BE12A921F260040F873 /* HourForecastViewController.swift in Sources */,
 				CE21D7422A7667EB00650BAB /* BasePresenter.swift in Sources */,
 				CEFA03922A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift in Sources */,
 				CEF248532A8C6936001BEB26 /* LocationWeatherModel.swift in Sources */,
+				CE890BDC2A921F260040F873 /* HourForecastCoordinatorAssembly.swift in Sources */,
 				CE5DCBD32A7FAD1E00582FB3 /* BaseCompositeModuleRouter.swift in Sources */,
 				CE5DCBCB2A7FAC2A00582FB3 /* MultyAssembly.swift in Sources */,
 				CE890BA12A921E430040F873 /* CityWeatherPresenter.swift in Sources */,
@@ -1379,6 +1478,7 @@
 				CE21D7882A76984C00650BAB /* DeepLinkOption.swift in Sources */,
 				CE21D7412A7667EB00650BAB /* BaseViewController.swift in Sources */,
 				CEA3C83C2A8C52CF009F62B9 /* LocationWeatherRequest.swift in Sources */,
+				CE890BE02A921F260040F873 /* HourForecastPresenter.swift in Sources */,
 				CE21D7452A7667EB00650BAB /* PresentableProtocol.swift in Sources */,
 				CEFA03AB2A79413000D5471D /* MainPresenter.swift in Sources */,
 				CE890BA32A921E430040F873 /* CityDataViewModel.swift in Sources */,
@@ -1414,11 +1514,14 @@
 				CEC03FDA2A8FB96E00F730CE /* LocalWeatherStoredModel.swift in Sources */,
 				CE21D7652A768B9F00650BAB /* AppCoordinatorLocator.swift in Sources */,
 				CE21D7492A7667EB00650BAB /* CoordinatorProtocol.swift in Sources */,
+				CE890BE32A921F260040F873 /* HourForecastInteractor.swift in Sources */,
 				CE21D73A2A7667EB00650BAB /* BaseCoordinatorRouter.swift in Sources */,
 				CE21D7562A766DC800650BAB /* UIView+Layout.swift in Sources */,
 				CE21D77E2A7694EC00650BAB /* NetworkingSessionService.swift in Sources */,
 				CEC03FD32A8E744400F730CE /* ToolBar.swift in Sources */,
 				CE21D73C2A7667EB00650BAB /* Router.swift in Sources */,
+				CE890BDF2A921F260040F873 /* HourForecastContracts.swift in Sources */,
+				CE890BDD2A921F260040F873 /* HourForecastCoordinator.swift in Sources */,
 				CEF248752A8CF32D001BEB26 /* WeatherListMainModel.swift in Sources */,
 				CE21D7752A76903100650BAB /* UserDefaultsService.swift in Sources */,
 				CE21D7612A76887600650BAB /* App.swift in Sources */,
@@ -1437,6 +1540,7 @@
 				CE21D75B2A766F2300650BAB /* SBFloatingPanelDelegate.swift in Sources */,
 				CE65D9502A728E7B009E6954 /* SceneDelegate.swift in Sources */,
 				CECB445A2A8A560E00B86A0D /* RawDataResponse.swift in Sources */,
+				CE890BE42A921F260040F873 /* HourForecastRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

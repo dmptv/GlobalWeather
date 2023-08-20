@@ -50,7 +50,7 @@ protocol MultyInteractorOutput: AnyObject {
 }
 
 // Router
-protocol MultyRouterInputProtocol: BaseModuleRoutableProtocol {
+protocol MultyRouterInputProtocol: AlertRoutableProtocol, BaseModuleRoutableProtocol {
     func showSubmodule1(_ presentable: PresentableProtocol)
     func showSubmodule2(_ presentable: PresentableProtocol)
     

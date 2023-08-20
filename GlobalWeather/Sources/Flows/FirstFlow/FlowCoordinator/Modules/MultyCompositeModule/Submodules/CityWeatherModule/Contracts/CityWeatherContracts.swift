@@ -39,7 +39,7 @@ protocol CityWeatherInteractorOutput: AnyObject {
 }
 
 // Router
-protocol CityWeatherRouterInputProtocol: BaseModuleRoutableProtocol {
+protocol CityWeatherRouterInputProtocol: AlertRoutableProtocol, BaseModuleRoutableProtocol {
     
 }
 
