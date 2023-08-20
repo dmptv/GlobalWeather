@@ -15,7 +15,7 @@ class MultyViewController: BaseViewController {
     static let headerViewHeightRatio = CGFloat(0.38)
     
     @IBOutlet private weak var cityContainer: UIView!
-    @IBOutlet private weak var container2: UIView!
+    @IBOutlet private weak var hourContainer: UIView!
     @IBOutlet private weak var toolBar: ToolBar!
     
     override func viewDidLoad() {
@@ -76,7 +76,7 @@ extension MultyViewController: MultyContainersHolderProtocol {
         cityContainer
     }
     
-    var containerForSubmodule2: UIView {
-        container2
+    var containerForHourSubmodule: UIView {
+        hourContainer
     }
 }

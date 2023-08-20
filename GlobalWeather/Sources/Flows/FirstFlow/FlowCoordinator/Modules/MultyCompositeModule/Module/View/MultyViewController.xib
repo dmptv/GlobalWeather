@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MultyViewController">
             <connections>
                 <outlet property="cityContainer" destination="u0p-n2-YrP" id="Gg9-e2-vVu"/>
-                <outlet property="container2" destination="dzC-cc-ybd" id="es8-FT-iHg"/>
+                <outlet property="hourContainer" destination="dzC-cc-ybd" id="bsn-ep-l7a"/>
                 <outlet property="toolBar" destination="GLf-dZ-6gd" id="64Q-vx-cYS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

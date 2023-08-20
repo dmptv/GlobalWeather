@@ -93,8 +93,8 @@ extension MultyPresenter {
         let hourModule = hourSubmodule else {
             return
         }
-        router?.showSubmodule1(cityModule)
-        router?.showSubmodule2(hourModule)
+        router?.showCitySubmodule(cityModule)
+        router?.showHourSubmodule(hourModule)
     }
 }
 
