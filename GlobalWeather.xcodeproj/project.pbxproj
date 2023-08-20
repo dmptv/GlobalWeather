@@ -796,9 +796,9 @@
 		CE890B932A921E430040F873 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE890B942A921E430040F873 /* ViewModel */,
-				CE890B972A921E430040F873 /* CityWeatherViewController.xib */,
 				CE890B982A921E430040F873 /* CityWeatherViewController.swift */,
+				CE890B972A921E430040F873 /* CityWeatherViewController.xib */,
+				CE890B942A921E430040F873 /* ViewModel */,
 			);
 			path = View;
 			sourceTree = "<group>";

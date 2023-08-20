@@ -21,5 +21,7 @@ class HourForecastCoordinator: BaseCoordinator<HourForecastCoordinatorExitRoutin
 }
 
 extension HourForecastCoordinator: HourForecastRoutingHandlingProtocol {
-    
+    func tapHourSubmoduleModuleButton() {
+        
+    }
 }

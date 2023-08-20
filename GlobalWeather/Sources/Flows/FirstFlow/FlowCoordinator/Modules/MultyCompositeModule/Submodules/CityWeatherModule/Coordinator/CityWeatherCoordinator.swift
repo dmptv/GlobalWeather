@@ -23,5 +23,7 @@ class CityWeatherCoordinator: BaseCoordinator<CityWeatherCoordinatorExitRoutingP
 }
 
 extension CityWeatherCoordinator: CityWeatherRoutingHandlingProtocol {
-    
+    func tapCitySubmoduleModuleButton() {
+        
+    }
 }

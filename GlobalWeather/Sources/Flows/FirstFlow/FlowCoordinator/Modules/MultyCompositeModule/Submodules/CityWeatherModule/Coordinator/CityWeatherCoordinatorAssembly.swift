@@ -12,7 +12,7 @@ class CityWeatherCoordinatorAssembly: BaseAssemblyProtocol {
     func build(router: CoordinatorRouterProtocol = BaseCoordinatorRouter(),
                routingHandler: CityWeatherCoordinatorExitRoutingProtocol) -> CoordinatorProtocol {
         let coordinator = CityWeatherCoordinator(router: router)
-        coordinator.coordinationExitPoint = routingHandler
+//        coordinator.coordinationExitPoint = routingHandler
         return coordinator
     }
 }

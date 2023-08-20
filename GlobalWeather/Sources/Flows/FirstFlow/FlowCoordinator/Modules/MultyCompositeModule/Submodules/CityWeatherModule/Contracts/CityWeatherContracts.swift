@@ -45,7 +45,7 @@ protocol CityWeatherRouterInputProtocol: AlertRoutableProtocol, BaseModuleRoutab
 
 // Routing Handling
 protocol CityWeatherRoutingHandlingProtocol: ModuleRoutingHandlingProtocol {
-    
+    func tapCitySubmoduleModuleButton()
 }
 
 // Coordinator Routing Handling

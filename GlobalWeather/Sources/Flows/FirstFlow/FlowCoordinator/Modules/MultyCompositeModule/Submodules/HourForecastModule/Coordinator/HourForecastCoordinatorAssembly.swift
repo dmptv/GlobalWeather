@@ -12,7 +12,7 @@ class HourForecastCoordinatorAssembly: BaseAssemblyProtocol {
     func build(router: CoordinatorRouterProtocol = BaseCoordinatorRouter(),
                routingHandler: HourForecastCoordinatorExitRoutingProtocol) -> CoordinatorProtocol {
         let coordinator = HourForecastCoordinator(router: router)
-        coordinator.coordinationExitPoint = routingHandler
+//        coordinator.coordinationExitPoint = routingHandler
         return coordinator
     }
 }

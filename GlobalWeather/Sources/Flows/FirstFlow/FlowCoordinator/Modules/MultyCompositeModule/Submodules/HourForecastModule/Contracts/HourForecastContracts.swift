@@ -45,7 +45,7 @@ protocol HourForecastRouterInputProtocol: AlertRoutableProtocol, BaseModuleRouta
 
 // Routing Handling
 protocol HourForecastRoutingHandlingProtocol: ModuleRoutingHandlingProtocol {
-    
+    func tapHourSubmoduleModuleButton()
 }
 
 // Coordinator Routing Handling
