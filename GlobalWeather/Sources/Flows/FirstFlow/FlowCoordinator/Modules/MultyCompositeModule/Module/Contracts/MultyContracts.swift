@@ -61,7 +61,7 @@ protocol MultyRouterInputProtocol: AlertRoutableProtocol, BaseModuleRoutableProt
 // Routing Handling
 protocol MultyRoutingHandlingProtocol: ModuleRoutingHandlingProtocol {
     func citySumboduleButtonRouting()
-    func sumbodule2ButtonRouting()
+    func hourSumboduleButtonRouting()
 }
 
 // Coordinator Routing Handling

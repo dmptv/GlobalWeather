@@ -27,7 +27,7 @@ extension MultyCoordinator: MultyRoutingHandlingProtocol {
 
     }
 
-    func sumbodule2ButtonRouting() {
+    func hourSumboduleButtonRouting() {
 
     }
 }

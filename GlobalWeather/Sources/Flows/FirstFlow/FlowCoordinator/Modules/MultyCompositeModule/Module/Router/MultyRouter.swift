@@ -33,6 +33,6 @@ extension MultyRouter: MultyRouterInputProtocol {
     }
     
     func submoduleHourButtonRoute() {
-        moduleRoutingHandler?.sumbodule2ButtonRouting()
+        moduleRoutingHandler?.hourSumboduleButtonRouting()
     }
 }
