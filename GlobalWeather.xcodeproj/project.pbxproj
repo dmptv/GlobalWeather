@@ -90,6 +90,7 @@
 		CE890BE32A921F260040F873 /* HourForecastInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE890BD92A921F260040F873 /* HourForecastInteractor.swift */; };
 		CE890BE42A921F260040F873 /* HourForecastRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE890BDB2A921F260040F873 /* HourForecastRouter.swift */; };
 		CE890BE62A921FB30040F873 /* AlertRoutableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE890BE52A921FB30040F873 /* AlertRoutableProtocol.swift */; };
+		CE8A49DD2A92527A003E02FD /* HourCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A49DC2A92527A003E02FD /* HourCollectionView.swift */; };
 		CEA3C8392A8C529B009F62B9 /* CityWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3C8382A8C529B009F62B9 /* CityWeatherRequest.swift */; };
 		CEA3C83C2A8C52CF009F62B9 /* LocationWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3C83B2A8C52CF009F62B9 /* LocationWeatherRequest.swift */; };
 		CEA3C8402A8C5331009F62B9 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3C83F2A8C5331009F62B9 /* BaseRequest.swift */; };
@@ -253,6 +254,7 @@
 		CE890BD92A921F260040F873 /* HourForecastInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourForecastInteractor.swift; sourceTree = "<group>"; };
 		CE890BDB2A921F260040F873 /* HourForecastRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourForecastRouter.swift; sourceTree = "<group>"; };
 		CE890BE52A921FB30040F873 /* AlertRoutableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertRoutableProtocol.swift; sourceTree = "<group>"; };
+		CE8A49DC2A92527A003E02FD /* HourCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCollectionView.swift; sourceTree = "<group>"; };
 		CE9612B3053BD055CF15AF86 /* Pods-GlobalWeather-GlobalWeatherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalWeather-GlobalWeatherUITests.debug.xcconfig"; path = "Target Support Files/Pods-GlobalWeather-GlobalWeatherUITests/Pods-GlobalWeather-GlobalWeatherUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CEA3C8382A8C529B009F62B9 /* CityWeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherRequest.swift; sourceTree = "<group>"; };
 		CEA3C83B2A8C52CF009F62B9 /* LocationWeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeatherRequest.swift; sourceTree = "<group>"; };
@@ -889,6 +891,7 @@
 			children = (
 				CE890BD62A921F260040F873 /* HourForecastViewController.swift */,
 				CE890BD72A921F260040F873 /* HourForecastViewController.xib */,
+				CE8A49DC2A92527A003E02FD /* HourCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1446,6 +1449,7 @@
 				CEF2487A2A8CF518001BEB26 /* WeatherListWeatherModel.swift in Sources */,
 				CE5DCBCD2A7FAC2A00582FB3 /* MultyPresenter.swift in Sources */,
 				CE21D78A2A76988700650BAB /* DeepLinkOptionProtocol.swift in Sources */,
+				CE8A49DD2A92527A003E02FD /* HourCollectionView.swift in Sources */,
 				CE890BA22A921E430040F873 /* WeatherViewModel.swift in Sources */,
 				CE21D74E2A76686E00650BAB /* BlockObject.swift in Sources */,
 				CEF248592A8CC4F6001BEB26 /* StorableProtocol.swift in Sources */,

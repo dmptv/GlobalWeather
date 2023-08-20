@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="753" height="518"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="15H-NA-udZ">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="15H-NA-udZ" customClass="HourCollectionView" customModule="GlobalWeather" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="753" height="518"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OWk-nI-4A0">
