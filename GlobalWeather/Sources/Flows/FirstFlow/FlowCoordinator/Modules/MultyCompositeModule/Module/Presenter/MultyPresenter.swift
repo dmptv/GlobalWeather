@@ -23,6 +23,7 @@ MultyViewInput> {
     override func viewDidLoad() {
         super.viewDidLoad()        
         setupSubmodules()
+        interactor?.retrieveCityWeather()
         
         interactor?.getDataStateSubject
             .sink { [weak self] state in
