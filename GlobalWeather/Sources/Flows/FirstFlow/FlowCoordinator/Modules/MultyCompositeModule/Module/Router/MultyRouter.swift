@@ -28,11 +28,11 @@ extension MultyRouter: MultyRouterInputProtocol {
         showSubmodule(presentable, container)
     }
     
-    func submodule1ButtonRoute() {
+    func submoduleCityButtonRoute() {
         moduleRoutingHandler?.citySumboduleButtonRouting()
     }
     
-    func submodule2ButtonRoute() {
+    func submoduleHourButtonRoute() {
         moduleRoutingHandler?.sumbodule2ButtonRouting()
     }
 }

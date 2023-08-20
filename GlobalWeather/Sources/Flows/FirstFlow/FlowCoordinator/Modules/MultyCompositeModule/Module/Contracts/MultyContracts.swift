@@ -54,8 +54,8 @@ protocol MultyRouterInputProtocol: AlertRoutableProtocol, BaseModuleRoutableProt
     func showCitySubmodule(_ presentable: PresentableProtocol)
     func showHourSubmodule(_ presentable: PresentableProtocol)
     
-    func submodule1ButtonRoute()
-    func submodule2ButtonRoute()
+    func submoduleCityButtonRoute()
+    func submoduleHourButtonRoute()
 }
 
 // Routing Handling

@@ -141,12 +141,12 @@ extension MultyPresenter: CityWeatherRoutingHandlingProtocol {
     }
     
     func tapSubmodule1ModuleButton() {
-        router?.submodule1ButtonRoute()
+        router?.submoduleCityButtonRoute()
     }
 }
 
 extension MultyPresenter: HourForecastRoutingHandlingProtocol {
     func tapSubmodule2ModuleButton() {
-        router?.submodule2ButtonRoute()
+        router?.submoduleHourButtonRoute()
     }
 }
