@@ -25,7 +25,9 @@ extension CityWeatherPresenter {
 
 // MARK: Module Input
 extension CityWeatherPresenter: CityWeatherModuleInput {
-    
+    func setData(data: String) {
+        view?.setCity(name: data)
+    }
 }
 
 // MARK: View Output

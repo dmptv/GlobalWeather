@@ -40,7 +40,11 @@ extension CityWeatherViewController {
 
 // MARK: View Input
 extension CityWeatherViewController {
-    
+    func setCity(name: String) {
+        DispatchQueue.main.async {
+            self.cityNameLabel.text = name
+        }
+    }
 }
 
 // MARK: Button Action

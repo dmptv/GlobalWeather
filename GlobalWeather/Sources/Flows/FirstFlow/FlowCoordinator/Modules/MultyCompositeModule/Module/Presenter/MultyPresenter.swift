@@ -48,6 +48,7 @@ MultyViewInput> {
     
     private func subsribeForFeaturedCityWeather(_ cityName: String) {
         interactor?.featuredCityWeather(cityName: cityName)
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { receiveCompletion in
                 switch receiveCompletion {
                 case .finished:
@@ -55,8 +56,11 @@ MultyViewInput> {
                 case .failure(let error):
                     print(error.localizedDescription, "error featured")
                 }
-            }, receiveValue: { response in
-                print(response.city?.name as Any, "featured")
+            }, receiveValue: { [weak self] response in
+                guard let self = self else {
+                    return
+                }
+                self.submodule1?.input.setData(data: response.city?.name ?? "Not known city")
             })
             .store(in: &cancellables)
     }
