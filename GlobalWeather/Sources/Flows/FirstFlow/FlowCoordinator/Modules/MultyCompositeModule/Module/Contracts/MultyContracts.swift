@@ -31,7 +31,7 @@ protocol MultyViewOutput: ViewOutputProtocol {
 
 // View Composite Module Containers Holder
 protocol MultyContainersHolderProtocol: ContainersHolderProtocol {
-    var containerForSubmodule1: UIView { get }
+    var containerForCitySubmodule: UIView { get }
     var containerForSubmodule2: UIView { get }
 }
 

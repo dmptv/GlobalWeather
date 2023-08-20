@@ -15,7 +15,7 @@ class MultyRouter<
 
 extension MultyRouter: MultyRouterInputProtocol {
     func showSubmodule1(_ presentable: PresentableProtocol) {
-        guard let container = containersHolder?.containerForSubmodule1 else {
+        guard let container = containersHolder?.containerForCitySubmodule else {
             return
         }
         showSubmodule(presentable, container)
