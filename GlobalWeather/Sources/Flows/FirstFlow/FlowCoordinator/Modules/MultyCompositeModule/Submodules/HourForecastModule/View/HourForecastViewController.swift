@@ -11,6 +11,7 @@ import UIKit
 class HourForecastViewController: BaseViewController {
     var output: HourForecastViewOutput?
     
+    @IBOutlet weak var hourCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubviews()
@@ -21,7 +22,11 @@ class HourForecastViewController: BaseViewController {
 // MARK: - Configure
 extension HourForecastViewController: HourForecastViewInput {
     private func setupSubviews() {
-        
+        setupCollectionView()
+    }
+    
+    private func setupCollectionView() {
+        hourCollectionView.backgroundColor = .emerald
     }
 }
 
