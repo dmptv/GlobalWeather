@@ -68,10 +68,12 @@ extension MultyInteractor: MultyInteractorInput {
             }
             .store(in: &cancellables)
         
+        // we have localData and weatherData
         localDataPublisher
             .map { $0.first }
             .compactMap { localData -> LocalWeatherModel? in
                 guard let _ = localData?.locationName,
+                      let _ = localData?.locationName,
                       let _ = localData?.latitude,
                       let _ = localData?.longitude
                 else {
@@ -79,13 +81,40 @@ extension MultyInteractor: MultyInteractorInput {
                 }
                 return localData
             }
-            .sink { [weak self] localData in
+            .flatMap { _ in
+                    self.databaseService.getAll(of: CityWeatherModel.self)
+            }
+            .map { $0.first }
+            .compactMap { $0 }
+            .sink { [weak self] cityData in
                 guard let self = self else {
                     return
                 }
                 
             }
             .store(in: &cancellables)
+        //-------------
+        
+        localDataPublisher
+            .map { $0.first }
+            .compactMap { $0 }
+            .combineLatest(databaseService.getAll(of: CityWeatherModel.self)
+                .map { $0.first }
+                .compactMap { $0 }
+            )
+            .sink { [weak self] localData, cityData in
+                guard let self = self else {
+                    return
+                }
+                
+                // Use 'localData' and 'cityData' here
+                
+            }
+            .store(in: &cancellables)
+
+        
+
+
         
     }
     
