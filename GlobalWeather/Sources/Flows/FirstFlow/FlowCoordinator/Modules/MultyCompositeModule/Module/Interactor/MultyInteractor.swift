@@ -83,6 +83,7 @@ extension MultyInteractor: MultyInteractorInput {
                 
                 if let lastRefreshDate = localData.lastRefreshedDate,
                    let locationName = localData.locationName {
+                    
                     if self.isDataTooOld(from: lastRefreshDate) {
                         self.getDataStateSubject.send(.fetchLocationWeatherData(localData))
                     } else {

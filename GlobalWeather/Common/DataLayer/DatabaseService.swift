@@ -37,7 +37,14 @@ protocol DatabaseServiceProtocol {
                 callbackQueue: DispatchQueue,
                 completion: BlockObject<T?, Void>) where T: RunTimeModelProtocol
     
-    func getAll<T: RunTimeModelProtocol>(of type: T.Type, callbackQueue: DispatchQueue) -> Future<[T], Never>
+    func addOrUpdate<T: RunTimeModelProtocol>(objects: [T],
+                        callbackQueue: DispatchQueue) -> AnyPublisher<Void, Never>
+    
+    func getAll<T: RunTimeModelProtocol>(of type: T.Type,
+                                         callbackQueue: DispatchQueue) -> Future<[T], Never>
+    
+    func removeAll<T: RunTimeModelProtocol>(of type: T.Type,
+                                            callbackQueue: DispatchQueue) -> AnyPublisher<Void, Never>
 }
 
 extension DatabaseServiceProtocol {
@@ -66,13 +73,26 @@ extension DatabaseServiceProtocol {
         getAll(of: type, callbackQueue: .main, completion: completion)
     }
     
-    func getAll<T>(of type: T.Type) -> Future<[T], Never> where T: RunTimeModelProtocol {
-        getAll(of: type, callbackQueue: .main)
-    }
-
     func get<T>(primaryKey: Any,
                 completion: BlockObject<T?, Void>) where T: RunTimeModelProtocol {
         get(primaryKey: primaryKey, callbackQueue: .main, completion: completion)
+    }
+}
+
+// MARK: - Default Combine Implementatons
+extension DatabaseServiceProtocol {
+    func addOrUpdate<T: RunTimeModelProtocol>(objects: [T],
+                                              callbackQueue: DispatchQueue) -> AnyPublisher<Void, Never> {
+        addOrUpdate(objects: objects, callbackQueue: .main)
+    }
+    
+    func getAll<T>(of type: T.Type) -> Future<[T], Never> where T: RunTimeModelProtocol {
+        getAll(of: type, callbackQueue: .main)
+    }
+    
+    func removeAll<T: RunTimeModelProtocol>(of type: T.Type,
+                                            callbackQueue: DispatchQueue) -> AnyPublisher<Void, Never> {
+        removeAll(of: type, callbackQueue: .main)
     }
 }
 
@@ -216,28 +236,6 @@ final class DatabaseService: DatabaseServiceProtocol {
         }
     }
     
-    public func getAll<T: RunTimeModelProtocol>(of type: T.Type, callbackQueue: DispatchQueue = .main) -> Future<[T], Never> {
-        return Future<[T], Never> { promise in
-            self.queue.async { [weak self] in
-                guard let realm = self?.realm else {
-                    callbackQueue.async {
-                        promise(.success([]))
-                    }
-                    return
-                }
-                
-                autoreleasepool {
-                    let results = realm.objects(type.storableType()).compactMap { ($0 as? StorableProtocol)?.createRuntimeModel() }
-                    let array = Array(results) as? [T] ?? []
-                    callbackQueue.async {
-                        promise(.success(array))
-                    }
-                }
-            }
-        }
-    }
-
-    
     public func get<T>(primaryKey : Any,
                        callbackQueue: DispatchQueue = .main,
                        completion: BlockObject<T?, Void>) where T: RunTimeModelProtocol{
@@ -256,4 +254,89 @@ final class DatabaseService: DatabaseServiceProtocol {
             }
         }
     }
+}
+
+// MARK: - Combine
+extension DatabaseService {
+    public func addOrUpdate<T: RunTimeModelProtocol>(objects: [T],
+                                                     callbackQueue: DispatchQueue) -> AnyPublisher<Void, Never> {
+        let emptyObject = PassthroughSubject<Void, Never>()
+        
+        queue.sync { [weak self] in
+            guard let realm = self?.realm else {
+                return
+            }
+            
+            do {
+                try realm.write {
+                    autoreleasepool {
+                        let objectsToStore = objects.map { $0.convertToStorable() }
+                        realm.add(objectsToStore, update: .modified)
+                        
+                        callbackQueue.async {
+                            emptyObject.send(())
+                        }
+                    }
+                }
+            } catch let error as NSError {
+                print(error)
+            }
+        }
+        
+        return emptyObject.eraseToAnyPublisher()
+    }
+    
+    public func getAll<T: RunTimeModelProtocol>(of type: T.Type, callbackQueue: DispatchQueue = .main) -> Future<[T], Never> {
+        return Future<[T], Never> { [weak self]  promise in
+            guard let self = self else {
+                return
+            }
+            
+            self.queue.async {
+                guard let realm = self.realm else {
+                    callbackQueue.async {
+                        promise(.success([]))
+                    }
+                    return
+                }
+                
+                autoreleasepool {
+                    let results = realm.objects(type.storableType()).compactMap { ($0 as? StorableProtocol)?.createRuntimeModel() }
+                    let array = Array(results) as? [T] ?? []
+                    callbackQueue.async {
+                        promise(.success(array))
+                    }
+                }
+            }
+        }
+    }
+    
+    func removeAll<T: RunTimeModelProtocol>(of type: T.Type, callbackQueue: DispatchQueue = .main) -> AnyPublisher<Void, Never>  {
+        let emptyObject = PassthroughSubject<Void, Never>()
+        
+        self.queue.sync { [weak self] in
+            guard let self = self,
+                  let realm = self.realm else {
+                return
+            }
+            
+            autoreleasepool {
+                do {
+                    let objects = realm.objects(type.storableType())
+                    
+                    try realm.write {
+                        realm.delete(objects)
+                        callbackQueue.async {
+                            emptyObject.send(())
+                        }
+                    }
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
+        }
+        
+        return emptyObject.eraseToAnyPublisher()
+    }
+    
 }

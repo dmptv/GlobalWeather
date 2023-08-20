@@ -891,7 +891,7 @@
 			children = (
 				CE890BD62A921F260040F873 /* HourForecastViewController.swift */,
 				CE890BD72A921F260040F873 /* HourForecastViewController.xib */,
-				CE8A49DC2A92527A003E02FD /* HourCollectionView.swift */,
+				CE8A49DE2A9253AA003E02FD /* Subviews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -910,6 +910,14 @@
 				CE890BDB2A921F260040F873 /* HourForecastRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		CE8A49DE2A9253AA003E02FD /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				CE8A49DC2A92527A003E02FD /* HourCollectionView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		CEA3C83A2A8C52A4009F62B9 /* CityWeather */ = {
