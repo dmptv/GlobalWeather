@@ -20,6 +20,9 @@ class CityWeatherViewController: BaseViewController {
         setupSubviews()
         output?.viewDidLoad()
     }
+    @IBAction func subModuleTapped(_ sender: Any) {
+        output?.subModuleTapped()
+    }
 }
 
 // MARK: - Configure
