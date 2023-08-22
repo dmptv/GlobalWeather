@@ -26,6 +26,11 @@ extension HourCollectionView {
         delegate = self
         backgroundColor = .clear
         
+        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.minimumInteritemSpacing = 0
+            layout.minimumLineSpacing = 0
+        }
+        
         configureSubViews()
     }
     

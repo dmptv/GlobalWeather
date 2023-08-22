@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,11 +30,10 @@
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="15H-NA-udZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0ZL-12-V8d"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="15H-NA-udZ" secondAttribute="trailing" id="Tqb-Jg-rw1"/>
+                <constraint firstItem="15H-NA-udZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0ZL-12-V8d"/>
+                <constraint firstAttribute="trailing" secondItem="15H-NA-udZ" secondAttribute="trailing" id="Tqb-Jg-rw1"/>
                 <constraint firstItem="15H-NA-udZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Xra-dj-iGD"/>
                 <constraint firstAttribute="bottom" secondItem="15H-NA-udZ" secondAttribute="bottom" id="zm5-pz-Tbd"/>
             </constraints>
