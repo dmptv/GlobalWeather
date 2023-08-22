@@ -56,6 +56,6 @@ extension HourCollectionView: UICollectionViewDataSource {
 
 extension HourCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: bounds.height, height: bounds.height)
+        return CGSize(width: bounds.height / 2, height: bounds.height)
     }
 }
