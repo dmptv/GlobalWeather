@@ -11,8 +11,7 @@ import UIKit
 typealias CityWeatherModule = Module<CityWeatherModuleInput, CityWeatherModuleOutput>
 
 class CityWeatherAssembly: BaseAssemblyProtocol {
-    func build(_ moduleOutput: CityWeatherModuleOutput?,
-               _ routingHandler: CityWeatherRoutingHandlingProtocol?) -> CityWeatherModule {
+    func build(_ moduleOutput: CityWeatherModuleOutput?) -> CityWeatherModule {
         // View
         let view = CityWeatherViewController()
         
@@ -28,7 +27,7 @@ class CityWeatherAssembly: BaseAssemblyProtocol {
         // Dependency Setup
         view.output = presenter
         interactor.output = presenter
-        router.moduleRoutingHandler = routingHandler
+//        router.moduleRoutingHandler = routingHandler
         
         return Module(view: view, input: presenter, output: moduleOutput)
     }

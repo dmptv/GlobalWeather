@@ -14,7 +14,7 @@ protocol CityWeatherCoordinatorProtocol: CoordinatorProtocol {
 
 class CityWeatherCoordinator: BaseCoordinator<CityWeatherCoordinatorExitRoutingProtocol>, CityWeatherCoordinatorProtocol {
     override func start(with option: DeepLinkOptionProtocol?) {
-        let module = CityWeatherAssembly().build(nil, nil)
+        let module = CityWeatherAssembly().build(nil)
         guard let toPresent = module.toPresent() else {
             return
         }

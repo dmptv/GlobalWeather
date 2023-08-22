@@ -12,7 +12,4 @@ class CityWeatherRouter: BaseModuleRouter<CityWeatherRoutingHandlingProtocol> {
 }
 
 extension CityWeatherRouter: CityWeatherRouterInputProtocol {
-    func subModuleTapped() {
-        moduleRoutingHandler?.tapCitySubmoduleModuleButton()
-    }
 }

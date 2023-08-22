@@ -11,8 +11,7 @@ import UIKit
 typealias HourForecastModule = Module<HourForecastModuleInput, HourForecastModuleOutput>
 
 class HourForecastAssembly: BaseAssemblyProtocol {
-    func build(_ moduleOutput: HourForecastModuleOutput?,
-               _ routingHandler: HourForecastRoutingHandlingProtocol?) -> HourForecastModule {
+    func build(_ moduleOutput: HourForecastModuleOutput?) -> HourForecastModule {
         // View
         let view = HourForecastViewController()
         
@@ -28,7 +27,6 @@ class HourForecastAssembly: BaseAssemblyProtocol {
         // Dependency Setup
         view.output = presenter
         interactor.output = presenter
-        router.moduleRoutingHandler = routingHandler
         
         return Module(view: view, input: presenter, output: moduleOutput)
     }

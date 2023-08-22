@@ -43,7 +43,6 @@ MultyViewInput> {
     }
     
     private func presentData(_ model: CityWeatherModel, _ city: String) {
-        
     }
     
     private func subsribeForFeaturedCityWeather(_ cityName: String) {
@@ -115,7 +114,9 @@ extension MultyPresenter: MultyInteractorOutput {
 
 // MARK: Sumbmodules Outputs
 extension MultyPresenter: CityWeatherModuleOutput {
-    
+    func tapCitySubmoduleModuleButton() {
+        router?.submoduleCityButtonRoute()
+    }
 }
 
 extension MultyPresenter: HourForecastModuleOutput {
@@ -138,10 +139,6 @@ extension MultyPresenter: CityWeatherRoutingHandlingProtocol {
     
     func performRouteForBackOrCloseRouting() {
         
-    }
-    
-    func tapCitySubmoduleModuleButton() {
-        router?.submoduleCityButtonRoute()
     }
 }
 

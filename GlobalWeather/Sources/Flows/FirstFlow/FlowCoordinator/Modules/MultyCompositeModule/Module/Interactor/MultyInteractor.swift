@@ -95,7 +95,7 @@ extension MultyInteractor: MultyInteractorInput {
             .store(in: &cancellables)
     }
     
-    
+    @available(*, deprecated, message: "use: retrieveCityWeather()")
     func retrieveCityWeather2() -> AnyPublisher<LocalDataState, Never> {
         let subject = PassthroughSubject<LocalDataState, Never>()
         

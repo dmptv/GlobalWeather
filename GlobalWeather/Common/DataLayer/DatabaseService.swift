@@ -99,7 +99,7 @@ extension DatabaseServiceProtocol {
 final class DatabaseService: DatabaseServiceProtocol {
     static let shared = DatabaseService()
     
-    private let queue = DispatchQueue(label: "com.smartbank.DatabaseService.queue")
+    private let queue = DispatchQueue(label: "com.DatabaseService.queue")
     private var realm: Realm?
     
     private init() { }

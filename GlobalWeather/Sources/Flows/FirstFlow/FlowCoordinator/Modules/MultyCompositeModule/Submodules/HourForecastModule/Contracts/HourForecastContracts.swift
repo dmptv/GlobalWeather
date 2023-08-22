@@ -15,7 +15,7 @@ protocol HourForecastModuleInput {
 
 // Module Output
 protocol HourForecastModuleOutput {
-    
+    func tapHourSubmoduleModuleButton()
 }
 
 // View Input
@@ -45,7 +45,7 @@ protocol HourForecastRouterInputProtocol: AlertRoutableProtocol, BaseModuleRouta
 
 // Routing Handling
 protocol HourForecastRoutingHandlingProtocol: ModuleRoutingHandlingProtocol {
-    func tapHourSubmoduleModuleButton()
+    
 }
 
 // Coordinator Routing Handling
