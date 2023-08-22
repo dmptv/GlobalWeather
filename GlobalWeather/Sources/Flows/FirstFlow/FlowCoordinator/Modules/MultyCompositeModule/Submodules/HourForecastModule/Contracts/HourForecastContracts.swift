@@ -10,7 +10,8 @@ import Foundation
 
 // Module Input
 protocol HourForecastModuleInput {
-    
+    func setHourData(_ viewModels: [WeatherViewModel])
+
 }
 
 // Module Output
@@ -20,7 +21,7 @@ protocol HourForecastModuleOutput {
 
 // View Input
 protocol HourForecastViewInput: BaseViewInput {
-    
+    func setupUIBinding(with viewModel: [WeatherViewModel]) 
 }
 
 // View Output

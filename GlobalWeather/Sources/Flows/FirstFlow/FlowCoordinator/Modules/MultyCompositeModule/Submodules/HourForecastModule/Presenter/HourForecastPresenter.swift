@@ -25,7 +25,10 @@ extension HourForecastPresenter {
 
 // MARK: Module Input
 extension HourForecastPresenter: HourForecastModuleInput {
-    
+    func setHourData(_ viewModels: [WeatherViewModel]) {
+        view?.setupUIBinding(with: viewModels)
+    }
+
 }
 
 // MARK: View Output

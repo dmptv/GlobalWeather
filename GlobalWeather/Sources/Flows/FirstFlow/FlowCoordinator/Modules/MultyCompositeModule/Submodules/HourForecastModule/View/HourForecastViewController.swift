@@ -29,7 +29,9 @@ extension HourForecastViewController: HourForecastViewInput {
 
 // MARK: View Input
 extension HourForecastViewController {
-    
+    func setupUIBinding(with viewModel: [WeatherViewModel]) {
+        
+    }
 }
 
 // MARK: Button Action
