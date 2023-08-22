@@ -17,7 +17,6 @@ class HourCollectionView: UICollectionView {
         super.init(coder: aDecoder)
         setupViews()
     }
-
 }
 
 
@@ -31,19 +30,25 @@ extension HourCollectionView {
     }
     
     private func configureSubViews() {
-        register(cellType: UICollectionViewCell.self)
+        registerNib(cellType: HourCollectionViewCell.self)
+        
     }
 }
 
 extension HourCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        15
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: UICollectionViewCell.self)
+        let cell: HourCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+
+        cell.configureCell(
+            viewModel: [
+                WeatherViewModel.init(dt_txt: "", dateWithMonth: "", hour: "", day: "", temp: "", tempOriginal: "", temp_min: "", temp_max: "", description: "", conditionId: 1, temp_min_int: 89, temp_max_int: 334, feelslike: "", humidity: "", pressure: "", windSpeed: "", windDirection: "", visibility: "")
+            ],
+            item: indexPath.item)
         
-        cell.contentView.backgroundColor = .red
         
         return cell
     }
