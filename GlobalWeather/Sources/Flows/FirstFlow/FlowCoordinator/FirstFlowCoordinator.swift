@@ -27,10 +27,6 @@ extension FirstFlowCoordinator {
     }
 }
 
-extension FirstFlowCoordinator: MainCoordinatorExitRoutingProtocol {
-    
-}
-
 extension FirstFlowCoordinator: MultyCoordinatorExitRoutingProtocol {
     
 }

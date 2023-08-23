@@ -33,6 +33,7 @@ protocol MultyViewOutput: ViewOutputProtocol {
 protocol MultyContainersHolderProtocol: ContainersHolderProtocol {
     var containerForCitySubmodule: UIView { get }
     var containerForHourSubmodule: UIView { get }
+    var containerForSummarySubmodule: UIView { get }
 }
 
 // Interactor Input
@@ -53,15 +54,18 @@ protocol MultyInteractorOutput: AnyObject {
 protocol MultyRouterInputProtocol: AlertRoutableProtocol, BaseModuleRoutableProtocol {
     func showCitySubmodule(_ presentable: PresentableProtocol)
     func showHourSubmodule(_ presentable: PresentableProtocol)
+    func showSummarySubmodule(_ presentable: PresentableProtocol)
     
     func submoduleCityButtonRoute()
     func submoduleHourButtonRoute()
+    func submoduleSummaryButtonRoute()
 }
 
 // Routing Handling
 protocol MultyRoutingHandlingProtocol: ModuleRoutingHandlingProtocol {
     func citySumboduleButtonRouting()
     func hourSumboduleButtonRouting()
+    func summarySumboduleButtonRouting()
 }
 
 // Coordinator Routing Handling

@@ -16,6 +16,7 @@ MultyRouterInputProtocol,
 MultyViewInput> {
     var citySubmodule: Module<CityWeatherModuleInput, CityWeatherModuleOutput>?
     var hourSubmodule: Module<HourForecastModuleInput, HourForecastModuleOutput>?
+    var summarySubModule: Module<SummaryDayModuleInput, SummaryDayModuleOutput>?
     
     private var cancellables = Set<AnyCancellable>()
     @FeaturedCityProvider var featuredCity: String
@@ -125,6 +126,10 @@ extension MultyPresenter: HourForecastModuleOutput {
     
 }
 
+extension MultyPresenter: SummaryDayModuleOutput {
+    
+}
+
 // MARK: Submodules Routing Handling
 extension MultyPresenter: CityWeatherRoutingHandlingProtocol {
     func performRouteForBackRouting() {
@@ -148,4 +153,8 @@ extension MultyPresenter: HourForecastRoutingHandlingProtocol {
     func tapHourSubmoduleModuleButton() {
         router?.submoduleHourButtonRoute()
     }
+}
+
+extension MultyPresenter: SummaryDayRoutingHandlingProtocol {
+    
 }
