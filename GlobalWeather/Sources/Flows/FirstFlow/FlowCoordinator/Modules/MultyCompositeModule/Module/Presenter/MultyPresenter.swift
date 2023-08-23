@@ -60,7 +60,8 @@ MultyViewInput> {
                     return
                 }
                 self.citySubmodule?.input.setData(CityDataViewModel.configure(response))
-                self.hourSubmodule?.input.setHourData(WeatherViewModel.getViewModels(with: response))
+                self.hourSubmodule?.input.hourDataPublisher.send(WeatherViewModel.getViewModels(with: response))
+                
             })
             .store(in: &cancellables)
     }

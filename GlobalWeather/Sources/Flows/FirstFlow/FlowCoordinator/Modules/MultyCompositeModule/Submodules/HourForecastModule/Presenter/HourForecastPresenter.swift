@@ -7,14 +7,25 @@
 //
 
 import Foundation
+import Combine
 
 class HourForecastPresenter: BasePresenter
 <HourForecastModuleOutput,
 HourForecastInteractorInput,
 HourForecastRouterInputProtocol,
 HourForecastViewInput> {
+    private var cancellables = Set<AnyCancellable>()
+    private(set) var hourDataPublisher = PassthroughSubject<[WeatherViewModel], Never>()
+    
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        
+        subscribeForModuleInput()
+    }
+    
+    deinit {
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
     }
 }
 
@@ -25,10 +36,14 @@ extension HourForecastPresenter {
 
 // MARK: Module Input
 extension HourForecastPresenter: HourForecastModuleInput {
-    func setHourData(_ viewModels: [WeatherViewModel]) {
-        view?.setupUIBinding(with: viewModels)
+    private func subscribeForModuleInput() {
+        hourDataPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] vms in
+                self?.view?.hourDataPublisher.send(vms)
+            }
+            .store(in: &cancellables)
     }
-
 }
 
 // MARK: View Output

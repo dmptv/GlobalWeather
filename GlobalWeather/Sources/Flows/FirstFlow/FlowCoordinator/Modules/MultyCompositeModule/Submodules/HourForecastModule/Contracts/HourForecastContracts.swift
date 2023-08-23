@@ -7,11 +7,11 @@
 //
 
 import Foundation
+import Combine
 
 // Module Input
 protocol HourForecastModuleInput {
-    func setHourData(_ viewModels: [WeatherViewModel])
-
+    var hourDataPublisher: PassthroughSubject<[WeatherViewModel], Never> { get }
 }
 
 // Module Output
@@ -21,7 +21,7 @@ protocol HourForecastModuleOutput {
 
 // View Input
 protocol HourForecastViewInput: BaseViewInput {
-    func setupUIBinding(with viewModel: [WeatherViewModel]) 
+    var hourDataPublisher: PassthroughSubject<[WeatherViewModel], Never> { get }
 }
 
 // View Output
