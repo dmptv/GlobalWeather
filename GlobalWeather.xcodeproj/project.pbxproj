@@ -13,6 +13,16 @@
 		CE0535132A94E20B006E00CB /* HourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0535112A94E20B006E00CB /* HourCollectionViewCell.swift */; };
 		CE0535142A94E20B006E00CB /* HourCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0535122A94E20B006E00CB /* HourCollectionViewCell.xib */; };
 		CE0D65732A77E0D9007B5713 /* AppServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D65722A77E0D9007B5713 /* AppServiceLocator.swift */; };
+		CE167B912A96506B00EB5338 /* SummaryDayCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE167B822A96506A00EB5338 /* SummaryDayCoordinatorAssembly.swift */; };
+		CE167B922A96506B00EB5338 /* SummaryDayCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE167B832A96506A00EB5338 /* SummaryDayCoordinator.swift */; };
+		CE167B932A96506B00EB5338 /* SummaryDayAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE167B852A96506A00EB5338 /* SummaryDayAssembly.swift */; };
+		CE167B942A96506B00EB5338 /* SummaryDayContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE167B872A96506A00EB5338 /* SummaryDayContracts.swift */; };
+		CE167B952A96506B00EB5338 /* SummaryDayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE167B892A96506A00EB5338 /* SummaryDayPresenter.swift */; };
+		CE167B962A96506B00EB5338 /* SummaryDayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE167B8B2A96506A00EB5338 /* SummaryDayViewController.xib */; };
+		CE167B972A96506B00EB5338 /* SummaryDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE167B8C2A96506A00EB5338 /* SummaryDayViewController.swift */; };
+		CE167B982A96506B00EB5338 /* SummaryDayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE167B8E2A96506A00EB5338 /* SummaryDayInteractor.swift */; };
+		CE167B992A96506B00EB5338 /* SummaryDayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE167B902A96506A00EB5338 /* SummaryDayRouter.swift */; };
+		CE167BA52A96548A00EB5338 /* WeatherDailyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE167BA42A96548A00EB5338 /* WeatherDailyViewModel.swift */; };
 		CE1B9D262A7E99CA00C6D5C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1B9D252A7E99CA00C6D5C0 /* LaunchScreen.storyboard */; };
 		CE1D94E52A7BF0DC0058EBBF /* WeatherRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D94E42A7BF0DC0058EBBF /* WeatherRouter.swift */; };
 		CE1D94EA2A7BFAB20058EBBF /* CityWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D94E92A7BFAB20058EBBF /* CityWeatherModel.swift */; };
@@ -134,15 +144,6 @@
 		CEFA03902A79410200D5471D /* FirstFlowCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA038D2A79410200D5471D /* FirstFlowCoordinatorAssembly.swift */; };
 		CEFA03912A79410200D5471D /* FirstFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA038E2A79410200D5471D /* FirstFlowCoordinator.swift */; };
 		CEFA03922A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA038F2A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift */; };
-		CEFA03A72A79413000D5471D /* MainCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03982A79413000D5471D /* MainCoordinatorAssembly.swift */; };
-		CEFA03A82A79413000D5471D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03992A79413000D5471D /* MainCoordinator.swift */; };
-		CEFA03A92A79413000D5471D /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA039B2A79413000D5471D /* MainAssembly.swift */; };
-		CEFA03AA2A79413000D5471D /* MainContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA039D2A79413000D5471D /* MainContracts.swift */; };
-		CEFA03AB2A79413000D5471D /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA039F2A79413000D5471D /* MainPresenter.swift */; };
-		CEFA03AC2A79413000D5471D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFA03A12A79413000D5471D /* MainViewController.xib */; };
-		CEFA03AD2A79413000D5471D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03A22A79413000D5471D /* MainViewController.swift */; };
-		CEFA03AE2A79413000D5471D /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03A42A79413000D5471D /* MainInteractor.swift */; };
-		CEFA03AF2A79413000D5471D /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03A62A79413000D5471D /* MainRouter.swift */; };
 		CEFA03B52A7AA48F00D5471D /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03B32A7AA48F00D5471D /* WeatherService.swift */; };
 		CEFA03B62A7AA48F00D5471D /* WeatherServiceLocatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA03B42A7AA48F00D5471D /* WeatherServiceLocatorProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -175,6 +176,16 @@
 		CE0535112A94E20B006E00CB /* HourCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE0535122A94E20B006E00CB /* HourCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE0D65722A77E0D9007B5713 /* AppServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServiceLocator.swift; sourceTree = "<group>"; };
+		CE167B822A96506A00EB5338 /* SummaryDayCoordinatorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryDayCoordinatorAssembly.swift; sourceTree = "<group>"; };
+		CE167B832A96506A00EB5338 /* SummaryDayCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryDayCoordinator.swift; sourceTree = "<group>"; };
+		CE167B852A96506A00EB5338 /* SummaryDayAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryDayAssembly.swift; sourceTree = "<group>"; };
+		CE167B872A96506A00EB5338 /* SummaryDayContracts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryDayContracts.swift; sourceTree = "<group>"; };
+		CE167B892A96506A00EB5338 /* SummaryDayPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryDayPresenter.swift; sourceTree = "<group>"; };
+		CE167B8B2A96506A00EB5338 /* SummaryDayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SummaryDayViewController.xib; sourceTree = "<group>"; };
+		CE167B8C2A96506A00EB5338 /* SummaryDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryDayViewController.swift; sourceTree = "<group>"; };
+		CE167B8E2A96506A00EB5338 /* SummaryDayInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryDayInteractor.swift; sourceTree = "<group>"; };
+		CE167B902A96506A00EB5338 /* SummaryDayRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryDayRouter.swift; sourceTree = "<group>"; };
+		CE167BA42A96548A00EB5338 /* WeatherDailyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyViewModel.swift; sourceTree = "<group>"; };
 		CE1B9D252A7E99CA00C6D5C0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE1D94E42A7BF0DC0058EBBF /* WeatherRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRouter.swift; sourceTree = "<group>"; };
 		CE1D94E92A7BFAB20058EBBF /* CityWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherModel.swift; sourceTree = "<group>"; };
@@ -301,15 +312,6 @@
 		CEFA038D2A79410200D5471D /* FirstFlowCoordinatorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstFlowCoordinatorAssembly.swift; sourceTree = "<group>"; };
 		CEFA038E2A79410200D5471D /* FirstFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstFlowCoordinator.swift; sourceTree = "<group>"; };
 		CEFA038F2A79410200D5471D /* FirstFlowExitRoutingHandlerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstFlowExitRoutingHandlerProtocol.swift; sourceTree = "<group>"; };
-		CEFA03982A79413000D5471D /* MainCoordinatorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinatorAssembly.swift; sourceTree = "<group>"; };
-		CEFA03992A79413000D5471D /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		CEFA039B2A79413000D5471D /* MainAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
-		CEFA039D2A79413000D5471D /* MainContracts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContracts.swift; sourceTree = "<group>"; };
-		CEFA039F2A79413000D5471D /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		CEFA03A12A79413000D5471D /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		CEFA03A22A79413000D5471D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		CEFA03A42A79413000D5471D /* MainInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
-		CEFA03A62A79413000D5471D /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		CEFA03B32A7AA48F00D5471D /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		CEFA03B42A7AA48F00D5471D /* WeatherServiceLocatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherServiceLocatorProtocol.swift; sourceTree = "<group>"; };
 		EDC4795345FF2FB6DEE1B27D /* Pods_GlobalWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobalWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -391,6 +393,95 @@
 				CE65D94F2A728E7B009E6954 /* SceneDelegate.swift */,
 			);
 			path = ApplicationDelegate;
+			sourceTree = "<group>";
+		};
+		CE167B802A96506A00EB5338 /* SummaryDayModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE167B812A96506A00EB5338 /* Coordinator */,
+				CE167B842A96506A00EB5338 /* Assembly */,
+				CE167B862A96506A00EB5338 /* Contracts */,
+				CE167B882A96506A00EB5338 /* Presenter */,
+				CE167B8A2A96506A00EB5338 /* View */,
+				CE167B8D2A96506A00EB5338 /* Interactor */,
+				CE167B8F2A96506A00EB5338 /* Router */,
+			);
+			path = SummaryDayModule;
+			sourceTree = "<group>";
+		};
+		CE167B812A96506A00EB5338 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CE167B822A96506A00EB5338 /* SummaryDayCoordinatorAssembly.swift */,
+				CE167B832A96506A00EB5338 /* SummaryDayCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CE167B842A96506A00EB5338 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				CE167B852A96506A00EB5338 /* SummaryDayAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		CE167B862A96506A00EB5338 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				CE167B872A96506A00EB5338 /* SummaryDayContracts.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
+		CE167B882A96506A00EB5338 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CE167B892A96506A00EB5338 /* SummaryDayPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CE167B8A2A96506A00EB5338 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE167B8C2A96506A00EB5338 /* SummaryDayViewController.swift */,
+				CE167B8B2A96506A00EB5338 /* SummaryDayViewController.xib */,
+				CE167BA62A96549A00EB5338 /* ViewModel */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE167B8D2A96506A00EB5338 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CE167B8E2A96506A00EB5338 /* SummaryDayInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CE167B8F2A96506A00EB5338 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CE167B902A96506A00EB5338 /* SummaryDayRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CE167BA32A96543800EB5338 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE890B952A921E430040F873 /* WeatherViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CE167BA62A96549A00EB5338 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE167BA42A96548A00EB5338 /* WeatherDailyViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CE21D6BC2A765D7F00650BAB /* Common */ = {
@@ -821,7 +912,6 @@
 		CE890B942A921E430040F873 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				CE890B952A921E430040F873 /* WeatherViewModel.swift */,
 				CE890B962A921E430040F873 /* CityDataViewModel.swift */,
 			);
 			path = ViewModel;
@@ -848,6 +938,7 @@
 			children = (
 				CE890B892A921E430040F873 /* CityWeatherModule */,
 				CE890BCB2A921F260040F873 /* HourForecastModule */,
+				CE167B802A96506A00EB5338 /* SummaryDayModule */,
 			);
 			path = Submodules;
 			sourceTree = "<group>";
@@ -905,6 +996,7 @@
 				CE890BD62A921F260040F873 /* HourForecastViewController.swift */,
 				CE890BD72A921F260040F873 /* HourForecastViewController.xib */,
 				CE8A49DE2A9253AA003E02FD /* CollectionView */,
+				CE167BA32A96543800EB5338 /* ViewModel */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1111,82 +1203,9 @@
 		CEFA03932A79410E00D5471D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				CEFA03962A79413000D5471D /* MainModule */,
 				CE5DCBB72A7FAC2A00582FB3 /* MultyCompositeModule */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		CEFA03962A79413000D5471D /* MainModule */ = {
-			isa = PBXGroup;
-			children = (
-				CEFA03972A79413000D5471D /* Coordinator */,
-				CEFA039A2A79413000D5471D /* Assembly */,
-				CEFA039C2A79413000D5471D /* Contracts */,
-				CEFA039E2A79413000D5471D /* Presenter */,
-				CEFA03A02A79413000D5471D /* View */,
-				CEFA03A32A79413000D5471D /* Interactor */,
-				CEFA03A52A79413000D5471D /* Router */,
-			);
-			path = MainModule;
-			sourceTree = "<group>";
-		};
-		CEFA03972A79413000D5471D /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				CEFA03982A79413000D5471D /* MainCoordinatorAssembly.swift */,
-				CEFA03992A79413000D5471D /* MainCoordinator.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		CEFA039A2A79413000D5471D /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				CEFA039B2A79413000D5471D /* MainAssembly.swift */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		CEFA039C2A79413000D5471D /* Contracts */ = {
-			isa = PBXGroup;
-			children = (
-				CEFA039D2A79413000D5471D /* MainContracts.swift */,
-			);
-			path = Contracts;
-			sourceTree = "<group>";
-		};
-		CEFA039E2A79413000D5471D /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				CEFA039F2A79413000D5471D /* MainPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		CEFA03A02A79413000D5471D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				CEFA03A22A79413000D5471D /* MainViewController.swift */,
-				CEFA03A12A79413000D5471D /* MainViewController.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		CEFA03A32A79413000D5471D /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				CEFA03A42A79413000D5471D /* MainInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		CEFA03A52A79413000D5471D /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				CEFA03A62A79413000D5471D /* MainRouter.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		CEFA03B22A7AA48F00D5471D /* WeatherService */ = {
@@ -1313,9 +1332,9 @@
 				CE0535142A94E20B006E00CB /* HourCollectionViewCell.xib in Resources */,
 				CE1B9D262A7E99CA00C6D5C0 /* LaunchScreen.storyboard in Resources */,
 				CE65D9572A728E7D009E6954 /* Assets.xcassets in Resources */,
+				CE167B962A96506B00EB5338 /* SummaryDayViewController.xib in Resources */,
 				CE5DCBCE2A7FAC2A00582FB3 /* MultyViewController.xib in Resources */,
 				CE890BA42A921E430040F873 /* CityWeatherViewController.xib in Resources */,
-				CEFA03AC2A79413000D5471D /* MainViewController.xib in Resources */,
 				CE890BE22A921F260040F873 /* HourForecastViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1463,12 +1482,10 @@
 				CE1D94E52A7BF0DC0058EBBF /* WeatherRouter.swift in Sources */,
 				CEF2487D2A8CF55E001BEB26 /* WeatherListWeatherStoredModel.swift in Sources */,
 				CECB445C2A8A564900B86A0D /* ResponseProtocol.swift in Sources */,
-				CEFA03A72A79413000D5471D /* MainCoordinatorAssembly.swift in Sources */,
 				CE890BA52A921E430040F873 /* CityWeatherViewController.swift in Sources */,
 				CE21D7802A76953E00650BAB /* NetworkingSessionServiceLocator.swift in Sources */,
-				CEFA03AE2A79413000D5471D /* MainInteractor.swift in Sources */,
-				CEFA03AA2A79413000D5471D /* MainContracts.swift in Sources */,
 				CEF248712A8CDC81001BEB26 /* WeatherListStoredModel.swift in Sources */,
+				CE167B972A96506B00EB5338 /* SummaryDayViewController.swift in Sources */,
 				CEF2487A2A8CF518001BEB26 /* WeatherListWeatherModel.swift in Sources */,
 				CE5DCBCD2A7FAC2A00582FB3 /* MultyPresenter.swift in Sources */,
 				CE21D78A2A76988700650BAB /* DeepLinkOptionProtocol.swift in Sources */,
@@ -1482,7 +1499,6 @@
 				CEF248822A8CF68C001BEB26 /* WeatherListWindStoredModel.swift in Sources */,
 				CEDB8A092A83DDE400E1F27A /* Double+Extension.swift in Sources */,
 				CEF2486C2A8CDBA6001BEB26 /* WeatherListModel.swift in Sources */,
-				CEFA03A92A79413000D5471D /* MainAssembly.swift in Sources */,
 				CE5DCBD12A7FAC2A00582FB3 /* MultyRouter.swift in Sources */,
 				CEF248672A8CD9CA001BEB26 /* WeatherCityCoordModel.swift in Sources */,
 				CEC03FC82A8E3E8300F730CE /* DatabaseService.swift in Sources */,
@@ -1499,15 +1515,17 @@
 				CE890BDC2A921F260040F873 /* HourForecastCoordinatorAssembly.swift in Sources */,
 				CE5DCBD32A7FAD1E00582FB3 /* BaseCompositeModuleRouter.swift in Sources */,
 				CE5DCBCB2A7FAC2A00582FB3 /* MultyAssembly.swift in Sources */,
+				CE167B922A96506B00EB5338 /* SummaryDayCoordinator.swift in Sources */,
 				CE890BA12A921E430040F873 /* CityWeatherPresenter.swift in Sources */,
 				CEA3C8422A8C544D009F62B9 /* CustomAPIError.swift in Sources */,
 				CE890BA62A921E430040F873 /* CityWeatherInteractor.swift in Sources */,
 				CE21D7882A76984C00650BAB /* DeepLinkOption.swift in Sources */,
+				CE167B952A96506B00EB5338 /* SummaryDayPresenter.swift in Sources */,
 				CE21D7412A7667EB00650BAB /* BaseViewController.swift in Sources */,
 				CEA3C83C2A8C52CF009F62B9 /* LocationWeatherRequest.swift in Sources */,
+				CE167B982A96506B00EB5338 /* SummaryDayInteractor.swift in Sources */,
 				CE890BE02A921F260040F873 /* HourForecastPresenter.swift in Sources */,
 				CE21D7452A7667EB00650BAB /* PresentableProtocol.swift in Sources */,
-				CEFA03AB2A79413000D5471D /* MainPresenter.swift in Sources */,
 				CE890BA32A921E430040F873 /* CityDataViewModel.swift in Sources */,
 				CE21D7632A768B4500650BAB /* AppCoordinator.swift in Sources */,
 				CE21D73B2A7667EB00650BAB /* BaseModuleRouter.swift in Sources */,
@@ -1515,20 +1533,21 @@
 				CEF2486A2A8CDA1A001BEB26 /* WeatherCityCoordStoredModel.swift in Sources */,
 				CEFA03B62A7AA48F00D5471D /* WeatherServiceLocatorProtocol.swift in Sources */,
 				CE1D94EC2A7BFC7E0058EBBF /* WeatherServiceError.swift in Sources */,
+				CE167B912A96506B00EB5338 /* SummaryDayCoordinatorAssembly.swift in Sources */,
 				CE21D7522A766CBD00650BAB /* UIViewController+Extension.swift in Sources */,
 				CE21D73E2A7667EB00650BAB /* ModuleRoutingHandlingProtocol.swift in Sources */,
+				CE167BA52A96548A00EB5338 /* WeatherDailyViewModel.swift in Sources */,
 				CE21D7672A768C3600650BAB /* RootRouter.swift in Sources */,
 				CE5DCBCA2A7FAC2A00582FB3 /* MultyCoordinatorAssembly.swift in Sources */,
 				CEFA03902A79410200D5471D /* FirstFlowCoordinatorAssembly.swift in Sources */,
 				CE5DCBCF2A7FAC2A00582FB3 /* MultyViewController.swift in Sources */,
 				CEF248602A8CD623001BEB26 /* CityWeatherStoredModel.swift in Sources */,
 				CEC03FCF2A8E721F00F730CE /* UICollectionView.swift in Sources */,
-				CEFA03AD2A79413000D5471D /* MainViewController.swift in Sources */,
 				CEC03FDC2A90DA5400F730CE /* FeaturedCityProvider.swift in Sources */,
 				CEF2485B2A8CC541001BEB26 /* RunTimeModelProtocol.swift in Sources */,
 				CE65D94E2A728E7B009E6954 /* AppDelegate.swift in Sources */,
+				CE167B992A96506B00EB5338 /* SummaryDayRouter.swift in Sources */,
 				CE1D94EA2A7BFAB20058EBBF /* CityWeatherModel.swift in Sources */,
-				CEFA03A82A79413000D5471D /* MainCoordinator.swift in Sources */,
 				CE21D7402A7667EB00650BAB /* BaseCoordinator.swift in Sources */,
 				CE21D76D2A768D6600650BAB /* AppInteractor.swift in Sources */,
 				CEC03FD72A8FB94B00F730CE /* LocalWeatherModel.swift in Sources */,
@@ -1536,7 +1555,6 @@
 				CE890B9F2A921E430040F873 /* CityWeatherAssembly.swift in Sources */,
 				CE5DCBD02A7FAC2A00582FB3 /* MultyInteractor.swift in Sources */,
 				CE21D7582A766E3100650BAB /* DeviceService.swift in Sources */,
-				CEFA03AF2A79413000D5471D /* MainRouter.swift in Sources */,
 				CE21D7502A7668C000650BAB /* WeakContainer.swift in Sources */,
 				CE0535132A94E20B006E00CB /* HourCollectionViewCell.swift in Sources */,
 				CEC03FDA2A8FB96E00F730CE /* LocalWeatherStoredModel.swift in Sources */,
@@ -1559,6 +1577,7 @@
 				CEFA03912A79410200D5471D /* FirstFlowCoordinator.swift in Sources */,
 				CEFA03B52A7AA48F00D5471D /* WeatherService.swift in Sources */,
 				CE21D7542A766D9500650BAB /* LoaderView.swift in Sources */,
+				CE167B942A96506B00EB5338 /* SummaryDayContracts.swift in Sources */,
 				CEC03FCA2A8E3E8600F730CE /* DatabaseServiceLocatorProtocol.swift in Sources */,
 				CEA3C8462A8C6408009F62B9 /* RouterProtocol.swift in Sources */,
 				CE5DCBCC2A7FAC2A00582FB3 /* MultyContracts.swift in Sources */,
@@ -1569,6 +1588,7 @@
 				CE65D9502A728E7B009E6954 /* SceneDelegate.swift in Sources */,
 				CECB445A2A8A560E00B86A0D /* RawDataResponse.swift in Sources */,
 				CE890BE42A921F260040F873 /* HourForecastRouter.swift in Sources */,
+				CE167B932A96506B00EB5338 /* SummaryDayAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

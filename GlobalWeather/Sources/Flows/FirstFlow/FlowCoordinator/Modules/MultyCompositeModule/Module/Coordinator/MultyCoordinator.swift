@@ -23,6 +23,10 @@ class MultyCoordinator: BaseCoordinator<MultyCoordinatorExitRoutingProtocol>, Mu
 }
 
 extension MultyCoordinator: MultyRoutingHandlingProtocol {
+    func summarySumboduleButtonRouting() {
+        
+    }
+    
     func citySumboduleButtonRouting() {
 
     }

@@ -16,6 +16,8 @@ class MultyViewController: BaseViewController {
     
     @IBOutlet private weak var cityContainer: UIView!
     @IBOutlet private weak var hourContainer: UIView!
+    @IBOutlet private weak var summaryContainer: UIView!
+    
     @IBOutlet private weak var toolBar: ToolBar!
     
     override func viewDidLoad() {
@@ -78,5 +80,9 @@ extension MultyViewController: MultyContainersHolderProtocol {
     
     var containerForHourSubmodule: UIView {
         hourContainer
+    }
+    
+    var containerForSummarySubmodule: UIView {
+        summaryContainer
     }
 }
