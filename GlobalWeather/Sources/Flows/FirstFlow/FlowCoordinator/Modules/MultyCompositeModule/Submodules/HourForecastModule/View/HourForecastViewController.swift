@@ -29,11 +29,10 @@ extension HourForecastViewController: HourForecastViewInput {
 
 // MARK: View Input
 extension HourForecastViewController {
-    func setupUIBinding(with viewModel: [WeatherViewModel]) {
+    func setupUIBinding(with viewModels: [WeatherViewModel]) {
         DispatchQueue.main.async {
-            self.hourCollectionView.hourlyCellDidLoad = { cell, indexPath in
-                cell.configureCell(viewModel: viewModel[indexPath.item])
-            }
+            self.hourCollectionView.hoursDataSource = viewModels
+            self.hourCollectionView.reloadData()
         }
     }
 }
