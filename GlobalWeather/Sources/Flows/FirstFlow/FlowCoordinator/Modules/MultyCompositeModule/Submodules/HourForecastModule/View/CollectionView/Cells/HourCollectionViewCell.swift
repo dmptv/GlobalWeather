@@ -19,9 +19,9 @@ class HourCollectionViewCell: UICollectionViewCell {
 }
 
 extension HourCollectionViewCell {
-    func configureCell(viewModel: [WeatherViewModel], item: Int) {
-        hourLabel.text = "\(item)"
-        icon.image = UIImage(named: "drizzling")
-        degreeLabel.text = "\(item)"
+    func configureCell(viewModel: WeatherViewModel) {
+        hourLabel.text = viewModel.hour
+        icon.image = UIImage(named: viewModel.conditionImage)
+        degreeLabel.text = viewModel.temp
     }
 }

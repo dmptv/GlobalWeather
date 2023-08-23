@@ -8,6 +8,8 @@
 import UIKit
 
 class HourCollectionView: UICollectionView {
+    var hourlyCellDidLoad: ((HourCollectionViewCell, IndexPath) -> Void)?
+    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         setupViews()
@@ -36,7 +38,6 @@ extension HourCollectionView {
     
     private func configureSubViews() {
         registerNib(cellType: HourCollectionViewCell.self)
-        
     }
 }
 
@@ -48,12 +49,16 @@ extension HourCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: HourCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
 
-        cell.configureCell(
-            viewModel: [
-                WeatherViewModel.init(dt_txt: "", dateWithMonth: "", hour: "", day: "", temp: "", tempOriginal: "", temp_min: "", temp_max: "", description: "", conditionId: 1, temp_min_int: 89, temp_max_int: 334, feelslike: "", humidity: "", pressure: "", windSpeed: "", windDirection: "", visibility: "")
-            ],
-            item: indexPath.item)
+//        cell.configureCell(
+//            viewModel: [
+//                WeatherViewModel.init(dt_txt: "", dateWithMonth: "", hour: "", day: "", temp: "", tempOriginal: "", temp_min: "", temp_max: "", description: "", conditionId: 1, temp_min_int: 89, temp_max_int: 334, feelslike: "", humidity: "", pressure: "", windSpeed: "", windDirection: "", visibility: "")
+//            ],
+//            item: indexPath.item)
         
+        
+        if let hourlyCellDidLoad = self.hourlyCellDidLoad {
+            hourlyCellDidLoad(cell, indexPath)
+        }
         
         return cell
     }
