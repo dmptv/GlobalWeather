@@ -12,5 +12,4 @@ class CityWeatherRouter: BaseModuleRouter<CityWeatherRoutingHandlingProtocol> {
 }
 
 extension CityWeatherRouter: CityWeatherRouterInputProtocol {
-    
 }

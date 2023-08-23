@@ -15,7 +15,7 @@ protocol CityWeatherModuleInput {
 
 // Module Output
 protocol CityWeatherModuleOutput {
-    
+    func tapCitySubmoduleModuleButton()
 }
 
 // View Input
@@ -26,6 +26,7 @@ protocol CityWeatherViewInput: BaseViewInput {
 // View Output
 protocol CityWeatherViewOutput: ViewOutputProtocol {
     func viewDidLoad()
+    func subModuleTapped()
 }
 
 // Interactor Input
@@ -39,13 +40,12 @@ protocol CityWeatherInteractorOutput: AnyObject {
 }
 
 // Router
-protocol CityWeatherRouterInputProtocol: BaseModuleRoutableProtocol {
+protocol CityWeatherRouterInputProtocol: AlertRoutableProtocol, BaseModuleRoutableProtocol {
     
 }
 
 // Routing Handling
 protocol CityWeatherRoutingHandlingProtocol: ModuleRoutingHandlingProtocol {
-    
 }
 
 // Coordinator Routing Handling

@@ -14,8 +14,8 @@ class MultyViewController: BaseViewController {
     private var cancellables = Set<AnyCancellable>()
     static let headerViewHeightRatio = CGFloat(0.38)
     
-    @IBOutlet private weak var container1: UIView!
-    @IBOutlet private weak var container2: UIView!
+    @IBOutlet private weak var cityContainer: UIView!
+    @IBOutlet private weak var hourContainer: UIView!
     @IBOutlet private weak var toolBar: ToolBar!
     
     override func viewDidLoad() {
@@ -72,11 +72,11 @@ extension MultyViewController {
 }
 
 extension MultyViewController: MultyContainersHolderProtocol {
-    var containerForSubmodule1: UIView {
-        container1
+    var containerForCitySubmodule: UIView {
+        cityContainer
     }
     
-    var containerForSubmodule2: UIView {
-        container2
+    var containerForHourSubmodule: UIView {
+        hourContainer
     }
 }

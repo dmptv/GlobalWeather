@@ -11,8 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MultyViewController">
             <connections>
-                <outlet property="container1" destination="u0p-n2-YrP" id="N2Z-O9-9dW"/>
-                <outlet property="container2" destination="dzC-cc-ybd" id="es8-FT-iHg"/>
+                <outlet property="cityContainer" destination="u0p-n2-YrP" id="Gg9-e2-vVu"/>
+                <outlet property="hourContainer" destination="dzC-cc-ybd" id="bsn-ep-l7a"/>
                 <outlet property="toolBar" destination="GLf-dZ-6gd" id="64Q-vx-cYS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,13 +24,12 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u0p-n2-YrP" userLabel="container1">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
-                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="220" id="qtY-dV-KIp"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzC-cc-ybd" userLabel="Container2">
-                    <rect key="frame" x="0.0" y="382" width="414" height="120"/>
+                    <rect key="frame" x="0.0" y="220" width="414" height="120"/>
                     <color key="backgroundColor" systemColor="systemTealColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="tyN-oZ-guX"/>
@@ -51,7 +50,7 @@
             <constraints>
                 <constraint firstItem="dzC-cc-ybd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5WB-dH-62N"/>
                 <constraint firstItem="u0p-n2-YrP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BZu-Pr-WcE"/>
-                <constraint firstItem="dzC-cc-ybd" firstAttribute="top" secondItem="u0p-n2-YrP" secondAttribute="bottom" constant="162" id="HyK-Ge-Vb7"/>
+                <constraint firstItem="dzC-cc-ybd" firstAttribute="top" secondItem="u0p-n2-YrP" secondAttribute="bottom" id="HyK-Ge-Vb7"/>
                 <constraint firstItem="GLf-dZ-6gd" firstAttribute="trailing" secondItem="j4l-4n-nlZ" secondAttribute="trailing" id="Keb-LM-q0F"/>
                 <constraint firstItem="u0p-n2-YrP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="T8j-mx-TvA"/>
                 <constraint firstItem="u0p-n2-YrP" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="VOD-Zw-gvU"/>
@@ -63,9 +62,6 @@
         </view>
     </objects>
     <resources>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

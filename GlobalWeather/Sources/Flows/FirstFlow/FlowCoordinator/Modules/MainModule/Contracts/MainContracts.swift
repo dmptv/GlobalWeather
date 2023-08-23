@@ -40,7 +40,7 @@ protocol MainInteractorOutput: AnyObject {
 }
 
 // Router
-protocol MainRouterInputProtocol: BaseModuleRoutableProtocol {
+protocol MainRouterInputProtocol: AlertRoutableProtocol, BaseModuleRoutableProtocol {
     
 }
 

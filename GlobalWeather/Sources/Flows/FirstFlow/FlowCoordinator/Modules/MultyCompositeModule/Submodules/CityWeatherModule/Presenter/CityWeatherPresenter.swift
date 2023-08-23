@@ -32,7 +32,9 @@ extension CityWeatherPresenter: CityWeatherModuleInput {
 
 // MARK: View Output
 extension CityWeatherPresenter: CityWeatherViewOutput {
-    
+    func subModuleTapped() {
+        moduleOutput?.tapCitySubmoduleModuleButton()
+    }
 }
 
 // MARK: Interactor Output

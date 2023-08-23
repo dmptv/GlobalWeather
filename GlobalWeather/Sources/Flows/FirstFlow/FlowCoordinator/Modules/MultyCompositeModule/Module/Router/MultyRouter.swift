@@ -14,25 +14,25 @@ class MultyRouter<
 }
 
 extension MultyRouter: MultyRouterInputProtocol {
-    func showSubmodule1(_ presentable: PresentableProtocol) {
-        guard let container = containersHolder?.containerForSubmodule1 else {
+    func showCitySubmodule(_ presentable: PresentableProtocol) {
+        guard let container = containersHolder?.containerForCitySubmodule else {
             return
         }
         showSubmodule(presentable, container)
     }
     
-    func showSubmodule2(_ presentable: PresentableProtocol) {
-        guard let container = containersHolder?.containerForSubmodule2 else {
+    func showHourSubmodule(_ presentable: PresentableProtocol) {
+        guard let container = containersHolder?.containerForHourSubmodule else {
             return
         }
         showSubmodule(presentable, container)
     }
     
-    func submodule1ButtonRoute() {
-        moduleRoutingHandler?.sumbodule1ButtonRouting()
+    func submoduleCityButtonRoute() {
+        moduleRoutingHandler?.citySumboduleButtonRouting()
     }
     
-    func submodule2ButtonRoute() {
-        moduleRoutingHandler?.sumbodule2ButtonRouting()
+    func submoduleHourButtonRoute() {
+        moduleRoutingHandler?.hourSumboduleButtonRouting()
     }
 }

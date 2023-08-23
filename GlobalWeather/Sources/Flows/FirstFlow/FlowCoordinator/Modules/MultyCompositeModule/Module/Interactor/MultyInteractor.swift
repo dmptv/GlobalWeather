@@ -83,6 +83,7 @@ extension MultyInteractor: MultyInteractorInput {
                 
                 if let lastRefreshDate = localData.lastRefreshedDate,
                    let locationName = localData.locationName {
+                    
                     if self.isDataTooOld(from: lastRefreshDate) {
                         self.getDataStateSubject.send(.fetchLocationWeatherData(localData))
                     } else {
@@ -94,7 +95,7 @@ extension MultyInteractor: MultyInteractorInput {
             .store(in: &cancellables)
     }
     
-    
+    @available(*, deprecated, message: "use: retrieveCityWeather()")
     func retrieveCityWeather2() -> AnyPublisher<LocalDataState, Never> {
         let subject = PassthroughSubject<LocalDataState, Never>()
         
