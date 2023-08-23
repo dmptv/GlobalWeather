@@ -15,7 +15,7 @@ SummaryDayInteractorInput,
 SummaryDayRouterInputProtocol,
 SummaryDayViewInput> {
     private var cancellables = Set<AnyCancellable>()
-    private(set) var summaryDayPublisher = PassthroughSubject<[WeatherDailyViewModel], Never>()
+    private(set) var summaryDayPublisher = PassthroughSubject<WeatherDailyViewModel, Never>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +39,8 @@ extension SummaryDayPresenter: SummaryDayModuleInput {
     private func subscribeForModuleInput() {
         summaryDayPublisher
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] vms in
-                self?.view?.summaryDayPublisher.send(vms)
+            .sink { [weak self] vm in
+                self?.view?.summaryDayPublisher.send(vm)
             }
             .store(in: &cancellables)
     }

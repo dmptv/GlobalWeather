@@ -13,13 +13,15 @@ class SummaryDayViewController: BaseViewController {
     var output: SummaryDayViewOutput?
     
     private var cancellables = Set<AnyCancellable>()
-    private(set) var summaryDayPublisher = PassthroughSubject<[WeatherDailyViewModel], Never>()
+    private(set) var summaryDayPublisher = PassthroughSubject<WeatherDailyViewModel, Never>()
 
+    @IBOutlet private weak var descriptionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubviews()
         output?.viewDidLoad()
+        
         subscribeForViewInput()
     }
     
@@ -41,10 +43,14 @@ extension SummaryDayViewController {
     private func subscribeForViewInput() {
         summaryDayPublisher
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] vms in
-                
+            .sink { [weak self] vm in
+                self?.configure(vm)
             }
             .store(in: &cancellables)
+    }
+    
+    private func configure(_ viewModel: WeatherDailyViewModel) {
+        descriptionLabel.text = "Today: Mostly \(viewModel.conditionImage[0]). The high today was forecast as \(viewModel.temp_max[0])"
     }
 }
 

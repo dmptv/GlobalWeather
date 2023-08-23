@@ -11,7 +11,7 @@ import Combine
 
 // Module Input
 protocol SummaryDayModuleInput {
-    var summaryDayPublisher: PassthroughSubject<[WeatherDailyViewModel], Never> { get }
+    var summaryDayPublisher: PassthroughSubject<WeatherDailyViewModel, Never> { get }
 }
 
 // Module Output
@@ -21,7 +21,7 @@ protocol SummaryDayModuleOutput {
 
 // View Input
 protocol SummaryDayViewInput: BaseViewInput {
-    var summaryDayPublisher: PassthroughSubject<[WeatherDailyViewModel], Never> { get }
+    var summaryDayPublisher: PassthroughSubject<WeatherDailyViewModel, Never> { get }
 
 }
 

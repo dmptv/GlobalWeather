@@ -60,9 +60,7 @@ MultyViewInput> {
                 guard let self = self else {
                     return
                 }
-                self.citySubmodule?.input.setData(CityDataViewModel.configure(response))
-                self.hourSubmodule?.input.hourDataPublisher.send(WeatherViewModel.getViewModels(with: response))
-                
+                self.setViewModels(response)
             })
             .store(in: &cancellables)
     }
@@ -92,11 +90,20 @@ MultyViewInput> {
 extension MultyPresenter {
     private func setupSubmodules() {
         guard let cityModule = citySubmodule,
-        let hourModule = hourSubmodule else {
+        let hourModule = hourSubmodule,
+        let summaryModule = summarySubModule else {
             return
         }
         router?.showCitySubmodule(cityModule)
         router?.showHourSubmodule(hourModule)
+        router?.showSummarySubmodule(summaryModule)
+    }
+    
+    private func setViewModels(_ response: CityWeatherModel) {
+        citySubmodule?.input.setData(CityDataViewModel.configure(response))
+        let vms = WeatherViewModel.getViewModels(with: response)
+        hourSubmodule?.input.hourDataPublisher.send(vms)
+        summarySubModule?.input.summaryDayPublisher.send(WeatherDailyViewModel.getViewModel(with: vms))
     }
 }
 

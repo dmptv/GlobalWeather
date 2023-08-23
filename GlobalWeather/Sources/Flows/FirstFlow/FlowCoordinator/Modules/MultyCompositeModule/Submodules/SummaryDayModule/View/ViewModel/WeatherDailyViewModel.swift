@@ -21,7 +21,6 @@ struct WeatherDailyViewModel {
     }
     
     static func getViewModel(with weatherViewModel: [WeatherViewModel]) -> WeatherDailyViewModel {
-        
         var minTempArray = [String]()
         var maxTempArray = [String]()
         var conditionIDArray = [String]()
