@@ -30,6 +30,8 @@ class MultyAssembly: BaseAssemblyProtocol {
         presenter.citySubmodule = CityWeatherAssembly().build(presenter)
         presenter.hourSubmodule = HourForecastAssembly().build(presenter)
         presenter.summarySubModule = SummaryDayAssembly().build(presenter)
+        presenter.infoFeelingsModule = InfoFeelingsAssembly().build(presenter)
+
         
         // Dependency Setup
         view.output = presenter

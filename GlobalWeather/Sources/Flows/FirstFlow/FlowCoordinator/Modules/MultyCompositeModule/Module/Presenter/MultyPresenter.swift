@@ -17,6 +17,7 @@ MultyViewInput> {
     var citySubmodule: Module<CityWeatherModuleInput, CityWeatherModuleOutput>?
     var hourSubmodule: Module<HourForecastModuleInput, HourForecastModuleOutput>?
     var summarySubModule: Module<SummaryDayModuleInput, SummaryDayModuleOutput>?
+    var infoFeelingsModule: Module<InfoFeelingsModuleInput, InfoFeelingsModuleOutput>?
     
     private var cancellables = Set<AnyCancellable>()
     @FeaturedCityProvider var featuredCity: String
@@ -91,12 +92,14 @@ extension MultyPresenter {
     private func setupSubmodules() {
         guard let cityModule = citySubmodule,
         let hourModule = hourSubmodule,
-        let summaryModule = summarySubModule else {
+        let summaryModule = summarySubModule,
+        let feelingsModule = infoFeelingsModule else {
             return
         }
         router?.showCitySubmodule(cityModule)
         router?.showHourSubmodule(hourModule)
         router?.showSummarySubmodule(summaryModule)
+        router?.showFeelingsSubmodule(feelingsModule)
     }
     
     private func setViewModels(_ response: CityWeatherModel) {
@@ -104,6 +107,7 @@ extension MultyPresenter {
         let vms = WeatherViewModel.getViewModels(with: response)
         hourSubmodule?.input.hourDataPublisher.send(vms)
         summarySubModule?.input.summaryDayPublisher.send(WeatherDailyViewModel.getViewModel(with: vms))
+        infoFeelingsModule?.input.feelingsPublisher.send(WeatherInfoViewModel.getViewModel(with: vms))
     }
 }
 
@@ -137,6 +141,10 @@ extension MultyPresenter: SummaryDayModuleOutput {
     
 }
 
+extension MultyPresenter: InfoFeelingsModuleOutput {
+    
+}
+
 // MARK: Submodules Routing Handling
 extension MultyPresenter: CityWeatherRoutingHandlingProtocol {
     func performRouteForBackRouting() {
@@ -157,9 +165,6 @@ extension MultyPresenter: CityWeatherRoutingHandlingProtocol {
 }
 
 extension MultyPresenter: HourForecastRoutingHandlingProtocol {
-    func tapHourSubmoduleModuleButton() {
-        router?.submoduleHourButtonRoute()
-    }
 }
 
 extension MultyPresenter: SummaryDayRoutingHandlingProtocol {

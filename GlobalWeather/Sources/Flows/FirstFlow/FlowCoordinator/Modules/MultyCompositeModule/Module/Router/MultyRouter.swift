@@ -14,6 +14,13 @@ class MultyRouter<
 }
 
 extension MultyRouter: MultyRouterInputProtocol {
+    func showFeelingsSubmodule(_ presentable: PresentableProtocol) {
+        guard let container = containersHolder?.containerForFeelingsSubmodule else {
+            return
+        }
+        showSubmodule(presentable, container)
+    }
+    
     func showSummarySubmodule(_ presentable: PresentableProtocol) {
         guard let container = containersHolder?.containerForSummarySubmodule else {
             return
@@ -45,5 +52,9 @@ extension MultyRouter: MultyRouterInputProtocol {
     
     func submoduleSummaryButtonRoute() {
         moduleRoutingHandler?.summarySumboduleButtonRouting()
+    }
+    
+    func submoduleFeelingsButtonRoute() {
+        
     }
 }

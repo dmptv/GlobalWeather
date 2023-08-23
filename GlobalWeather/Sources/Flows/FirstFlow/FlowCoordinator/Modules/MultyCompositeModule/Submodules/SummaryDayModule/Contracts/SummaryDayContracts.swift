@@ -22,7 +22,6 @@ protocol SummaryDayModuleOutput {
 // View Input
 protocol SummaryDayViewInput: BaseViewInput {
     var summaryDayPublisher: PassthroughSubject<WeatherDailyViewModel, Never> { get }
-
 }
 
 // View Output
