@@ -92,7 +92,7 @@ struct WeatherViewModel {
         
         var description: String = ""
         let feelslike = "\(Int(eachWeather.main?.feelsLike ?? 0))°C"
-        let humidity = "\(String(describing: eachWeather.main?.humidity))%"
+        let humidity = "\(Int(eachWeather.main?.humidity ?? 0))%"
         let pressure = "\(Int(eachWeather.main?.pressure ?? 0))hPa"
         let windSpeed = "\(Int((eachWeather.wind?.speed ?? 0) * 3.6))km/h"
         let windDirection = (eachWeather.wind?.deg ?? 0).degToCompass()

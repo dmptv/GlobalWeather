@@ -17,6 +17,7 @@ class MultyViewController: BaseViewController {
     @IBOutlet private weak var cityContainer: UIView!
     @IBOutlet private weak var hourContainer: UIView!
     @IBOutlet private weak var summaryContainer: UIView!
+    @IBOutlet private weak var feelingsContainer: UIView!
     
     @IBOutlet private weak var toolBar: ToolBar!
     
@@ -84,5 +85,9 @@ extension MultyViewController: MultyContainersHolderProtocol {
     
     var containerForSummarySubmodule: UIView {
         summaryContainer
+    }
+    
+    var containerForFeelingsSubmodule: UIView {
+        feelingsContainer
     }
 }

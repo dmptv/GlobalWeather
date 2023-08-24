@@ -34,4 +34,8 @@ extension MultyCoordinator: MultyRoutingHandlingProtocol {
     func hourSumboduleButtonRouting() {
 
     }
+    
+    func feelingsSumboduleButtonRouting() {
+        
+    }
 }

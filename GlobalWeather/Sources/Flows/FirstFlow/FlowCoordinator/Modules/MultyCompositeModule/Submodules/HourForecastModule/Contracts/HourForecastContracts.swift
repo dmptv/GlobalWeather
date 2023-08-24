@@ -16,7 +16,6 @@ protocol HourForecastModuleInput {
 
 // Module Output
 protocol HourForecastModuleOutput {
-    func tapHourSubmoduleModuleButton()
 }
 
 // View Input
