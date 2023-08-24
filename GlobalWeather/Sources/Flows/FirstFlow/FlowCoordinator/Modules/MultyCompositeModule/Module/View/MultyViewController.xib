@@ -36,13 +36,13 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYo-1Q-kYE" userLabel="Container3">
-                    <rect key="frame" x="0.0" y="340" width="414" height="100"/>
+                    <rect key="frame" x="0.0" y="340" width="414" height="70"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="6p3-1P-3Ar"/>
+                        <constraint firstAttribute="height" constant="70" id="6p3-1P-3Ar"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuH-a1-Wp4" userLabel="Container4">
-                    <rect key="frame" x="0.0" y="440" width="414" height="372"/>
+                    <rect key="frame" x="0.0" y="410" width="414" height="402"/>
                 </view>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GLf-dZ-6gd" customClass="ToolBar" customModule="GlobalWeather" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="812" width="414" height="50"/>

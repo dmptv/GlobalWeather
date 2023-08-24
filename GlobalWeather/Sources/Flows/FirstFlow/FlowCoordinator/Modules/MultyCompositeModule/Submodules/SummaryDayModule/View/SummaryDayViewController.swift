@@ -15,7 +15,7 @@ class SummaryDayViewController: BaseViewController {
     private var cancellables = Set<AnyCancellable>()
     private(set) var summaryDayPublisher = PassthroughSubject<WeatherDailyViewModel, Never>()
 
-    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: TopAlignedLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,6 @@ class SummaryDayViewController: BaseViewController {
 // MARK: - Configure
 extension SummaryDayViewController: SummaryDayViewInput {
     private func setupSubviews() {
-        
     }
 }
 
@@ -57,4 +56,34 @@ extension SummaryDayViewController {
 // MARK: Button Action
 extension SummaryDayViewController {
     
+}
+
+class TopAlignedLabel: UILabel {
+    override func drawText(in rect: CGRect) {
+        guard let text = text else {
+            super.drawText(in: rect)
+            return
+        }
+        
+        let style = NSMutableParagraphStyle()
+        style.alignment = textAlignment
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font ?? UIFont.boldSystemFont(ofSize: 20),
+            .foregroundColor: textColor ?? UIColor(red: 0.41, green: 0.69, blue: 0.89, alpha: 1.00)
+,
+            .paragraphStyle: style
+        ]
+        
+        let size = text.boundingRect(with: rect.size,
+                                     options: [.usesLineFragmentOrigin],
+                                     attributes: attributes,
+                                     context: nil).size
+        
+        let newRect = CGRect(x: rect.origin.x,
+                             y: rect.origin.y,
+                             width: rect.size.width,
+                             height: size.height)
+        
+        super.drawText(in: newRect)
+    }
 }
