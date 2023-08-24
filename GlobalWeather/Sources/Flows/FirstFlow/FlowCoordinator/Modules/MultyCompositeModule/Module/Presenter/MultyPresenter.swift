@@ -21,10 +21,14 @@ MultyViewInput> {
     
     private var cancellables = Set<AnyCancellable>()
     @FeaturedCityProvider var featuredCity: String
+    private(set) var navigateToSeachSubject = PassthroughSubject<Void, Never>()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()        
         setupSubmodules()
+        setupForActions()
+        
         interactor?.retrieveCityWeather()
         
         interactor?.getDataStateSubject
@@ -109,6 +113,16 @@ extension MultyPresenter {
         summarySubModule?.input.summaryDayPublisher.send(WeatherDailyViewModel.getViewModel(with: vms))
         infoFeelingsModule?.input.feelingsPublisher.send(WeatherInfoViewModel.getViewModel(with: vms))
     }
+    
+    private func setupForActions() {
+        navigateToSeachSubject
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                self?.router?.routeToSeachSubject.send(())
+            }
+            .store(in: &cancellables)
+    }
+
 }
 
 // MARK: Module Input

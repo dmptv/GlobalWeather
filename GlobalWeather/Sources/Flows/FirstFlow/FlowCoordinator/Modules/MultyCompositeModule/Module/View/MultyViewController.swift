@@ -81,8 +81,9 @@ extension MultyViewController: MultyViewInput {
             .store(in: &cancellables)
         
         toolBar.settingButtonDidTapSubject
-            .sink { _ in
-                
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                self?.output?.navigateToSeachSubject.send(())
             }
             .store(in: &cancellables)
     }

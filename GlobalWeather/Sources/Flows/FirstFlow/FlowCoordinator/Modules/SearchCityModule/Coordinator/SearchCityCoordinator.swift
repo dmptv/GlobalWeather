@@ -18,8 +18,7 @@ class SearchCityCoordinator: BaseCoordinator<SearchCityCoordinatorExitRoutingPro
         guard let toPresent = module.toPresent() else {
             return
         }
-        let navController = UINavigationController(rootViewController: toPresent)
-        router.showScreen(navController)
+        router.showScreen(toPresent)
     }
 }
 

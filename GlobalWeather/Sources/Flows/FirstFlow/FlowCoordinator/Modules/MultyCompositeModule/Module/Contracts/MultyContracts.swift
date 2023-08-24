@@ -26,6 +26,9 @@ protocol MultyViewInput: BaseViewInput {
 
 // View Output
 protocol MultyViewOutput: ViewOutputProtocol {
+    var navigateToSeachSubject: PassthroughSubject<Void, Never> { get }
+
+    
     func viewDidLoad()
 }
 
@@ -53,6 +56,8 @@ protocol MultyInteractorOutput: AnyObject {
 
 // Router
 protocol MultyRouterInputProtocol: AlertRoutableProtocol, BaseModuleRoutableProtocol {
+    var routeToSeachSubject: PassthroughSubject<Void, Never> { get }
+    
     func showCitySubmodule(_ presentable: PresentableProtocol)
     func showHourSubmodule(_ presentable: PresentableProtocol)
     func showSummarySubmodule(_ presentable: PresentableProtocol)
@@ -70,8 +75,11 @@ protocol MultyRoutingHandlingProtocol: ModuleRoutingHandlingProtocol {
     func hourSumboduleButtonRouting()
     func summarySumboduleButtonRouting()
     func feelingsSumboduleButtonRouting()
+    
+    func performRouteToSearch()
 }
 
 // Coordinator Routing Handling
 protocol MultyCoordinatorExitRoutingProtocol: FlowExitPointProtocol {
+    func performRouteToSearch(_ coordinator: CoordinatorProtocol)
 }

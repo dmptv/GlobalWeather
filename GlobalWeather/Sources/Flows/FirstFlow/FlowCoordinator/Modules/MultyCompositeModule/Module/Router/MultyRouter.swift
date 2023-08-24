@@ -7,10 +7,30 @@
 //
 
 import Foundation
+import Combine
 
 class MultyRouter<
     ContainerHolder: MultyContainersHolderProtocol
 >: BaseCompositeModuleRouter<ContainerHolder, MultyRoutingHandlingProtocol> {
+    private var cancellables = Set<AnyCancellable>()
+    private(set) var routeToSeachSubject = PassthroughSubject<Void, Never>()
+
+
+    override init(viewController: ViewControllerProtocol, containersHolder: ContainerHolder) {
+        super.init(viewController: viewController, containersHolder: containersHolder)
+        
+        routeToSeachSubject
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                self?.moduleRoutingHandler?.performRouteToSearch()
+            }
+            .store(in: &cancellables)
+    }
+    
+    deinit {
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
+    }
 }
 
 extension MultyRouter: MultyRouterInputProtocol {
