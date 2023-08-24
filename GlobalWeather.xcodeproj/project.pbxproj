@@ -532,6 +532,7 @@
 			isa = PBXGroup;
 			children = (
 				CE19ADC32A96B41500ADA506 /* FeelingsCollectionView.swift */,
+				CE19ADE02A96BA0E00ADA506 /* Cell */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -1248,7 +1249,6 @@
 				CEB0C8BD2A967183003730FC /* InfoFeelingsViewController.swift */,
 				CEB0C8BE2A967183003730FC /* InfoFeelingsViewController.xib */,
 				CE19ADC22A96B3DD00ADA506 /* CollectionView */,
-				CE19ADE02A96BA0E00ADA506 /* Cell */,
 				CE823BB02A9775D9004A50FA /* ViewModel */,
 			);
 			path = View;
