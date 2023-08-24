@@ -34,6 +34,7 @@ class SummaryDayViewController: BaseViewController {
 // MARK: - Configure
 extension SummaryDayViewController: SummaryDayViewInput {
     private func setupSubviews() {
+        descriptionLabel.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.5, alpha: 1.0)
     }
 }
 

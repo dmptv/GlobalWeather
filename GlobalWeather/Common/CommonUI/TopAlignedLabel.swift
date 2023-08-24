@@ -13,9 +13,7 @@ class TopAlignedLabel: UILabel {
             super.drawText(in: rect)
             return
         }
-        
-        backgroundColor = .gray
-        
+                
         let style = NSMutableParagraphStyle()
         style.alignment = textAlignment
         let attributes: [NSAttributedString.Key: Any] = [
