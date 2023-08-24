@@ -23,6 +23,8 @@
 		CE167B982A96506B00EB5338 /* SummaryDayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE167B8E2A96506A00EB5338 /* SummaryDayInteractor.swift */; };
 		CE167B992A96506B00EB5338 /* SummaryDayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE167B902A96506A00EB5338 /* SummaryDayRouter.swift */; };
 		CE167BA52A96548A00EB5338 /* WeatherDailyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE167BA42A96548A00EB5338 /* WeatherDailyViewModel.swift */; };
+		CE19ADC42A96B41500ADA506 /* FeelingsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19ADC32A96B41500ADA506 /* FeelingsCollectionView.swift */; };
+		CE19ADDE2A96B9DF00ADA506 /* FeelingsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19ADDC2A96B9DF00ADA506 /* FeelingsCollectionViewCell.swift */; };
 		CE1B9D262A7E99CA00C6D5C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1B9D252A7E99CA00C6D5C0 /* LaunchScreen.storyboard */; };
 		CE1D94E52A7BF0DC0058EBBF /* WeatherRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D94E42A7BF0DC0058EBBF /* WeatherRouter.swift */; };
 		CE1D94EA2A7BFAB20058EBBF /* CityWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D94E92A7BFAB20058EBBF /* CityWeatherModel.swift */; };
@@ -196,6 +198,8 @@
 		CE167B8E2A96506A00EB5338 /* SummaryDayInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryDayInteractor.swift; sourceTree = "<group>"; };
 		CE167B902A96506A00EB5338 /* SummaryDayRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryDayRouter.swift; sourceTree = "<group>"; };
 		CE167BA42A96548A00EB5338 /* WeatherDailyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDailyViewModel.swift; sourceTree = "<group>"; };
+		CE19ADC32A96B41500ADA506 /* FeelingsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsCollectionView.swift; sourceTree = "<group>"; };
+		CE19ADDC2A96B9DF00ADA506 /* FeelingsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeelingsCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE1B9D252A7E99CA00C6D5C0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE1D94E42A7BF0DC0058EBBF /* WeatherRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRouter.swift; sourceTree = "<group>"; };
 		CE1D94E92A7BFAB20058EBBF /* CityWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherModel.swift; sourceTree = "<group>"; };
@@ -505,6 +509,22 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		CE19ADC22A96B3DD00ADA506 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				CE19ADC32A96B41500ADA506 /* FeelingsCollectionView.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		CE19ADE02A96BA0E00ADA506 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE19ADDC2A96B9DF00ADA506 /* FeelingsCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		CE21D6BC2A765D7F00650BAB /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,7 +533,6 @@
 				CE21D7762A76907500650BAB /* ModelLayer */,
 				CECB444B2A8A4A8C00B86A0D /* Services */,
 				CE21D7222A7667EB00650BAB /* BaseModule */,
-				CE21D75E2A76707100650BAB /* Extension */,
 				CE21D75F2A76708400650BAB /* CommonUI */,
 			);
 			path = Common;
@@ -854,6 +873,7 @@
 		CE65D9812A7290DE009E6954 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CE21D75E2A76707100650BAB /* Extension */,
 				CE21D7592A766F1300650BAB /* FloatingPanel */,
 				CE21D7572A766E3100650BAB /* DeviceService.swift */,
 				CE21D74D2A76686E00650BAB /* BlockObject.swift */,
@@ -1127,6 +1147,8 @@
 			children = (
 				CEB0C8BD2A967183003730FC /* InfoFeelingsViewController.swift */,
 				CEB0C8BE2A967183003730FC /* InfoFeelingsViewController.xib */,
+				CE19ADC22A96B3DD00ADA506 /* CollectionView */,
+				CE19ADE02A96BA0E00ADA506 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1591,6 +1613,7 @@
 				CEF248592A8CC4F6001BEB26 /* StorableProtocol.swift in Sources */,
 				CE890BA02A921E430040F873 /* CityWeatherContracts.swift in Sources */,
 				CEA3C8402A8C5331009F62B9 /* BaseRequest.swift in Sources */,
+				CE19ADDE2A96B9DF00ADA506 /* FeelingsCollectionViewCell.swift in Sources */,
 				CEC03FCD2A8E71FD00F730CE /* Reusable.swift in Sources */,
 				CEF248822A8CF68C001BEB26 /* WeatherListWindStoredModel.swift in Sources */,
 				CEDB8A092A83DDE400E1F27A /* Double+Extension.swift in Sources */,
@@ -1673,6 +1696,7 @@
 				CE890BDF2A921F260040F873 /* HourForecastContracts.swift in Sources */,
 				CE890BDD2A921F260040F873 /* HourForecastCoordinator.swift in Sources */,
 				CEF248752A8CF32D001BEB26 /* WeatherListMainModel.swift in Sources */,
+				CE19ADC42A96B41500ADA506 /* FeelingsCollectionView.swift in Sources */,
 				CE21D7752A76903100650BAB /* UserDefaultsService.swift in Sources */,
 				CE21D7612A76887600650BAB /* App.swift in Sources */,
 				CE21D7442A7667EB00650BAB /* Module.swift in Sources */,

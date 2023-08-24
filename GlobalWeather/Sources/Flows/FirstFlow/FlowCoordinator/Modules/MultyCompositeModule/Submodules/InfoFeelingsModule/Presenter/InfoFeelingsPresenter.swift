@@ -15,7 +15,7 @@ InfoFeelingsInteractorInput,
 InfoFeelingsRouterInputProtocol,
 InfoFeelingsViewInput> {
     private var cancellables = Set<AnyCancellable>()
-    private(set) var feelingsPublisher = PassthroughSubject<WeatherInfoViewModel, Never>()
+    private(set) var feelingsPublisher = PassthroughSubject<WeatherInfoViewModel?, Never>()
 
     override func viewDidLoad() {
         super.viewDidLoad()

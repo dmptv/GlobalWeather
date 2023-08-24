@@ -15,7 +15,6 @@ class HourForecastViewController: BaseViewController {
     private var cancellables = Set<AnyCancellable>()
     private(set) var hourDataPublisher = PassthroughSubject<[WeatherViewModel], Never>()
 
-    
     @IBOutlet weak var hourCollectionView: HourCollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()

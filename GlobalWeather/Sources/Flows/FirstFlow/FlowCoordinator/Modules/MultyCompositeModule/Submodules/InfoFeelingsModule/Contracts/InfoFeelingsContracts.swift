@@ -11,7 +11,7 @@ import Combine
 
 // Module Input
 protocol InfoFeelingsModuleInput {
-    var feelingsPublisher: PassthroughSubject<WeatherInfoViewModel, Never> { get }
+    var feelingsPublisher: PassthroughSubject<WeatherInfoViewModel?, Never> { get }
 }
 
 // Module Output
@@ -21,7 +21,7 @@ protocol InfoFeelingsModuleOutput {
 
 // View Input
 protocol InfoFeelingsViewInput: BaseViewInput {
-    var feelingsPublisher: PassthroughSubject<WeatherInfoViewModel, Never> { get }
+    var feelingsPublisher: PassthroughSubject<WeatherInfoViewModel?, Never> { get }
 }
 
 // View Output

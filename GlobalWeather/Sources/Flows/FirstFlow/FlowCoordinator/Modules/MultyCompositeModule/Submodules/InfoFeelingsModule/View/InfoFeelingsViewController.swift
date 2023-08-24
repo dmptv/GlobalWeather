@@ -12,8 +12,10 @@ import Combine
 class InfoFeelingsViewController: BaseViewController {
     var output: InfoFeelingsViewOutput?
     private var cancellables = Set<AnyCancellable>()
-    private(set) var feelingsPublisher = PassthroughSubject<WeatherInfoViewModel, Never>()
-    
+    private(set) var feelingsPublisher = PassthroughSubject<WeatherInfoViewModel?, Never>()
+    private let subInfoTitles = ["Feels like", "Humidity", "Pressure", "Wind Speed", "Wind Direction", "Visibility"]
+
+    @IBOutlet weak var feelingsCollectionView: FeelingsCollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubviews()
@@ -40,14 +42,17 @@ extension InfoFeelingsViewController {
     private func subscribeForViewInput() {
         feelingsPublisher
             .receive(on: DispatchQueue.main)
+            .compactMap { $0 }
+            .print("controller")
             .sink { [weak self] vm in
                 self?.configure(vm)
             }
             .store(in: &cancellables)
     }
     
-    private func configure(_ viewModel: WeatherInfoViewModel) {
-        print(viewModel.infos)
+    private func configure(_ viewModel: WeatherInfoViewModel?) {
+        feelingsCollectionView.viewModel = viewModel
+        feelingsCollectionView.reloadData()
     }
 }
 
