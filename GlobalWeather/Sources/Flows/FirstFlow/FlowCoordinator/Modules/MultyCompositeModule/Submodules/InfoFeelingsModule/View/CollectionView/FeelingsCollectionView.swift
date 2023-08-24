@@ -27,10 +27,14 @@ extension FeelingsCollectionView {
         dataSource = self
         delegate = self
         backgroundColor = .clear
+        isUserInteractionEnabled = true
+        isScrollEnabled = true
         
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             layout.minimumInteritemSpacing = 0
-            layout.minimumLineSpacing = 0
+            layout.minimumLineSpacing = 12
+            layout.scrollDirection = .vertical
+
         }
         
         configureSubViews()
@@ -60,6 +64,6 @@ extension FeelingsCollectionView: UICollectionViewDataSource {
 
 extension FeelingsCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: bounds.height / 2, height: bounds.height / 4)
+        return CGSize(width: bounds.height / 4, height: 52)
     }
 }

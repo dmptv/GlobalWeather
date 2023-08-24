@@ -42,8 +42,6 @@ extension InfoFeelingsViewController {
     private func subscribeForViewInput() {
         feelingsPublisher
             .receive(on: DispatchQueue.main)
-            .compactMap { $0 }
-            .print("controller")
             .sink { [weak self] vm in
                 self?.configure(vm)
             }

@@ -42,16 +42,17 @@ class FeelingsCollectionViewCell: UICollectionViewCell {
         
         topLabel
             .leadingAnchor(to: leadingAnchor, constant: 16)
-            .topAnchor(to: topAnchor, constant: 8)
+            .topAnchor(to: topAnchor, constant: 4)
             .trailingAnchor(to: trailingAnchor, constant: 8)
             .heightAnchor(constant: 24)
             .activateAnchors()
         
         bottomLabel
             .leadingAnchor(to: leadingAnchor, constant: 8)
-            .topAnchor(to: topLabel.bottomAnchor, constant: 8)
+            .topAnchor(to: topLabel.bottomAnchor, constant: 0)
             .trailingAnchor(to: trailingAnchor, constant: 8)
             .heightAnchor(constant: 24)
+            .bottomAnchor(to: bottomAnchor, constant: 4)
             .activateAnchors()
     }
 
