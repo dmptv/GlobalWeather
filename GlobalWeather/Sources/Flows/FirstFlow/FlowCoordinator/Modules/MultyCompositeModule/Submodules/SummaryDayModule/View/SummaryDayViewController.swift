@@ -50,7 +50,26 @@ extension SummaryDayViewController {
     }
     
     private func configure(_ viewModel: WeatherDailyViewModel) {
-        descriptionLabel.text = "Today: Mostly \(viewModel.conditionImage[0]). The high today was forecast as \(viewModel.temp_max[0])"
+        descriptionLabel.text = "Expect mostly \(weatherCondition(from: viewModel.conditionImage[0])) conditions. The projected high temperature \(viewModel.temp_max[0])"
+    }
+    
+    private func weatherCondition(from imageName: String) -> String {
+        switch imageName {
+        case "cloud.bolt.rain.fill":
+            return "thunderstorms"
+        case "cloud.drizzle.fill":
+            return "drizzling"
+        case "cloud.rain.fill":
+            return "raining"
+        case "snow":
+            return "snowing"
+        case "wind":
+            return "windy"
+        case "sun.max":
+            return "clear"
+        default:
+            return "cloudy"
+        }
     }
 }
 

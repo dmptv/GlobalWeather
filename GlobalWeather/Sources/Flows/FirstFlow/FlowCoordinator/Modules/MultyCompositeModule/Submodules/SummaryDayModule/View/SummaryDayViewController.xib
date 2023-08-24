@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,19 +18,18 @@
             <rect key="frame" x="0.0" y="0.0" width="795" height="367"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vj3-Um-PzK" userLabel="description" customClass="TopAlignedLabel" customModule="GlobalWeather" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vj3-Um-PzK" userLabel="description" customClass="TopAlignedLabel" customModule="GlobalWeather" customModuleProvider="target">
                     <rect key="frame" x="16" y="0.0" width="763" height="367"/>
-                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="24"/>
+                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
                 <constraint firstItem="vj3-Um-PzK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Slu-KU-nDz"/>
-                <constraint firstItem="vj3-Um-PzK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Zwd-9C-eia"/>
+                <constraint firstItem="vj3-Um-PzK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Zwd-9C-eia"/>
                 <constraint firstAttribute="bottom" secondItem="vj3-Um-PzK" secondAttribute="bottom" id="ddy-85-bo3"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vj3-Um-PzK" secondAttribute="trailing" constant="16" id="uea-xr-B7d"/>
+                <constraint firstAttribute="trailing" secondItem="vj3-Um-PzK" secondAttribute="trailing" constant="16" id="uea-xr-B7d"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="200.72463768115944" y="115.51339285714285"/>
