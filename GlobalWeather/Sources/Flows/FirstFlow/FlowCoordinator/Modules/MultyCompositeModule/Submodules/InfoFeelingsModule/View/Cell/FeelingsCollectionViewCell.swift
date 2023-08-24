@@ -12,9 +12,13 @@ class FeelingsCollectionViewCell: UICollectionViewCell {
     
     private lazy var topLabel = UILabel().then {
         $0.textAlignment = .center
+        $0.textColor = UIColor(red: 0.29, green: 0.59, blue: 0.83, alpha: 1.00)
+        $0.font = UIFont.systemFont(ofSize: 18)
     }
     private lazy var bottomLabel = UILabel().then {
         $0.textAlignment = .center
+        $0.textColor = UIColor(red: 0.41, green: 0.69, blue: 0.89, alpha: 1.00)
+        $0.font = UIFont.boldSystemFont(ofSize: 20)
     }
     
     private let subInfoTitles = ["Feels like", "Humidity", "Pressure", "Wind Speed", "Wind Direction", "Visibility"]
@@ -37,7 +41,7 @@ class FeelingsCollectionViewCell: UICollectionViewCell {
     private func setupConstraints() {
         
         topLabel
-            .leadingAnchor(to: leadingAnchor, constant: 8)
+            .leadingAnchor(to: leadingAnchor, constant: 16)
             .topAnchor(to: topAnchor, constant: 8)
             .trailingAnchor(to: trailingAnchor, constant: 8)
             .heightAnchor(constant: 24)
