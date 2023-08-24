@@ -24,7 +24,15 @@ class HourCollectionViewCell: UICollectionViewCell {
 extension HourCollectionViewCell {
     func configureCell(viewModel: WeatherViewModel) {
         hourLabel.text = viewModel.hour
-        icon.image = UIImage(named: viewModel.conditionImage)
         degreeLabel.text = viewModel.temp
+        configure(iconName: viewModel.conditionImage)
+
+    }
+    
+    func configure(iconName: String) {
+        if let image = UIImage(systemName: iconName) {
+            icon.image = image.withRenderingMode(.alwaysTemplate)
+            icon.tintColor = .white
+        }
     }
 }

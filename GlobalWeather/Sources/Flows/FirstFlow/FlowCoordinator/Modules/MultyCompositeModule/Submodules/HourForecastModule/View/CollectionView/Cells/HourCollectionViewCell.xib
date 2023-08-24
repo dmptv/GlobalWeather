@@ -17,35 +17,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="247" height="265"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="12h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBf-vx-gT4">
-                        <rect key="frame" x="0.0" y="4" width="247" height="214.33333333333334"/>
-                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28℃" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mn7-17-k6g">
-                        <rect key="frame" x="0.0" y="238.66666666666666" width="247" height="22.333333333333343"/>
-                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="Q2s-bG-ivg">
-                        <rect key="frame" x="16" y="219.33333333333334" width="215" height="19.000000000000028"/>
-                        <imageReference key="image" image="sun.haze.circle" catalog="system" symbolScale="default"/>
-                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FX2-Tb-Xwc">
+                        <rect key="frame" x="0.0" y="0.0" width="247" height="265"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="12h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBf-vx-gT4">
+                                <rect key="frame" x="108.66666666666667" y="0.0" width="30.000000000000014" height="88.333333333333329"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="Q2s-bG-ivg">
+                                <rect key="frame" x="113.66666666666667" y="89.333333333333314" width="19.666666666666671" height="87"/>
+                                <imageReference key="image" image="sun.haze.circle" catalog="system" symbolScale="default"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28℃" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mn7-17-k6g">
+                                <rect key="frame" x="104.66666666666667" y="176.66666666666666" width="38.000000000000014" height="88.333333333333343"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="Q2s-bG-ivg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="2ah-Ky-hPC"/>
-                <constraint firstAttribute="trailing" secondItem="QBf-vx-gT4" secondAttribute="trailing" id="9pl-lx-UZd"/>
-                <constraint firstAttribute="trailing" secondItem="mn7-17-k6g" secondAttribute="trailing" id="Fri-RE-cYI"/>
-                <constraint firstAttribute="trailing" secondItem="Q2s-bG-ivg" secondAttribute="trailing" constant="16" id="IKt-08-tDj"/>
-                <constraint firstAttribute="bottom" secondItem="mn7-17-k6g" secondAttribute="bottom" constant="4" id="WxY-KJ-l83"/>
-                <constraint firstItem="mn7-17-k6g" firstAttribute="top" secondItem="Q2s-bG-ivg" secondAttribute="bottom" priority="750" id="YlM-5k-1DS"/>
-                <constraint firstItem="Q2s-bG-ivg" firstAttribute="top" secondItem="QBf-vx-gT4" secondAttribute="bottom" priority="750" id="e7p-pC-0so"/>
-                <constraint firstItem="QBf-vx-gT4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iM5-a7-V72"/>
-                <constraint firstItem="QBf-vx-gT4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="oQR-bu-xHN"/>
-                <constraint firstItem="mn7-17-k6g" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xOy-HW-cgf"/>
+                <constraint firstItem="FX2-Tb-Xwc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Sue-rz-gIR"/>
+                <constraint firstAttribute="trailing" secondItem="FX2-Tb-Xwc" secondAttribute="trailing" id="eBl-SH-QKX"/>
+                <constraint firstAttribute="bottom" secondItem="FX2-Tb-Xwc" secondAttribute="bottom" id="g7R-Sf-KC6"/>
+                <constraint firstItem="FX2-Tb-Xwc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nfE-fZ-s3X"/>
             </constraints>
             <size key="customSize" width="247" height="265"/>
             <connections>

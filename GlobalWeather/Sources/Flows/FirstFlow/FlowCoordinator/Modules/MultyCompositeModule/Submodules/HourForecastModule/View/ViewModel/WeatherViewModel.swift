@@ -25,19 +25,19 @@ struct WeatherViewModel {
     var conditionImage: String {
         switch conditionId {
         case 200...299:
-            return "thunderstorms"
+            return "cloud.bolt.rain.fill"
         case 300...399:
-            return "drizzling"
+            return "cloud.drizzle.fill"
         case 500...599:
-            return "raining"
+            return "cloud.rain.fill"
         case 600...699:
-            return "snowing"
+            return "snow"
         case 700...799:
-            return "windy"
+            return "wind"
         case 800:
-            return "shine"
+            return "sun.max"
         default:
-            return "cloudy"
+            return "cloud.fill"
         }
     }
     
