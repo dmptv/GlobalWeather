@@ -47,6 +47,7 @@ class MultyViewController: BaseViewController {
 extension MultyViewController: MultyViewInput {
     private func setupSubviews() {
         subscribeForPublishers()
+        
     }
     
     private func subscribeForPublishers() {

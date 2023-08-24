@@ -34,9 +34,9 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="TcQ-FJ-HTg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZoN-yR-Ytg"/>
+                <constraint firstItem="TcQ-FJ-HTg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZoN-yR-Ytg"/>
                 <constraint firstItem="TcQ-FJ-HTg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cMX-ZU-kZW"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TcQ-FJ-HTg" secondAttribute="trailing" id="gSd-Eg-ucJ"/>
+                <constraint firstAttribute="trailing" secondItem="TcQ-FJ-HTg" secondAttribute="trailing" id="gSd-Eg-ucJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="TcQ-FJ-HTg" secondAttribute="bottom" id="oxq-L1-vWq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

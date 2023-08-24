@@ -16,6 +16,7 @@ class InfoFeelingsViewController: BaseViewController {
     private let subInfoTitles = ["Feels like", "Humidity", "Pressure", "Wind Speed", "Wind Direction", "Visibility"]
 
     @IBOutlet weak var feelingsCollectionView: FeelingsCollectionView!
+      
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubviews()
@@ -23,7 +24,7 @@ class InfoFeelingsViewController: BaseViewController {
         
         subscribeForViewInput()
     }
-    
+     
     deinit {
         cancellables.forEach { $0.cancel() }
         cancellables.removeAll()
@@ -33,7 +34,6 @@ class InfoFeelingsViewController: BaseViewController {
 // MARK: - Configure
 extension InfoFeelingsViewController: InfoFeelingsViewInput {
     private func setupSubviews() {
-        
     }
 }
 
