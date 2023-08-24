@@ -15,6 +15,9 @@ class HourCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        hourLabel.textColor = .white
+        degreeLabel.textColor = .white
+        
     }
 }
 
