@@ -16,13 +16,26 @@ class SearchCityViewController: BaseViewController {
         setupSubviews()
         output?.viewDidLoad()
     }
+    
+    deinit {
+        
+    }
 }
 
 // MARK: - Configure
 extension SearchCityViewController: SearchCityViewInput {
     private func setupSubviews() {
-        
+        setupNavigationBar()
     }
+    
+    private func setupNavigationBar() {
+        let exitBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left") ?? UIImage(),
+                                                style: .done,
+                                                target: self,
+                                                action: #selector(exitButtonTapped))
+        navigationItem.leftBarButtonItem = exitBarButtonItem
+    }
+    
 }
 
 // MARK: View Input
@@ -32,5 +45,8 @@ extension SearchCityViewController {
 
 // MARK: Button Action
 extension SearchCityViewController {
-    
+    @objc
+    private func exitButtonTapped() {
+        output?.backButtonAction()
+    }
 }

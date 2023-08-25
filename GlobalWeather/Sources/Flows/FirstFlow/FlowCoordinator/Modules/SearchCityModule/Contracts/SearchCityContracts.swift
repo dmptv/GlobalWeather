@@ -26,6 +26,7 @@ protocol SearchCityViewInput: BaseViewInput {
 // View Output
 protocol SearchCityViewOutput: ViewOutputProtocol {
     func viewDidLoad()
+    func backButtonAction()
 }
 
 // Interactor Input

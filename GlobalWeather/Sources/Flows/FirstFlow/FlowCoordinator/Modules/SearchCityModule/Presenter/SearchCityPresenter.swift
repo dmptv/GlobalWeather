@@ -30,7 +30,9 @@ extension SearchCityPresenter: SearchCityModuleInput {
 
 // MARK: View Output
 extension SearchCityPresenter: SearchCityViewOutput {
-    
+    func backButtonAction() {
+        router?.closeRouting()
+    }
 }
 
 // MARK: Interactor Output

@@ -964,8 +964,8 @@
 		CE823B9D2A970350004A50FA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE823B9E2A970350004A50FA /* SearchCityViewController.xib */,
 				CE823B9F2A970350004A50FA /* SearchCityViewController.swift */,
+				CE823B9E2A970350004A50FA /* SearchCityViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";

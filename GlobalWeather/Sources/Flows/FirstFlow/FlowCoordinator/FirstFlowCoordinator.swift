@@ -36,15 +36,15 @@ extension FirstFlowCoordinator: MultyCoordinatorExitRoutingProtocol {
         guard let toPresent = coordinator.toPresent() else {
             return
         }
-        let navigationController = UINavigationController(rootViewController: toPresent)
-        navigationController.hero.isEnabled = true
-        navigationController.hero.modalAnimationType =
+        toPresent.hero.isEnabled = true
+        toPresent.hero.modalAnimationType =
             .selectBy(presenting: .push(direction: .left),
                       dismissing: .pull(direction: .right))
-        router.present(navigationController, style: .fullScreen)
+        router.present(toPresent, style: .fullScreen)
     }
 }
 
 extension FirstFlowCoordinator: SearchCityCoordinatorExitRoutingProtocol {
     
 }
+
