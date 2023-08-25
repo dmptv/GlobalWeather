@@ -19,7 +19,6 @@ class FeelingsCollectionView: UICollectionView {
         super.init(coder: aDecoder)
         setupViews()
     }
-
 }
 
 extension FeelingsCollectionView {

@@ -66,6 +66,7 @@
 		CE21D7852A76971E00650BAB /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7842A76971E00650BAB /* AppAppearance.swift */; };
 		CE21D7882A76984C00650BAB /* DeepLinkOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7872A76984C00650BAB /* DeepLinkOption.swift */; };
 		CE21D78A2A76988700650BAB /* DeepLinkOptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21D7892A76988700650BAB /* DeepLinkOptionProtocol.swift */; };
+		CE4AD2792A98489F00D2CE67 /* SearchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AD2782A98489F00D2CE67 /* SearchTableView.swift */; };
 		CE5DCBC92A7FAC2A00582FB3 /* MultyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DCBBA2A7FAC2A00582FB3 /* MultyCoordinator.swift */; };
 		CE5DCBCA2A7FAC2A00582FB3 /* MultyCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DCBBB2A7FAC2A00582FB3 /* MultyCoordinatorAssembly.swift */; };
 		CE5DCBCB2A7FAC2A00582FB3 /* MultyAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DCBBD2A7FAC2A00582FB3 /* MultyAssembly.swift */; };
@@ -251,6 +252,7 @@
 		CE21D7842A76971E00650BAB /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		CE21D7872A76984C00650BAB /* DeepLinkOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkOption.swift; sourceTree = "<group>"; };
 		CE21D7892A76988700650BAB /* DeepLinkOptionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkOptionProtocol.swift; sourceTree = "<group>"; };
+		CE4AD2782A98489F00D2CE67 /* SearchTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableView.swift; sourceTree = "<group>"; };
 		CE5DCBBA2A7FAC2A00582FB3 /* MultyCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultyCoordinator.swift; sourceTree = "<group>"; };
 		CE5DCBBB2A7FAC2A00582FB3 /* MultyCoordinatorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultyCoordinatorAssembly.swift; sourceTree = "<group>"; };
 		CE5DCBBD2A7FAC2A00582FB3 /* MultyAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultyAssembly.swift; sourceTree = "<group>"; };
@@ -729,6 +731,14 @@
 			path = DeepLink;
 			sourceTree = "<group>";
 		};
+		CE4AD27A2A9848A500D2CE67 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				CE4AD2782A98489F00D2CE67 /* SearchTableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		CE5DCBB72A7FAC2A00582FB3 /* MultyCompositeModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -966,6 +976,7 @@
 			children = (
 				CE823B9F2A970350004A50FA /* SearchCityViewController.swift */,
 				CE823B9E2A970350004A50FA /* SearchCityViewController.xib */,
+				CE4AD27A2A9848A500D2CE67 /* TableView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1796,6 +1807,7 @@
 				CE21D7652A768B9F00650BAB /* AppCoordinatorLocator.swift in Sources */,
 				CE21D7492A7667EB00650BAB /* CoordinatorProtocol.swift in Sources */,
 				CE823BAB2A970350004A50FA /* SearchCityInteractor.swift in Sources */,
+				CE4AD2792A98489F00D2CE67 /* SearchTableView.swift in Sources */,
 				CE890BE32A921F260040F873 /* HourForecastInteractor.swift in Sources */,
 				CEB0C8CA2A967183003730FC /* InfoFeelingsInteractor.swift in Sources */,
 				CE21D73A2A7667EB00650BAB /* BaseCoordinatorRouter.swift in Sources */,

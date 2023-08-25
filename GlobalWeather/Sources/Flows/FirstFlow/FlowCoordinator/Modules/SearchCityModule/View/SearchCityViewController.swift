@@ -11,10 +11,18 @@ import UIKit
 class SearchCityViewController: BaseViewController {
     var output: SearchCityViewOutput?
     
+    @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var searchTableView: SearchTableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubviews()
         output?.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchBar.becomeFirstResponder()
     }
     
     deinit {
@@ -26,6 +34,8 @@ class SearchCityViewController: BaseViewController {
 extension SearchCityViewController: SearchCityViewInput {
     private func setupSubviews() {
         setupNavigationBar()
+        searchBar.delegate = self
+        
     }
     
     private func setupNavigationBar() {
@@ -48,5 +58,13 @@ extension SearchCityViewController {
     @objc
     private func exitButtonTapped() {
         output?.backButtonAction()
+    }
+}
+
+
+
+extension SearchCityViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        presenter?.textDidChange(searchText: searchText)
     }
 }
