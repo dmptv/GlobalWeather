@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 // Module Input
 protocol SearchCityModuleInput {
@@ -27,11 +28,15 @@ protocol SearchCityViewInput: BaseViewInput {
 protocol SearchCityViewOutput: ViewOutputProtocol {
     func viewDidLoad()
     func backButtonAction()
+    func textDidChange(searchText: String)
+    func didSelectTableViewRow(at indexPath: IndexPath)
 }
 
 // Interactor Input
 protocol SearchCityInteractorInput {
-    
+    func setupCompleterDelegate()
+    func enterQueryFragment(with searchText: String)
+    func saveSelectedLocationData(indexPath: IndexPath)
 }
 
 // Interactor Output

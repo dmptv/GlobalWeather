@@ -14,7 +14,9 @@ SearchCityInteractorInput,
 SearchCityRouterInputProtocol,
 SearchCityViewInput> {
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        
+        interactor?.setupCompleterDelegate()
     }
 }
 
@@ -30,8 +32,16 @@ extension SearchCityPresenter: SearchCityModuleInput {
 
 // MARK: View Output
 extension SearchCityPresenter: SearchCityViewOutput {
+    func didSelectTableViewRow(at indexPath: IndexPath) {
+        interactor?.saveSelectedLocationData(indexPath: indexPath)
+    }
+    
     func backButtonAction() {
         router?.closeRouting()
+    }
+    
+    func textDidChange(searchText: String) {
+        interactor?.enterQueryFragment(with: searchText)
     }
 }
 

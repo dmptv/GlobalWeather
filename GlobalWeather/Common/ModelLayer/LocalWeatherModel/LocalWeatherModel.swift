@@ -17,7 +17,7 @@ class LocalWeatherModel: Codable {
     var lastRefreshedDate: Date?
     var weatherData: Data?
     
-    init(locationName: String?, latitude: Double?, longitude: Double?, lastRefreshedDate: Date?, weatherData: Data?) {
+    init(locationName: String?, latitude: Double?, longitude: Double?, lastRefreshedDate: Date? = nil, weatherData: Data? = nil) {
         self.locationName = locationName
         self.latitude = latitude
         self.longitude = longitude
