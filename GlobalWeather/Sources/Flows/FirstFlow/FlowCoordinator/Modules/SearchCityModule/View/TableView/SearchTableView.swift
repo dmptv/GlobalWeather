@@ -31,7 +31,7 @@ extension SearchTableView {
 
 extension SearchTableView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        searchResults = ["first", "paris", "london"]
+        searchResults = ["Rome", "Paris", "London"]
         return searchResults.count
     }
     
