@@ -80,7 +80,7 @@ MultyViewInput> {
                     print(error.localizedDescription, "error by location")
                 }
             }, receiveValue: { response in
-
+                self.setViewModels(response)
             })
             .store(in: &cancellables)
     }

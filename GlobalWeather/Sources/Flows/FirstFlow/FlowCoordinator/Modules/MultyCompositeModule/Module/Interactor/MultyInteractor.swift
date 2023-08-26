@@ -182,7 +182,7 @@ extension MultyInteractor: MultyInteractorInput {
         }
     }
     
-    func fetchWeather(location: LocalWeatherModel) -> Future<LocationWeatherModel, CustomAPIError> {
+    func fetchWeather(location: LocalWeatherModel) -> Future<CityWeatherModel, CustomAPIError> {
         apiClient.fetchWeather(location: location)
     }
     

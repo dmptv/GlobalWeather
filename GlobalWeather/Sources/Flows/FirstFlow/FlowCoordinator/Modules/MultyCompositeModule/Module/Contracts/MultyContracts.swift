@@ -46,7 +46,7 @@ protocol MultyInteractorInput {
     
     func retrieveCityWeather()
     func featuredCityWeather(cityName: String) -> Future<CityWeatherModel, CustomAPIError>
-    func fetchWeather(location: LocalWeatherModel) -> Future<LocationWeatherModel, CustomAPIError>
+    func fetchWeather(location: LocalWeatherModel) -> Future<CityWeatherModel, CustomAPIError>
 }
 
 // Interactor Output
