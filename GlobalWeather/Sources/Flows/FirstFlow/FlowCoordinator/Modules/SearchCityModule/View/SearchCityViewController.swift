@@ -42,9 +42,17 @@ extension SearchCityViewController: SearchCityViewInput, SearchTableViewDelegate
     
     private func setupSubviews() {
         setupNavigationBar()
+        setupdelegates()
+        setupCancelImage()
+        setupSearchBar()
+    }
+    
+    private func setupdelegates() {
         searchBar.delegate = self
         searchTableView.searchDelegate = self
-        
+    }
+    
+    private func setupSearchBar() {
         if let textField = searchBar.value(forKey: "searchField") as? UITextField {
             let placeholderText = " Enter city, zip, code, or airport location"
             let placeholderAttributes: [NSAttributedString.Key: Any] = [
@@ -63,9 +71,14 @@ extension SearchCityViewController: SearchCityViewInput, SearchTableViewDelegate
         gradientLayer.colors = [sunriseBackgroundColor, sunsetBackgroundColor]
         gradientLayer.frame = view.bounds
         view.layer.insertSublayer(gradientLayer, at: 0)
-        
+    }
+    
+    private func setupCancelImage() {
         cancelImage.layer.cornerRadius = cancelImage.frame.height / 2
         cancelImage.image = UIImage(named: "GhostEmoji")
+        cancelImage.translatesAutoresizingMaskIntoConstraints = true
+        cancelImage.frame = CGRect(x: -100, y: 100, width: 100, height: 100)
+        cancelImage.alpha = 0
     }
     
     private func setupNavigationBar() {
@@ -76,6 +89,20 @@ extension SearchCityViewController: SearchCityViewInput, SearchTableViewDelegate
         navigationItem.leftBarButtonItem = exitBarButtonItem
     }
     
+    private func showGhostAnimation() {
+        UIView.animate(withDuration: 1.0, delay: 0, options: .transitionFlipFromLeft, animations: {
+            self.cancelImage.center = self.view.center
+            self.cancelImage.alpha = 0.6
+        }, completion: { _ in })
+    }
+    
+    private func hideGhostAnimation() {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .transitionCurlDown, animations: {
+            self.cancelImage.alpha = 0
+        }, completion: { _ in
+            self.cancelImage.frame = CGRect(x: -100, y: 100, width: 100, height: 100)
+        })
+    }
 }
 
 // MARK: View Input
@@ -84,7 +111,7 @@ extension SearchCityViewController {
         Just(results)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] results in
-                self?.cancelImage.isHidden = true
+                self?.hideGhostAnimation()
                 self?.searchTableView.searchResults = results
             }
             .store(in: &cancellables)
@@ -93,6 +120,7 @@ extension SearchCityViewController {
     func showCancelImage() {
         DispatchQueue.main.async {
             self.cancelImage.isHidden = false
+            self.showGhostAnimation()
         }
     }
 }
