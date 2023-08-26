@@ -60,6 +60,7 @@ extension MultyInteractor: MultyInteractorInput {
                 return localData
             }
             .filter { $0 == nil }
+            .print("localData none")
             .sink { [weak self] localData in
                 guard let self = self else {
                     return
@@ -76,6 +77,7 @@ extension MultyInteractor: MultyInteractorInput {
                 .map { $0.first }
                 .compactMap { $0 }
             )
+            .print("localData and cityData here")
             .sink { [weak self] localData, cityData in
                 guard let self = self else {
                     return
@@ -91,6 +93,22 @@ extension MultyInteractor: MultyInteractorInput {
                     }
                 }
                 
+            }
+            .store(in: &cancellables)
+        
+        // we have solely localData
+        localDataPublisher
+            .map { $0.first }
+            .compactMap { $0 }
+            .combineLatest(self.databaseService.getAll(of: CityWeatherModel.self)
+                                .filter { $0.isEmpty }
+                                .eraseToAnyPublisher())
+            .print("localData here")
+            .sink { [weak self] localData, _ in
+                guard let self = self else {
+                    return
+                }
+                self.getDataStateSubject.send(LocalDataState.fetchLocationWeatherData(localData))
             }
             .store(in: &cancellables)
     }
