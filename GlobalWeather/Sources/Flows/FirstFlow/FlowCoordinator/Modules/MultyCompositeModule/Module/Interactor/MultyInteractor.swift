@@ -15,8 +15,6 @@ enum LocalDataState {
     case presentStoredData(CityWeatherModel, _ name: String)
 }
 
-/// https://developer.apple.com/documentation/mapkit/mapkit_for_appkit_and_uikit/interacting_with_nearby_points_of_interest
-
 class MultyInteractor {
     weak var output: MultyInteractorOutput?
     
@@ -60,7 +58,7 @@ extension MultyInteractor: MultyInteractorInput {
                 return localData
             }
             .filter { $0 == nil }
-            .print("localData none")
+            .print("local none")
             .sink { [weak self] localData in
                 guard let self = self else {
                     return
@@ -77,7 +75,7 @@ extension MultyInteractor: MultyInteractorInput {
                 .map { $0.first }
                 .compactMap { $0 }
             )
-            .print("localData and cityData here")
+            .print("local city here")
             .sink { [weak self] localData, cityData in
                 guard let self = self else {
                     return
@@ -92,7 +90,7 @@ extension MultyInteractor: MultyInteractorInput {
                         self.getDataStateSubject.send(.presentStoredData(cityData, locationName))
                     }
                 } else {
-                    print("no -> \(localData.lastRefreshedDate) or \(localData.locationName ?? "")")
+                    self.getDataStateSubject.send(.fetchFeaturedCityWeatherData)
                 }
             }
             .store(in: &cancellables)
@@ -104,7 +102,7 @@ extension MultyInteractor: MultyInteractorInput {
             .combineLatest(self.databaseService.getAll(of: CityWeatherModel.self)
                                 .filter { $0.isEmpty }
                                 .eraseToAnyPublisher())
-            .print("localData here")
+            .print("local here")
             .sink { [weak self] localData, _ in
                 guard let self = self else {
                     return
@@ -171,12 +169,3 @@ extension MultyInteractor: MultyInteractorInput {
         return currentDate.minutes(from: lastRefreshDate) >= 1 ? true : false // 180
     }
 }
-
-
-/// check if data is 3 hour long
-/// if  more 3 hour long
-/// then fetchWeather for location
-/// then store data to reaml
-/// then  bind data to view
-/// if less 3 hour
-/// then present stored data

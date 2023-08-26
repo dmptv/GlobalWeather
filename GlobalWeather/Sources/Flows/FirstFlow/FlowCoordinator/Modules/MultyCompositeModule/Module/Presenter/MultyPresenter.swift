@@ -125,7 +125,7 @@ extension MultyPresenter {
     }
 
     private func presentData(_ model: CityWeatherModel, _ city: String) {
-       assertionFailure("🙀 stored data is too old")
+        setViewModels(model)
     }
 }
 
