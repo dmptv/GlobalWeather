@@ -28,14 +28,14 @@ protocol SearchCityViewInput: BaseViewInput {
 protocol SearchCityViewOutput: ViewOutputProtocol {
     func viewDidLoad()
     func backButtonAction()
-    func textDidChange(searchText: String)
+    func textDidChange(searchText: String) -> Future<Void, Never>?
     func didSelectTableViewRow(at indexPath: IndexPath)
 }
 
 // Interactor Input
 protocol SearchCityInteractorInput {
     func setupCompleterDelegate()
-    func enterQueryFragment(with searchText: String)
+    func enterQueryFragment(with searchText: String) -> Future<Void, Never>
     func saveSelectedLocationData(indexPath: IndexPath)
 }
 

@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchTableView: UITableView {
-    var searchResults = [String]()
+    var searchResults = ["Rome", "Paris", "London"]
 
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -31,7 +31,6 @@ extension SearchTableView {
 
 extension SearchTableView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        searchResults = ["Rome", "Paris", "London"]
         return searchResults.count
     }
     

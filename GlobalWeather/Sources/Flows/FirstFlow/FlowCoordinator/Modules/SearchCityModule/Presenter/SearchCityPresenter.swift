@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 class SearchCityPresenter: BasePresenter
 <SearchCityModuleOutput,
@@ -40,7 +41,7 @@ extension SearchCityPresenter: SearchCityViewOutput {
         router?.closeRouting()
     }
     
-    func textDidChange(searchText: String) {
+    func textDidChange(searchText: String) -> Future<Void, Never>? {
         interactor?.enterQueryFragment(with: searchText)
     }
 }

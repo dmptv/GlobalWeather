@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Combine
 
 class SearchCityViewController: BaseViewController {
     var output: SearchCityViewOutput?
+    private var cancellables = Set<AnyCancellable>()
+
     
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var searchTableView: SearchTableView!
@@ -26,7 +29,8 @@ class SearchCityViewController: BaseViewController {
     }
     
     deinit {
-        
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
     }
 }
 
@@ -65,6 +69,11 @@ extension SearchCityViewController {
 
 extension SearchCityViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        output?.textDidChange(searchText: searchText)
+        output?.textDidChange(searchText: searchText)?
+            .sink { [weak self] in
+                self?.searchTableView.searchResults.removeAll()
+                self?.searchTableView.reloadData()
+            }
+            .store(in: &cancellables)
     }
 }

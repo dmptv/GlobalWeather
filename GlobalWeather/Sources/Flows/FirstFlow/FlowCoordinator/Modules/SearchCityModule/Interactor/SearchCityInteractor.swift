@@ -58,12 +58,15 @@ extension SearchCityInteractor: SearchCityInteractorInput {
         }
     }
     
-    func enterQueryFragment(with searchText: String) {
-        if searchText == "" {
-            searchResults.removeAll()
-//            presenter?.reloadTableView()
+    func enterQueryFragment(with searchText: String) -> Future<Void, Never> {
+        let future: Future<Void, Never> = Future { [weak self] promise in
+            if searchText.isEmpty {
+                self?.searchResults.removeAll()
+                promise(.success(()))
+            }
+            self?.searchCompleter.queryFragment = searchText
         }
-        searchCompleter.queryFragment = searchText
+        return future
     }
 }
 
