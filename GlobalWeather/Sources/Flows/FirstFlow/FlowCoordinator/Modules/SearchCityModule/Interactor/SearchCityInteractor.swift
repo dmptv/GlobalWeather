@@ -89,6 +89,6 @@ extension SearchCityInteractor: MKLocalSearchCompleterDelegate {
     }
     
     func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
-        print("👻 Cancel")
+        output?.showCancelImage()
     }
 }

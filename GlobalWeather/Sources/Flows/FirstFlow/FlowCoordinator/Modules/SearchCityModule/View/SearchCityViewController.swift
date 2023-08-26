@@ -15,6 +15,7 @@ class SearchCityViewController: BaseViewController {
     
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var searchTableView: SearchTableView!
+    @IBOutlet private weak var cancelImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +63,9 @@ extension SearchCityViewController: SearchCityViewInput, SearchTableViewDelegate
         gradientLayer.colors = [sunriseBackgroundColor, sunsetBackgroundColor]
         gradientLayer.frame = view.bounds
         view.layer.insertSublayer(gradientLayer, at: 0)
+        
+        cancelImage.layer.cornerRadius = cancelImage.frame.height / 2
+        cancelImage.image = UIImage(named: "GhostEmoji")
     }
     
     private func setupNavigationBar() {
@@ -80,9 +84,16 @@ extension SearchCityViewController {
         Just(results)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] results in
+                self?.cancelImage.isHidden = true
                 self?.searchTableView.searchResults = results
             }
             .store(in: &cancellables)
+    }
+    
+    func showCancelImage() {
+        DispatchQueue.main.async {
+            self.cancelImage.isHidden = false
+        }
     }
 }
 
@@ -104,3 +115,5 @@ extension SearchCityViewController: UISearchBarDelegate {
             .store(in: &cancellables)
     }
 }
+
+

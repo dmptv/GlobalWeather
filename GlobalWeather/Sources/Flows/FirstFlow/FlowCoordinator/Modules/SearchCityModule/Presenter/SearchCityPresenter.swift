@@ -55,4 +55,8 @@ extension SearchCityPresenter: SearchCityInteractorOutput {
     func navigateRouteToMain() {
         router?.closeRouting()
     }
+    
+    func showCancelImage() {
+        view?.showCancelImage()
+    }
 }

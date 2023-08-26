@@ -22,6 +22,7 @@ protocol SearchCityModuleOutput {
 // View Input
 protocol SearchCityViewInput: BaseViewInput {
     func updateSearchResults(_ results: [String])
+    func showCancelImage()
 }
 
 // View Output
@@ -43,6 +44,7 @@ protocol SearchCityInteractorInput {
 protocol SearchCityInteractorOutput: AnyObject {
     func updateSearchResults(_ results: [String])
     func navigateRouteToMain()
+    func showCancelImage()
 }
 
 // Router
