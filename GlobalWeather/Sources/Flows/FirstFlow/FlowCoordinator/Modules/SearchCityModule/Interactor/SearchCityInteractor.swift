@@ -70,7 +70,6 @@ extension SearchCityInteractor: SearchCityInteractorInput {
 //MARK: - MKLocalSearchCompleterDelegate
 extension SearchCityInteractor: MKLocalSearchCompleterDelegate {
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
-        // update search results
         searchResults = completer.results
 //        presenter?.reloadTableView()
     }

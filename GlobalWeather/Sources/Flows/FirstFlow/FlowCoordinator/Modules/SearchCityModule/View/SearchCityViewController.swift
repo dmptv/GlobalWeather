@@ -65,6 +65,6 @@ extension SearchCityViewController {
 
 extension SearchCityViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        presenter?.textDidChange(searchText: searchText)
+        output?.textDidChange(searchText: searchText)
     }
 }
