@@ -48,5 +48,7 @@ extension SearchCityPresenter: SearchCityViewOutput {
 
 // MARK: Interactor Output
 extension SearchCityPresenter: SearchCityInteractorOutput {
-    
+    func updateSearchResults(_ results: [String]) {
+        view?.updateSearchResults(results)
+    }
 }

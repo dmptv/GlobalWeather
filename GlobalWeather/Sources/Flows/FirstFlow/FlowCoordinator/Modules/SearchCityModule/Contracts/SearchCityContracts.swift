@@ -21,7 +21,7 @@ protocol SearchCityModuleOutput {
 
 // View Input
 protocol SearchCityViewInput: BaseViewInput {
-    
+    func updateSearchResults(_ results: [String])
 }
 
 // View Output
@@ -41,7 +41,7 @@ protocol SearchCityInteractorInput {
 
 // Interactor Output
 protocol SearchCityInteractorOutput: AnyObject {
-    
+    func updateSearchResults(_ results: [String])
 }
 
 // Router

@@ -54,7 +54,14 @@ extension SearchCityViewController: SearchCityViewInput {
 
 // MARK: View Input
 extension SearchCityViewController {
-    
+    func updateSearchResults(_ results: [String]) {
+        Just(results)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] results in
+                self?.searchTableView.searchResults = results
+            }
+            .store(in: &cancellables)
+    }
 }
 
 // MARK: Button Action
@@ -70,9 +77,9 @@ extension SearchCityViewController {
 extension SearchCityViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         output?.textDidChange(searchText: searchText)?
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] in
                 self?.searchTableView.searchResults.removeAll()
-                self?.searchTableView.reloadData()
             }
             .store(in: &cancellables)
     }

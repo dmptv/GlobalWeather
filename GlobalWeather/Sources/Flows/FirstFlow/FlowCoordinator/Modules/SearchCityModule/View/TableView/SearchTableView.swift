@@ -8,7 +8,11 @@
 import UIKit
 
 class SearchTableView: UITableView {
-    var searchResults = ["Rome", "Paris", "London"]
+    var searchResults: [String] = ["Bangkok", "Paris", "London"] {
+        didSet {
+            reloadData()
+        }
+    }
 
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)

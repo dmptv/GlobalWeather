@@ -74,10 +74,15 @@ extension SearchCityInteractor: SearchCityInteractorInput {
 extension SearchCityInteractor: MKLocalSearchCompleterDelegate {
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         searchResults = completer.results
-//        presenter?.reloadTableView()
+        Just(searchResults.map { $0.title })
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] results in
+                self?.output?.updateSearchResults(results)
+            }
+            .store(in: &cancellables)
     }
     
     func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
-        print("Cancel")
+        print("👻 Cancel")
     }
 }
