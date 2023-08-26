@@ -28,8 +28,8 @@ protocol MultyViewInput: BaseViewInput {
 protocol MultyViewOutput: ViewOutputProtocol {
     var navigateToSeachSubject: PassthroughSubject<Void, Never> { get }
 
-    
     func viewDidLoad()
+    func viewWillAppear()
 }
 
 // View Composite Module Containers Holder

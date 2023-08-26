@@ -51,4 +51,8 @@ extension SearchCityPresenter: SearchCityInteractorOutput {
     func updateSearchResults(_ results: [String]) {
         view?.updateSearchResults(results)
     }
+    
+    func navigateRouteToMain() {
+        router?.closeRouting()
+    }
 }

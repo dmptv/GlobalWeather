@@ -188,7 +188,7 @@ extension MultyInteractor: MultyInteractorInput {
     
     private func isDataTooOld(from lastRefreshDate: Date) -> Bool {
         let currentDate = Date()
-        return currentDate.minutes(from: lastRefreshDate) >= 180 ? true : false
+        return currentDate.minutes(from: lastRefreshDate) >= 1 ? true : false // 180
     }
 }
 

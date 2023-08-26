@@ -50,21 +50,13 @@ extension SearchCityInteractor: SearchCityInteractorInput {
             guard let locationName = placeMark.name else { return }
              
             let location = LocalWeatherModel(locationName: locationName, latitude: placeMark.coordinate.latitude, longitude: placeMark.coordinate.longitude)
-            // Delete All local data and Save Only Location Data (No Weather Data)
             self.databaseService.removeAll(of: CityWeatherModel.self)
                 .flatMap { self.databaseService.removeAll(of: LocalWeatherModel.self) }
                 .flatMap { self.databaseService.add(objects: [location]) }
-                .sink { res in
-                
+                .sink { [weak self] _ in
+                    self?.output?.navigateRouteToMain()
                 }
                 .store(in: &cancellables)
-            
-            
-            
-            
-            
-            // go back to RootViewController
-//            self.presenter?.popToRootViewController()
         }
     }
     

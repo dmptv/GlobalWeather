@@ -42,19 +42,17 @@ protocol SearchCityInteractorInput {
 // Interactor Output
 protocol SearchCityInteractorOutput: AnyObject {
     func updateSearchResults(_ results: [String])
+    func navigateRouteToMain()
 }
 
 // Router
 protocol SearchCityRouterInputProtocol: AlertRoutableProtocol, BaseModuleRoutableProtocol {
-    
 }
 
 // Routing Handling
 protocol SearchCityRoutingHandlingProtocol: ModuleRoutingHandlingProtocol {
-    
 }
 
 // Coordinator Routing Handling
 protocol SearchCityCoordinatorExitRoutingProtocol: FlowExitPointProtocol {
-    
 }
