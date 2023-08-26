@@ -52,8 +52,8 @@ extension SearchCityInteractor: SearchCityInteractorInput {
             let location = LocalWeatherModel(locationName: locationName, latitude: placeMark.coordinate.latitude, longitude: placeMark.coordinate.longitude)
             // Delete All local data and Save Only Location Data (No Weather Data)
             self.databaseService.removeAll(of: CityWeatherModel.self)
+                .flatMap { self.databaseService.removeAll(of: LocalWeatherModel.self) }
                 .flatMap { self.databaseService.add(objects: [location]) }
-                
                 .sink { res in
                 
                 }
