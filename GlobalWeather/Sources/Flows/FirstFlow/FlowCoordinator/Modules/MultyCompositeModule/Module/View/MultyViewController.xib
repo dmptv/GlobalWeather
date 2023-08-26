@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -25,16 +24,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u0p-n2-YrP" userLabel="container1">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="220" id="qtY-dV-KIp"/>
+                        <constraint firstAttribute="height" constant="200" id="qtY-dV-KIp"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzC-cc-ybd" userLabel="Container2">
-                    <rect key="frame" x="0.0" y="220" width="414" height="120"/>
+                    <rect key="frame" x="0.0" y="200" width="414" height="120"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="tyN-oZ-guX"/>
                     </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYo-1Q-kYE" userLabel="Container3">
+                    <rect key="frame" x="0.0" y="320" width="414" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="6p3-1P-3Ar"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuH-a1-Wp4" userLabel="Container4">
+                    <rect key="frame" x="0.0" y="400" width="414" height="412"/>
                 </view>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GLf-dZ-6gd" customClass="ToolBar" customModule="GlobalWeather" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="812" width="414" height="50"/>
@@ -45,43 +53,28 @@
                         <barButtonItem title="Item" id="f3V-Zq-AdW"/>
                     </items>
                 </toolbar>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYo-1Q-kYE" userLabel="Container3">
-                    <rect key="frame" x="0.0" y="340" width="414" height="140"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="140" id="6p3-1P-3Ar"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuH-a1-Wp4" userLabel="Container4">
-                    <rect key="frame" x="0.0" y="480" width="414" height="332"/>
-                    <color key="backgroundColor" systemColor="systemCyanColor"/>
-                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="j4l-4n-nlZ"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="dzC-cc-ybd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5WB-dH-62N"/>
+                <constraint firstItem="JuH-a1-Wp4" firstAttribute="top" secondItem="jYo-1Q-kYE" secondAttribute="bottom" id="7T2-zr-7mH"/>
                 <constraint firstItem="u0p-n2-YrP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BZu-Pr-WcE"/>
-                <constraint firstItem="GLf-dZ-6gd" firstAttribute="top" secondItem="JuH-a1-Wp4" secondAttribute="bottom" id="FV4-wd-vCM"/>
                 <constraint firstItem="dzC-cc-ybd" firstAttribute="top" secondItem="u0p-n2-YrP" secondAttribute="bottom" id="HyK-Ge-Vb7"/>
-                <constraint firstItem="jYo-1Q-kYE" firstAttribute="leading" secondItem="j4l-4n-nlZ" secondAttribute="leading" id="JSU-iL-CHn"/>
+                <constraint firstItem="jYo-1Q-kYE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JSU-iL-CHn"/>
                 <constraint firstItem="GLf-dZ-6gd" firstAttribute="trailing" secondItem="j4l-4n-nlZ" secondAttribute="trailing" id="Keb-LM-q0F"/>
-                <constraint firstItem="j4l-4n-nlZ" firstAttribute="trailing" secondItem="jYo-1Q-kYE" secondAttribute="trailing" id="OI1-V3-Upd"/>
+                <constraint firstAttribute="trailing" secondItem="jYo-1Q-kYE" secondAttribute="trailing" id="OI1-V3-Upd"/>
+                <constraint firstItem="JuH-a1-Wp4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PYd-OU-kYk"/>
                 <constraint firstItem="u0p-n2-YrP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="T8j-mx-TvA"/>
-                <constraint firstItem="j4l-4n-nlZ" firstAttribute="trailing" secondItem="JuH-a1-Wp4" secondAttribute="trailing" id="Tdk-ab-Sbu"/>
                 <constraint firstItem="jYo-1Q-kYE" firstAttribute="top" secondItem="dzC-cc-ybd" secondAttribute="bottom" id="UO8-IL-4PZ"/>
                 <constraint firstItem="u0p-n2-YrP" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="VOD-Zw-gvU"/>
                 <constraint firstItem="dzC-cc-ybd" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="Wvw-0c-nhx"/>
+                <constraint firstItem="GLf-dZ-6gd" firstAttribute="top" secondItem="JuH-a1-Wp4" secondAttribute="bottom" id="YdG-1A-uDl"/>
                 <constraint firstItem="GLf-dZ-6gd" firstAttribute="bottom" secondItem="j4l-4n-nlZ" secondAttribute="bottom" id="Yqq-bH-mdV"/>
                 <constraint firstItem="GLf-dZ-6gd" firstAttribute="leading" secondItem="j4l-4n-nlZ" secondAttribute="leading" id="bgr-rV-Y9o"/>
-                <constraint firstItem="JuH-a1-Wp4" firstAttribute="leading" secondItem="j4l-4n-nlZ" secondAttribute="leading" id="oFt-8w-vh3"/>
-                <constraint firstItem="JuH-a1-Wp4" firstAttribute="top" secondItem="jYo-1Q-kYE" secondAttribute="bottom" id="weZ-rh-sl6"/>
+                <constraint firstItem="JuH-a1-Wp4" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="zgq-Tj-7QW"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

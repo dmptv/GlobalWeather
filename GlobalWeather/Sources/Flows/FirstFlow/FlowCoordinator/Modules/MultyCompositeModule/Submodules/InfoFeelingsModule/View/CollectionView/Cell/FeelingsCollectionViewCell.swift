@@ -12,12 +12,12 @@ class FeelingsCollectionViewCell: UICollectionViewCell {
     
     private lazy var topLabel = UILabel().then {
         $0.textAlignment = .center
-        $0.textColor = UIColor(red: 0.29, green: 0.59, blue: 0.83, alpha: 1.00)
+        $0.textColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
         $0.font = UIFont.systemFont(ofSize: 18)
     }
     private lazy var bottomLabel = UILabel().then {
         $0.textAlignment = .center
-        $0.textColor = UIColor(red: 0.41, green: 0.69, blue: 0.89, alpha: 1.00)
+        $0.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
         $0.font = UIFont.boldSystemFont(ofSize: 20)
     }
     
@@ -34,23 +34,22 @@ class FeelingsCollectionViewCell: UICollectionViewCell {
     
     private func setupViews() {
         backgroundColor = .clear
-        addSubviews([topLabel, bottomLabel])
+        contentView.addSubviews([topLabel, bottomLabel])
         setupConstraints()
     }
     
     private func setupConstraints() {
-        
         topLabel
-            .leadingAnchor(to: leadingAnchor, constant: 16)
-            .topAnchor(to: topAnchor, constant: 8)
-            .trailingAnchor(to: trailingAnchor, constant: 8)
+            .leadingAnchor(to: leadingAnchor, constant: 8)
+            .trailingAnchor(to: trailingAnchor, constant: -8)
+            .topAnchor(to: topAnchor, constant: 4)
             .heightAnchor(constant: 24)
             .activateAnchors()
         
         bottomLabel
             .leadingAnchor(to: leadingAnchor, constant: 8)
-            .topAnchor(to: topLabel.bottomAnchor, constant: 8)
-            .trailingAnchor(to: trailingAnchor, constant: 8)
+            .trailingAnchor(to: trailingAnchor, constant: -8)
+            .topAnchor(to: topLabel.bottomAnchor, constant: 0)
             .heightAnchor(constant: 24)
             .activateAnchors()
     }

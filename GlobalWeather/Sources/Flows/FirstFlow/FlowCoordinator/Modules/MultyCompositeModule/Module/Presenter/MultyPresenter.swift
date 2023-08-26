@@ -21,64 +21,17 @@ MultyViewInput> {
     
     private var cancellables = Set<AnyCancellable>()
     @FeaturedCityProvider var featuredCity: String
-    
+    private(set) var navigateToSeachSubject = PassthroughSubject<Void, Never>()
+
     override func viewDidLoad() {
         super.viewDidLoad()        
         setupSubmodules()
+        setupForActions()
+        subscribeForDataState()
+    }
+    
+    func viewWillAppear() {
         interactor?.retrieveCityWeather()
-        
-        interactor?.getDataStateSubject
-            .sink { [weak self] state in
-                guard let self = self else {
-                    return
-                }
-                switch state {
-                case .fetchFeaturedCityWeatherData:
-                    self.subsribeForFeaturedCityWeather(self.featuredCity)
-                case let .fetchLocationWeatherData(location):
-                    self.subsribeForFetchWeather(with: location)
-                case .presentStoredData(let model, let city):
-                    self.presentData(model, city)
-                }
-            }
-            .store(in: &cancellables)
-    }
-    
-    private func presentData(_ model: CityWeatherModel, _ city: String) {
-    }
-    
-    private func subsribeForFeaturedCityWeather(_ cityName: String) {
-        interactor?.featuredCityWeather(cityName: cityName)
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { receiveCompletion in
-                switch receiveCompletion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    print(error.localizedDescription, "error featured")
-                }
-            }, receiveValue: { [weak self] response in
-                guard let self = self else {
-                    return
-                }
-                self.setViewModels(response)
-            })
-            .store(in: &cancellables)
-    }
-    
-    private func subsribeForFetchWeather(with location: LocalWeatherModel) {
-        interactor?.fetchWeather(location: location)
-            .sink(receiveCompletion: { receiveCompletion in
-                switch receiveCompletion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    print(error.localizedDescription, "error by location")
-                }
-            }, receiveValue: { response in
-                print(response.city?.name as Any, "by locatiion")
-            })
-            .store(in: &cancellables)
     }
     
     deinit {
@@ -108,6 +61,71 @@ extension MultyPresenter {
         hourSubmodule?.input.hourDataPublisher.send(vms)
         summarySubModule?.input.summaryDayPublisher.send(WeatherDailyViewModel.getViewModel(with: vms))
         infoFeelingsModule?.input.feelingsPublisher.send(WeatherInfoViewModel.getViewModel(with: vms))
+    }
+    
+    private func setupForActions() {
+        navigateToSeachSubject
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                self?.router?.routeToSeachSubject.send(())
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func subscribeForDataState() {
+        interactor?.getDataStateSubject
+            .sink { [weak self] state in
+                guard let self = self else {
+                    return
+                }
+                switch state {
+                case .fetchFeaturedCityWeatherData:
+                    self.subsribeForFeaturedCityWeather(self.featuredCity)
+                case let .fetchLocationWeatherData(location):
+                    self.subsribeForFetchLocationWeather(with: location)
+                case .presentStoredData(let model, let city):
+                    self.presentData(model, city)
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func subsribeForFeaturedCityWeather(_ cityName: String) {
+        interactor?.featuredCityWeather(cityName: cityName)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { receiveCompletion in
+                switch receiveCompletion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription, "error featured")
+                }
+            }, receiveValue: { [weak self] response in
+                guard let self = self else {
+                    return
+                }
+                self.setViewModels(response)
+            })
+            .store(in: &cancellables)
+    }
+    
+    private func subsribeForFetchLocationWeather(with location: LocalWeatherModel) {
+        interactor?.fetchWeather(location: location)
+            .sink(receiveCompletion: { receiveCompletion in
+                switch receiveCompletion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription, "error by location")
+                }
+            }, receiveValue: { response in
+                self.setViewModels(response)
+            })
+            .store(in: &cancellables)
+    }
+
+    private func presentData(_ model: CityWeatherModel, _ city: String) {
+        setViewModels(model)
     }
 }
 

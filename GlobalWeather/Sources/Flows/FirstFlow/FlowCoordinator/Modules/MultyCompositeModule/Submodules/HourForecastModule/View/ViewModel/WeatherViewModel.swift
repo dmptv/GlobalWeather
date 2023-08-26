@@ -1,9 +1,3 @@
-//
-//  WeatherViewModel.swift
-//  GlobalWeather
-//
-//  Created by Kanat on 09.08.2023.
-//
 
 import Foundation
 
@@ -31,19 +25,19 @@ struct WeatherViewModel {
     var conditionImage: String {
         switch conditionId {
         case 200...299:
-            return "thunderstorms"
+            return "cloud.bolt.rain.fill"
         case 300...399:
-            return "drizzling"
+            return "cloud.drizzle.fill"
         case 500...599:
-            return "raining"
+            return "cloud.rain.fill"
         case 600...699:
-            return "snowing"
+            return "snow"
         case 700...799:
-            return "windy"
+            return "wind"
         case 800:
-            return "shine"
+            return "sun.max"
         default:
-            return "cloudy"
+            return "cloud.fill"
         }
     }
     
@@ -105,5 +99,5 @@ struct WeatherViewModel {
         }
         
         return WeatherViewModel(dt_txt: date, dateWithMonth: dateWithMonth, hour: hour, day: day, temp: temp, tempOriginal: tempOriginal, temp_min: temp_min, temp_max: temp_max, description: description, conditionId: conditionId, temp_min_int: temp_min_int, temp_max_int: temp_max_int, feelslike: feelslike, humidity: humidity, pressure: pressure, windSpeed: windSpeed, windDirection: windDirection, visibility: visibility)
-    }
+    }  
 }

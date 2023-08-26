@@ -15,7 +15,7 @@ class SummaryDayViewController: BaseViewController {
     private var cancellables = Set<AnyCancellable>()
     private(set) var summaryDayPublisher = PassthroughSubject<WeatherDailyViewModel, Never>()
 
-    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: TopAlignedLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class SummaryDayViewController: BaseViewController {
 // MARK: - Configure
 extension SummaryDayViewController: SummaryDayViewInput {
     private func setupSubviews() {
-        
+        descriptionLabel.textColor = UIColor(red: 0.9, green: 0.75, blue: 0.85, alpha: 1.0)
     }
 }
 
@@ -50,7 +50,26 @@ extension SummaryDayViewController {
     }
     
     private func configure(_ viewModel: WeatherDailyViewModel) {
-        descriptionLabel.text = "Today: Mostly \(viewModel.conditionImage[0]). The high today was forecast as \(viewModel.temp_max[0])"
+        descriptionLabel.text = "Expect mostly \(weatherCondition(from: viewModel.conditionImage[0])) conditions. The projected high temperature \(viewModel.temp_max[0])"
+    }
+    
+    private func weatherCondition(from imageName: String) -> String {
+        switch imageName {
+        case "cloud.bolt.rain.fill":
+            return "thunderstorms"
+        case "cloud.drizzle.fill":
+            return "drizzling"
+        case "cloud.rain.fill":
+            return "raining"
+        case "snow":
+            return "snowing"
+        case "wind":
+            return "windy"
+        case "sun.max":
+            return "clear"
+        default:
+            return "cloudy"
+        }
     }
 }
 
@@ -58,3 +77,5 @@ extension SummaryDayViewController {
 extension SummaryDayViewController {
     
 }
+
+

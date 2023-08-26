@@ -5,7 +5,7 @@ protocol BaseModuleRoutableProtocol {
     var viewController: ViewControllerProtocol? { get }
     
     func goBackRouting()
-    func closeRouting()
+    func closeRouting() 
     func goBackOrCloseRouting()
     func removeRouting()
 }

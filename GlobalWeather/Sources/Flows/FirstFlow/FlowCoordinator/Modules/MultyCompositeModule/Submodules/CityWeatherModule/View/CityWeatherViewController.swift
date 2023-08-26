@@ -36,7 +36,9 @@ extension CityWeatherViewController: CityWeatherViewInput {
 
 extension CityWeatherViewController {
     private func setupSubviews() {
-        
+        cityNameLabel.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
+        temperatureLabel.textColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.0)
+        weatherDescriptionLabel.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
     }
 }
 

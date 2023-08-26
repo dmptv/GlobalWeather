@@ -30,6 +30,7 @@ class MultyViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        output?.viewWillAppear()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -47,6 +48,30 @@ class MultyViewController: BaseViewController {
 extension MultyViewController: MultyViewInput {
     private func setupSubviews() {
         subscribeForPublishers()
+        setupViewColor()
+        setupToolbarColor()
+    }
+    
+    private func setupViewColor() {
+        let sunriseBackgroundColor = UIColor(red: 1.0, green: 0.6, blue: 0.4, alpha: 1.0).cgColor
+        let sunsetBackgroundColor = UIColor(red: 0.8, green: 0.3, blue: 0.6, alpha: 1.0).cgColor
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [sunriseBackgroundColor, sunsetBackgroundColor]
+        gradientLayer.frame = view.bounds
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    private func setupToolbarColor() {
+        let sunriseColor = UIColor(red: 1.0, green: 0.6, blue: 0.4, alpha: 1.0)
+        let sunsetColor = UIColor(red: 0.8, green: 0.3, blue: 0.6, alpha: 1.0)
+
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [sunriseColor.cgColor, sunsetColor.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
+        gradientLayer.frame = toolBar.bounds
+
+        toolBar.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     private func subscribeForPublishers() {
@@ -57,8 +82,9 @@ extension MultyViewController: MultyViewInput {
             .store(in: &cancellables)
         
         toolBar.settingButtonDidTapSubject
-            .sink { _ in
-                
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                self?.output?.navigateToSeachSubject.send(())
             }
             .store(in: &cancellables)
     }

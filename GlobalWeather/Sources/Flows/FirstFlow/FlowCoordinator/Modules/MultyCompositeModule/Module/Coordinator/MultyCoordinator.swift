@@ -38,4 +38,8 @@ extension MultyCoordinator: MultyRoutingHandlingProtocol {
     func feelingsSumboduleButtonRouting() {
         
     }
+    
+    func performRouteToSearch() {
+        coordinationExitPoint?.performRouteToSearch(self)
+    }
 }

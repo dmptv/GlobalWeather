@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 class FirstFlowCoordinator: BaseFlowCoordinator<FirstFlowRoutingExitHandler> {    
     override func start(with option: DeepLinkOptionProtocol?) {
@@ -28,5 +29,22 @@ extension FirstFlowCoordinator {
 }
 
 extension FirstFlowCoordinator: MultyCoordinatorExitRoutingProtocol {
+    func performRouteToSearch(_ coordinator: CoordinatorProtocol) {
+        let coordinator = SearchCityCoordinatorAssembly().build(routingHandler: self)
+        coordinator.start()
+        addChild(coordinator)
+        guard let toPresent = coordinator.toPresent() else {
+            return
+        }
+        toPresent.hero.isEnabled = true
+        toPresent.hero.modalAnimationType =
+            .selectBy(presenting: .push(direction: .left),
+                      dismissing: .pull(direction: .right))
+        router.present(toPresent, style: .fullScreen)
+    }
+}
+
+extension FirstFlowCoordinator: SearchCityCoordinatorExitRoutingProtocol {
     
 }
+

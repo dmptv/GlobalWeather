@@ -1,9 +1,4 @@
-//
-//  WeatherDailyViewModel.swift
-//  GlobalWeather
-//
-//  Created by Kanat on 23.08.2023.
-//
+
 
 import Foundation
 
@@ -24,17 +19,11 @@ struct WeatherDailyViewModel {
         var minTempArray = [String]()
         var maxTempArray = [String]()
         var conditionIDArray = [String]()
-        // weatherViewModel -> [WeatherViewModel]
         let temporaryDailyDictionary = Dictionary(grouping: weatherViewModel, by: { $0.dateWithMonth })
-        // temporaryDailyDictionary -> ["17/08": [WeatherViewModel], 18/08: [WeatherViewModel] ..]
         let keysArray = Array(temporaryDailyDictionary.keys).sorted(by: { $0 < $1 })
-        // keysArray -> ["17/08, 18/08, .."]
         
         temporaryDailyDictionary.forEach { key, value in
-            // value => [WeatherViewModel]
-            // find highest temperature using max.
             let tempMax = value.max { $0.tempMaxInt < $1.tempMaxInt }
-            // find lowest temperature using min.
             let tempMin = value.min { $0.tempMinInt < $1.tempMinInt }
             guard let tempMax = tempMax, let tempMin = tempMin else { return }
             

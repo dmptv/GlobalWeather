@@ -26,7 +26,10 @@ protocol MultyViewInput: BaseViewInput {
 
 // View Output
 protocol MultyViewOutput: ViewOutputProtocol {
+    var navigateToSeachSubject: PassthroughSubject<Void, Never> { get }
+
     func viewDidLoad()
+    func viewWillAppear()
 }
 
 // View Composite Module Containers Holder
@@ -43,7 +46,7 @@ protocol MultyInteractorInput {
     
     func retrieveCityWeather()
     func featuredCityWeather(cityName: String) -> Future<CityWeatherModel, CustomAPIError>
-    func fetchWeather(location: LocalWeatherModel) -> Future<LocationWeatherModel, CustomAPIError>
+    func fetchWeather(location: LocalWeatherModel) -> Future<CityWeatherModel, CustomAPIError>
 }
 
 // Interactor Output
@@ -53,6 +56,8 @@ protocol MultyInteractorOutput: AnyObject {
 
 // Router
 protocol MultyRouterInputProtocol: AlertRoutableProtocol, BaseModuleRoutableProtocol {
+    var routeToSeachSubject: PassthroughSubject<Void, Never> { get }
+    
     func showCitySubmodule(_ presentable: PresentableProtocol)
     func showHourSubmodule(_ presentable: PresentableProtocol)
     func showSummarySubmodule(_ presentable: PresentableProtocol)
@@ -70,8 +75,11 @@ protocol MultyRoutingHandlingProtocol: ModuleRoutingHandlingProtocol {
     func hourSumboduleButtonRouting()
     func summarySumboduleButtonRouting()
     func feelingsSumboduleButtonRouting()
+    
+    func performRouteToSearch()
 }
 
 // Coordinator Routing Handling
 protocol MultyCoordinatorExitRoutingProtocol: FlowExitPointProtocol {
+    func performRouteToSearch(_ coordinator: CoordinatorProtocol)
 }

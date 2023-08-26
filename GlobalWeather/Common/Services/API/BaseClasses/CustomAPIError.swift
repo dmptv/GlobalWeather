@@ -11,6 +11,7 @@ enum CustomAPIError: Error {
     case requestFailed(description: String)
     case customError(message: String)
     case noLocalData
+    case mapError(message: String)
 }
 
 extension CustomAPIError: Equatable {
