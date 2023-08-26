@@ -37,6 +37,11 @@ protocol DatabaseServiceProtocol {
                 callbackQueue: DispatchQueue,
                 completion: BlockObject<T?, Void>) where T: RunTimeModelProtocol
     
+    // Combine
+    func add<T: RunTimeModelProtocol>(objects: [T],
+                        callbackQueue: DispatchQueue) -> AnyPublisher<Void, Never>
+    
+    
     func addOrUpdate<T: RunTimeModelProtocol>(objects: [T],
                         callbackQueue: DispatchQueue) -> AnyPublisher<Void, Never>
     
@@ -77,12 +82,19 @@ extension DatabaseServiceProtocol {
                 completion: BlockObject<T?, Void>) where T: RunTimeModelProtocol {
         get(primaryKey: primaryKey, callbackQueue: .main, completion: completion)
     }
+    
+    func removeAll<T: RunTimeModelProtocol>(of type: T.Type) -> AnyPublisher<Void, Never> {
+        removeAll(of: type, callbackQueue: .main)
+    }
 }
 
 // MARK: - Default Combine Implementatons
 extension DatabaseServiceProtocol {
-    func addOrUpdate<T: RunTimeModelProtocol>(objects: [T],
-                                              callbackQueue: DispatchQueue) -> AnyPublisher<Void, Never> {
+    func add<T: RunTimeModelProtocol>(objects: [T]) -> AnyPublisher<Void, Never> {
+        add(objects: objects, callbackQueue: .main)
+    }
+    
+    func addOrUpdate<T: RunTimeModelProtocol>(objects: [T]) -> AnyPublisher<Void, Never> {
         addOrUpdate(objects: objects, callbackQueue: .main)
     }
     
@@ -258,6 +270,34 @@ final class DatabaseService: DatabaseServiceProtocol {
 
 // MARK: - Combine
 extension DatabaseService {
+    public func add<T: RunTimeModelProtocol>(objects: [T],
+                       callbackQueue: DispatchQueue) -> AnyPublisher<Void, Never> {
+        let emptyObject = PassthroughSubject<Void, Never>()
+        
+        queue.sync { [weak self] in
+            guard let realm = self?.realm else {
+                return
+            }
+            
+            do {
+                try realm.write {
+                    autoreleasepool {
+                        let objectsToStore = objects.map { $0.convertToStorable() }
+                        realm.add(objectsToStore)
+                        
+                        callbackQueue.async {
+                            emptyObject.send(())
+                        }
+                    }
+                }
+            } catch let error as NSError {
+                print(error)
+            }
+        }
+        
+        return emptyObject.eraseToAnyPublisher()
+    }
+    
     public func addOrUpdate<T: RunTimeModelProtocol>(objects: [T],
                                                      callbackQueue: DispatchQueue) -> AnyPublisher<Void, Never> {
         let emptyObject = PassthroughSubject<Void, Never>()

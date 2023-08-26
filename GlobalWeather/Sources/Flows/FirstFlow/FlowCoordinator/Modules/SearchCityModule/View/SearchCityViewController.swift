@@ -9,10 +9,11 @@
 import UIKit
 import Combine
 
+
+
 class SearchCityViewController: BaseViewController {
     var output: SearchCityViewOutput?
     private var cancellables = Set<AnyCancellable>()
-
     
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var searchTableView: SearchTableView!
@@ -35,10 +36,15 @@ class SearchCityViewController: BaseViewController {
 }
 
 // MARK: - Configure
-extension SearchCityViewController: SearchCityViewInput {
+extension SearchCityViewController: SearchCityViewInput, SearchTableViewDelegate {
+    func didSelectTableViewRow(at indexPath: IndexPath) {
+        output?.didSelectTableViewRow(at: indexPath)
+    }
+    
     private func setupSubviews() {
         setupNavigationBar()
         searchBar.delegate = self
+        searchTableView.searchDelegate = self
         
     }
     
@@ -71,8 +77,6 @@ extension SearchCityViewController {
         output?.backButtonAction()
     }
 }
-
-
 
 extension SearchCityViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

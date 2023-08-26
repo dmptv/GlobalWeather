@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol SearchTableViewDelegate: AnyObject {
+    func didSelectTableViewRow(at indexPath: IndexPath)
+}
+
 class SearchTableView: UITableView {
-    var searchResults: [String] = ["Bangkok", "Paris", "London"] {
+    weak var searchDelegate: SearchTableViewDelegate?
+
+    var searchResults = [String]() {
         didSet {
             reloadData()
         }
@@ -46,6 +52,6 @@ extension SearchTableView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        presenter?.didSelectTableViewRow(at: indexPath)
+        searchDelegate?.didSelectTableViewRow(at: indexPath)
     }
 }

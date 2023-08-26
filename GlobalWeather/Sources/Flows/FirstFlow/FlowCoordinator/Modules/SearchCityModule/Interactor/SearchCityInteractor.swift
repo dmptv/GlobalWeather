@@ -41,15 +41,25 @@ extension SearchCityInteractor: SearchCityInteractorInput {
         let searchRequest = MKLocalSearch.Request(completion: selectedResult)
         let search = MKLocalSearch(request: searchRequest)
         
-        search.start { (response, error) in
-            guard error == nil else { return }
+        search.start { [weak self] (response, error) in
+            guard let self = self,
+                  error == nil else {
+                return
+            }
             guard let placeMark = response?.mapItems[0].placemark else { return }
             guard let locationName = placeMark.name else { return }
              
             let location = LocalWeatherModel(locationName: locationName, latitude: placeMark.coordinate.latitude, longitude: placeMark.coordinate.longitude)
             // Delete All local data and Save Only Location Data (No Weather Data)
+            self.databaseService.removeAll(of: CityWeatherModel.self)
+                .flatMap { self.databaseService.add(objects: [location]) }
+                
+                .sink { res in
+                
+                }
+                .store(in: &cancellables)
             
-//            self.realmManager.saveLocationData(location)
+            
             
             
             
