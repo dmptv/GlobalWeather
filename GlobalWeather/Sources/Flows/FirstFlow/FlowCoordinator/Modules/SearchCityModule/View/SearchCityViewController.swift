@@ -16,6 +16,7 @@ class SearchCityViewController: BaseViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var searchTableView: SearchTableView!
     @IBOutlet private weak var cancelImage: UIImageView!
+    let cancelImageHeight: CGFloat = 80
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,15 +70,15 @@ extension SearchCityViewController: SearchCityViewInput, SearchTableViewDelegate
         let sunsetBackgroundColor = UIColor(red: 0.8, green: 0.3, blue: 0.6, alpha: 1.0).cgColor
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [sunriseBackgroundColor, sunsetBackgroundColor]
-        gradientLayer.frame = view.bounds
+        gradientLayer.frame = UIScreen.main.bounds
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     private func setupCancelImage() {
-        cancelImage.layer.cornerRadius = cancelImage.frame.height / 2
+        cancelImage.layer.cornerRadius = cancelImageHeight / 2
         cancelImage.image = UIImage(named: "GhostEmoji")
         cancelImage.translatesAutoresizingMaskIntoConstraints = true
-        cancelImage.frame = CGRect(x: -100, y: 100, width: 100, height: 100)
+        cancelImage.frame = CGRect(x: -cancelImageHeight, y: cancelImageHeight, width: cancelImageHeight, height: cancelImageHeight)
         cancelImage.alpha = 0
     }
     
@@ -90,9 +91,9 @@ extension SearchCityViewController: SearchCityViewInput, SearchTableViewDelegate
     }
     
     private func showGhostAnimation() {
-        UIView.animate(withDuration: 1.0, delay: 0, options: .transitionFlipFromLeft, animations: {
-            self.cancelImage.center = self.view.center
-            self.cancelImage.alpha = 0.6
+        UIView.animate(withDuration: 0.5, delay: 0, options: .transitionFlipFromLeft, animations: {
+            self.cancelImage.center = CGPoint(x: self.view.center.x, y: self.view.center.y / 2)
+            self.cancelImage.alpha = 0.5
         }, completion: { _ in })
     }
     
@@ -100,8 +101,12 @@ extension SearchCityViewController: SearchCityViewInput, SearchTableViewDelegate
         UIView.animate(withDuration: 0.3, delay: 0, options: .transitionCurlDown, animations: {
             self.cancelImage.alpha = 0
         }, completion: { _ in
-            self.cancelImage.frame = CGRect(x: -100, y: 100, width: 100, height: 100)
+            self.placeCancelImageToOriginalPlace()
         })
+    }
+    
+    private func placeCancelImageToOriginalPlace() {
+        cancelImage.frame = CGRect(x: -cancelImageHeight, y: cancelImageHeight, width: cancelImageHeight, height: cancelImageHeight)
     }
 }
 
