@@ -57,7 +57,7 @@ extension MultyViewController: MultyViewInput {
         let sunsetBackgroundColor = UIColor(red: 0.8, green: 0.3, blue: 0.6, alpha: 1.0).cgColor
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [sunriseBackgroundColor, sunsetBackgroundColor]
-        gradientLayer.frame = view.bounds
+        gradientLayer.frame = UIScreen.main.bounds
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
@@ -69,8 +69,7 @@ extension MultyViewController: MultyViewInput {
         gradientLayer.colors = [sunriseColor.cgColor, sunsetColor.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
-        gradientLayer.frame = toolBar.bounds
-
+        gradientLayer.frame = UIScreen.main.bounds
         toolBar.layer.insertSublayer(gradientLayer, at: 0)
     }
     
