@@ -46,8 +46,9 @@ extension SearchTableView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: UITableViewCell.self)
-//        presenter?.configureCell(cell, forRowAt: indexPath)
+        cell.backgroundColor = .clear
         cell.textLabel?.text = searchResults[indexPath.row]
+        cell.textLabel?.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
         return cell
     }
     

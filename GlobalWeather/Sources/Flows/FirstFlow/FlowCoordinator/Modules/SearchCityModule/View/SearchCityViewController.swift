@@ -9,8 +9,6 @@
 import UIKit
 import Combine
 
-
-
 class SearchCityViewController: BaseViewController {
     var output: SearchCityViewOutput?
     private var cancellables = Set<AnyCancellable>()
@@ -46,6 +44,24 @@ extension SearchCityViewController: SearchCityViewInput, SearchTableViewDelegate
         searchBar.delegate = self
         searchTableView.searchDelegate = self
         
+        if let textField = searchBar.value(forKey: "searchField") as? UITextField {
+            let placeholderText = " Enter city, zip, code, or airport location"
+            let placeholderAttributes: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0),
+                .font: UIFont.systemFont(ofSize: 14)
+            ]
+            
+            let attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: placeholderAttributes)
+            textField.attributedPlaceholder = attributedPlaceholder
+            textField.textColor = UIColor.white
+        }
+        
+        let sunriseBackgroundColor = UIColor(red: 1.0, green: 0.6, blue: 0.4, alpha: 1.0).cgColor
+        let sunsetBackgroundColor = UIColor(red: 0.8, green: 0.3, blue: 0.6, alpha: 1.0).cgColor
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [sunriseBackgroundColor, sunsetBackgroundColor]
+        gradientLayer.frame = view.bounds
+        view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     private func setupNavigationBar() {

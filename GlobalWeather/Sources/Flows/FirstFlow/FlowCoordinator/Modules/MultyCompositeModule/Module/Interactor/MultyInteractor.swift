@@ -58,7 +58,6 @@ extension MultyInteractor: MultyInteractorInput {
                 return localData
             }
             .filter { $0 == nil }
-            .print("local none")
             .sink { [weak self] localData in
                 guard let self = self else {
                     return
@@ -75,7 +74,6 @@ extension MultyInteractor: MultyInteractorInput {
                 .map { $0.first }
                 .compactMap { $0 }
             )
-            .print("local city here")
             .sink { [weak self] localData, cityData in
                 guard let self = self else {
                     return
