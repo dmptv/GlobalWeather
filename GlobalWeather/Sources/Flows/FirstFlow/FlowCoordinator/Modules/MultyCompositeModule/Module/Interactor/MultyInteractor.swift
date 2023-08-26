@@ -91,8 +91,9 @@ extension MultyInteractor: MultyInteractorInput {
                     } else {
                         self.getDataStateSubject.send(.presentStoredData(cityData, locationName))
                     }
+                } else {
+                    print("no -> \(localData.lastRefreshedDate) or \(localData.locationName ?? "")")
                 }
-                
             }
             .store(in: &cancellables)
         
@@ -112,57 +113,7 @@ extension MultyInteractor: MultyInteractorInput {
             }
             .store(in: &cancellables)
     }
-    
-    @available(*, deprecated, message: "use: retrieveCityWeather()")
-    func retrieveCityWeather2() -> AnyPublisher<LocalDataState, Never> {
-        let subject = PassthroughSubject<LocalDataState, Never>()
-        
-        let completion = BlockObject<[LocalWeatherModel], Void> { [weak self] arr in
-            guard let self = self else {
-                return
-            }
-            
-            guard let localData = arr.first,
-                  let locationName = localData.locationName,
-                  let _ = localData.latitude,
-                  let _ = localData.longitude
-            else {
-                subject.send(.fetchFeaturedCityWeatherData)
-                return
-            }
-            
-            let localDataCompletion = BlockObject<[CityWeatherModel], Void> { [weak self] arr in
-                guard let self = self else {
-                    return
-                }
-                
-                if let _ = localData.weatherData,
-                   let model = arr.first,
-                   let lastRefreshDate = localData.lastRefreshedDate {
-                    // All Local Data Exsits
 
-                    if self.isDataTooOld(from: lastRefreshDate) {
-                        subject.send(.fetchLocationWeatherData(localData))
-                    } else {
-                        subject.send(.presentStoredData(model, locationName))
-                    }
-                       
-                } else {
-                    // no weather data with new location
-                    subject.send(.fetchLocationWeatherData(localData))
-                    return
-                }
-                
-            }
-            
-            self.databaseService.getAll(of: CityWeatherModel.self, completion: localDataCompletion)
-        }
-        
-        self.databaseService.getAll(of: LocalWeatherModel.self, completion: completion)
-        return subject.eraseToAnyPublisher()
-    }
-
-    
     func featuredCityWeather(cityName: String) -> Future<CityWeatherModel, CustomAPIError> {
         return Future { [weak self] promise in
             guard let self = self else {
@@ -174,16 +125,45 @@ extension MultyInteractor: MultyInteractorInput {
                     if case let .failure(error) = receiveCompletion {
                         promise(.failure(error))
                     }
-                }, receiveValue: { response in
-                    // 4 store data to realm and bind data to view
-                    promise(.success(response))
+                }, receiveValue: { [weak self] response in
+                    guard let self = self else {
+                        return
+                    }
+                    self.databaseService.removeAll(of: CityWeatherModel.self)
+                        .flatMap { self.databaseService.add(objects: [response]) }
+                        .sink { _ in
+                            promise(.success(response))
+                        }
+                        .store(in: &cancellables)
                 })
                 .store(in: &cancellables)
         }
     }
     
     func fetchWeather(location: LocalWeatherModel) -> Future<CityWeatherModel, CustomAPIError> {
-        apiClient.fetchWeather(location: location)
+        return Future { [weak self] promise in
+            guard let self = self else {
+                return
+            }
+            
+            self.apiClient.fetchWeather(location: location)
+                .sink(receiveCompletion: { receiveCompletion in
+                    if case let .failure(error) = receiveCompletion {
+                        promise(.failure(error))
+                    }
+                }, receiveValue: { [weak self] response in
+                    guard let self = self else {
+                        return
+                    }
+                    self.databaseService.removeAll(of: CityWeatherModel.self)
+                        .flatMap { self.databaseService.add(objects: [response]) }
+                        .sink { _ in
+                            promise(.success(response))
+                        }
+                        .store(in: &cancellables)
+                })
+                .store(in: &cancellables)
+        }
     }
     
     private func isDataTooOld(from lastRefreshDate: Date) -> Bool {
@@ -192,15 +172,11 @@ extension MultyInteractor: MultyInteractorInput {
     }
 }
 
-/// 1 retrieve data - V
-/// 2 check if the location has been saved - V
-/// 3 if location is nil - fetch cityWeather data, then - V
-/// 4 store data to realm and bind data to view
-/// 5 if location is not nil, then
-/// 6 check if location has been changed from settings, then
-/// 7 fetchWeather for location, then
-/// 8 store data to realm and bind data to view
-/// 9 check if data is 3 hour long
-/// 10 if  3 hour long - fetchWeather for location,
-/// 11 store data to real and bind data to view
-/// 12 if less 3 hour - fetch - present stored data
+
+/// check if data is 3 hour long
+/// if  more 3 hour long
+/// then fetchWeather for location
+/// then store data to reaml
+/// then  bind data to view
+/// if less 3 hour
+/// then present stored data

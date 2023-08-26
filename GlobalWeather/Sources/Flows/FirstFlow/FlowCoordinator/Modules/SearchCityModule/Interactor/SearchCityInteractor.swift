@@ -49,7 +49,11 @@ extension SearchCityInteractor: SearchCityInteractorInput {
             guard let placeMark = response?.mapItems[0].placemark else { return }
             guard let locationName = placeMark.name else { return }
              
-            let location = LocalWeatherModel(locationName: locationName, latitude: placeMark.coordinate.latitude, longitude: placeMark.coordinate.longitude)
+            let location = LocalWeatherModel(locationName: locationName,
+                                             latitude: placeMark.coordinate.latitude,
+                                             longitude: placeMark.coordinate.longitude,
+                                             lastRefreshedDate: Date())
+            
             self.databaseService.removeAll(of: CityWeatherModel.self)
                 .flatMap { self.databaseService.removeAll(of: LocalWeatherModel.self) }
                 .flatMap { self.databaseService.add(objects: [location]) }
