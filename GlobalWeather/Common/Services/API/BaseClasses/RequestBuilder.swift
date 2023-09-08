@@ -9,7 +9,9 @@ import Alamofire
 
 class RequestBuilder<R: RouterProtocol> {
     private let BASE_URL = "https://api.openweathermap.org/data/2.5/forecast"
-    let API_KEY = "da69ade359c47e35161bf2e2dad374e8"
+    let API_KEY = "3aeb0927332507b5d1c47e8cccb8c7b9"
+  //"3aeb0927332507b5d1c47e8cccb8c7b9" mine
+ //"da69ade359c47e35161bf2e2dad374e8"
     
     func buildURLRequest(for route: R) throws -> URLRequest {
         let url = try BASE_URL.asURL()
