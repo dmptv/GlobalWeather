@@ -48,7 +48,7 @@ extension WeatherRouter {
     
     private func buildParameters(apiKey: String) -> Parameters {
         var parameters: Parameters = [
-            "APPID": apiKey,
+            "appid": apiKey,
             "units": "metric"
         ]
         
