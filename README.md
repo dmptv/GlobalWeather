@@ -76,7 +76,7 @@ List the major dependencies used in the project, including any third-party libra
 - Combine: Reactive programming framework.
 - MapKit: Apple's framework for map integration.
 - Realm: Persist data
-- SnapKit: Layut views
+- SnapKit: Layout views
 - Alamofire: Networking
 - Service Locator: A design pattern used in software development to manage and provide access to various services or dependencies within an application
 
